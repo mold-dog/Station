@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{111B9F23-DE61-4605-A3E0-1903E5425D3C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>RFIDIcon.ico</ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>RFID Station</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>RFID_Station</RootNamespace>
+    <StartupObject>RFID_Station.Module1</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\ASA\Documents\New Install\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>RFID Station.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>RFID Station.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A71B6EB6E76D558802C278D00492D96B37245E60</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Station_7_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>RFID Station.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>RFID Station.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>RFID Station.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>RFID Station.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Carrier.Designer.vb">
+      <DependentUpon>Carrier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Change_Operator.Designer.vb">
+      <DependentUpon>Change_Operator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Change_Operator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comm_Status.Designer.vb">
+      <DependentUpon>Comm_Status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comm_Status.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comm_Status_Assembly.Designer.vb">
+      <DependentUpon>Comm_Status_Assembly.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comm_Status_Assembly.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comm_Status_HCC.Designer.vb">
+      <DependentUpon>Comm_Status_HCC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comm_Status_HCC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comm_Status_Three_Wheel.Designer.vb">
+      <DependentUpon>Comm_Status_Three_Wheel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comm_Status_Three_Wheel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comm_Status_Wetsand.Designer.vb">
+      <DependentUpon>Comm_Status_Wetsand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comm_Status_Wetsand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Completed_To_Ship.Designer.vb">
+      <DependentUpon>Completed_To_Ship.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Completed_To_Ship.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status.Designer.vb">
+      <DependentUpon>Ctr_Comm_Status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status_HCC.Designer.vb">
+      <DependentUpon>Ctr_Comm_Status_HCC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status_HCC.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status_Three_Wheel.Designer.vb">
+      <DependentUpon>Ctr_Comm_Status_Three_Wheel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status_Three_Wheel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status_Wetsand.Designer.vb">
+      <DependentUpon>Ctr_Comm_Status_Wetsand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Comm_Status_Wetsand.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Completed_To_Ship.Designer.vb">
+      <DependentUpon>Ctr_Completed_To_Ship.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Completed_To_Ship.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_FTB.Designer.vb">
+      <DependentUpon>Ctr_FTB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_FTB.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_FTB_by_Model.Designer.vb">
+      <DependentUpon>Ctr_FTB_by_Model.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_FTB_by_Model.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Inventory_by_Area.Designer.vb">
+      <DependentUpon>Ctr_Inventory_by_Area.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Inventory_by_Area.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Mold_Buffer.Designer.vb">
+      <DependentUpon>Ctr_Mold_Buffer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Mold_Buffer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Operator_Status_by_Function.Designer.vb">
+      <DependentUpon>Ctr_Operator_Status_by_Function.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Operator_Status_by_Function.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Paint_Conveyor.Designer.vb">
+      <DependentUpon>Ctr_Paint_Conveyor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Paint_Conveyor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Paint_Current_Run.Designer.vb">
+      <DependentUpon>Ctr_Paint_Current_Run.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Paint_Current_Run.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Press_History.Designer.vb">
+      <DependentUpon>Ctr_Press_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Press_History.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Press_Status.Designer.vb">
+      <DependentUpon>Ctr_Press_Status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Press_Status.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Press_Summary.Designer.vb">
+      <DependentUpon>Ctr_Press_Summary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Press_Summary.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctr_Robot_Status.Designer.vb">
+      <DependentUpon>Ctr_Robot_Status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ctr_Robot_Status.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Default_Schedule.Designer.vb">
+      <DependentUpon>Default_Schedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Default_Schedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defect.Designer.vb">
+      <DependentUpon>Defect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defects_By_Inspector.Designer.vb">
+      <DependentUpon>Defects_By_Inspector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defects_By_Inspector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defect_by_Part_Type.Designer.vb">
+      <DependentUpon>Defect_by_Part_Type.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_by_Part_Type.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defect_Inspections_by_Inspector.Designer.vb">
+      <DependentUpon>Defect_Inspections_by_Inspector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_Inspections_by_Inspector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defect_RFID_Manual_Entry.Designer.vb">
+      <DependentUpon>Defect_RFID_Manual_Entry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_RFID_Manual_Entry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defect_RFID_Manual_Select.Designer.vb">
+      <DependentUpon>Defect_RFID_Manual_Select.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_RFID_Manual_Select.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defect_Small.Designer.vb">
+      <DependentUpon>Defect_Small.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_Small.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Door_Reader.Designer.vb">
+      <DependentUpon>Door_Reader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Door_Reader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area.Designer.vb">
+      <DependentUpon>Area.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Area.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defects.Designer.vb">
+      <DependentUpon>Defects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defects.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ethernet_Devices.Designer.vb">
+      <DependentUpon>Ethernet_Devices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ethernet_Devices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Film_Check_History.Designer.vb">
+      <DependentUpon>Film_Check_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Film_Check_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Final_Color.Designer.vb">
+      <DependentUpon>Final_Color.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Final_Color.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Final_Part.Designer.vb">
+      <DependentUpon>Final_Part.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Final_Part.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carrier_Info.Designer.vb">
+      <DependentUpon>Carrier_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defect_History.Designer.vb">
+      <DependentUpon>Defect_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location_Select.Designer.vb">
+      <DependentUpon>Location_Select.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Location_Select.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marriage_RFID_Query.Designer.vb">
+      <DependentUpon>Marriage_RFID_Query.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marriage_RFID_Query.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Molding_Job_Process_Data.Designer.vb">
+      <DependentUpon>Molding_Job_Process_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Molding_Job_Process_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NCM_Entry.Designer.vb">
+      <DependentUpon>NCM_Entry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NCM_Entry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Number_Keyboard.Designer.vb">
+      <DependentUpon>Number_Keyboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Number_Keyboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Color_Groups.Designer.vb">
+      <DependentUpon>Paint_Color_Groups.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Color_Groups.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Position.Designer.vb">
+      <DependentUpon>Part_Position.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Position.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMC_History_By_Event.Designer.vb">
+      <DependentUpon>PMC_History_By_Event.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMC_History_By_Event.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMC_Report_By_Resource.Designer.vb">
+      <DependentUpon>PMC_Report_By_Resource.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMC_Report_By_Resource.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PressDataExport.Designer.vb" />
+    <Compile Include="PressDataExport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_Counts_By_User.Designer.vb">
+      <DependentUpon>Press_Counts_By_User.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_Counts_By_User.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRScanner.Designer.vb" />
+    <Compile Include="QRScanner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupPressRep.Designer.vb" />
+    <Compile Include="SupPressRep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tag_Compare.Designer.vb">
+      <DependentUpon>Tag_Compare.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tag_Compare.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTB.Designer.vb">
+      <DependentUpon>FTB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FTB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTB_by_Model.Designer.vb">
+      <DependentUpon>FTB_by_Model.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FTB_by_Model.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTQ_Summary.Designer.vb">
+      <DependentUpon>FTQ_Summary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FTQ_Summary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functional_Area.Designer.vb">
+      <DependentUpon>Functional_Area.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Functional_Area.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location_Corrections.Designer.vb">
+      <DependentUpon>Location_Corrections.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Location_Corrections.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mold_Buffer.Designer.vb">
+      <DependentUpon>Mold_Buffer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mold_Buffer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mold_Schedule.Designer.vb">
+      <DependentUpon>Mold_Schedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mold_Schedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor_Class.vb" />
+    <Compile Include="New_RFID_Tag_Debug.Designer.vb">
+      <DependentUpon>New_RFID_Tag_Debug.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New_RFID_Tag_Debug.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operator_Info.Designer.vb">
+      <DependentUpon>Operator_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operator_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operator_Logins.Designer.vb">
+      <DependentUpon>Operator_Logins.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operator_Logins.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operator_Status_by_Function2.Designer.vb">
+      <DependentUpon>Operator_Status_by_Function2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operator_Status_by_Function2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operator_Status_By_Function_Control.Designer.vb">
+      <DependentUpon>Operator_Status_By_Function_Control.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operator_Status_By_Function_Control.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operator_Status_by_Part.Designer.vb">
+      <DependentUpon>Operator_Status_by_Part.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operator_Status_by_Part.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operator_Status_by_Time.Designer.vb">
+      <DependentUpon>Operator_Status_by_Time.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operator_Status_by_Time.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Operator_Status_by_Date.Designer.vb">
+      <DependentUpon>Paint_Operator_Status_by_Date.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Operator_Status_by_Date.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Production_Quality.Designer.vb">
+      <DependentUpon>Paint_Production_Quality.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Production_Quality.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Robot_Data.Designer.vb">
+      <DependentUpon>Paint_Robot_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Robot_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Defect_List.Designer.vb">
+      <DependentUpon>Part_Defect_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Defect_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_History.Designer.vb">
+      <DependentUpon>Part_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Inspection_Counts.Designer.vb">
+      <DependentUpon>Part_Inspection_Counts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Inspection_Counts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Inspection_History.Designer.vb">
+      <DependentUpon>Part_Inspection_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Inspection_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Status_History.Designer.vb">
+      <DependentUpon>Part_Status_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Status_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Type_Group.Designer.vb">
+      <DependentUpon>Part_Type_Group.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Type_Group.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pinstripe_Productivity.Designer.vb">
+      <DependentUpon>Pinstripe_Productivity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pinstripe_Productivity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_Alarms.Designer.vb">
+      <DependentUpon>Press_Alarms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_Alarms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_Alarm_History.Designer.vb">
+      <DependentUpon>Press_Alarm_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_Alarm_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_History.Designer.vb">
+      <DependentUpon>Press_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_Produced.Designer.vb">
+      <DependentUpon>Press_Produced.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_Produced.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_RFID.Designer.vb">
+      <DependentUpon>Press_RFID.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_RFID.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_Status.Designer.vb">
+      <DependentUpon>Press_Status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_Status.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_Summary.Designer.vb">
+      <DependentUpon>Press_Summary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_Summary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Press_Users.Designer.vb">
+      <DependentUpon>Press_Users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Press_Users.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rate_Debug_Query.Designer.vb">
+      <DependentUpon>Rate_Debug_Query.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rate_Debug_Query.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Robot_Part_Defect.Designer.vb">
+      <DependentUpon>Robot_Part_Defect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Robot_Part_Defect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Robot_Part_History.Designer.vb">
+      <DependentUpon>Robot_Part_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Robot_Part_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule_Status.Designer.vb">
+      <DependentUpon>Schedule_Status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_Status.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scrapped_Parts_Defects.Designer.vb">
+      <DependentUpon>Scrapped_Parts_Defects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Scrapped_Parts_Defects.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Set_Color.Designer.vb">
+      <DependentUpon>Set_Color.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Set_Color.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Station_Pick.Designer.vb">
+      <DependentUpon>Station_Pick.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Station_Pick.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspection.Designer.vb">
+      <DependentUpon>Inspection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inspection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.vb">
+      <DependentUpon>Inventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Control.Designer.vb">
+      <DependentUpon>Inventory_Control.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Control.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Current_Run.Designer.vb">
+      <DependentUpon>Paint_Current_Run.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Current_Run.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part.Designer.vb">
+      <DependentUpon>Part.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Local_Read.Designer.vb">
+      <DependentUpon>Local_Read.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Local_Read.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Production_RFID_Query.Designer.vb">
+      <DependentUpon>Paint_Production_RFID_Query.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Production_RFID_Query.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Production_Parts_Query.Designer.vb">
+      <DependentUpon>Paint_Production_Parts_Query.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Production_Parts_Query.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Production_Query.Designer.vb">
+      <DependentUpon>Paint_Production_Query.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Production_Query.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production_Defects.Designer.vb">
+      <DependentUpon>Production_Defects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Production_Defects.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production_Inspections.Designer.vb">
+      <DependentUpon>Production_Inspections.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Production_Inspections.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFID_Reader_Door.Designer.vb">
+      <DependentUpon>RFID_Reader_Door.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RFID_Reader_Door.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Robot_Parts.Designer.vb">
+      <DependentUpon>Robot_Parts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Robot_Parts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Robot_Part_Change.Designer.vb">
+      <DependentUpon>Robot_Part_Change.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Robot_Part_Change.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Robot_Status.Designer.vb">
+      <DependentUpon>Robot_Status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Robot_Status.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule_Production.Designer.vb">
+      <DependentUpon>Schedule_Production.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_Production.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule_Shipping.Designer.vb">
+      <DependentUpon>Schedule_Shipping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_Shipping.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shifts.Designer.vb">
+      <DependentUpon>Shifts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shifts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_By_Area.Designer.vb">
+      <DependentUpon>Inventory_By_Area.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_By_Area.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Tracking.Designer.vb">
+      <DependentUpon>Part_Tracking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Tracking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Job_Process_Data.Designer.vb">
+      <DependentUpon>Paint_Job_Process_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Job_Process_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Data_By_Area.Designer.vb">
+      <DependentUpon>Paint_Data_By_Area.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Data_By_Area.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Station_Defects.Designer.vb">
+      <DependentUpon>Station_Defects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Station_Defects.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Target_Time_Per_Part.Designer.vb">
+      <DependentUpon>Target_Time_Per_Part.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Target_Time_Per_Part.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.vb">
+      <DependentUpon>Test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Test.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Panel.Designer.vb">
+      <DependentUpon>Test_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Panel_History.Designer.vb">
+      <DependentUpon>Test_Panel_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Panel_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toolboxMM.vb" />
+    <Compile Include="TU_Productivity.Designer.vb">
+      <DependentUpon>TU_Productivity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TU_Productivity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TU_Quality.Designer.vb">
+      <DependentUpon>TU_Quality.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TU_Quality.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInput.Designer.vb" />
+    <Compile Include="UserInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.vb">
+      <DependentUpon>Users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Users.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Style.Designer.vb">
+      <DependentUpon>Style.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Style.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stations.Designer.vb">
+      <DependentUpon>Stations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stations.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Type.Designer.vb">
+      <DependentUpon>Part_Type.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Type.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint_Color.Designer.vb">
+      <DependentUpon>Paint_Color.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Color.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Conveyor.Designer.vb">
+      <DependentUpon>Paint_Conveyor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paint_Conveyor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Menu.Designer.vb">
+      <DependentUpon>Main Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Carrier_Sideways.Designer.vb">
+      <DependentUpon>Carrier_Sideways.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier_Sideways.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Carrier.resx">
+      <DependentUpon>Carrier.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carrier_Info.resx">
+      <DependentUpon>Carrier_Info.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carrier_Sideways.resx">
+      <DependentUpon>Carrier_Sideways.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change_Operator.resx">
+      <DependentUpon>Change_Operator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm_Status.resx">
+      <DependentUpon>Comm_Status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm_Status_Assembly.resx">
+      <DependentUpon>Comm_Status_Assembly.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm_Status_HCC.resx">
+      <DependentUpon>Comm_Status_HCC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm_Status_Three_Wheel.resx">
+      <DependentUpon>Comm_Status_Three_Wheel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm_Status_Wetsand.resx">
+      <DependentUpon>Comm_Status_Wetsand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Completed_To_Ship.resx">
+      <DependentUpon>Completed_To_Ship.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Comm_Status.resx">
+      <DependentUpon>Ctr_Comm_Status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Comm_Status_HCC.resx">
+      <DependentUpon>Ctr_Comm_Status_HCC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Comm_Status_Three_Wheel.resx">
+      <DependentUpon>Ctr_Comm_Status_Three_Wheel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Comm_Status_Wetsand.resx">
+      <DependentUpon>Ctr_Comm_Status_Wetsand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Completed_To_Ship.resx">
+      <DependentUpon>Ctr_Completed_To_Ship.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_FTB.resx">
+      <DependentUpon>Ctr_FTB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_FTB_by_Model.resx">
+      <DependentUpon>Ctr_FTB_by_Model.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Inventory_by_Area.resx">
+      <DependentUpon>Ctr_Inventory_by_Area.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Mold_Buffer.resx">
+      <DependentUpon>Ctr_Mold_Buffer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Operator_Status_by_Function.resx">
+      <DependentUpon>Ctr_Operator_Status_by_Function.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Paint_Conveyor.resx">
+      <DependentUpon>Ctr_Paint_Conveyor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Paint_Current_Run.resx">
+      <DependentUpon>Ctr_Paint_Current_Run.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Press_History.resx">
+      <DependentUpon>Ctr_Press_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Press_Status.resx">
+      <DependentUpon>Ctr_Press_Status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Press_Summary.resx">
+      <DependentUpon>Ctr_Press_Summary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctr_Robot_Status.resx">
+      <DependentUpon>Ctr_Robot_Status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default_Schedule.resx">
+      <DependentUpon>Default_Schedule.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defect.resx">
+      <DependentUpon>Defect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defects_By_Inspector.resx">
+      <DependentUpon>Defects_By_Inspector.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defect_by_Part_Type.resx">
+      <DependentUpon>Defect_by_Part_Type.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defect_History.resx">
+      <DependentUpon>Defect_History.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defect_Inspections_by_Inspector.resx">
+      <DependentUpon>Defect_Inspections_by_Inspector.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defect_RFID_Manual_Entry.resx">
+      <DependentUpon>Defect_RFID_Manual_Entry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defect_RFID_Manual_Select.resx">
+      <DependentUpon>Defect_RFID_Manual_Select.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defect_Small.resx">
+      <DependentUpon>Defect_Small.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Door_Reader.resx">
+      <DependentUpon>Door_Reader.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area.resx">
+      <DependentUpon>Area.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defects.resx">
+      <DependentUpon>Defects.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ethernet_Devices.resx">
+      <DependentUpon>Ethernet_Devices.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Film_Check_History.resx">
+      <DependentUpon>Film_Check_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Final_Color.resx">
+      <DependentUpon>Final_Color.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Final_Part.resx">
+      <DependentUpon>Final_Part.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTB.resx">
+      <DependentUpon>FTB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTB_by_Model.resx">
+      <DependentUpon>FTB_by_Model.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTQ_Summary.resx">
+      <DependentUpon>FTQ_Summary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Functional_Area.resx">
+      <DependentUpon>Functional_Area.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspection.resx">
+      <DependentUpon>Inspection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Control.resx">
+      <DependentUpon>Inventory_Control.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location_Corrections.resx">
+      <DependentUpon>Location_Corrections.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location_Select.resx">
+      <DependentUpon>Location_Select.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marriage_RFID_Query.resx">
+      <DependentUpon>Marriage_RFID_Query.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Molding_Job_Process_Data.resx">
+      <DependentUpon>Molding_Job_Process_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mold_Buffer.resx">
+      <DependentUpon>Mold_Buffer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mold_Schedule.resx">
+      <DependentUpon>Mold_Schedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NCM_Entry.resx">
+      <DependentUpon>NCM_Entry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_RFID_Tag_Debug.resx">
+      <DependentUpon>New_RFID_Tag_Debug.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Number_Keyboard.resx">
+      <DependentUpon>Number_Keyboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operator_Info.resx">
+      <DependentUpon>Operator_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operator_Logins.resx">
+      <DependentUpon>Operator_Logins.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operator_Status_by_Function2.resx">
+      <DependentUpon>Operator_Status_by_Function2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operator_Status_By_Function_Control.resx">
+      <DependentUpon>Operator_Status_By_Function_Control.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operator_Status_by_Part.resx">
+      <DependentUpon>Operator_Status_by_Part.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operator_Status_by_Time.resx">
+      <DependentUpon>Operator_Status_by_Time.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Color_Groups.resx">
+      <DependentUpon>Paint_Color_Groups.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Current_Run.resx">
+      <DependentUpon>Paint_Current_Run.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Operator_Status_by_Date.resx">
+      <DependentUpon>Paint_Operator_Status_by_Date.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Production_Quality.resx">
+      <DependentUpon>Paint_Production_Quality.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Robot_Data.resx">
+      <DependentUpon>Paint_Robot_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part.resx">
+      <DependentUpon>Part.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local_Read.resx">
+      <DependentUpon>Local_Read.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Production_RFID_Query.resx">
+      <DependentUpon>Paint_Production_RFID_Query.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Production_Parts_Query.resx">
+      <DependentUpon>Paint_Production_Parts_Query.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_By_Area.resx">
+      <DependentUpon>Inventory_By_Area.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Production_Query.resx">
+      <DependentUpon>Paint_Production_Query.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Defect_List.resx">
+      <DependentUpon>Part_Defect_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_History.resx">
+      <DependentUpon>Part_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Inspection_Counts.resx">
+      <DependentUpon>Part_Inspection_Counts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Inspection_History.resx">
+      <DependentUpon>Part_Inspection_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Position.resx">
+      <DependentUpon>Part_Position.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Status_History.resx">
+      <DependentUpon>Part_Status_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Tracking.resx">
+      <DependentUpon>Part_Tracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Job_Process_Data.resx">
+      <DependentUpon>Paint_Job_Process_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Data_By_Area.resx">
+      <DependentUpon>Paint_Data_By_Area.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Type_Group.resx">
+      <DependentUpon>Part_Type_Group.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pinstripe_Productivity.resx">
+      <DependentUpon>Pinstripe_Productivity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMC_History_By_Event.resx">
+      <DependentUpon>PMC_History_By_Event.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMC_Report_By_Resource.resx">
+      <DependentUpon>PMC_Report_By_Resource.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PressDataExport.resx" />
+    <EmbeddedResource Include="Press_Alarms.resx">
+      <DependentUpon>Press_Alarms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_Alarm_History.resx">
+      <DependentUpon>Press_Alarm_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_Counts_By_User.resx">
+      <DependentUpon>Press_Counts_By_User.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_History.resx">
+      <DependentUpon>Press_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_Produced.resx">
+      <DependentUpon>Press_Produced.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_RFID.resx">
+      <DependentUpon>Press_RFID.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_Status.resx">
+      <DependentUpon>Press_Status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_Summary.resx">
+      <DependentUpon>Press_Summary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Press_Users.resx">
+      <DependentUpon>Press_Users.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production_Defects.resx">
+      <DependentUpon>Production_Defects.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production_Inspections.resx">
+      <DependentUpon>Production_Inspections.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QRScanner.resx" />
+    <EmbeddedResource Include="Rate_Debug_Query.resx">
+      <DependentUpon>Rate_Debug_Query.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFID_Reader_Door.resx">
+      <DependentUpon>RFID_Reader_Door.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Robot_Parts.resx">
+      <DependentUpon>Robot_Parts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Robot_Part_Change.resx">
+      <DependentUpon>Robot_Part_Change.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Robot_Part_Defect.resx">
+      <DependentUpon>Robot_Part_Defect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Robot_Part_History.resx">
+      <DependentUpon>Robot_Part_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Robot_Status.resx">
+      <DependentUpon>Robot_Status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule_Production.resx">
+      <DependentUpon>Schedule_Production.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule_Shipping.resx">
+      <DependentUpon>Schedule_Shipping.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule_Status.resx">
+      <DependentUpon>Schedule_Status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scrapped_Parts_Defects.resx">
+      <DependentUpon>Scrapped_Parts_Defects.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set_Color.resx">
+      <DependentUpon>Set_Color.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shifts.resx">
+      <DependentUpon>Shifts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station_Defects.resx">
+      <DependentUpon>Station_Defects.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Station_Pick.resx">
+      <DependentUpon>Station_Pick.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Style.resx">
+      <DependentUpon>Style.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stations.resx">
+      <DependentUpon>Stations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Type.resx">
+      <DependentUpon>Part_Type.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Color.resx">
+      <DependentUpon>Paint_Color.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paint_Conveyor.resx">
+      <DependentUpon>Paint_Conveyor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Menu.resx">
+      <DependentUpon>Main Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module1.resx">
+      <DependentUpon>Module1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupPressRep.resx" />
+    <EmbeddedResource Include="Tag_Compare.resx">
+      <DependentUpon>Tag_Compare.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Target_Time_Per_Part.resx">
+      <DependentUpon>Target_Time_Per_Part.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Panel.resx">
+      <DependentUpon>Test_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Panel_History.resx">
+      <DependentUpon>Test_Panel_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TU_Productivity.resx">
+      <DependentUpon>TU_Productivity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TU_Quality.resx">
+      <DependentUpon>TU_Quality.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInput.resx" />
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Station_1_TemporaryKey.pfx" />
+    <None Include="Station_2_TemporaryKey.pfx" />
+    <None Include="Station_3_TemporaryKey.pfx" />
+    <None Include="Station_4_TemporaryKey.pfx" />
+    <None Include="Station_5_TemporaryKey.pfx" />
+    <None Include="Station_6_TemporaryKey.pfx" />
+    <None Include="Station_7_TemporaryKey.pfx" />
+    <None Include="Station_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="new_rfid_station_icon.ico" />
+    <Content Include="Resources\Building_Layout.jpg" />
+    <None Include="Resources\HCC_Stations.jpg" />
+    <None Include="Resources\Three_Wheel_Stations.jpg" />
+    <None Include="Resources\Wetsand_Stations.jpg" />
+    <None Include="Resources\Wetsand_Stations1.jpg" />
+    <None Include="Resources\Building_Layout1.jpg" />
+    <None Include="Resources\New Plant Layout.jpg" />
+    <Content Include="RFIDIcon.ico" />
+    <Content Include="rfid_station_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paint Layout.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

@@ -27,6 +27,63 @@ Public Class SelectedTextBox
 
 End Class
 
+
+Public Class UserPermissions
+
+    Private show_location_screen As Boolean = False
+    Public Property ShowLocationScreen As Boolean
+        Get
+            Return show_location_screen
+        End Get
+        Set(value As Boolean)
+            show_location_screen = value
+        End Set
+    End Property
+
+    Private johnson_creek As Boolean = False
+
+    Public Property JohnsonCreek As Boolean
+        Get
+            Return johnson_creek
+        End Get
+        Set(value As Boolean)
+            johnson_creek = value
+
+            If johnson_creek And _mauston Then
+                show_location_screen = True
+            End If
+        End Set
+    End Property
+
+    Private _mauston As Boolean = False
+
+    Public Property Mauston As Boolean
+        Get
+            Return _mauston
+        End Get
+        Set(value As Boolean)
+            _mauston = value
+            If johnson_creek And _mauston Then
+                show_location_screen = True
+            End If
+        End Set
+    End Property
+
+
+    Private ncm_entry As Integer = 0
+
+    Public Property NCMEntry As Integer
+        Get
+            Return ncm_entry
+        End Get
+        Set(value As Integer)
+            ncm_entry = value
+
+        End Set
+    End Property
+
+End Class
+
 Module Module1
     Public DBConnection As String
     Public DBConnection_t As String
@@ -166,6 +223,9 @@ Module Module1
     Public User_Permissions_Change_Robot_Parts As Boolean = False
     Public User_Permissions_Kill As Boolean = False
     Public User_Permissions_Access_Press_Area As Boolean = False
+    Public User_Perms As New UserPermissions
+
+
 
     Public Station_Area As Integer = 0
     Public Station_Name As String = ""
@@ -442,32 +502,41 @@ Module Module1
             Else
 
                 Dim location_screen As Location_Select = New Location_Select
+                location_screen.JohnsonCreek = User_Perms.JohnsonCreek
+                location_screen.Mauston = User_Perms.Mauston
+                location_screen.NCMEntry = User_Perms.NCMEntry
 
-                If True Then
-                    ' TODO: add splash screen based on user
+                If User_Perms.ShowLocationScreen Or User_Perms.NCMEntry Then
+                    ' TODO: change what buttons based on configs
+
                     location_screen.ShowDialog()
+                    If location_screen.SelectedLocation = "Johnson Creek" Or location_screen.SelectedLocation = "Mauston" Then
+                        Main_Menu_Form = New Main_Menu
+                        Main_Menu_Form.ShowDialog()
+
+                    ElseIf location_screen.SelectedLocation <> "" Then
 
 
-                End If
+                        NCM_Form = New NCM_Entry
 
+                        NCM_Form.CustomerLocation = location_screen.SelectedLocation
+                        NCM_Form.ShowDialog()
 
-                If location_screen.SelectedLocation = "Johnson Creek" Or location_screen.SelectedLocation = "Mauston" Then
+                    End If
+                Else
+
                     Main_Menu_Form = New Main_Menu
                     Main_Menu_Form.ShowDialog()
 
-                Else
-
-
-                    NCM_Form = New NCM_Entry
-
-                    NCM_Form.CustomerLocation = location_screen.SelectedLocation
-                    NCM_Form.ShowDialog()
 
                 End If
 
+
+
+
             End If
 
-            ' turn into else if
+
 
 
 
@@ -510,7 +579,10 @@ Module Module1
                 User_Permissions_Kill = IIf(IsDBNull(dr("Access_Kill")), 0, dr("Access_Kill"))
                 User_Permissions_Access_Press_Area = IIf(IsDBNull(dr("Access_Press_Area")), 0, dr("Access_Press_Area"))
                 USer_ID = dr("ID")
-                'TODO: Add splash screen config to DB and grab information
+                User_Perms.JohnsonCreek = IIf(IsDBNull(dr("Johnson_Creek")), 0, dr("Johnson_Creek"))
+                User_Perms.Mauston = IIf(IsDBNull(dr("Mauston")), 0, dr("Mauston"))
+                User_Perms.NCMEntry = IIf(IsDBNull(dr("NCM_Entry")), 0, dr("NCM_Entry"))
+
             Next
         Catch Ex As Exception
 

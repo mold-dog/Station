@@ -3,10 +3,29 @@
     Private borderForm As New Form
     Private Sub splashload() Handles MyBase.Load
 
+        If Not johnson_creek Then
+            btn_location1.Visible = False
+        End If
+        If Not _mauston Then
+            btn_location2.Visible = False
+        End If
+
+        If ncm_entry Then
+            If ncm_entry = 1 Then
+                btn_location4.Visible = False
+            ElseIf ncm_entry = 2 Then
+                btn_location3.Visible = False
+            End If
+        Else
+            btn_location3.Visible = False
+            btn_location4.Visible = False
+        End If
+
         AddHandler btn_location1.Click, AddressOf locationselected
         AddHandler btn_location2.Click, AddressOf locationselected
         AddHandler btn_location3.Click, AddressOf locationselected
         AddHandler btn_location4.Click, AddressOf locationselected
+
 
         With Me
             .FormBorderStyle = Windows.Forms.FormBorderStyle.None
@@ -43,8 +62,43 @@
 
     Private Sub locationselected(sender As Button, e As EventArgs)
         selected_location = sender.Text
+
         Me.Close()
     End Sub
+
+
+    Private johnson_creek As Boolean
+
+    Public Property JohnsonCreek As Boolean
+        Get
+            Return johnson_creek
+        End Get
+        Set(value As Boolean)
+            johnson_creek = value
+        End Set
+    End Property
+
+    Private _mauston As Boolean
+
+    Public Property Mauston As Boolean
+        Get
+            Return _mauston
+        End Get
+        Set(value As Boolean)
+            _mauston = value
+        End Set
+    End Property
+
+    Private ncm_entry As Integer
+
+    Public Property NCMEntry As Integer
+        Get
+            Return ncm_entry
+        End Get
+        Set(value As Integer)
+            ncm_entry = value
+        End Set
+    End Property
 
 
 

@@ -222,7 +222,9 @@ Public Class Part
 
     Private Sub new_part_selected()
         Dim LikeResult As Boolean = 0
-        LikeResult = RFID Like "*Z100*"
+        ' LikeResult = RFID Like "*Z100*"
+        LikeResult = Txt_Description.Text Like "*Z100*"
+
         Call Load_Data()
         Btn_Edit.Visible = True
         Btn_Delete.Visible = True

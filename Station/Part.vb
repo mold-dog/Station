@@ -239,6 +239,9 @@ Public Class Part
         Btn_Paint_Production.Visible = True
         If LikeResult Then
             Btn_Marriage_Data.Visible = True
+        Else
+            Btn_Marriage_Data.Visible = False
+
         End If
         Btn_Unlock.Visible = True
         If User_Permissions_Kill Then

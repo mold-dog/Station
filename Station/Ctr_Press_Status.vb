@@ -14,7 +14,7 @@ Public Class Ctr_Press_Status
 
 
     Private Sub NotifyPropertyChanged(info As String)
-        RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(info))
+        RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(info)) ' New PropertyChangedEventArgs(info))
     End Sub
 
     Private _press As Boolean = False
@@ -127,6 +127,7 @@ Public Class Ctr_Press_Status
                 ReDim Preserve ID_Array(counter)
                 ID_Array(counter) = dr("ID")
                 counter += 1
+                ' MsgBox("Description: " & dr("Description") & vbCrLf & "ID: " & dr("ID"))
             Next
 
             lbl_Comm_Fail.Visible = False
@@ -145,23 +146,23 @@ Public Class Ctr_Press_Status
 
     End Sub
 
-    Private Sub change_labels(sender As Object, e As EventArgs) Handles Me.PropertyChanged
+    Private Sub change_labels(sender As Object, e As PropertyChangedEventArgs) Handles Me.PropertyChanged
 
         ' Dim query As String
         ' Dim Bonder_ID As Integer = 0
 
-        MsgBox(e.ToString)
+        ' MsgBox(e.PropertyName)
 
-        Lbl_Press.Text = e.ToString
+        Lbl_Press.Text = e.PropertyName
 
-        If e.ToString = "Press" Then
+        If e.PropertyName = "Press" Then
 
             ' query = "Select * from Press where id = " & Sub_Parameter
 
             _bonder = Not _press
             _router = Not _press
 
-        ElseIf e.ToString = "Bonder" Then
+        ElseIf e.PropertyName = "Bonder" Then
 
             ' Bonder_ID = (Sub_Parameter - 100) ' not used??
             ' query = "Select * from Bonder Where ID in (1, 2)"
@@ -169,7 +170,7 @@ Public Class Ctr_Press_Status
             _press = Not _bonder
             _router = Not _bonder
 
-        ElseIf e.ToString = "Router" Then
+        ElseIf e.PropertyName = "Router" Then
 
             ' Bonder_ID = (Sub_Parameter - 100)
 
@@ -180,53 +181,54 @@ Public Class Ctr_Press_Status
 
 
 
-        Panel1.Visible = _press
-        Panel3.Visible = _press
-        Panel5.Visible = _press
-        Panel7.Visible = _press
-        Panel9.Visible = _press
-        Panel11.Visible = _press
-        Panel13.Visible = _press
-        Panel15.Visible = _press
-        Panel17.Visible = _press
-        Panel19.Visible = _press
-        Panel21.Visible = _press
-        Panel23.Visible = _press
-        Panel25.Visible = _press
-        Panel27.Visible = _press
-        Panel29.Visible = _press
-        Panel31.Visible = _press
-        Panel33.Visible = _press
-        Panel35.Visible = _press
-        Panel37.Visible = _press
-        Panel39.Visible = _press
-        Panel41.Visible = _press
-        Panel43.Visible = _press
-        Panel45.Visible = _press
+        Panel1.Visible = _bonder
+        Panel3.Visible = _bonder
+        Panel5.Visible = _bonder
+        Panel7.Visible = _bonder
+        Panel9.Visible = _bonder
+        Panel11.Visible = _bonder
+        Panel13.Visible = _bonder
+        Panel15.Visible = _bonder
+        Panel17.Visible = _bonder
+        Panel19.Visible = _bonder
+        Panel21.Visible = _bonder
+        Panel23.Visible = _bonder
+        Panel25.Visible = _bonder
+        Panel27.Visible = _bonder
+        Panel29.Visible = _bonder
+        Panel31.Visible = _bonder
+        Panel33.Visible = _bonder
+        Panel35.Visible = _bonder
+        Panel37.Visible = _bonder
+        Panel39.Visible = _bonder
+        Panel41.Visible = _bonder
+        Panel43.Visible = _bonder
+        Panel45.Visible = _bonder
 
-        Panel2.Visible = _bonder
-        Panel4.Visible = _bonder
-        Panel6.Visible = _bonder
-        Panel8.Visible = _bonder
-        Panel10.Visible = _bonder
-        Panel12.Visible = _bonder
-        Panel14.Visible = _bonder
-        Panel16.Visible = _bonder
-        Panel18.Visible = _bonder
-        Panel20.Visible = _bonder
-        Panel22.Visible = _bonder
-        Panel24.Visible = _bonder
-        Panel26.Visible = _bonder
-        Panel28.Visible = _bonder
-        Panel30.Visible = _bonder
-        Panel32.Visible = _bonder
-        Panel34.Visible = _bonder
-        Panel36.Visible = _bonder
-        Panel38.Visible = _bonder
-        Panel40.Visible = _bonder
-        Panel42.Visible = _bonder
-        Panel44.Visible = _bonder
-        Panel46.Visible = _bonder
+        Panel2.Visible = _press
+        Panel4.Visible = _press
+        Panel6.Visible = _press
+        Panel8.Visible = _press
+        Panel10.Visible = _press
+        Panel12.Visible = _press
+        Panel14.Visible = _press
+        Panel16.Visible = _press
+        Panel18.Visible = _press
+        Panel20.Visible = _press
+        Panel22.Visible = _press
+        Panel24.Visible = _press
+        Panel26.Visible = _press
+        Panel28.Visible = _press
+        Panel30.Visible = _press
+        Panel32.Visible = _press
+        Panel34.Visible = _press
+        Panel36.Visible = _press
+        Panel38.Visible = _press
+        Panel40.Visible = _press
+        Panel42.Visible = _press
+        Panel44.Visible = _press
+        Panel46.Visible = _press
+
 
         Btn_Clear_Operators.Visible = User_Permissions_User_Management
         ' Update_Screen()
@@ -240,16 +242,20 @@ Public Class Ctr_Press_Status
         Dim query As String
         Dim Bonder_ID As Integer = 0
 
-        If Sub_Parameter = 100 Then
+        If Sub_Parameter = 101 Then
             query = "Select * From Bonder Where ID in (1, 2)"
 
             Bonder = True
 
-        ElseIf Sub_Parameter = 102 Then
-            query = "Select * From Bonder Where ID in (3, 4)"
+        ElseIf Sub_Parameter = 103 Then
+            query = "Select * From Bonder Where ID in (3, 4, 5)"
 
             Router = True
 
+        ElseIf Sub_Parameter = 105 Then
+            query = "Select * From Bonder Where ID in (6, 7, 8)"
+
+            Router = True
         Else
             query = "Select * from Press Where ID = " & Sub_Parameter
 
@@ -415,11 +421,15 @@ Public Class Ctr_Press_Status
         If Cmb_Press.SelectedIndex >= 0 Then
             Press_ID = ID_Array(Cmb_Press.SelectedIndex)
 
-            If Press_ID = 100 Then
+            If Press_ID = 101 Then
                 Lbl_Press.Text = "Bonder"
                 Bonder = True
 
-            ElseIf Press_ID = 102 Then
+            ElseIf Press_ID = 103 Then
+                Lbl_Press.Text = "Router"
+                Router = True
+
+            ElseIf Press_ID = 105 Then
                 Lbl_Press.Text = "Router"
                 Router = True
 

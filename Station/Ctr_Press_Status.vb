@@ -227,11 +227,11 @@ Public Class Ctr_Press_Status
         Panel42.Visible = _bonder
         Panel44.Visible = _bonder
         Panel46.Visible = _bonder
-        
+
         Btn_Clear_Operators.Visible = User_Permissions_User_Management
         ' Update_Screen()
 
-
+    End Sub
 
 
     Sub Load_Label()
@@ -241,24 +241,197 @@ Public Class Ctr_Press_Status
         Dim Bonder_ID As Integer = 0
 
         If Sub_Parameter = 100 Then
-          query = "Select * From Bonder Where ID in (1, 2)"
+            query = "Select * From Bonder Where ID in (1, 2)"
 
-          Bonder = True
+            Bonder = True
 
-        ElseIF Sub_Parameter = 102 Then
-          query = "Select * From Bonder Where ID in (3, 4)"
+        ElseIf Sub_Parameter = 102 Then
+            query = "Select * From Bonder Where ID in (3, 4)"
 
-          Router = True
+            Router = True
 
         Else
-          query = "Select * from Press Where ID = " & Sub_Parameter
+            query = "Select * from Press Where ID = " & Sub_Parameter
 
-          Press = True
+            Press = True
+
+        End If
+
         ' If Sub_Parameter > 100 Then
+        ' Bonder = 1
+        ' Press = 0
+        ' Bonder_ID = (Sub_Parameter - 100)
+        ' query = "Select * from Bonder"
+        ' Lbl_Press.Text = "Bonder"
+        ' Panel1.Visible = True
+        ' Panel3.Visible = True
+        ' Panel5.Visible = True
+        ' Panel7.Visible = True
+        ' Panel9.Visible = True
+        ' Panel11.Visible = True
+        ' Panel13.Visible = True
+        ' Panel15.Visible = True
+        ' Panel17.Visible = True
+        ' Panel19.Visible = True
+        ' Panel21.Visible = True
+        ' Panel23.Visible = True
+        ' Panel25.Visible = True
+        ' Panel27.Visible = True
+        ' Panel29.Visible = True
+        ' Panel31.Visible = True
+        ' Panel33.Visible = True
+        ' Panel35.Visible = True
+        ' Panel37.Visible = True
+        ' Panel39.Visible = True
+        ' Panel41.Visible = True
+        ' Panel43.Visible = True
+        ' Panel45.Visible = True
+        ' Panel2.Visible = False
+        ' Panel4.Visible = False
+        ' Panel6.Visible = False
+        ' Panel8.Visible = False
+        ' Panel10.Visible = False
+        ' Panel12.Visible = False
+        ' Panel14.Visible = False
+        ' Panel16.Visible = False
+        ' Panel18.Visible = False
+        ' Panel20.Visible = False
+        ' Panel22.Visible = False
+        ' Panel24.Visible = False
+        ' Panel26.Visible = False
+        ' Panel28.Visible = False
+        ' Panel30.Visible = False
+        ' Panel32.Visible = False
+        ' Panel34.Visible = False
+        ' Panel36.Visible = False
+        ' Panel38.Visible = False
+        ' Panel40.Visible = False
+        ' Panel42.Visible = False
+        ' Panel44.Visible = False
+        ' Panel46.Visible = False
+        ' Else
+        ' Bonder = 0
+        ' Press = 1
+        ' query = "Select * from Press where id = " & Sub_Parameter
+        ' Lbl_Press.Text = "Press"
+        ' Panel1.Visible = False
+        ' Panel3.Visible = False
+        ' Panel5.Visible = False
+        ' Panel7.Visible = False
+        ' Panel9.Visible = False
+        ' Panel11.Visible = False
+        ' Panel13.Visible = False
+        ' Panel15.Visible = False
+        ' Panel17.Visible = False
+        ' Panel19.Visible = False
+        ' Panel21.Visible = False
+        ' Panel23.Visible = False
+        ' Panel25.Visible = False
+        ' Panel27.Visible = False
+        ' Panel29.Visible = False
+        ' Panel31.Visible = False
+        ' Panel33.Visible = False
+        ' Panel35.Visible = False
+        ' Panel37.Visible = False
+        ' Panel39.Visible = False
+        ' Panel41.Visible = False
+        ' Panel43.Visible = False
+        ' Panel45.Visible = False
+        ' Panel2.Visible = True
+        ' Panel4.Visible = True
+        ' Panel6.Visible = True
+        ' Panel8.Visible = True
+        ' Panel10.Visible = True
+        ' Panel12.Visible = True
+        ' Panel16.Visible = True
+        ' Panel18.Visible = True
+        ' Panel20.Visible = True
+        ' Panel22.Visible = True
+        ' Panel24.Visible = True
+        ' Panel26.Visible = True
+        ' Panel28.Visible = True
+        ' Panel30.Visible = True
+        ' Panel32.Visible = True
+        ' Panel34.Visible = True
+        ' Panel36.Visible = True
+        ' Panel38.Visible = True
+        ' Panel40.Visible = True
+        ' Panel42.Visible = True
+        ' Panel44.Visible = True
+        ' Panel46.Visible = True
+        ' End If
+
+        Try
+                SQLCon.ConnectionString = DBConnection
+                SQLCon.Open()
+                Dim da As New SqlDataAdapter(query, SQLCon)
+                da.SelectCommand.CommandTimeout = SQL_Timeout
+                Dim ds As New DataSet
+                da.Fill(ds, "Press")
+                SQLCon.Close()
+                If Press Then
+                    For Each dr As DataRow In ds.Tables("Press").Rows
+                        Lbl_Press_Name.Text = (dr("Description"))
+                        If (dr("PLC_Comm")) <> 0 Then
+                            Lbl_RFID_Fail.Visible = True
+                        Else
+                            Lbl_RFID_Fail.Visible = False
+                        End If
+                    Next
+                End If
+                If Bonder Then
+                    counter = 0
+                    For Each dr As DataRow In ds.Tables("Press").Rows
+                        If counter = 0 Then
+                            Lbl_Press_Name.Text = (dr("Description"))
+                        End If
+                        If counter > 0 Then
+                            Lbl_Press_Name.Text = Lbl_Press_Name.Text & "/" & (dr("Description"))
+                        End If
+                        counter += 1
+                    Next
+                End If
+                Press_ID = Sub_Parameter
+                Call Update_Screen()
+                lbl_Comm_Fail.Visible = False
+
+
+
+            Catch Ex As Exception
+                If SQLCon.State = ConnectionState.Open Then
+                    SQLCon.Close()
+                End If
+                lbl_Comm_Fail.Visible = True
+                WriteEvent("Error registered on Press Status Screen(Load_Label): " & Ex.Message, EventError)
+                ' MsgBox("Error Getting Press Info from Database: " & Ex.Message)
+            End Try
+
+
+
+
+    End Sub
+
+    Private Sub Cmb_Press_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_Press.SelectedIndexChanged
+        If Cmb_Press.SelectedIndex >= 0 Then
+            Press_ID = ID_Array(Cmb_Press.SelectedIndex)
+
+            If Press_ID = 100 Then
+                Lbl_Press.Text = "Bonder"
+                Bonder = True
+
+            ElseIf Press_ID = 102 Then
+                Lbl_Press.Text = "Router"
+                Router = True
+
+            Else
+                Lbl_Press.Text = "Press"
+                Press = True
+
+            End If
+
+            ' If Press_ID > 100 Then
             ' Bonder = 1
             ' Press = 0
-            ' Bonder_ID = (Sub_Parameter - 100)
-            ' query = "Select * from Bonder"
             ' Lbl_Press.Text = "Bonder"
             ' Panel1.Visible = True
             ' Panel3.Visible = True
@@ -306,10 +479,9 @@ Public Class Ctr_Press_Status
             ' Panel42.Visible = False
             ' Panel44.Visible = False
             ' Panel46.Visible = False
-        ' Else
+            ' Else
             ' Bonder = 0
             ' Press = 1
-            ' query = "Select * from Press where id = " & Sub_Parameter
             ' Lbl_Press.Text = "Press"
             ' Panel1.Visible = False
             ' Panel3.Visible = False
@@ -356,182 +528,14 @@ Public Class Ctr_Press_Status
             ' Panel42.Visible = True
             ' Panel44.Visible = True
             ' Panel46.Visible = True
-        ' End If
-
-        Try
-            SQLCon.ConnectionString = DBConnection
-            SQLCon.Open()
-            Dim da As New SqlDataAdapter(query, SQLCon)
-            da.SelectCommand.CommandTimeout = SQL_Timeout
-            Dim ds As New DataSet
-            da.Fill(ds, "Press")
-            SQLCon.Close()
-            If Press Then
-                For Each dr As DataRow In ds.Tables("Press").Rows
-                    Lbl_Press_Name.Text = (dr("Description"))
-                    If (dr("PLC_Comm")) <> 0 Then
-                        Lbl_RFID_Fail.Visible = True
-                    Else
-                        Lbl_RFID_Fail.Visible = False
-                    End If
-                Next
-            End If
-            If Bonder Then
-                counter = 0
-                For Each dr As DataRow In ds.Tables("Press").Rows
-                    If counter = 0 Then
-                        Lbl_Press_Name.Text = (dr("Description"))
-                    End If
-                    If counter > 0 Then
-                        Lbl_Press_Name.Text = Lbl_Press_Name.Text & "/" & (dr("Description"))
-                    End If
-                    counter += 1
-                Next
-            End If
-            Press_ID = Sub_Parameter
-            Call Update_Screen()
-            lbl_Comm_Fail.Visible = False
-
-
-
-        Catch Ex As Exception
-            If SQLCon.State = ConnectionState.Open Then
-                SQLCon.Close()
-            End If
-            lbl_Comm_Fail.Visible = True
-            WriteEvent("Error registered on Press Status Screen(Load_Label): " & Ex.Message, EventError)
-            ' MsgBox("Error Getting Press Info from Database: " & Ex.Message)
-        End Try
-
-
-
-    End Sub
-
-    Private Sub Cmb_Press_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_Press.SelectedIndexChanged
-        If Cmb_Press.SelectedIndex >= 0 Then
-            Press_ID = ID_Array(Cmb_Press.SelectedIndex)
-            
-            If Press_ID = 100 Then
-              Lbl_Press.Text = "Bonder"
-              Bonder = True
-
-            ElseIf Press_ID = 102 Then
-              Lbl_Press.Text = "Router"
-              Router = True
-
-            Else
-              Lbl_Press.Text = "Press"
-              Press = True
-
-            End If
-
-            ' If Press_ID > 100 Then
-                ' Bonder = 1
-                ' Press = 0
-                ' Lbl_Press.Text = "Bonder"
-                ' Panel1.Visible = True
-                ' Panel3.Visible = True
-                ' Panel5.Visible = True
-                ' Panel7.Visible = True
-                ' Panel9.Visible = True
-                ' Panel11.Visible = True
-                ' Panel13.Visible = True
-                ' Panel15.Visible = True
-                ' Panel17.Visible = True
-                ' Panel19.Visible = True
-                ' Panel21.Visible = True
-                ' Panel23.Visible = True
-                ' Panel25.Visible = True
-                ' Panel27.Visible = True
-                ' Panel29.Visible = True
-                ' Panel31.Visible = True
-                ' Panel33.Visible = True
-                ' Panel35.Visible = True
-                ' Panel37.Visible = True
-                ' Panel39.Visible = True
-                ' Panel41.Visible = True
-                ' Panel43.Visible = True
-                ' Panel45.Visible = True
-                ' Panel2.Visible = False
-                ' Panel4.Visible = False
-                ' Panel6.Visible = False
-                ' Panel8.Visible = False
-                ' Panel10.Visible = False
-                ' Panel12.Visible = False
-                ' Panel14.Visible = False
-                ' Panel16.Visible = False
-                ' Panel18.Visible = False
-                ' Panel20.Visible = False
-                ' Panel22.Visible = False
-                ' Panel24.Visible = False
-                ' Panel26.Visible = False
-                ' Panel28.Visible = False
-                ' Panel30.Visible = False
-                ' Panel32.Visible = False
-                ' Panel34.Visible = False
-                ' Panel36.Visible = False
-                ' Panel38.Visible = False
-                ' Panel40.Visible = False
-                ' Panel42.Visible = False
-                ' Panel44.Visible = False
-                ' Panel46.Visible = False
-            ' Else
-                ' Bonder = 0
-                ' Press = 1
-                ' Lbl_Press.Text = "Press"
-                ' Panel1.Visible = False
-                ' Panel3.Visible = False
-                ' Panel5.Visible = False
-                ' Panel7.Visible = False
-                ' Panel9.Visible = False
-                ' Panel11.Visible = False
-                ' Panel13.Visible = False
-                ' Panel15.Visible = False
-                ' Panel17.Visible = False
-                ' Panel19.Visible = False
-                ' Panel21.Visible = False
-                ' Panel23.Visible = False
-                ' Panel25.Visible = False
-                ' Panel27.Visible = False
-                ' Panel29.Visible = False
-                ' Panel31.Visible = False
-                ' Panel33.Visible = False
-                ' Panel35.Visible = False
-                ' Panel37.Visible = False
-                ' Panel39.Visible = False
-                ' Panel41.Visible = False
-                ' Panel43.Visible = False
-                ' Panel45.Visible = False
-                ' Panel2.Visible = True
-                ' Panel4.Visible = True
-                ' Panel6.Visible = True
-                ' Panel8.Visible = True
-                ' Panel10.Visible = True
-                ' Panel12.Visible = True
-                ' Panel16.Visible = True
-                ' Panel18.Visible = True
-                ' Panel20.Visible = True
-                ' Panel22.Visible = True
-                ' Panel24.Visible = True
-                ' Panel26.Visible = True
-                ' Panel28.Visible = True
-                ' Panel30.Visible = True
-                ' Panel32.Visible = True
-                ' Panel34.Visible = True
-                ' Panel36.Visible = True
-                ' Panel38.Visible = True
-                ' Panel40.Visible = True
-                ' Panel42.Visible = True
-                ' Panel44.Visible = True
-                ' Panel46.Visible = True
             ' End If
         End If
         ' If User_Permissions_User_Management = True Then
-            ' Btn_Clear_Operators.Visible = True
+        ' Btn_Clear_Operators.Visible = True
         ' Else
-            ' Btn_Clear_Operators.Visible = False
+        ' Btn_Clear_Operators.Visible = False
         ' End If
-       Call Update_Screen()
+        Call Update_Screen()
 
     End Sub
 

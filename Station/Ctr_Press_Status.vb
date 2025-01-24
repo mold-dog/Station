@@ -230,6 +230,34 @@ Public Class Ctr_Press_Status
         Panel46.Visible = _press
 
 
+        Panel50.Visible = _router
+        Panel51.Visible = _router
+        Panel52.Visible = _router
+        Panel53.Visible = _router
+        Panel54.Visible = _router
+        Panel55.Visible = _router
+        Panel56.Visible = _router
+        Panel57.Visible = _router
+        Panel58.Visible = _router
+        Panel59.Visible = _router
+        Panel60.Visible = _router
+        Panel61.Visible = _router
+        Panel62.Visible = _router
+        Panel63.Visible = _router
+        Panel64.Visible = _router
+        Panel65.Visible = _router
+        Panel66.Visible = _router
+        Panel67.Visible = _router
+        Panel68.Visible = _router
+        Panel69.Visible = _router
+        Panel70.Visible = _router
+        Panel71.Visible = _router
+        Panel72.Visible = _router
+        Panel73.Visible = _router
+        Panel74.Visible = _router
+        Panel75.Visible = _router
+
+
         Btn_Clear_Operators.Visible = User_Permissions_User_Management
         ' Update_Screen()
 
@@ -1592,8 +1620,36 @@ Public Class Ctr_Press_Status
                 'End If
 
             End If
+            
+
+            If Router Then
+              
+              Dim dsCounts As DataSet = toolboxmm.SQLTools.QueryDB(query,"Counts")
+              Dim dsUser As DataSet = toolboxmm.SQLTools.QueryDB(query2, "Users")
+              Dim daFourthShift As Dataset = toolboxmm.SQLTools.QueryDB("Select Enable_Fourth_Shift From Config_View", "Fourth")
+
+              'TODO: Insert fourth shift logic
+              
+              Lbl_Downtime.Text = Format_Time(drCounts("Downtime") & "")
+
+              lbl_Current_Shift_Total_3_1.Text = drCounts("A_Shift_Hours" & "")
+              Press_Hours = Val(drCounts("A_Shift_Hours") & "")
+
+              If Press_Hours > 0 Then
+                lbl_Current_Total_Rate_3_1.Text = Format(Val(Lbl_Current_Shift_Total_3_1.Text) / Press_Hours, "#.0")
+              Else
+                lbl_Current_Total_Rate_3_1.Text = "0.0"
+              End If
+
+              Lbl_last_Shift_Total_3_1.Text = drCounts("B_Shift_Total") & ""
+              Press_Hours = Val(drCounts("B_Shift_Hours") & "") 
+               
+
+            End If
 
 
+
+            'TODO: Why is this here?'
             _press = Not _bonder
 
             Call Update_Alarms()

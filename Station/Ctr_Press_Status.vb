@@ -573,13 +573,16 @@ Public Class Ctr_Press_Status
 
 
         ' If Press_ID > 100 Then
-        If Bonder Then
+        If Bonder Or Router Then
             'Bonder = 1
             'Press = 0
             Bonder_ID = (Press_ID - 100)
             query = "Exec Get_Bonder_Status3 " & Bonder_ID
             query2 = "Exec Get_Bonder_Users " & Bonder_ID & "," & Clear_Press_Operators
+
+
         Else
+
             'Bonder = 0
             'Press = 1
             query = "Exec Get_Press_Status3 " & Press_ID
@@ -1775,8 +1778,6 @@ Public Class Ctr_Press_Status
             End If
         End If
     End Sub
-
-
 
 
 End Class

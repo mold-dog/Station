@@ -264,6 +264,10 @@ Namespace toolboxMM
                             regpaintprocesskey.Close()
                         End If
                         regoraclekey.Close()
+                    Else
+                        strDBServer = "192.168.15.253"
+                        strDBUID = "VB_Client"
+                        strDBpassword = "RFID123$"
                     End If
                     regsoftwarekey.Close()
                 End If
@@ -307,7 +311,9 @@ Namespace toolboxMM
 
             Catch ex As Exception
 
-                MsgBox(ex.ToString)
+                MsgBox("Query: " & query & vbCrLf & "Table: " & table & vbCrLf & vbCrLf & "Exception Message: " & vbCrLf & ex.ToString)
+
+
             End Try
 
             Return tempDataSet

@@ -51,7 +51,7 @@ Public Class Ctr_Press_Status
 
     Public Property Router As Boolean
         Get
-            Return _bonder
+            Return _router
         End Get
         Set(value As Boolean)
             If Not (value = _router) Then
@@ -153,11 +153,16 @@ Public Class Ctr_Press_Status
 
         ' MsgBox(e.PropertyName)
 
+
+
         Lbl_Press.Text = e.PropertyName
 
         If e.PropertyName = "Press" Then
 
             ' query = "Select * from Press where id = " & Sub_Parameter
+
+            Lbl_Part.Font = New Font("Microsoft Sans Serif", 36.0F)
+            Lbl_Press_Name.Font = New Font("Microsoft Sans Serif", 36.0F)
 
             _bonder = Not _press
             _router = Not _press
@@ -167,6 +172,8 @@ Public Class Ctr_Press_Status
             ' Bonder_ID = (Sub_Parameter - 100) ' not used??
             ' query = "Select * from Bonder Where ID in (1, 2)"
 
+            Lbl_Part.Font = New Font("Microsoft Sans Serif", 36.0F)
+            Lbl_Press_Name.Font = New Font("Microsoft Sans Serif", 36.0F)
             _press = Not _bonder
             _router = Not _bonder
 
@@ -174,8 +181,12 @@ Public Class Ctr_Press_Status
 
             ' Bonder_ID = (Sub_Parameter - 100)
 
-            _press = Not _bonder
-            _router = Not _bonder
+            Lbl_Part.Font = New Font("Microsoft Sans Serif", 16.0F)
+            Lbl_Press_Name.Font = New Font("Microsoft Sans Serif", 26.0F)
+
+
+            _press = Not _router
+            _bonder = Not _router
 
         End If
 
@@ -253,9 +264,7 @@ Public Class Ctr_Press_Status
         Panel70.Visible = _router
         Panel71.Visible = _router
         Panel72.Visible = _router
-        Panel73.Visible = _router
-        Panel74.Visible = _router
-        Panel75.Visible = _router
+
 
 
         Btn_Clear_Operators.Visible = User_Permissions_User_Management
@@ -280,7 +289,7 @@ Public Class Ctr_Press_Status
 
             Router = True
 
-        ElseIf Sub_Parameter = 105 Then
+        ElseIf Sub_Parameter = 106 Then
             query = "Select * From Bonder Where ID in (6, 7, 8)"
 
             Router = True
@@ -396,49 +405,57 @@ Public Class Ctr_Press_Status
         ' End If
 
         Try
-                SQLCon.ConnectionString = DBConnection
-                SQLCon.Open()
-                Dim da As New SqlDataAdapter(query, SQLCon)
-                da.SelectCommand.CommandTimeout = SQL_Timeout
-                Dim ds As New DataSet
-                da.Fill(ds, "Press")
-                SQLCon.Close()
-                If Press Then
-                    For Each dr As DataRow In ds.Tables("Press").Rows
-                        Lbl_Press_Name.Text = (dr("Description"))
+            SQLCon.ConnectionString = DBConnection
+            SQLCon.Open()
+            Dim da As New SqlDataAdapter(query, SQLCon)
+            da.SelectCommand.CommandTimeout = SQL_Timeout
+            Dim ds As New DataSet
+            da.Fill(ds, "Press")
+            SQLCon.Close()
+            If Press Then
+                For Each dr As DataRow In ds.Tables("Press").Rows
+                    Lbl_Press_Name.Text = (dr("Description"))
+                    If (Not IsDBNull(dr("PLC_Comm"))) Then
                         If (dr("PLC_Comm")) <> 0 Then
                             Lbl_RFID_Fail.Visible = True
                         Else
                             Lbl_RFID_Fail.Visible = False
                         End If
-                    Next
-                End If
-                If Bonder Then
-                    counter = 0
-                    For Each dr As DataRow In ds.Tables("Press").Rows
-                        If counter = 0 Then
-                            Lbl_Press_Name.Text = (dr("Description"))
-                        End If
-                        If counter > 0 Then
-                            Lbl_Press_Name.Text = Lbl_Press_Name.Text & "/" & (dr("Description"))
-                        End If
-                        counter += 1
-                    Next
-                End If
-                Press_ID = Sub_Parameter
-                Call Update_Screen()
-                lbl_Comm_Fail.Visible = False
+
+                    Else
+                        Lbl_RFID_Fail.Visible = False
+                    End If
+
+                Next
+            End If
+            If Bonder Or Router Then
+                counter = 0
+                For Each dr As DataRow In ds.Tables("Press").Rows
+                    If counter = 0 Then
+                        Lbl_Press_Name.Text = (dr("Description"))
+                    End If
+                    If counter > 0 Then
+                        Lbl_Press_Name.Text = Lbl_Press_Name.Text & "/" & (dr("Description"))
+                    End If
+                    counter += 1
+                Next
+            End If
+
+
+            Press_ID = Sub_Parameter
+            Call Update_Screen()
+            lbl_Comm_Fail.Visible = False
 
 
 
-            Catch Ex As Exception
-                If SQLCon.State = ConnectionState.Open Then
-                    SQLCon.Close()
-                End If
-                lbl_Comm_Fail.Visible = True
-                WriteEvent("Error registered on Press Status Screen(Load_Label): " & Ex.Message, EventError)
-                ' MsgBox("Error Getting Press Info from Database: " & Ex.Message)
-            End Try
+        Catch Ex As Exception
+            If SQLCon.State = ConnectionState.Open Then
+                SQLCon.Close()
+            End If
+            lbl_Comm_Fail.Visible = True
+            WriteEvent("Error registered on Press Status Screen(Load_Label): " & Ex.Message, EventError)
+            ' MsgBox("Error Getting Press Info from Database: " & Ex.Message)
+        End Try
 
 
 
@@ -449,6 +466,7 @@ Public Class Ctr_Press_Status
         If Cmb_Press.SelectedIndex >= 0 Then
             Press_ID = ID_Array(Cmb_Press.SelectedIndex)
 
+
             If Press_ID = 101 Then
                 Lbl_Press.Text = "Bonder"
                 Bonder = True
@@ -457,7 +475,7 @@ Public Class Ctr_Press_Status
                 Lbl_Press.Text = "Router"
                 Router = True
 
-            ElseIf Press_ID = 105 Then
+            ElseIf Press_ID = 106 Then
                 Lbl_Press.Text = "Router"
                 Router = True
 
@@ -583,6 +601,7 @@ Public Class Ctr_Press_Status
 
 
     Sub Update_Screen()
+
         Dim Quantity_Count As Integer = 1
         Dim Max_Counts As Integer = 35
         Dim prev_op As String = ""
@@ -602,6 +621,7 @@ Public Class Ctr_Press_Status
 
         ' If Press_ID > 100 Then
         If Bonder Or Router Then
+
             'Bonder = 1
             'Press = 0
             Bonder_ID = (Press_ID - 100)
@@ -619,9 +639,13 @@ Public Class Ctr_Press_Status
 
 
         Try
+
             If Press_ID <= 0 Then
+
                 Exit Sub
             End If
+
+            ' MsgBox("Press: " & Press.ToString & vbCrLf & "Bonder: " & Bonder.ToString & vbCrLf & "Router: " & Router.ToString)
             If Press Then
                 SQLCon.ConnectionString = DBConnection
                 SQLCon.Open()
@@ -983,6 +1007,8 @@ Public Class Ctr_Press_Status
             End If
 
             If Bonder Then
+
+
 
                 SQLCon.ConnectionString = DBConnection
                 SQLCon.Open()
@@ -1620,37 +1646,783 @@ Public Class Ctr_Press_Status
                 'End If
 
             End If
-            
+
 
             If Router Then
-              
-              Dim dsCounts As DataSet = toolboxmm.SQLTools.QueryDB(query,"Counts")
-              Dim dsUser As DataSet = toolboxmm.SQLTools.QueryDB(query2, "Users")
-              Dim daFourthShift As Dataset = toolboxmm.SQLTools.QueryDB("Select Enable_Fourth_Shift From Config_View", "Fourth")
 
-              'TODO: Insert fourth shift logic
-              
-              Lbl_Downtime.Text = Format_Time(drCounts("Downtime") & "")
+                Dim dsCounts As DataSet = toolboxMM.SQLTools.queryDatabase(query, "Counts")
+                Dim dsUser As DataSet = toolboxMM.SQLTools.queryDatabase(query2, "Users")
+                Dim daFourthShift As DataSet = toolboxMM.SQLTools.queryDatabase("Select Enable_Fourth_Shift From Config_View", "Fourth")
 
-              lbl_Current_Shift_Total_3_1.Text = drCounts("A_Shift_Hours" & "")
-              Press_Hours = Val(drCounts("A_Shift_Hours") & "")
 
-              If Press_Hours > 0 Then
-                lbl_Current_Total_Rate_3_1.Text = Format(Val(Lbl_Current_Shift_Total_3_1.Text) / Press_Hours, "#.0")
-              Else
-                lbl_Current_Total_Rate_3_1.Text = "0.0"
-              End If
+                Dim enable_fourth_shift As Boolean = False
 
-              Lbl_last_Shift_Total_3_1.Text = drCounts("B_Shift_Total") & ""
-              Press_Hours = Val(drCounts("B_Shift_Hours") & "") 
-               
+                For Each temp_dr As DataRow In daFourthShift.Tables("Fourth").Rows
+                    If temp_dr("Enable_Fourth_Shift") Then
+                        enable_fourth_shift = True
+                    End If
+                Next
+
+
+                For Each drCounts As DataRow In dsCounts.Tables("Counts").Rows
+                    Lbl_Part.Text = drCounts("Part_Name")
+                    shift = drCounts("Shift") & ""
+                    Select Case shift
+                        Case "1"
+                            If enable_fourth_shift Then
+                                Lbl_Current_Shift.Text = "A"
+                                Lbl_Last_Shift.Text = "B"
+                                Lbl_Previous_Shift.Text = "C"
+                                Lbl_Fourth_Shift.Text = "D"
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Fourth_Shift.Text = ""
+                            End If
+                            Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
+                            Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Current_Shift.BackColor = Color.Lime
+                            Lbl_Last_Shift.BackColor = SystemColors.Control
+                            Lbl_Previous_Shift.BackColor = SystemColors.Control
+                            Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                        Case "2"
+                            If enable_fourth_shift Then
+                                Lbl_Current_Shift.Text = "A"
+                                Lbl_Last_Shift.Text = "B"
+                                Lbl_Previous_Shift.Text = "C"
+                                Lbl_Fourth_Shift.Text = "D"
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Fourth_Shift.Text = ""
+                            End If
+                            Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Last_Shift.BorderStyle = BorderStyle.FixedSingle
+                            Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Current_Shift.BackColor = SystemColors.Control
+                            Lbl_Last_Shift.BackColor = Color.Lime
+                            Lbl_Previous_Shift.BackColor = SystemColors.Control
+                            Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                        Case "3"
+                            If enable_fourth_shift Then
+                                Lbl_Current_Shift.Text = "A"
+                                Lbl_Last_Shift.Text = "B"
+                                Lbl_Previous_Shift.Text = "C"
+                                Lbl_Fourth_Shift.Text = "D"
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Fourth_Shift.Text = ""
+                            End If
+                            Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Previous_Shift.BorderStyle = BorderStyle.FixedSingle
+                            Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Current_Shift.BackColor = SystemColors.Control
+                            Lbl_Last_Shift.BackColor = SystemColors.Control
+                            Lbl_Previous_Shift.BackColor = Color.Lime
+                            Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                        Case "4"
+                            If enable_fourth_shift Then
+                                Lbl_Current_Shift.Text = "A"
+                                Lbl_Last_Shift.Text = "B"
+                                Lbl_Previous_Shift.Text = "C"
+                                Lbl_Fourth_Shift.Text = "D"
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Fourth_Shift.Text = ""
+                            End If
+                            Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                            Lbl_Fourth_Shift.BorderStyle = BorderStyle.FixedSingle
+                            Lbl_Current_Shift.BackColor = SystemColors.Control
+                            Lbl_Last_Shift.BackColor = SystemColors.Control
+                            Lbl_Previous_Shift.BackColor = SystemColors.Control
+                            Lbl_Fourth_Shift.BackColor = Color.Lime
+                    End Select
+
+
+                    If enable_fourth_shift Then
+
+                        Label27.Visible = True
+                        Label28.Visible = True
+                        Label32.Visible = True
+                        'Label32.Text = "Average"
+                        'Label28.Text = "Pieces Total"
+                        'Label27.Text = "Scrap Total"
+                    Else
+                        Label27.Visible = False
+                        Label28.Visible = False
+                        Label32.Visible = False
+                        'Label32.Text = ""
+                        'Label28.Text = ""
+                        'Label27.Text = ""
+                    End If
+                    Lbl_Downtime.Text = Format_Time(drCounts("Downtime") & "")
+
+                    Lbl_Current_Shift_Total_3_1.Text = drCounts("A_Shift_Total") & ""
+                    Press_Hours = Val(drCounts("A_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_Current_Total_Rate_3_1.Text = Format(Val(Lbl_Current_Shift_Total_3_1.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_Current_Total_Rate_3_1.Text = "0.0"
+                    End If
+                    Lbl_Last_Shift_Total_3_1.Text = drCounts("B_Shift_Total") & ""
+                    Press_Hours = Val(drCounts("B_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_Last_Total_Rate_3_1.Text = Format(Val(Lbl_Last_Shift_Total_3_1.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_Last_Total_Rate_3_1.Text = "0.0"
+                    End If
+                    Lbl_Previous_Shift_Total_3_1.Text = drCounts("C_Shift_Total") & ""
+                    Press_Hours = Val(drCounts("C_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_previous_Total_Rate_3_1.Text = Format(Val(Lbl_Previous_Shift_Total_3_1.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_previous_Total_Rate_3_1.Text = "0.0"
+                    End If
+                    Lbl_Fourth_Shift_Total_3_1.Text = "" 'drCounts("D_Shift_Total") & ""
+                    Press_Hours = Val(drCounts("D_Shift_Hours") & "")
+
+                    If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            lbl_Fourth_Total_Rate_3_1.Text = Format(Val(Lbl_Fourth_Shift_Total_3_1.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_Fourth_Total_Rate_3_1.Text = "0.0"
+                        End If
+                    Else
+                        lbl_Fourth_Total_Rate_3_1.Text = ""
+                    End If
+
+
+
+
+                    Shift_Parts = drCounts("A_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts("A_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Current_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Current_Shift_Rate_3_1.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts("B_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts("B_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Last_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Last_Shift_Rate_3_1.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts("C_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts("C_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Previous_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Previous_Shift_Rate_3_1.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts("D_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts("D_Shift_Last_Hours") & "")
+
+                    If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Fourth_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Fourth_Shift_Rate_3_1.Text = "0.0"
+                        End If
+                    Else
+                        Lbl_Fourth_Shift_Rate_3_1.Text = ""
+                    End If
+
+
+
+
+
+                    Press_Hours = Val(drCounts("A_Shift_Hours") & "") + Val(drCounts("B_Shift_Hours") & "") + Val(drCounts("C_Shift_Hours") & "") + Val(drCounts("D_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Total_Parts = Val(drCounts("A_Shift_Total") & "") + Val(drCounts("B_Shift_Total") & "") + Val(drCounts("C_Shift_Total") & "") + Val(drCounts("D_Shift_Total") & "")
+                        Lbl_Total_Actual_3_1.Text = Format(Total_Parts / Press_Hours, "#.0")
+                    Else
+                        Lbl_Total_Actual_3_1.Text = "0.0"
+                    End If
+
+                    Lbl_Current_Actual_3_1.Text = drCounts("Current_Hour") & ""
+
+
+                    Lbl_Current_Expected.Text = Format(Val(drCounts("Rate") & ""), "0.#")
+                    planned = Val(Lbl_Current_Expected.Text)
+                    Lbl_Total_Expected_3_1.Text = Format(Val(drCounts("Rate") & "") * Press_Hours, "0")
+                    Lbl_Hours.Text = Format(Press_Hours, "0.#")
+
+                    Lbl_Total_Plus_3_1.Text = Val(Lbl_Current_Shift_Total_3_1.Text) + Val(Lbl_Last_Shift_Total_3_1.Text) + Val(Lbl_Previous_Shift_Total_3_1.Text) + Val(Lbl_Fourth_Shift_Total_3_1.Text) - Val(Lbl_Total_Expected_3_1.Text)
+                    Lbl_Total_Plus_3_1.ForeColor = Get_Color(Val(Lbl_Total_Plus_3_1.Text), planned)
+
+                    If drCounts("Running") & "" = "1" Then
+                        Lbl_Running.Text = "Running"
+                        Lbl_Current_Plus_3_1.Text = Val(Lbl_Current_Actual_3_1.Text) - Val(Lbl_Current_Expected.Text)
+                        Lbl_Current_Plus_3_1.ForeColor = Get_Color(Val(Lbl_Current_Plus_3_1.Text), 0)
+                    Else
+                        Lbl_Running.Text = "Stopped"
+                        Lbl_Current_Plus_3_1.Text = "0"
+                        Lbl_Current_Plus_3_1.ForeColor = Get_Color(Val(Lbl_Current_Plus_3_1.Text), 0)
+                    End If
+
+                    lbl_Current_Scan_3_1.Text = drCounts("Current_Hour_Scans") & ""
+                    If (drCounts("Current_Hour_Scans") + 1 < drCounts("Current_Hour")) Or (drCounts("Current_Hour_Scans") - 1 > drCounts("Current_Hour")) Then
+                        lbl_Current_Scan_3_1.BackColor = Color.Red
+                    Else
+                        lbl_Current_Scan_3_1.BackColor = SystemColors.Control
+                    End If
+                    Lbl_Scrap_Total_3_1.Text = drCounts("Total_Scrap") & ""
+                    lbl_Current_Shift_Total_Scrap_3_1.Text = drCounts("A_Shift_Scrap_Total") & ""
+                    lbl_Last_Shift_Total_Scrap_3_1.Text = drCounts("B_Shift_Scrap_Total") & ""
+                    lbl_Previous_Shift_Total_Scrap_3_1.Text = drCounts("C_Shift_Scrap_Total") & ""
+                    If enable_fourth_shift Then
+                        lbl_Fourth_Shift_Total_Scrap_3_1.Text = drCounts("D_Shift_Scrap_Total") & ""
+                    Else
+                        lbl_Fourth_Shift_Total_Scrap_3_1.Text = ""
+                    End If
+
+
+                    'Set colors 
+                    lbl_Current_Total_Rate_3_1.ForeColor = Get_Color(Val(lbl_Current_Total_Rate_3_1.Text), planned)
+                    lbl_Last_Total_Rate_3_1.ForeColor = Get_Color(Val(lbl_Last_Total_Rate_3_1.Text), planned)
+                    lbl_previous_Total_Rate_3_1.ForeColor = Get_Color(Val(lbl_previous_Total_Rate_3_1.Text), planned)
+                    lbl_Fourth_Total_Rate_3_1.ForeColor = Get_Color(Val(lbl_Fourth_Total_Rate_3_1.Text), planned)
+                    Lbl_Current_Shift_Rate_3_1.ForeColor = Get_Color(Val(Lbl_Current_Shift_Rate_3_1.Text), planned)
+                    Lbl_Last_Shift_Rate_3_1.ForeColor = Get_Color(Val(Lbl_Last_Shift_Rate_3_1.Text), planned)
+                    Lbl_Previous_Shift_Rate_3_1.ForeColor = Get_Color(Val(Lbl_Previous_Shift_Rate_3_1.Text), planned)
+                    Lbl_Fourth_Shift_Rate_3_1.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate_3_1.Text), planned)
+
+                    'lbl_Current_Scan.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan.Text))
+                    Lbl_Scrap_Total_3_1.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_1.Text))
+                    lbl_Current_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_1.Text))
+                    lbl_Last_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_1.Text))
+                    lbl_Previous_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_1.Text))
+                    lbl_Fourth_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_1.Text))
+
+
+
+                Next
+
+                lblUser1.Visible = False
+                lblUser2.Visible = False
+                lblUser3.Visible = False
+                lblUser4.Visible = False
+                lblUser5.Visible = False
+                rowcount = 0
+
+
+
+
+
+
+                For Each drUsers As DataRow In dsUser.Tables("Users").Rows
+                        rowcount = rowcount + 1
+                        Select Case rowcount
+                            Case = 1
+                                If drUsers("User") <> "" Then
+                                    lblUser1.Visible = True
+                                    lblUser1.Text = drUsers("User")
+                                End If
+                            Case = 2
+                                If drUsers("User") <> "" Then
+                                    lblUser2.Visible = True
+                                    lblUser2.Text = drUsers("User")
+                                End If
+                            Case = 3
+                                If drUsers("User") <> "" Then
+                                    lblUser3.Visible = True
+                                    lblUser3.Text = drUsers("User")
+                                End If
+                            Case = 4
+                                If drUsers("User") <> "" Then
+                                    lblUser4.Visible = True
+                                    lblUser4.Text = drUsers("User")
+                                End If
+                            Case = 5
+                                If drUsers("User") <> "" Then
+                                    lblUser5.Visible = True
+                                    lblUser5.Text = drUsers("User")
+                                End If
+
+                        End Select
+
+
+
+                    Next
+
+
+                If Lbl_Running.Text = "Running" And lblUser1.Visible = False And lblUser2.Visible = False And lblUser3.Visible = False And lblUser4.Visible = False And lblUser5.Visible = False Then
+                    No_Operator = No_Operator + 1
+                Else
+                    No_Operator = 0
+                End If
+                If Press Then
+                    If No_Operator > 5 Then
+                        Lbl_Users.ForeColor = Color.Red
+                        lbl_Warning.Visible = True
+                    Else
+                        Lbl_Users.ForeColor = Color.Black
+                        lbl_Warning.Visible = False
+                    End If
+                End If
+                Clear_Press_Operators = False
+
+                If Lbl_Running.Text = "Stopped" And (lblUser1.Visible = True Or lblUser2.Visible = True Or lblUser3.Visible = True Or lblUser4.Visible = True Or lblUser5.Visible = True) Then
+                    Auto_Logout_Counter = Auto_Logout_Counter + 1
+                Else
+                    Auto_Logout_Counter = 0
+                End If
+
+                If Auto_Logout_Counter > 5 Then
+                    Clear_Press_Operators = True
+                End If
+
+                query = "Exec Get_Bonder_Status3 " & Bonder_ID + 1
+                ' query2 = "Exec Get_Bonder_Users " & Bonder_ID + 1 & ", " & Clear_Press_Operators
+
+                Dim dsCounts1 As DataSet = toolboxMM.SQLTools.queryDatabase(query, "Counts")
+                ' Dim dsUser1 As DataSet = toolboxMM.SQLTools.queryDatabase(query2, "Users")
+
+                For Each drCounts1 As DataRow In dsCounts1.Tables("Counts").Rows
+                    Lbl_Part.Text = Lbl_Part.Text & "/" & drCounts1("Part_Name")
+                    'shift = drCounts("Shift") & ""
+                    'Select Case shift
+                    '    Case "1"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Current_Shift.BackColor = Color.Lime
+                    '        Lbl_Last_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Previous_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                    '    Case "2"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Current_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Last_Shift.BackColor = Color.Lime
+                    '        Lbl_Previous_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                    '    Case "3"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Current_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Last_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Previous_Shift.BackColor = Color.Lime
+                    '        Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                    '    Case "4"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Current_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Last_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Previous_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Fourth_Shift.BackColor = Color.Lime
+                    'End Select
+
+                    'Lbl_Downtime.Text = Format_Time(drCounts("Downtime") & "")
+
+                    Lbl_Current_Shift_Total_3_2.Text = drCounts1("A_Shift_Total") & ""
+                    Press_Hours = Val(drCounts1("A_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_Current_Total_Rate_3_2.Text = Format(Val(Lbl_Current_Shift_Total_3_2.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_Current_Total_Rate_3_2.Text = "0.0"
+                    End If
+                    Lbl_Last_Shift_Total_3_2.Text = drCounts1("B_Shift_Total") & ""
+                    Press_Hours = Val(drCounts1("B_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_Last_Total_Rate_3_2.Text = Format(Val(Lbl_Last_Shift_Total_3_2.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_Last_Total_Rate_3_2.Text = "0.0"
+                    End If
+                    Lbl_Previous_Shift_Total_3_2.Text = drCounts1("C_Shift_Total") & ""
+                    Press_Hours = Val(drCounts1("C_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_previous_Total_Rate_3_2.Text = Format(Val(Lbl_Previous_Shift_Total_3_2.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_previous_Total_Rate_3_2.Text = "0.0"
+                    End If
+
+                    If enable_fourth_shift Then
+                        Lbl_Fourth_Shift_Total_3_2.Text = drCounts1("D_Shift_Total") & ""
+                    Else
+                        Lbl_Fourth_Shift_Total_3_2.Text = ""
+                    End If
+
+
+
+                    If enable_fourth_shift Then
+                        Press_Hours = Val(drCounts1("D_Shift_Hours") & "")
+
+                        If Press_Hours > 0 Then
+                            lbl_Fourth_Total_Rate_3_2.Text = Format(Val(Lbl_Fourth_Shift_Total_3_2.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_Fourth_Total_Rate_3_2.Text = "0.0"
+                        End If
+                    Else
+                        lbl_Fourth_Total_Rate_3_2.Text = ""
+                    End If
+
+
+
+
+                    Shift_Parts = drCounts1("A_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts1("A_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Current_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Current_Shift_Rate_3_2.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts1("B_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts1("B_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Last_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Last_Shift_Rate_3_2.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts1("C_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts1("C_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Previous_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Previous_Shift_Rate_3_2.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts1("D_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts1("D_Shift_Last_Hours") & "")
+
+                    If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Fourth_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Fourth_Shift_Rate_3_2.Text = "0.0"
+                        End If
+                    Else
+                        Lbl_Fourth_Shift_Rate_3_2.Text = ""
+                    End If
+
+
+
+
+
+                    Press_Hours = Val(drCounts1("A_Shift_Hours") & "") + Val(drCounts1("B_Shift_Hours") & "") + Val(drCounts1("C_Shift_Hours") & "") + Val(drCounts1("D_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Total_Parts = Val(drCounts1("A_Shift_Total") & "") + Val(drCounts1("B_Shift_Total") & "") + Val(drCounts1("C_Shift_Total") & "") + Val(drCounts1("D_Shift_Total") & "")
+                        Lbl_Total_Actual_3_2.Text = Format(Total_Parts / Press_Hours, "#.0")
+                    Else
+                        Lbl_Total_Actual_3_2.Text = "0.0"
+                    End If
+
+                    Lbl_Current_Actual_3_2.Text = drCounts1("Current_Hour") & ""
+
+
+                    '    Lbl_Current_Expected.Text = Format(Val(drCounts("Rate") & ""), "0.#")
+                    '    planned = Val(Lbl_Current_Expected.Text)
+                    Lbl_Total_Expected_3_2.Text = Format(Val(drCounts1("Rate") & "") * Press_Hours, "0")
+                    '    Lbl_Hours.Text = Format(Press_Hours, "0.#")
+
+                    Lbl_Total_Plus_3_2.Text = Val(Lbl_Current_Shift_Total_3_2.Text) + Val(Lbl_Last_Shift_Total_3_2.Text) + Val(Lbl_Previous_Shift_Total_3_2.Text) + Val(Lbl_Fourth_Shift_Total_3_2.Text) - Val(Lbl_Total_Expected_3_2.Text)
+                    Lbl_Total_Plus_3_2.ForeColor = Get_Color(Val(Lbl_Total_Plus_3_2.Text), planned)
+
+                    If drCounts1("Running") & "" = "1" Then
+                        Lbl_Running.Text = "Running"
+                        Lbl_Current_Plus_3_2.Text = Val(Lbl_Current_Actual_3_2.Text) - Val(Lbl_Current_Expected.Text)
+                        Lbl_Current_Plus_3_2.ForeColor = Get_Color(Val(Lbl_Current_Plus_3_2.Text), 0)
+                    Else
+                        Lbl_Running.Text = "Stopped"
+                        Lbl_Current_Plus_3_2.Text = "0"
+                        Lbl_Current_Plus_3_2.ForeColor = Get_Color(Val(Lbl_Current_Plus_3_2.Text), 0)
+                    End If
+
+                    lbl_Current_Scan_3_2.Text = drCounts1("Current_Hour_Scans") & ""
+                    If (drCounts1("Current_Hour_Scans") + 1 < drCounts1("Current_Hour")) Or (drCounts1("Current_Hour_Scans") - 1 > drCounts1("Current_Hour")) Then
+                        lbl_Current_Scan_3_2.BackColor = Color.Red
+                    Else
+                        lbl_Current_Scan_3_2.BackColor = SystemColors.Control
+                    End If
+                    Lbl_Scrap_Total_3_2.Text = drCounts1("Total_Scrap") & ""
+                    lbl_Current_Shift_Total_Scrap_3_2.Text = drCounts1("A_Shift_Scrap_Total") & ""
+                    lbl_Last_Shift_Total_Scrap_3_2.Text = drCounts1("B_Shift_Scrap_Total") & ""
+                    lbl_Previous_Shift_Total_Scrap_3_2.Text = drCounts1("C_Shift_Scrap_Total") & ""
+
+                    If enable_fourth_shift Then
+                        lbl_Fourth_Shift_Total_Scrap_3_2.Text = drCounts1("D_Shift_Scrap_Total") & ""
+                    Else
+                        lbl_Fourth_Shift_Total_Scrap_3_2.Text = ""
+                    End If
+
+
+                    '    'Set colors 
+                    lbl_Current_Total_Rate_3_2.ForeColor = Get_Color(Val(lbl_Current_Total_Rate_3_2.Text), planned)
+                    lbl_Last_Total_Rate_3_2.ForeColor = Get_Color(Val(lbl_Last_Total_Rate_3_2.Text), planned)
+                    lbl_previous_Total_Rate_3_2.ForeColor = Get_Color(Val(lbl_previous_Total_Rate_3_2.Text), planned)
+                    lbl_Fourth_Total_Rate_3_2.ForeColor = Get_Color(Val(lbl_Fourth_Total_Rate_3_2.Text), planned)
+                    Lbl_Current_Shift_Rate_3_2.ForeColor = Get_Color(Val(Lbl_Current_Shift_Rate_3_2.Text), planned)
+                    Lbl_Last_Shift_Rate_3_2.ForeColor = Get_Color(Val(Lbl_Last_Shift_Rate_3_2.Text), planned)
+                    Lbl_Previous_Shift_Rate_3_2.ForeColor = Get_Color(Val(Lbl_Previous_Shift_Rate_3_2.Text), planned)
+                    Lbl_Fourth_Shift_Rate_3_2.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate_3_2.Text), planned)
+
+                    '    'lbl_Current_Scan2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan2.Text))
+                    Lbl_Scrap_Total_3_2.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_2.Text))
+                    lbl_Current_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_2.Text))
+                    lbl_Last_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_2.Text))
+                    lbl_Previous_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_2.Text))
+                    lbl_Fourth_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_2.Text))
+
+
+
+                Next
+
+
+                query = "Exec Get_Bonder_Status3 " & Bonder_ID + 2
+                ' query2 = "Exec Get_Bonder_Users " & Bonder_ID + 1 & ", " & Clear_Press_Operators
+
+                Dim dsCounts2 As DataSet = toolboxMM.SQLTools.queryDatabase(query, "Counts")
+                ' Dim dsUser1 As DataSet = toolboxMM.SQLTools.queryDatabase(query2, "Users")
+
+                For Each drCounts2 As DataRow In dsCounts2.Tables("Counts").Rows
+                    Lbl_Part.Text = Lbl_Part.Text & "/" & drCounts2("Part_Name")
+                    'shift = drCounts("Shift") & ""
+                    'Select Case shift
+                    '    Case "1"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Current_Shift.BackColor = Color.Lime
+                    '        Lbl_Last_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Previous_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                    '    Case "2"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Current_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Last_Shift.BackColor = Color.Lime
+                    '        Lbl_Previous_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                    '    Case "3"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Current_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Last_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Previous_Shift.BackColor = Color.Lime
+                    '        Lbl_Fourth_Shift.BackColor = SystemColors.Control
+                    '    Case "4"
+                    '        Lbl_Current_Shift.Text = "A"
+                    '        Lbl_Last_Shift.Text = "B"
+                    '        Lbl_Previous_Shift.Text = "C"
+                    '        Lbl_Fourth_Shift.Text = "D"
+                    '        Lbl_Current_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Last_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Previous_Shift.BorderStyle = BorderStyle.None
+                    '        Lbl_Fourth_Shift.BorderStyle = BorderStyle.FixedSingle
+                    '        Lbl_Current_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Last_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Previous_Shift.BackColor = SystemColors.Control
+                    '        Lbl_Fourth_Shift.BackColor = Color.Lime
+                    'End Select
+
+                    'Lbl_Downtime.Text = Format_Time(drCounts("Downtime") & "")
+
+                    Lbl_Current_Shift_Total_3_3.Text = drCounts2("A_Shift_Total") & ""
+                    Press_Hours = Val(drCounts2("A_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_Current_Total_Rate_3_3.Text = Format(Val(Lbl_Current_Shift_Total_3_3.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_Current_Total_Rate_3_3.Text = "0.0"
+                    End If
+                    Lbl_Last_Shift_Total_3_3.Text = drCounts2("B_Shift_Total") & ""
+                    Press_Hours = Val(drCounts2("B_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_Last_Total_Rate_3_3.Text = Format(Val(Lbl_Last_Shift_Total_3_3.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_Last_Total_Rate_3_3.Text = "0.0"
+                    End If
+                    Lbl_Previous_Shift_Total_3_3.Text = drCounts2("C_Shift_Total") & ""
+                    Press_Hours = Val(drCounts2("C_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        lbl_previous_Total_Rate_3_3.Text = Format(Val(Lbl_Previous_Shift_Total_3_3.Text) / Press_Hours, "#.0")
+                    Else
+                        lbl_previous_Total_Rate_3_3.Text = "0.0"
+                    End If
+
+                    If enable_fourth_shift Then
+                        Lbl_Fourth_Shift_Total_3_3.Text = drCounts2("D_Shift_Total") & ""
+                    Else
+                        Lbl_Fourth_Shift_Total_3_3.Text = ""
+                    End If
+
+
+
+                    If enable_fourth_shift Then
+                        Press_Hours = Val(drCounts2("D_Shift_Hours") & "")
+
+                        If Press_Hours > 0 Then
+                            lbl_Fourth_Total_Rate_3_3.Text = Format(Val(Lbl_Fourth_Shift_Total_3_3.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_Fourth_Total_Rate_3_3.Text = "0.0"
+                        End If
+                    Else
+                        lbl_Fourth_Total_Rate_3_3.Text = ""
+                    End If
+
+
+
+
+                    Shift_Parts = drCounts2("A_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts2("A_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Current_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Current_Shift_Rate_3_3.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts2("B_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts2("B_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Last_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Last_Shift_Rate_3_3.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts2("C_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts2("C_Shift_Last_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Lbl_Previous_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                    Else
+                        Lbl_Previous_Shift_Rate_3_3.Text = "0.0"
+                    End If
+                    Shift_Parts = drCounts2("D_Shift_Parts") & ""
+                    Press_Hours = Val(drCounts2("D_Shift_Last_Hours") & "")
+
+                    If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Fourth_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Fourth_Shift_Rate_3_3.Text = "0.0"
+                        End If
+                    Else
+                        Lbl_Fourth_Shift_Rate_3_3.Text = ""
+                    End If
+
+
+
+
+
+                    Press_Hours = Val(drCounts2("A_Shift_Hours") & "") + Val(drCounts2("B_Shift_Hours") & "") + Val(drCounts2("C_Shift_Hours") & "") + Val(drCounts2("D_Shift_Hours") & "")
+                    If Press_Hours > 0 Then
+                        Total_Parts = Val(drCounts2("A_Shift_Total") & "") + Val(drCounts2("B_Shift_Total") & "") + Val(drCounts2("C_Shift_Total") & "") + Val(drCounts2("D_Shift_Total") & "")
+                        Lbl_Total_Actual_3_3.Text = Format(Total_Parts / Press_Hours, "#.0")
+                    Else
+                        Lbl_Total_Actual_3_3.Text = "0.0"
+                    End If
+
+                    Lbl_Current_Actual_3_3.Text = drCounts2("Current_Hour") & ""
+
+
+                    '    Lbl_Current_Expected.Text = Format(Val(dsCounts2("Rate") & ""), "0.#")
+                    '    planned = Val(Lbl_Current_Expected.Text)
+                    Lbl_Total_Expected_3_3.Text = Format(Val(drCounts2("Rate") & "") * Press_Hours, "0")
+                    '    Lbl_Hours.Text = Format(Press_Hours, "0.#")
+
+                    Lbl_Total_Plus_3_3.Text = Val(Lbl_Current_Shift_Total_3_3.Text) + Val(Lbl_Last_Shift_Total_3_3.Text) + Val(Lbl_Previous_Shift_Total_3_3.Text) + Val(Lbl_Fourth_Shift_Total_3_3.Text) - Val(Lbl_Total_Expected_3_3.Text)
+                    Lbl_Total_Plus_3_3.ForeColor = Get_Color(Val(Lbl_Total_Plus_3_3.Text), planned)
+
+                    If drCounts2("Running") & "" = "1" Then
+                        Lbl_Running.Text = "Running"
+                        Lbl_Current_Plus_3_3.Text = Val(Lbl_Current_Actual_3_3.Text) - Val(Lbl_Current_Expected.Text)
+                        Lbl_Current_Plus_3_3.ForeColor = Get_Color(Val(Lbl_Current_Plus_3_3.Text), 0)
+                    Else
+                        Lbl_Running.Text = "Stopped"
+                        Lbl_Current_Plus_3_3.Text = "0"
+                        Lbl_Current_Plus_3_3.ForeColor = Get_Color(Val(Lbl_Current_Plus_3_3.Text), 0)
+                    End If
+
+                    lbl_Current_Scan_3_3.Text = drCounts2("Current_Hour_Scans") & ""
+                    If (drCounts2("Current_Hour_Scans") + 1 < drCounts2("Current_Hour")) Or (drCounts2("Current_Hour_Scans") - 1 > drCounts2("Current_Hour")) Then
+                        lbl_Current_Scan_3_3.BackColor = Color.Red
+                    Else
+                        lbl_Current_Scan_3_3.BackColor = SystemColors.Control
+                    End If
+                    Lbl_Scrap_Total_3_3.Text = drCounts2("Total_Scrap") & ""
+                    lbl_Current_Shift_Total_Scrap_3_3.Text = drCounts2("A_Shift_Scrap_Total") & ""
+                    lbl_Last_Shift_Total_Scrap_3_3.Text = drCounts2("B_Shift_Scrap_Total") & ""
+                    lbl_Previous_Shift_Total_Scrap_3_3.Text = drCounts2("C_Shift_Scrap_Total") & ""
+
+                    If enable_fourth_shift Then
+                        lbl_Fourth_Shift_Total_Scrap_3_3.Text = drCounts2("D_Shift_Scrap_Total") & ""
+                    Else
+                        lbl_Fourth_Shift_Total_Scrap_3_3.Text = ""
+                    End If
+
+
+                    '    'Set colors 
+                    lbl_Current_Total_Rate_3_3.ForeColor = Get_Color(Val(lbl_Current_Total_Rate_3_3.Text), planned)
+                    lbl_Last_Total_Rate_3_3.ForeColor = Get_Color(Val(lbl_Last_Total_Rate_3_3.Text), planned)
+                    lbl_previous_Total_Rate_3_3.ForeColor = Get_Color(Val(lbl_previous_Total_Rate_3_3.Text), planned)
+                    lbl_Fourth_Total_Rate_3_3.ForeColor = Get_Color(Val(lbl_Fourth_Total_Rate_3_3.Text), planned)
+                    Lbl_Current_Shift_Rate_3_3.ForeColor = Get_Color(Val(Lbl_Current_Shift_Rate_3_3.Text), planned)
+                    Lbl_Last_Shift_Rate_3_3.ForeColor = Get_Color(Val(Lbl_Last_Shift_Rate_3_3.Text), planned)
+                    Lbl_Previous_Shift_Rate_3_3.ForeColor = Get_Color(Val(Lbl_Previous_Shift_Rate_3_3.Text), planned)
+                    Lbl_Fourth_Shift_Rate_3_3.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate_3_3.Text), planned)
+
+                    '    'lbl_Current_Scan2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan2.Text))
+                    Lbl_Scrap_Total_3_3.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_3.Text))
+                    lbl_Current_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_3.Text))
+                    lbl_Last_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_3.Text))
+                    lbl_Previous_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_3.Text))
+                    lbl_Fourth_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_3.Text))
+
+
+
+                Next
+
 
             End If
 
-
-
-            'TODO: Why is this here?'
-            _press = Not _bonder
 
             Call Update_Alarms()
             lbl_Comm_Fail.Visible = False
@@ -1662,7 +2434,7 @@ Public Class Ctr_Press_Status
             End If
             lbl_Comm_Fail.Visible = True
             WriteEvent("Error registered on Press Status Screen(Update Screen): " & Ex.Message, EventError)
-            ' MsgBox("Error Getting Press Info from Database: " & Ex.Message)
+            MsgBox("Error Getting Press Info from Database: " & Ex.Message & vbCrLf & Ex.StackTrace)
         End Try
 
 

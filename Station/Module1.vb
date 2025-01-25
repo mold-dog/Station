@@ -343,11 +343,13 @@ Module Module1
 
         Try
             SQLCon.Open()
+
             Dim daStation_Data As New SqlDataAdapter("Select * from Station where Client_Name = '" & System.Environment.MachineName & "'", SQLCon)
             daStation_Data.SelectCommand.CommandTimeout = SQL_Timeout
             Dim dsStation As New DataSet
             daStation_Data.Fill(dsStation, "Station")
             SQLCon.Close()
+
             For Each drStation As DataRow In dsStation.Tables("Station").Rows
 
                 ' This does not catch null values
@@ -361,8 +363,6 @@ Module Module1
 
 
                 Show_Paint_Defects = drStation("Show_Paint_Defects")
-
-
                 ' Set bools for what defects may be shown, sets to false if a null is returned (default is False)
                 If Not IsDBNull(drStation("Enable_Paint_Defects")) Then
                     Enable_Paint_Defects = drStation("Enable_Paint_Defects")
@@ -606,6 +606,7 @@ Module Module1
 
         Dim regsoftwarekey As RegistryKey = Registry.LocalMachine.OpenSubKey("SOFTWARE")
         If Not (regsoftwarekey Is Nothing) Then
+
             Dim regoraclekey As RegistryKey = regsoftwarekey.OpenSubKey("ASA")
             If Not (regoraclekey Is Nothing) Then
                 Dim regpaintprocesskey As RegistryKey = regoraclekey.OpenSubKey("RFID")
@@ -620,10 +621,15 @@ Module Module1
                     regpaintprocesskey.Close()
                 End If
                 regoraclekey.Close()
+            Else
+                strDBServer = "192.168.15.253"
+                strDBUID = "VB_Client"
+                strDBpassword = "RFID123$"
             End If
             regsoftwarekey.Close()
         End If
         DBConnection = "Server=" + strDBServer + ";uid=" + strDBUID + ";pwd=" + strDBpassword + ";database=RFID;Connection Timeout=30;"
+
         DBConnection_t = "Server=" + strDBServer + ";uid=" + strDBUID + ";pwd=" + strDBpassword + ";database=RFID_t;Connection Timeout=30;"
         Image_Share = "\\" & strDBServer & "\Images\"
         'Image_Share = "C:\Images\"

@@ -132,6 +132,20 @@ Partial Class Ctr_Press_Status
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Lbl_Current_Plus = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel53 = New System.Windows.Forms.Panel()
+        Me.Panel54 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer30 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape63 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape64 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Total_Actual_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Total_Actual_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Total_Actual_3_2 = New System.Windows.Forms.Label()
+        Me.ShapeContainer29 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape61 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape62 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Total_Expected_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Total_Expected_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Total_Expected_3_2 = New System.Windows.Forms.Label()
         Me.ShapeContainer5 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape33 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Lbl_Total_Expected2 = New System.Windows.Forms.Label()
@@ -187,6 +201,13 @@ Partial Class Ctr_Press_Status
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Lbl_Fourth_Shift_Rate = New System.Windows.Forms.Label()
         Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Panel61 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer37 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape77 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape78 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.lbl_Current_Total_Rate_3_3 = New System.Windows.Forms.Label()
+        Me.lbl_Current_Total_Rate_3_1 = New System.Windows.Forms.Label()
+        Me.lbl_Current_Total_Rate_3_2 = New System.Windows.Forms.Label()
         Me.ShapeContainer13 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape41 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.lbl_Current_Total_Rate2 = New System.Windows.Forms.Label()
@@ -206,6 +227,13 @@ Partial Class Ctr_Press_Status
         Me.lbl_previous_Total_Rate2 = New System.Windows.Forms.Label()
         Me.lbl_previous_Total_Rate1 = New System.Windows.Forms.Label()
         Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Panel63 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer39 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape81 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape82 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.lbl_previous_Total_Rate_3_3 = New System.Windows.Forms.Label()
+        Me.lbl_previous_Total_Rate_3_1 = New System.Windows.Forms.Label()
+        Me.lbl_previous_Total_Rate_3_2 = New System.Windows.Forms.Label()
         Me.lbl_previous_Total_Rate = New System.Windows.Forms.Label()
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.ShapeContainer16 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -220,8 +248,22 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Current_Shift_Total2 = New System.Windows.Forms.Label()
         Me.Lbl_Current_Shift_Total1 = New System.Windows.Forms.Label()
         Me.Panel32 = New System.Windows.Forms.Panel()
+        Me.Panel65 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer41 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape85 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape86 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Current_Shift_Total_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Current_Shift_Total_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Current_Shift_Total_3_2 = New System.Windows.Forms.Label()
         Me.Lbl_Current_Shift_Total = New System.Windows.Forms.Label()
         Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.Panel66 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer42 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape87 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape88 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Last_Shift_Total_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Last_Shift_Total_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Last_Shift_Total_3_2 = New System.Windows.Forms.Label()
         Me.ShapeContainer18 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape46 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Lbl_Last_Shift_Total2 = New System.Windows.Forms.Label()
@@ -229,6 +271,13 @@ Partial Class Ctr_Press_Status
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Lbl_Last_Shift_Total = New System.Windows.Forms.Label()
         Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.Panel67 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer43 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape89 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape90 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Previous_Shift_Total_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Previous_Shift_Total_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Previous_Shift_Total_3_2 = New System.Windows.Forms.Label()
         Me.ShapeContainer19 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape47 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Lbl_Previous_Shift_Total2 = New System.Windows.Forms.Label()
@@ -236,6 +285,13 @@ Partial Class Ctr_Press_Status
         Me.Panel36 = New System.Windows.Forms.Panel()
         Me.Lbl_Previous_Shift_Total = New System.Windows.Forms.Label()
         Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.Panel68 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer44 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape91 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape92 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Fourth_Shift_Total_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Fourth_Shift_Total_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Fourth_Shift_Total_3_2 = New System.Windows.Forms.Label()
         Me.ShapeContainer20 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape48 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Lbl_Fourth_Shift_Total2 = New System.Windows.Forms.Label()
@@ -248,6 +304,13 @@ Partial Class Ctr_Press_Status
         Me.lbl_Current_Shift_Total_Scrap2 = New System.Windows.Forms.Label()
         Me.lbl_Current_Shift_Total_Scrap1 = New System.Windows.Forms.Label()
         Me.Panel40 = New System.Windows.Forms.Panel()
+        Me.Panel69 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer45 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape93 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape94 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.lbl_Current_Shift_Total_Scrap_3_3 = New System.Windows.Forms.Label()
+        Me.lbl_Current_Shift_Total_Scrap_3_1 = New System.Windows.Forms.Label()
+        Me.lbl_Current_Shift_Total_Scrap_3_2 = New System.Windows.Forms.Label()
         Me.lbl_Current_Shift_Total_Scrap = New System.Windows.Forms.Label()
         Me.Panel41 = New System.Windows.Forms.Panel()
         Me.ShapeContainer22 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -255,6 +318,13 @@ Partial Class Ctr_Press_Status
         Me.lbl_Last_Shift_Total_Scrap2 = New System.Windows.Forms.Label()
         Me.lbl_Last_Shift_Total_Scrap1 = New System.Windows.Forms.Label()
         Me.Panel42 = New System.Windows.Forms.Panel()
+        Me.Panel70 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer46 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape95 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape96 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.lbl_Last_Shift_Total_Scrap_3_3 = New System.Windows.Forms.Label()
+        Me.lbl_Last_Shift_Total_Scrap_3_1 = New System.Windows.Forms.Label()
+        Me.lbl_Last_Shift_Total_Scrap_3_2 = New System.Windows.Forms.Label()
         Me.lbl_Last_Shift_Total_Scrap = New System.Windows.Forms.Label()
         Me.Panel43 = New System.Windows.Forms.Panel()
         Me.ShapeContainer23 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -264,6 +334,13 @@ Partial Class Ctr_Press_Status
         Me.Panel44 = New System.Windows.Forms.Panel()
         Me.lbl_Previous_Shift_Total_Scrap = New System.Windows.Forms.Label()
         Me.Panel45 = New System.Windows.Forms.Panel()
+        Me.Panel72 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer25 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape54 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape53 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3 = New System.Windows.Forms.Label()
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1 = New System.Windows.Forms.Label()
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2 = New System.Windows.Forms.Label()
         Me.ShapeContainer24 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape52 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.lbl_Fourth_Shift_Total_Scrap2 = New System.Windows.Forms.Label()
@@ -271,20 +348,7 @@ Partial Class Ctr_Press_Status
         Me.Panel46 = New System.Windows.Forms.Panel()
         Me.lbl_Fourth_Shift_Total_Scrap = New System.Windows.Forms.Label()
         Me.Lbl_RFID_Fail = New System.Windows.Forms.Label()
-        Me.Panel72 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer25 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape53 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3 = New System.Windows.Forms.Label()
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1 = New System.Windows.Forms.Label()
-        Me.LineShape54 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2 = New System.Windows.Forms.Label()
         Me.Panel50 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer26 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape55 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape56 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Current_Actual_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Current_Actual_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Current_Actual_3_2 = New System.Windows.Forms.Label()
         Me.Panel51 = New System.Windows.Forms.Panel()
         Me.ShapeContainer27 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape57 = New Microsoft.VisualBasic.PowerPacks.LineShape()
@@ -292,6 +356,12 @@ Partial Class Ctr_Press_Status
         Me.lbl_Current_Scan_3_3 = New System.Windows.Forms.Label()
         Me.lbl_Current_Scan_3_1 = New System.Windows.Forms.Label()
         Me.lbl_Current_Scan_3_2 = New System.Windows.Forms.Label()
+        Me.ShapeContainer26 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape55 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape56 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Current_Actual_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Current_Actual_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Current_Actual_3_2 = New System.Windows.Forms.Label()
         Me.Panel52 = New System.Windows.Forms.Panel()
         Me.ShapeContainer28 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape59 = New Microsoft.VisualBasic.PowerPacks.LineShape()
@@ -299,27 +369,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Current_Plus_3_3 = New System.Windows.Forms.Label()
         Me.Lbl_Current_Plus_3_1 = New System.Windows.Forms.Label()
         Me.Lbl_Current_Plus_3_2 = New System.Windows.Forms.Label()
-        Me.Panel53 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer29 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape61 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape62 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Total_Expected_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Total_Expected_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Total_Expected_3_2 = New System.Windows.Forms.Label()
-        Me.Panel54 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer30 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape63 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape64 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Total_Actual_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Total_Actual_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Total_Actual_3_2 = New System.Windows.Forms.Label()
         Me.Panel55 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer31 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape65 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape66 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Scrap_Total_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Scrap_Total_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Scrap_Total_3_2 = New System.Windows.Forms.Label()
         Me.Panel56 = New System.Windows.Forms.Panel()
         Me.ShapeContainer32 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape67 = New Microsoft.VisualBasic.PowerPacks.LineShape()
@@ -327,6 +377,12 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Total_Plus_3_3 = New System.Windows.Forms.Label()
         Me.Lbl_Total_Plus_3_1 = New System.Windows.Forms.Label()
         Me.Lbl_Total_Plus_3_2 = New System.Windows.Forms.Label()
+        Me.ShapeContainer31 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape65 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape66 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.Lbl_Scrap_Total_3_3 = New System.Windows.Forms.Label()
+        Me.Lbl_Scrap_Total_3_1 = New System.Windows.Forms.Label()
+        Me.Lbl_Scrap_Total_3_2 = New System.Windows.Forms.Label()
         Me.Panel57 = New System.Windows.Forms.Panel()
         Me.ShapeContainer33 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape69 = New Microsoft.VisualBasic.PowerPacks.LineShape()
@@ -355,13 +411,6 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Previous_Shift_Rate_3_3 = New System.Windows.Forms.Label()
         Me.Lbl_Previous_Shift_Rate_3_1 = New System.Windows.Forms.Label()
         Me.Lbl_Previous_Shift_Rate_3_2 = New System.Windows.Forms.Label()
-        Me.Panel61 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer37 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape77 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape78 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lbl_Current_Total_Rate_3_3 = New System.Windows.Forms.Label()
-        Me.lbl_Current_Total_Rate_3_1 = New System.Windows.Forms.Label()
-        Me.lbl_Current_Total_Rate_3_2 = New System.Windows.Forms.Label()
         Me.Panel62 = New System.Windows.Forms.Panel()
         Me.ShapeContainer38 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape79 = New Microsoft.VisualBasic.PowerPacks.LineShape()
@@ -369,13 +418,6 @@ Partial Class Ctr_Press_Status
         Me.lbl_Last_Total_Rate_3_3 = New System.Windows.Forms.Label()
         Me.lbl_Last_Total_Rate_3_1 = New System.Windows.Forms.Label()
         Me.lbl_Last_Total_Rate_3_2 = New System.Windows.Forms.Label()
-        Me.Panel63 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer39 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape81 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape82 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lbl_previous_Total_Rate_3_3 = New System.Windows.Forms.Label()
-        Me.lbl_previous_Total_Rate_3_1 = New System.Windows.Forms.Label()
-        Me.lbl_previous_Total_Rate_3_2 = New System.Windows.Forms.Label()
         Me.Panel64 = New System.Windows.Forms.Panel()
         Me.ShapeContainer40 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape83 = New Microsoft.VisualBasic.PowerPacks.LineShape()
@@ -383,48 +425,6 @@ Partial Class Ctr_Press_Status
         Me.lbl_Fourth_Total_Rate_3_3 = New System.Windows.Forms.Label()
         Me.lbl_Fourth_Total_Rate_3_1 = New System.Windows.Forms.Label()
         Me.lbl_Fourth_Total_Rate_3_2 = New System.Windows.Forms.Label()
-        Me.Panel65 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer41 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape85 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape86 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Current_Shift_Total_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Current_Shift_Total_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Current_Shift_Total_3_2 = New System.Windows.Forms.Label()
-        Me.Panel66 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer42 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape87 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape88 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Last_Shift_Total_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Last_Shift_Total_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Last_Shift_Total_3_2 = New System.Windows.Forms.Label()
-        Me.Panel67 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer43 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape89 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape90 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Previous_Shift_Total_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Previous_Shift_Total_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Previous_Shift_Total_3_2 = New System.Windows.Forms.Label()
-        Me.Panel68 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer44 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape91 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape92 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.Lbl_Fourth_Shift_Total_3_3 = New System.Windows.Forms.Label()
-        Me.Lbl_Fourth_Shift_Total_3_1 = New System.Windows.Forms.Label()
-        Me.Lbl_Fourth_Shift_Total_3_2 = New System.Windows.Forms.Label()
-        Me.Panel69 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer45 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape93 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape94 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lbl_Current_Shift_Total_Scrap_3_3 = New System.Windows.Forms.Label()
-        Me.lbl_Current_Shift_Total_Scrap_3_1 = New System.Windows.Forms.Label()
-        Me.lbl_Current_Shift_Total_Scrap_3_2 = New System.Windows.Forms.Label()
-        Me.Panel70 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer46 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape95 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape96 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lbl_Last_Shift_Total_Scrap_3_3 = New System.Windows.Forms.Label()
-        Me.lbl_Last_Shift_Total_Scrap_3_1 = New System.Windows.Forms.Label()
-        Me.lbl_Last_Shift_Total_Scrap_3_2 = New System.Windows.Forms.Label()
         Me.Panel71 = New System.Windows.Forms.Panel()
         Me.ShapeContainer47 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.LineShape97 = New Microsoft.VisualBasic.PowerPacks.LineShape()
@@ -440,6 +440,8 @@ Partial Class Ctr_Press_Status
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel7.SuspendLayout()
+        Me.Panel53.SuspendLayout()
+        Me.Panel54.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -456,51 +458,49 @@ Partial Class Ctr_Press_Status
         Me.Panel21.SuspendLayout()
         Me.Panel22.SuspendLayout()
         Me.Panel23.SuspendLayout()
+        Me.Panel61.SuspendLayout()
         Me.Panel24.SuspendLayout()
         Me.Panel25.SuspendLayout()
         Me.Panel26.SuspendLayout()
         Me.Panel27.SuspendLayout()
         Me.Panel28.SuspendLayout()
+        Me.Panel63.SuspendLayout()
         Me.Panel29.SuspendLayout()
         Me.Panel30.SuspendLayout()
         Me.Panel31.SuspendLayout()
         Me.Panel32.SuspendLayout()
+        Me.Panel65.SuspendLayout()
         Me.Panel33.SuspendLayout()
+        Me.Panel66.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.Panel35.SuspendLayout()
+        Me.Panel67.SuspendLayout()
         Me.Panel36.SuspendLayout()
         Me.Panel37.SuspendLayout()
+        Me.Panel68.SuspendLayout()
         Me.Panel38.SuspendLayout()
         Me.Panel39.SuspendLayout()
         Me.Panel40.SuspendLayout()
+        Me.Panel69.SuspendLayout()
         Me.Panel41.SuspendLayout()
         Me.Panel42.SuspendLayout()
+        Me.Panel70.SuspendLayout()
         Me.Panel43.SuspendLayout()
         Me.Panel44.SuspendLayout()
         Me.Panel45.SuspendLayout()
-        Me.Panel46.SuspendLayout()
         Me.Panel72.SuspendLayout()
+        Me.Panel46.SuspendLayout()
         Me.Panel50.SuspendLayout()
         Me.Panel51.SuspendLayout()
         Me.Panel52.SuspendLayout()
-        Me.Panel53.SuspendLayout()
-        Me.Panel54.SuspendLayout()
         Me.Panel55.SuspendLayout()
         Me.Panel56.SuspendLayout()
         Me.Panel57.SuspendLayout()
         Me.Panel58.SuspendLayout()
         Me.Panel60.SuspendLayout()
         Me.Panel59.SuspendLayout()
-        Me.Panel61.SuspendLayout()
         Me.Panel62.SuspendLayout()
-        Me.Panel63.SuspendLayout()
         Me.Panel64.SuspendLayout()
-        Me.Panel65.SuspendLayout()
-        Me.Panel66.SuspendLayout()
-        Me.Panel67.SuspendLayout()
-        Me.Panel68.SuspendLayout()
-        Me.Panel69.SuspendLayout()
-        Me.Panel70.SuspendLayout()
         Me.Panel71.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -1654,7 +1654,6 @@ Partial Class Ctr_Press_Status
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.Panel53)
         Me.Panel7.Controls.Add(Me.ShapeContainer5)
         Me.Panel7.Controls.Add(Me.Lbl_Total_Expected2)
         Me.Panel7.Controls.Add(Me.Lbl_Total_Expected1)
@@ -1663,6 +1662,170 @@ Partial Class Ctr_Press_Status
         Me.Panel7.Size = New System.Drawing.Size(271, 186)
         Me.Panel7.TabIndex = 1646
         Me.Panel7.Visible = False
+        '
+        'Panel53
+        '
+        Me.Panel53.Controls.Add(Me.ShapeContainer29)
+        Me.Panel53.Controls.Add(Me.Lbl_Total_Expected_3_3)
+        Me.Panel53.Controls.Add(Me.Lbl_Total_Expected_3_1)
+        Me.Panel53.Controls.Add(Me.Lbl_Total_Expected_3_2)
+        Me.Panel53.Location = New System.Drawing.Point(21, 778)
+        Me.Panel53.Name = "Panel53"
+        Me.Panel53.Size = New System.Drawing.Size(273, 175)
+        Me.Panel53.TabIndex = 1649
+        Me.Panel53.Visible = False
+        '
+        'Panel54
+        '
+        Me.Panel54.Controls.Add(Me.ShapeContainer30)
+        Me.Panel54.Controls.Add(Me.Lbl_Total_Actual_3_3)
+        Me.Panel54.Controls.Add(Me.Lbl_Total_Actual_3_1)
+        Me.Panel54.Controls.Add(Me.Lbl_Total_Actual_3_2)
+        Me.Panel54.Location = New System.Drawing.Point(305, 778)
+        Me.Panel54.Name = "Panel54"
+        Me.Panel54.Size = New System.Drawing.Size(277, 175)
+        Me.Panel54.TabIndex = 1649
+        Me.Panel54.Visible = False
+        '
+        'ShapeContainer30
+        '
+        Me.ShapeContainer30.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer30.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer30.Name = "ShapeContainer30"
+        Me.ShapeContainer30.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape63, Me.LineShape64})
+        Me.ShapeContainer30.Size = New System.Drawing.Size(277, 175)
+        Me.ShapeContainer30.TabIndex = 1123
+        Me.ShapeContainer30.TabStop = False
+        '
+        'LineShape63
+        '
+        Me.LineShape63.BorderWidth = 3
+        Me.LineShape63.Name = "LineShape54"
+        Me.LineShape63.X1 = 284
+        Me.LineShape63.X2 = 1
+        Me.LineShape63.Y1 = 124
+        Me.LineShape63.Y2 = 124
+        '
+        'LineShape64
+        '
+        Me.LineShape64.BorderWidth = 3
+        Me.LineShape64.Name = "LineShape30"
+        Me.LineShape64.X1 = 281
+        Me.LineShape64.X2 = -2
+        Me.LineShape64.Y1 = 62
+        Me.LineShape64.Y2 = 62
+        '
+        'Lbl_Total_Actual_3_3
+        '
+        Me.Lbl_Total_Actual_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Total_Actual_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Total_Actual_3_3.Location = New System.Drawing.Point(0, 125)
+        Me.Lbl_Total_Actual_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Total_Actual_3_3.Name = "Lbl_Total_Actual_3_3"
+        Me.Lbl_Total_Actual_3_3.Size = New System.Drawing.Size(275, 55)
+        Me.Lbl_Total_Actual_3_3.TabIndex = 1125
+        Me.Lbl_Total_Actual_3_3.Text = "#"
+        Me.Lbl_Total_Actual_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Total_Actual_3_1
+        '
+        Me.Lbl_Total_Actual_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Total_Actual_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Total_Actual_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Total_Actual_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Total_Actual_3_1.Name = "Lbl_Total_Actual_3_1"
+        Me.Lbl_Total_Actual_3_1.Size = New System.Drawing.Size(267, 49)
+        Me.Lbl_Total_Actual_3_1.TabIndex = 1124
+        Me.Lbl_Total_Actual_3_1.Text = "#"
+        Me.Lbl_Total_Actual_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Total_Actual_3_2
+        '
+        Me.Lbl_Total_Actual_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Total_Actual_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Total_Actual_3_2.Location = New System.Drawing.Point(0, 63)
+        Me.Lbl_Total_Actual_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Total_Actual_3_2.Name = "Lbl_Total_Actual_3_2"
+        Me.Lbl_Total_Actual_3_2.Size = New System.Drawing.Size(273, 51)
+        Me.Lbl_Total_Actual_3_2.TabIndex = 1126
+        Me.Lbl_Total_Actual_3_2.Text = "#"
+        Me.Lbl_Total_Actual_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ShapeContainer29
+        '
+        Me.ShapeContainer29.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer29.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer29.Name = "ShapeContainer29"
+        Me.ShapeContainer29.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape61, Me.LineShape62})
+        Me.ShapeContainer29.Size = New System.Drawing.Size(273, 175)
+        Me.ShapeContainer29.TabIndex = 1123
+        Me.ShapeContainer29.TabStop = False
+        '
+        'LineShape61
+        '
+        Me.LineShape61.BorderWidth = 3
+        Me.LineShape61.Name = "LineShape54"
+        Me.LineShape61.X1 = 284
+        Me.LineShape61.X2 = 1
+        Me.LineShape61.Y1 = 124
+        Me.LineShape61.Y2 = 124
+        '
+        'LineShape62
+        '
+        Me.LineShape62.BorderWidth = 3
+        Me.LineShape62.Name = "LineShape30"
+        Me.LineShape62.X1 = 281
+        Me.LineShape62.X2 = -2
+        Me.LineShape62.Y1 = 62
+        Me.LineShape62.Y2 = 62
+        '
+        'Lbl_Total_Expected_3_3
+        '
+        Me.Lbl_Total_Expected_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Total_Expected_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Total_Expected_3_3.Location = New System.Drawing.Point(0, 125)
+        Me.Lbl_Total_Expected_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Total_Expected_3_3.Name = "Lbl_Total_Expected_3_3"
+        Me.Lbl_Total_Expected_3_3.Size = New System.Drawing.Size(271, 55)
+        Me.Lbl_Total_Expected_3_3.TabIndex = 1125
+        Me.Lbl_Total_Expected_3_3.Text = "#"
+        Me.Lbl_Total_Expected_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Total_Expected_3_1
+        '
+        Me.Lbl_Total_Expected_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Total_Expected_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Total_Expected_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Total_Expected_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Total_Expected_3_1.Name = "Lbl_Total_Expected_3_1"
+        Me.Lbl_Total_Expected_3_1.Size = New System.Drawing.Size(263, 49)
+        Me.Lbl_Total_Expected_3_1.TabIndex = 1124
+        Me.Lbl_Total_Expected_3_1.Text = "#"
+        Me.Lbl_Total_Expected_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Total_Expected_3_2
+        '
+        Me.Lbl_Total_Expected_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Total_Expected_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Total_Expected_3_2.Location = New System.Drawing.Point(0, 63)
+        Me.Lbl_Total_Expected_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Total_Expected_3_2.Name = "Lbl_Total_Expected_3_2"
+        Me.Lbl_Total_Expected_3_2.Size = New System.Drawing.Size(269, 51)
+        Me.Lbl_Total_Expected_3_2.TabIndex = 1126
+        Me.Lbl_Total_Expected_3_2.Text = "#"
+        Me.Lbl_Total_Expected_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ShapeContainer5
         '
@@ -2273,7 +2436,6 @@ Partial Class Ctr_Press_Status
         '
         'Panel23
         '
-        Me.Panel23.Controls.Add(Me.Panel61)
         Me.Panel23.Controls.Add(Me.ShapeContainer13)
         Me.Panel23.Controls.Add(Me.lbl_Current_Total_Rate2)
         Me.Panel23.Controls.Add(Me.lbl_Current_Total_Rate1)
@@ -2281,6 +2443,88 @@ Partial Class Ctr_Press_Status
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(166, 83)
         Me.Panel23.TabIndex = 1655
+        '
+        'Panel61
+        '
+        Me.Panel61.Controls.Add(Me.ShapeContainer37)
+        Me.Panel61.Controls.Add(Me.lbl_Current_Total_Rate_3_3)
+        Me.Panel61.Controls.Add(Me.lbl_Current_Total_Rate_3_1)
+        Me.Panel61.Controls.Add(Me.lbl_Current_Total_Rate_3_2)
+        Me.Panel61.Location = New System.Drawing.Point(1170, 662)
+        Me.Panel61.Name = "Panel61"
+        Me.Panel61.Size = New System.Drawing.Size(166, 81)
+        Me.Panel61.TabIndex = 1649
+        Me.Panel61.Visible = False
+        '
+        'ShapeContainer37
+        '
+        Me.ShapeContainer37.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer37.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer37.Name = "ShapeContainer37"
+        Me.ShapeContainer37.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape77, Me.LineShape78})
+        Me.ShapeContainer37.Size = New System.Drawing.Size(166, 81)
+        Me.ShapeContainer37.TabIndex = 1123
+        Me.ShapeContainer37.TabStop = False
+        '
+        'LineShape77
+        '
+        Me.LineShape77.BorderWidth = 3
+        Me.LineShape77.Name = "LineShape54"
+        Me.LineShape77.X1 = 166
+        Me.LineShape77.X2 = 0
+        Me.LineShape77.Y1 = 55
+        Me.LineShape77.Y2 = 55
+        '
+        'LineShape78
+        '
+        Me.LineShape78.BorderWidth = 3
+        Me.LineShape78.Name = "LineShape30"
+        Me.LineShape78.X1 = 166
+        Me.LineShape78.X2 = 0
+        Me.LineShape78.Y1 = 28
+        Me.LineShape78.Y2 = 28
+        '
+        'lbl_Current_Total_Rate_3_3
+        '
+        Me.lbl_Current_Total_Rate_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Current_Total_Rate_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Current_Total_Rate_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.lbl_Current_Total_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Current_Total_Rate_3_3.Name = "lbl_Current_Total_Rate_3_3"
+        Me.lbl_Current_Total_Rate_3_3.Size = New System.Drawing.Size(166, 24)
+        Me.lbl_Current_Total_Rate_3_3.TabIndex = 1125
+        Me.lbl_Current_Total_Rate_3_3.Text = "#"
+        Me.lbl_Current_Total_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Current_Total_Rate_3_1
+        '
+        Me.lbl_Current_Total_Rate_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Current_Total_Rate_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Current_Total_Rate_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.lbl_Current_Total_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Current_Total_Rate_3_1.Name = "lbl_Current_Total_Rate_3_1"
+        Me.lbl_Current_Total_Rate_3_1.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_Current_Total_Rate_3_1.TabIndex = 1124
+        Me.lbl_Current_Total_Rate_3_1.Text = "#"
+        Me.lbl_Current_Total_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Current_Total_Rate_3_2
+        '
+        Me.lbl_Current_Total_Rate_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Current_Total_Rate_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Current_Total_Rate_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.lbl_Current_Total_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Current_Total_Rate_3_2.Name = "lbl_Current_Total_Rate_3_2"
+        Me.lbl_Current_Total_Rate_3_2.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_Current_Total_Rate_3_2.TabIndex = 1126
+        Me.lbl_Current_Total_Rate_3_2.Text = "#"
+        Me.lbl_Current_Total_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ShapeContainer13
         '
@@ -2486,12 +2730,93 @@ Partial Class Ctr_Press_Status
         '
         'Panel28
         '
-        Me.Panel28.Controls.Add(Me.Panel63)
         Me.Panel28.Controls.Add(Me.lbl_previous_Total_Rate)
         Me.Panel28.Location = New System.Drawing.Point(1511, 659)
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(166, 83)
         Me.Panel28.TabIndex = 1661
+        '
+        'Panel63
+        '
+        Me.Panel63.Controls.Add(Me.ShapeContainer39)
+        Me.Panel63.Controls.Add(Me.lbl_previous_Total_Rate_3_3)
+        Me.Panel63.Controls.Add(Me.lbl_previous_Total_Rate_3_1)
+        Me.Panel63.Controls.Add(Me.lbl_previous_Total_Rate_3_2)
+        Me.Panel63.Location = New System.Drawing.Point(1510, 662)
+        Me.Panel63.Name = "Panel63"
+        Me.Panel63.Size = New System.Drawing.Size(166, 81)
+        Me.Panel63.TabIndex = 1649
+        Me.Panel63.Visible = False
+        '
+        'ShapeContainer39
+        '
+        Me.ShapeContainer39.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer39.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer39.Name = "ShapeContainer39"
+        Me.ShapeContainer39.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape81, Me.LineShape82})
+        Me.ShapeContainer39.Size = New System.Drawing.Size(166, 81)
+        Me.ShapeContainer39.TabIndex = 1123
+        Me.ShapeContainer39.TabStop = False
+        '
+        'LineShape81
+        '
+        Me.LineShape81.BorderWidth = 3
+        Me.LineShape81.Name = "LineShape54"
+        Me.LineShape81.X1 = 166
+        Me.LineShape81.X2 = 0
+        Me.LineShape81.Y1 = 55
+        Me.LineShape81.Y2 = 55
+        '
+        'LineShape82
+        '
+        Me.LineShape82.BorderWidth = 3
+        Me.LineShape82.Name = "LineShape30"
+        Me.LineShape82.X1 = 166
+        Me.LineShape82.X2 = 0
+        Me.LineShape82.Y1 = 28
+        Me.LineShape82.Y2 = 28
+        '
+        'lbl_previous_Total_Rate_3_3
+        '
+        Me.lbl_previous_Total_Rate_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_previous_Total_Rate_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_previous_Total_Rate_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.lbl_previous_Total_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_previous_Total_Rate_3_3.Name = "lbl_previous_Total_Rate_3_3"
+        Me.lbl_previous_Total_Rate_3_3.Size = New System.Drawing.Size(166, 24)
+        Me.lbl_previous_Total_Rate_3_3.TabIndex = 1125
+        Me.lbl_previous_Total_Rate_3_3.Text = "#"
+        Me.lbl_previous_Total_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_previous_Total_Rate_3_1
+        '
+        Me.lbl_previous_Total_Rate_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_previous_Total_Rate_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_previous_Total_Rate_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.lbl_previous_Total_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_previous_Total_Rate_3_1.Name = "lbl_previous_Total_Rate_3_1"
+        Me.lbl_previous_Total_Rate_3_1.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_previous_Total_Rate_3_1.TabIndex = 1124
+        Me.lbl_previous_Total_Rate_3_1.Text = "#"
+        Me.lbl_previous_Total_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_previous_Total_Rate_3_2
+        '
+        Me.lbl_previous_Total_Rate_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_previous_Total_Rate_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_previous_Total_Rate_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.lbl_previous_Total_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_previous_Total_Rate_3_2.Name = "lbl_previous_Total_Rate_3_2"
+        Me.lbl_previous_Total_Rate_3_2.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_previous_Total_Rate_3_2.TabIndex = 1126
+        Me.lbl_previous_Total_Rate_3_2.Text = "#"
+        Me.lbl_previous_Total_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbl_previous_Total_Rate
         '
@@ -2643,12 +2968,93 @@ Partial Class Ctr_Press_Status
         '
         'Panel32
         '
-        Me.Panel32.Controls.Add(Me.Panel65)
         Me.Panel32.Controls.Add(Me.Lbl_Current_Shift_Total)
         Me.Panel32.Location = New System.Drawing.Point(1171, 795)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(166, 83)
         Me.Panel32.TabIndex = 1663
+        '
+        'Panel65
+        '
+        Me.Panel65.Controls.Add(Me.ShapeContainer41)
+        Me.Panel65.Controls.Add(Me.Lbl_Current_Shift_Total_3_3)
+        Me.Panel65.Controls.Add(Me.Lbl_Current_Shift_Total_3_1)
+        Me.Panel65.Controls.Add(Me.Lbl_Current_Shift_Total_3_2)
+        Me.Panel65.Location = New System.Drawing.Point(1170, 796)
+        Me.Panel65.Name = "Panel65"
+        Me.Panel65.Size = New System.Drawing.Size(166, 83)
+        Me.Panel65.TabIndex = 1649
+        Me.Panel65.Visible = False
+        '
+        'ShapeContainer41
+        '
+        Me.ShapeContainer41.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer41.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer41.Name = "ShapeContainer41"
+        Me.ShapeContainer41.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape85, Me.LineShape86})
+        Me.ShapeContainer41.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer41.TabIndex = 1123
+        Me.ShapeContainer41.TabStop = False
+        '
+        'LineShape85
+        '
+        Me.LineShape85.BorderWidth = 3
+        Me.LineShape85.Name = "LineShape54"
+        Me.LineShape85.X1 = 166
+        Me.LineShape85.X2 = 0
+        Me.LineShape85.Y1 = 55
+        Me.LineShape85.Y2 = 55
+        '
+        'LineShape86
+        '
+        Me.LineShape86.BorderWidth = 3
+        Me.LineShape86.Name = "LineShape30"
+        Me.LineShape86.X1 = 166
+        Me.LineShape86.X2 = 0
+        Me.LineShape86.Y1 = 28
+        Me.LineShape86.Y2 = 28
+        '
+        'Lbl_Current_Shift_Total_3_3
+        '
+        Me.Lbl_Current_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Current_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Current_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.Lbl_Current_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Current_Shift_Total_3_3.Name = "Lbl_Current_Shift_Total_3_3"
+        Me.Lbl_Current_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Current_Shift_Total_3_3.TabIndex = 1125
+        Me.Lbl_Current_Shift_Total_3_3.Text = "#"
+        Me.Lbl_Current_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Current_Shift_Total_3_1
+        '
+        Me.Lbl_Current_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Current_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Current_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Current_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Current_Shift_Total_3_1.Name = "Lbl_Current_Shift_Total_3_1"
+        Me.Lbl_Current_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Current_Shift_Total_3_1.TabIndex = 1124
+        Me.Lbl_Current_Shift_Total_3_1.Text = "#"
+        Me.Lbl_Current_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Current_Shift_Total_3_2
+        '
+        Me.Lbl_Current_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Current_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Current_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.Lbl_Current_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Current_Shift_Total_3_2.Name = "Lbl_Current_Shift_Total_3_2"
+        Me.Lbl_Current_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Current_Shift_Total_3_2.TabIndex = 1126
+        Me.Lbl_Current_Shift_Total_3_2.Text = "#"
+        Me.Lbl_Current_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Lbl_Current_Shift_Total
         '
@@ -2666,7 +3072,6 @@ Partial Class Ctr_Press_Status
         '
         'Panel33
         '
-        Me.Panel33.Controls.Add(Me.Panel66)
         Me.Panel33.Controls.Add(Me.ShapeContainer18)
         Me.Panel33.Controls.Add(Me.Lbl_Last_Shift_Total2)
         Me.Panel33.Controls.Add(Me.Lbl_Last_Shift_Total1)
@@ -2674,6 +3079,88 @@ Partial Class Ctr_Press_Status
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(166, 83)
         Me.Panel33.TabIndex = 1657
+        '
+        'Panel66
+        '
+        Me.Panel66.Controls.Add(Me.ShapeContainer42)
+        Me.Panel66.Controls.Add(Me.Lbl_Last_Shift_Total_3_3)
+        Me.Panel66.Controls.Add(Me.Lbl_Last_Shift_Total_3_1)
+        Me.Panel66.Controls.Add(Me.Lbl_Last_Shift_Total_3_2)
+        Me.Panel66.Location = New System.Drawing.Point(1340, 796)
+        Me.Panel66.Name = "Panel66"
+        Me.Panel66.Size = New System.Drawing.Size(166, 83)
+        Me.Panel66.TabIndex = 1649
+        Me.Panel66.Visible = False
+        '
+        'ShapeContainer42
+        '
+        Me.ShapeContainer42.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer42.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer42.Name = "ShapeContainer42"
+        Me.ShapeContainer42.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape87, Me.LineShape88})
+        Me.ShapeContainer42.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer42.TabIndex = 1123
+        Me.ShapeContainer42.TabStop = False
+        '
+        'LineShape87
+        '
+        Me.LineShape87.BorderWidth = 3
+        Me.LineShape87.Name = "LineShape54"
+        Me.LineShape87.X1 = 166
+        Me.LineShape87.X2 = 0
+        Me.LineShape87.Y1 = 55
+        Me.LineShape87.Y2 = 55
+        '
+        'LineShape88
+        '
+        Me.LineShape88.BorderWidth = 3
+        Me.LineShape88.Name = "LineShape30"
+        Me.LineShape88.X1 = 166
+        Me.LineShape88.X2 = 0
+        Me.LineShape88.Y1 = 28
+        Me.LineShape88.Y2 = 28
+        '
+        'Lbl_Last_Shift_Total_3_3
+        '
+        Me.Lbl_Last_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Last_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Last_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.Lbl_Last_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Last_Shift_Total_3_3.Name = "Lbl_Last_Shift_Total_3_3"
+        Me.Lbl_Last_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Last_Shift_Total_3_3.TabIndex = 1125
+        Me.Lbl_Last_Shift_Total_3_3.Text = "#"
+        Me.Lbl_Last_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Last_Shift_Total_3_1
+        '
+        Me.Lbl_Last_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Last_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Last_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Last_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Last_Shift_Total_3_1.Name = "Lbl_Last_Shift_Total_3_1"
+        Me.Lbl_Last_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Last_Shift_Total_3_1.TabIndex = 1124
+        Me.Lbl_Last_Shift_Total_3_1.Text = "#"
+        Me.Lbl_Last_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Last_Shift_Total_3_2
+        '
+        Me.Lbl_Last_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Last_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Last_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.Lbl_Last_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Last_Shift_Total_3_2.Name = "Lbl_Last_Shift_Total_3_2"
+        Me.Lbl_Last_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Last_Shift_Total_3_2.TabIndex = 1126
+        Me.Lbl_Last_Shift_Total_3_2.Text = "#"
+        Me.Lbl_Last_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ShapeContainer18
         '
@@ -2745,7 +3232,6 @@ Partial Class Ctr_Press_Status
         '
         'Panel35
         '
-        Me.Panel35.Controls.Add(Me.Panel67)
         Me.Panel35.Controls.Add(Me.ShapeContainer19)
         Me.Panel35.Controls.Add(Me.Lbl_Previous_Shift_Total2)
         Me.Panel35.Controls.Add(Me.Lbl_Previous_Shift_Total1)
@@ -2753,6 +3239,88 @@ Partial Class Ctr_Press_Status
         Me.Panel35.Name = "Panel35"
         Me.Panel35.Size = New System.Drawing.Size(166, 83)
         Me.Panel35.TabIndex = 1658
+        '
+        'Panel67
+        '
+        Me.Panel67.Controls.Add(Me.ShapeContainer43)
+        Me.Panel67.Controls.Add(Me.Lbl_Previous_Shift_Total_3_3)
+        Me.Panel67.Controls.Add(Me.Lbl_Previous_Shift_Total_3_1)
+        Me.Panel67.Controls.Add(Me.Lbl_Previous_Shift_Total_3_2)
+        Me.Panel67.Location = New System.Drawing.Point(1510, 796)
+        Me.Panel67.Name = "Panel67"
+        Me.Panel67.Size = New System.Drawing.Size(166, 83)
+        Me.Panel67.TabIndex = 1649
+        Me.Panel67.Visible = False
+        '
+        'ShapeContainer43
+        '
+        Me.ShapeContainer43.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer43.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer43.Name = "ShapeContainer43"
+        Me.ShapeContainer43.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape89, Me.LineShape90})
+        Me.ShapeContainer43.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer43.TabIndex = 1123
+        Me.ShapeContainer43.TabStop = False
+        '
+        'LineShape89
+        '
+        Me.LineShape89.BorderWidth = 3
+        Me.LineShape89.Name = "LineShape54"
+        Me.LineShape89.X1 = 166
+        Me.LineShape89.X2 = 0
+        Me.LineShape89.Y1 = 55
+        Me.LineShape89.Y2 = 55
+        '
+        'LineShape90
+        '
+        Me.LineShape90.BorderWidth = 3
+        Me.LineShape90.Name = "LineShape30"
+        Me.LineShape90.X1 = 166
+        Me.LineShape90.X2 = 0
+        Me.LineShape90.Y1 = 28
+        Me.LineShape90.Y2 = 28
+        '
+        'Lbl_Previous_Shift_Total_3_3
+        '
+        Me.Lbl_Previous_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Previous_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Previous_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.Lbl_Previous_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Previous_Shift_Total_3_3.Name = "Lbl_Previous_Shift_Total_3_3"
+        Me.Lbl_Previous_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Previous_Shift_Total_3_3.TabIndex = 1125
+        Me.Lbl_Previous_Shift_Total_3_3.Text = "#"
+        Me.Lbl_Previous_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Previous_Shift_Total_3_1
+        '
+        Me.Lbl_Previous_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Previous_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Previous_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Previous_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Previous_Shift_Total_3_1.Name = "Lbl_Previous_Shift_Total_3_1"
+        Me.Lbl_Previous_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Previous_Shift_Total_3_1.TabIndex = 1124
+        Me.Lbl_Previous_Shift_Total_3_1.Text = "#"
+        Me.Lbl_Previous_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Previous_Shift_Total_3_2
+        '
+        Me.Lbl_Previous_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Previous_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Previous_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.Lbl_Previous_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Previous_Shift_Total_3_2.Name = "Lbl_Previous_Shift_Total_3_2"
+        Me.Lbl_Previous_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Previous_Shift_Total_3_2.TabIndex = 1126
+        Me.Lbl_Previous_Shift_Total_3_2.Text = "#"
+        Me.Lbl_Previous_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ShapeContainer19
         '
@@ -2824,7 +3392,6 @@ Partial Class Ctr_Press_Status
         '
         'Panel37
         '
-        Me.Panel37.Controls.Add(Me.Panel68)
         Me.Panel37.Controls.Add(Me.ShapeContainer20)
         Me.Panel37.Controls.Add(Me.Lbl_Fourth_Shift_Total2)
         Me.Panel37.Controls.Add(Me.Lbl_Fourth_Shift_Total1)
@@ -2832,6 +3399,88 @@ Partial Class Ctr_Press_Status
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(166, 83)
         Me.Panel37.TabIndex = 1659
+        '
+        'Panel68
+        '
+        Me.Panel68.Controls.Add(Me.ShapeContainer44)
+        Me.Panel68.Controls.Add(Me.Lbl_Fourth_Shift_Total_3_3)
+        Me.Panel68.Controls.Add(Me.Lbl_Fourth_Shift_Total_3_1)
+        Me.Panel68.Controls.Add(Me.Lbl_Fourth_Shift_Total_3_2)
+        Me.Panel68.Location = New System.Drawing.Point(1681, 796)
+        Me.Panel68.Name = "Panel68"
+        Me.Panel68.Size = New System.Drawing.Size(166, 83)
+        Me.Panel68.TabIndex = 1649
+        Me.Panel68.Visible = False
+        '
+        'ShapeContainer44
+        '
+        Me.ShapeContainer44.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer44.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer44.Name = "ShapeContainer44"
+        Me.ShapeContainer44.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape91, Me.LineShape92})
+        Me.ShapeContainer44.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer44.TabIndex = 1123
+        Me.ShapeContainer44.TabStop = False
+        '
+        'LineShape91
+        '
+        Me.LineShape91.BorderWidth = 3
+        Me.LineShape91.Name = "LineShape54"
+        Me.LineShape91.X1 = 166
+        Me.LineShape91.X2 = 0
+        Me.LineShape91.Y1 = 55
+        Me.LineShape91.Y2 = 55
+        '
+        'LineShape92
+        '
+        Me.LineShape92.BorderWidth = 3
+        Me.LineShape92.Name = "LineShape30"
+        Me.LineShape92.X1 = 166
+        Me.LineShape92.X2 = 0
+        Me.LineShape92.Y1 = 28
+        Me.LineShape92.Y2 = 28
+        '
+        'Lbl_Fourth_Shift_Total_3_3
+        '
+        Me.Lbl_Fourth_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Fourth_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Fourth_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.Lbl_Fourth_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Fourth_Shift_Total_3_3.Name = "Lbl_Fourth_Shift_Total_3_3"
+        Me.Lbl_Fourth_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Fourth_Shift_Total_3_3.TabIndex = 1125
+        Me.Lbl_Fourth_Shift_Total_3_3.Text = "#"
+        Me.Lbl_Fourth_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Fourth_Shift_Total_3_1
+        '
+        Me.Lbl_Fourth_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Fourth_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Fourth_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Fourth_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Fourth_Shift_Total_3_1.Name = "Lbl_Fourth_Shift_Total_3_1"
+        Me.Lbl_Fourth_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Fourth_Shift_Total_3_1.TabIndex = 1124
+        Me.Lbl_Fourth_Shift_Total_3_1.Text = "#"
+        Me.Lbl_Fourth_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Fourth_Shift_Total_3_2
+        '
+        Me.Lbl_Fourth_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Fourth_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Lbl_Fourth_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.Lbl_Fourth_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Fourth_Shift_Total_3_2.Name = "Lbl_Fourth_Shift_Total_3_2"
+        Me.Lbl_Fourth_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Fourth_Shift_Total_3_2.TabIndex = 1126
+        Me.Lbl_Fourth_Shift_Total_3_2.Text = "#"
+        Me.Lbl_Fourth_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ShapeContainer20
         '
@@ -2959,12 +3608,93 @@ Partial Class Ctr_Press_Status
         '
         'Panel40
         '
-        Me.Panel40.Controls.Add(Me.Panel69)
         Me.Panel40.Controls.Add(Me.lbl_Current_Shift_Total_Scrap)
         Me.Panel40.Location = New System.Drawing.Point(1171, 928)
         Me.Panel40.Name = "Panel40"
         Me.Panel40.Size = New System.Drawing.Size(166, 83)
         Me.Panel40.TabIndex = 1667
+        '
+        'Panel69
+        '
+        Me.Panel69.Controls.Add(Me.ShapeContainer45)
+        Me.Panel69.Controls.Add(Me.lbl_Current_Shift_Total_Scrap_3_3)
+        Me.Panel69.Controls.Add(Me.lbl_Current_Shift_Total_Scrap_3_1)
+        Me.Panel69.Controls.Add(Me.lbl_Current_Shift_Total_Scrap_3_2)
+        Me.Panel69.Location = New System.Drawing.Point(1170, 930)
+        Me.Panel69.Name = "Panel69"
+        Me.Panel69.Size = New System.Drawing.Size(166, 83)
+        Me.Panel69.TabIndex = 1649
+        Me.Panel69.Visible = False
+        '
+        'ShapeContainer45
+        '
+        Me.ShapeContainer45.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer45.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer45.Name = "ShapeContainer45"
+        Me.ShapeContainer45.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape93, Me.LineShape94})
+        Me.ShapeContainer45.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer45.TabIndex = 1123
+        Me.ShapeContainer45.TabStop = False
+        '
+        'LineShape93
+        '
+        Me.LineShape93.BorderWidth = 3
+        Me.LineShape93.Name = "LineShape54"
+        Me.LineShape93.X1 = 166
+        Me.LineShape93.X2 = 0
+        Me.LineShape93.Y1 = 55
+        Me.LineShape93.Y2 = 55
+        '
+        'LineShape94
+        '
+        Me.LineShape94.BorderWidth = 3
+        Me.LineShape94.Name = "LineShape30"
+        Me.LineShape94.X1 = 166
+        Me.LineShape94.X2 = 0
+        Me.LineShape94.Y1 = 28
+        Me.LineShape94.Y2 = 28
+        '
+        'lbl_Current_Shift_Total_Scrap_3_3
+        '
+        Me.lbl_Current_Shift_Total_Scrap_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Current_Shift_Total_Scrap_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Current_Shift_Total_Scrap_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.lbl_Current_Shift_Total_Scrap_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Current_Shift_Total_Scrap_3_3.Name = "lbl_Current_Shift_Total_Scrap_3_3"
+        Me.lbl_Current_Shift_Total_Scrap_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_Current_Shift_Total_Scrap_3_3.TabIndex = 1125
+        Me.lbl_Current_Shift_Total_Scrap_3_3.Text = "#"
+        Me.lbl_Current_Shift_Total_Scrap_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Current_Shift_Total_Scrap_3_1
+        '
+        Me.lbl_Current_Shift_Total_Scrap_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Current_Shift_Total_Scrap_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Current_Shift_Total_Scrap_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.lbl_Current_Shift_Total_Scrap_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Current_Shift_Total_Scrap_3_1.Name = "lbl_Current_Shift_Total_Scrap_3_1"
+        Me.lbl_Current_Shift_Total_Scrap_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Current_Shift_Total_Scrap_3_1.TabIndex = 1124
+        Me.lbl_Current_Shift_Total_Scrap_3_1.Text = "#"
+        Me.lbl_Current_Shift_Total_Scrap_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Current_Shift_Total_Scrap_3_2
+        '
+        Me.lbl_Current_Shift_Total_Scrap_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Current_Shift_Total_Scrap_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Current_Shift_Total_Scrap_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.lbl_Current_Shift_Total_Scrap_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Current_Shift_Total_Scrap_3_2.Name = "lbl_Current_Shift_Total_Scrap_3_2"
+        Me.lbl_Current_Shift_Total_Scrap_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Current_Shift_Total_Scrap_3_2.TabIndex = 1126
+        Me.lbl_Current_Shift_Total_Scrap_3_2.Text = "#"
+        Me.lbl_Current_Shift_Total_Scrap_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbl_Current_Shift_Total_Scrap
         '
@@ -3038,12 +3768,93 @@ Partial Class Ctr_Press_Status
         '
         'Panel42
         '
-        Me.Panel42.Controls.Add(Me.Panel70)
         Me.Panel42.Controls.Add(Me.lbl_Last_Shift_Total_Scrap)
         Me.Panel42.Location = New System.Drawing.Point(1341, 929)
         Me.Panel42.Name = "Panel42"
         Me.Panel42.Size = New System.Drawing.Size(166, 83)
         Me.Panel42.TabIndex = 1668
+        '
+        'Panel70
+        '
+        Me.Panel70.Controls.Add(Me.ShapeContainer46)
+        Me.Panel70.Controls.Add(Me.lbl_Last_Shift_Total_Scrap_3_3)
+        Me.Panel70.Controls.Add(Me.lbl_Last_Shift_Total_Scrap_3_1)
+        Me.Panel70.Controls.Add(Me.lbl_Last_Shift_Total_Scrap_3_2)
+        Me.Panel70.Location = New System.Drawing.Point(1340, 930)
+        Me.Panel70.Name = "Panel70"
+        Me.Panel70.Size = New System.Drawing.Size(166, 83)
+        Me.Panel70.TabIndex = 1649
+        Me.Panel70.Visible = False
+        '
+        'ShapeContainer46
+        '
+        Me.ShapeContainer46.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer46.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer46.Name = "ShapeContainer46"
+        Me.ShapeContainer46.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape95, Me.LineShape96})
+        Me.ShapeContainer46.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer46.TabIndex = 1123
+        Me.ShapeContainer46.TabStop = False
+        '
+        'LineShape95
+        '
+        Me.LineShape95.BorderWidth = 3
+        Me.LineShape95.Name = "LineShape54"
+        Me.LineShape95.X1 = 166
+        Me.LineShape95.X2 = 0
+        Me.LineShape95.Y1 = 55
+        Me.LineShape95.Y2 = 55
+        '
+        'LineShape96
+        '
+        Me.LineShape96.BorderWidth = 3
+        Me.LineShape96.Name = "LineShape30"
+        Me.LineShape96.X1 = 166
+        Me.LineShape96.X2 = 0
+        Me.LineShape96.Y1 = 28
+        Me.LineShape96.Y2 = 28
+        '
+        'lbl_Last_Shift_Total_Scrap_3_3
+        '
+        Me.lbl_Last_Shift_Total_Scrap_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Last_Shift_Total_Scrap_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Last_Shift_Total_Scrap_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.lbl_Last_Shift_Total_Scrap_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Last_Shift_Total_Scrap_3_3.Name = "lbl_Last_Shift_Total_Scrap_3_3"
+        Me.lbl_Last_Shift_Total_Scrap_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_Last_Shift_Total_Scrap_3_3.TabIndex = 1125
+        Me.lbl_Last_Shift_Total_Scrap_3_3.Text = "#"
+        Me.lbl_Last_Shift_Total_Scrap_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Last_Shift_Total_Scrap_3_1
+        '
+        Me.lbl_Last_Shift_Total_Scrap_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Last_Shift_Total_Scrap_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Last_Shift_Total_Scrap_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.lbl_Last_Shift_Total_Scrap_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Last_Shift_Total_Scrap_3_1.Name = "lbl_Last_Shift_Total_Scrap_3_1"
+        Me.lbl_Last_Shift_Total_Scrap_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Last_Shift_Total_Scrap_3_1.TabIndex = 1124
+        Me.lbl_Last_Shift_Total_Scrap_3_1.Text = "#"
+        Me.lbl_Last_Shift_Total_Scrap_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Last_Shift_Total_Scrap_3_2
+        '
+        Me.lbl_Last_Shift_Total_Scrap_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Last_Shift_Total_Scrap_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Last_Shift_Total_Scrap_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.lbl_Last_Shift_Total_Scrap_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Last_Shift_Total_Scrap_3_2.Name = "lbl_Last_Shift_Total_Scrap_3_2"
+        Me.lbl_Last_Shift_Total_Scrap_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Last_Shift_Total_Scrap_3_2.TabIndex = 1126
+        Me.lbl_Last_Shift_Total_Scrap_3_2.Text = "#"
+        Me.lbl_Last_Shift_Total_Scrap_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbl_Last_Shift_Total_Scrap
         '
@@ -3139,7 +3950,6 @@ Partial Class Ctr_Press_Status
         '
         'Panel45
         '
-        Me.Panel45.Controls.Add(Me.Panel72)
         Me.Panel45.Controls.Add(Me.ShapeContainer24)
         Me.Panel45.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap2)
         Me.Panel45.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap1)
@@ -3147,6 +3957,88 @@ Partial Class Ctr_Press_Status
         Me.Panel45.Name = "Panel45"
         Me.Panel45.Size = New System.Drawing.Size(166, 83)
         Me.Panel45.TabIndex = 1663
+        '
+        'Panel72
+        '
+        Me.Panel72.Controls.Add(Me.ShapeContainer25)
+        Me.Panel72.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap_3_3)
+        Me.Panel72.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap_3_1)
+        Me.Panel72.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap_3_2)
+        Me.Panel72.Location = New System.Drawing.Point(1681, 930)
+        Me.Panel72.Name = "Panel72"
+        Me.Panel72.Size = New System.Drawing.Size(166, 83)
+        Me.Panel72.TabIndex = 1648
+        Me.Panel72.Visible = False
+        '
+        'ShapeContainer25
+        '
+        Me.ShapeContainer25.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer25.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer25.Name = "ShapeContainer25"
+        Me.ShapeContainer25.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape54, Me.LineShape53})
+        Me.ShapeContainer25.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer25.TabIndex = 1123
+        Me.ShapeContainer25.TabStop = False
+        '
+        'LineShape54
+        '
+        Me.LineShape54.BorderWidth = 3
+        Me.LineShape54.Name = "LineShape54"
+        Me.LineShape54.X1 = 166
+        Me.LineShape54.X2 = 0
+        Me.LineShape54.Y1 = 55
+        Me.LineShape54.Y2 = 55
+        '
+        'LineShape53
+        '
+        Me.LineShape53.BorderWidth = 3
+        Me.LineShape53.Name = "LineShape30"
+        Me.LineShape53.X1 = 166
+        Me.LineShape53.X2 = 0
+        Me.LineShape53.Y1 = 28
+        Me.LineShape53.Y2 = 28
+        '
+        'lbl_Fourth_Shift_Total_Scrap_3_3
+        '
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Location = New System.Drawing.Point(0, 60)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Name = "lbl_Fourth_Shift_Total_Scrap_3_3"
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.TabIndex = 1125
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Text = "#"
+        Me.lbl_Fourth_Shift_Total_Scrap_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Fourth_Shift_Total_Scrap_3_1
+        '
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Name = "lbl_Fourth_Shift_Total_Scrap_3_1"
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.TabIndex = 1124
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Text = "#"
+        Me.lbl_Fourth_Shift_Total_Scrap_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_Fourth_Shift_Total_Scrap_3_2
+        '
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Location = New System.Drawing.Point(0, 30)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Name = "lbl_Fourth_Shift_Total_Scrap_3_2"
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.TabIndex = 1126
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Text = "#"
+        Me.lbl_Fourth_Shift_Total_Scrap_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ShapeContainer24
         '
@@ -3229,170 +4121,17 @@ Partial Class Ctr_Press_Status
         Me.Lbl_RFID_Fail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Lbl_RFID_Fail.Visible = False
         '
-        'Panel72
-        '
-        Me.Panel72.Controls.Add(Me.ShapeContainer25)
-        Me.Panel72.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap_3_3)
-        Me.Panel72.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap_3_1)
-        Me.Panel72.Controls.Add(Me.lbl_Fourth_Shift_Total_Scrap_3_2)
-        Me.Panel72.Location = New System.Drawing.Point(0, 2)
-        Me.Panel72.Name = "Panel72"
-        Me.Panel72.Size = New System.Drawing.Size(166, 83)
-        Me.Panel72.TabIndex = 1648
-        Me.Panel72.Visible = False
-        '
-        'ShapeContainer25
-        '
-        Me.ShapeContainer25.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer25.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer25.Name = "ShapeContainer25"
-        Me.ShapeContainer25.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape54, Me.LineShape53})
-        Me.ShapeContainer25.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer25.TabIndex = 1123
-        Me.ShapeContainer25.TabStop = False
-        '
-        'LineShape53
-        '
-        Me.LineShape53.BorderWidth = 3
-        Me.LineShape53.Name = "LineShape30"
-        Me.LineShape53.X1 = 166
-        Me.LineShape53.X2 = 0
-        Me.LineShape53.Y1 = 28
-        Me.LineShape53.Y2 = 28
-        '
-        'lbl_Fourth_Shift_Total_Scrap_3_3
-        '
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Name = "lbl_Fourth_Shift_Total_Scrap_3_3"
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.TabIndex = 1125
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.Text = "#"
-        Me.lbl_Fourth_Shift_Total_Scrap_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_Fourth_Shift_Total_Scrap_3_1
-        '
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Name = "lbl_Fourth_Shift_Total_Scrap_3_1"
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.TabIndex = 1124
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.Text = "#"
-        Me.lbl_Fourth_Shift_Total_Scrap_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'LineShape54
-        '
-        Me.LineShape54.BorderWidth = 3
-        Me.LineShape54.Name = "LineShape54"
-        Me.LineShape54.X1 = 166
-        Me.LineShape54.X2 = 0
-        Me.LineShape54.Y1 = 55
-        Me.LineShape54.Y2 = 55
-        '
-        'lbl_Fourth_Shift_Total_Scrap_3_2
-        '
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Name = "lbl_Fourth_Shift_Total_Scrap_3_2"
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.TabIndex = 1126
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.Text = "#"
-        Me.lbl_Fourth_Shift_Total_Scrap_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Panel50
         '
-        Me.Panel50.Controls.Add(Me.Panel51)
         Me.Panel50.Controls.Add(Me.ShapeContainer26)
         Me.Panel50.Controls.Add(Me.Lbl_Current_Actual_3_3)
         Me.Panel50.Controls.Add(Me.Lbl_Current_Actual_3_1)
         Me.Panel50.Controls.Add(Me.Lbl_Current_Actual_3_2)
-        Me.Panel50.Location = New System.Drawing.Point(305, 478)
+        Me.Panel50.Location = New System.Drawing.Point(304, 508)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(284, 186)
+        Me.Panel50.Size = New System.Drawing.Size(279, 156)
         Me.Panel50.TabIndex = 1649
         Me.Panel50.Visible = False
-        '
-        'ShapeContainer26
-        '
-        Me.ShapeContainer26.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer26.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer26.Name = "ShapeContainer26"
-        Me.ShapeContainer26.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape55, Me.LineShape56})
-        Me.ShapeContainer26.Size = New System.Drawing.Size(284, 186)
-        Me.ShapeContainer26.TabIndex = 1123
-        Me.ShapeContainer26.TabStop = False
-        '
-        'LineShape55
-        '
-        Me.LineShape55.BorderWidth = 3
-        Me.LineShape55.Name = "LineShape54"
-        Me.LineShape55.X1 = 284
-        Me.LineShape55.X2 = 1
-        Me.LineShape55.Y1 = 124
-        Me.LineShape55.Y2 = 124
-        '
-        'LineShape56
-        '
-        Me.LineShape56.BorderWidth = 3
-        Me.LineShape56.Name = "LineShape30"
-        Me.LineShape56.X1 = 281
-        Me.LineShape56.X2 = -2
-        Me.LineShape56.Y1 = 62
-        Me.LineShape56.Y2 = 62
-        '
-        'Lbl_Current_Actual_3_3
-        '
-        Me.Lbl_Current_Actual_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Current_Actual_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Current_Actual_3_3.Location = New System.Drawing.Point(0, 125)
-        Me.Lbl_Current_Actual_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Current_Actual_3_3.Name = "Lbl_Current_Actual_3_3"
-        Me.Lbl_Current_Actual_3_3.Size = New System.Drawing.Size(282, 66)
-        Me.Lbl_Current_Actual_3_3.TabIndex = 1125
-        Me.Lbl_Current_Actual_3_3.Text = "#"
-        Me.Lbl_Current_Actual_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Current_Actual_3_1
-        '
-        Me.Lbl_Current_Actual_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Current_Actual_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Current_Actual_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Current_Actual_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Current_Actual_3_1.Name = "Lbl_Current_Actual_3_1"
-        Me.Lbl_Current_Actual_3_1.Size = New System.Drawing.Size(274, 60)
-        Me.Lbl_Current_Actual_3_1.TabIndex = 1124
-        Me.Lbl_Current_Actual_3_1.Text = "#"
-        Me.Lbl_Current_Actual_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Current_Actual_3_2
-        '
-        Me.Lbl_Current_Actual_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Current_Actual_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Current_Actual_3_2.Location = New System.Drawing.Point(0, 63)
-        Me.Lbl_Current_Actual_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Current_Actual_3_2.Name = "Lbl_Current_Actual_3_2"
-        Me.Lbl_Current_Actual_3_2.Size = New System.Drawing.Size(280, 62)
-        Me.Lbl_Current_Actual_3_2.TabIndex = 1126
-        Me.Lbl_Current_Actual_3_2.Text = "#"
-        Me.Lbl_Current_Actual_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel51
         '
@@ -3400,9 +4139,9 @@ Partial Class Ctr_Press_Status
         Me.Panel51.Controls.Add(Me.lbl_Current_Scan_3_3)
         Me.Panel51.Controls.Add(Me.lbl_Current_Scan_3_1)
         Me.Panel51.Controls.Add(Me.lbl_Current_Scan_3_2)
-        Me.Panel51.Location = New System.Drawing.Point(281, 0)
+        Me.Panel51.Location = New System.Drawing.Point(590, 508)
         Me.Panel51.Name = "Panel51"
-        Me.Panel51.Size = New System.Drawing.Size(284, 186)
+        Me.Panel51.Size = New System.Drawing.Size(263, 156)
         Me.Panel51.TabIndex = 1649
         Me.Panel51.Visible = False
         '
@@ -3412,7 +4151,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer27.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer27.Name = "ShapeContainer27"
         Me.ShapeContainer27.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape57, Me.LineShape58})
-        Me.ShapeContainer27.Size = New System.Drawing.Size(284, 186)
+        Me.ShapeContainer27.Size = New System.Drawing.Size(263, 156)
         Me.ShapeContainer27.TabIndex = 1123
         Me.ShapeContainer27.TabStop = False
         '
@@ -3422,8 +4161,8 @@ Partial Class Ctr_Press_Status
         Me.LineShape57.Name = "LineShape54"
         Me.LineShape57.X1 = 284
         Me.LineShape57.X2 = 1
-        Me.LineShape57.Y1 = 124
-        Me.LineShape57.Y2 = 124
+        Me.LineShape57.Y1 = 110
+        Me.LineShape57.Y2 = 110
         '
         'LineShape58
         '
@@ -3431,8 +4170,8 @@ Partial Class Ctr_Press_Status
         Me.LineShape58.Name = "LineShape30"
         Me.LineShape58.X1 = 281
         Me.LineShape58.X2 = -2
-        Me.LineShape58.Y1 = 62
-        Me.LineShape58.Y2 = 62
+        Me.LineShape58.Y1 = 52
+        Me.LineShape58.Y2 = 52
         '
         'lbl_Current_Scan_3_3
         '
@@ -3440,10 +4179,10 @@ Partial Class Ctr_Press_Status
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_Current_Scan_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.lbl_Current_Scan_3_3.Location = New System.Drawing.Point(0, 125)
+        Me.lbl_Current_Scan_3_3.Location = New System.Drawing.Point(0, 120)
         Me.lbl_Current_Scan_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Current_Scan_3_3.Name = "lbl_Current_Scan_3_3"
-        Me.lbl_Current_Scan_3_3.Size = New System.Drawing.Size(282, 66)
+        Me.lbl_Current_Scan_3_3.Size = New System.Drawing.Size(261, 36)
         Me.lbl_Current_Scan_3_3.TabIndex = 1125
         Me.lbl_Current_Scan_3_3.Text = "#"
         Me.lbl_Current_Scan_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3457,7 +4196,7 @@ Partial Class Ctr_Press_Status
         Me.lbl_Current_Scan_3_1.Location = New System.Drawing.Point(0, 1)
         Me.lbl_Current_Scan_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Current_Scan_3_1.Name = "lbl_Current_Scan_3_1"
-        Me.lbl_Current_Scan_3_1.Size = New System.Drawing.Size(274, 60)
+        Me.lbl_Current_Scan_3_1.Size = New System.Drawing.Size(253, 30)
         Me.lbl_Current_Scan_3_1.TabIndex = 1124
         Me.lbl_Current_Scan_3_1.Text = "#"
         Me.lbl_Current_Scan_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3471,10 +4210,80 @@ Partial Class Ctr_Press_Status
         Me.lbl_Current_Scan_3_2.Location = New System.Drawing.Point(0, 63)
         Me.lbl_Current_Scan_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Current_Scan_3_2.Name = "lbl_Current_Scan_3_2"
-        Me.lbl_Current_Scan_3_2.Size = New System.Drawing.Size(280, 62)
+        Me.lbl_Current_Scan_3_2.Size = New System.Drawing.Size(259, 32)
         Me.lbl_Current_Scan_3_2.TabIndex = 1126
         Me.lbl_Current_Scan_3_2.Text = "#"
         Me.lbl_Current_Scan_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ShapeContainer26
+        '
+        Me.ShapeContainer26.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer26.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer26.Name = "ShapeContainer26"
+        Me.ShapeContainer26.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape55, Me.LineShape56})
+        Me.ShapeContainer26.Size = New System.Drawing.Size(279, 156)
+        Me.ShapeContainer26.TabIndex = 1123
+        Me.ShapeContainer26.TabStop = False
+        '
+        'LineShape55
+        '
+        Me.LineShape55.BorderWidth = 3
+        Me.LineShape55.Name = "LineShape54"
+        Me.LineShape55.X1 = 284
+        Me.LineShape55.X2 = 1
+        Me.LineShape55.Y1 = 110
+        Me.LineShape55.Y2 = 110
+        '
+        'LineShape56
+        '
+        Me.LineShape56.BorderWidth = 3
+        Me.LineShape56.Name = "LineShape30"
+        Me.LineShape56.X1 = 281
+        Me.LineShape56.X2 = -2
+        Me.LineShape56.Y1 = 52
+        Me.LineShape56.Y2 = 52
+        '
+        'Lbl_Current_Actual_3_3
+        '
+        Me.Lbl_Current_Actual_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Current_Actual_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Current_Actual_3_3.Location = New System.Drawing.Point(0, 120)
+        Me.Lbl_Current_Actual_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Current_Actual_3_3.Name = "Lbl_Current_Actual_3_3"
+        Me.Lbl_Current_Actual_3_3.Size = New System.Drawing.Size(277, 36)
+        Me.Lbl_Current_Actual_3_3.TabIndex = 1125
+        Me.Lbl_Current_Actual_3_3.Text = "#"
+        Me.Lbl_Current_Actual_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Current_Actual_3_1
+        '
+        Me.Lbl_Current_Actual_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Current_Actual_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Current_Actual_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Current_Actual_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Current_Actual_3_1.Name = "Lbl_Current_Actual_3_1"
+        Me.Lbl_Current_Actual_3_1.Size = New System.Drawing.Size(269, 30)
+        Me.Lbl_Current_Actual_3_1.TabIndex = 1124
+        Me.Lbl_Current_Actual_3_1.Text = "#"
+        Me.Lbl_Current_Actual_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Current_Actual_3_2
+        '
+        Me.Lbl_Current_Actual_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Current_Actual_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Current_Actual_3_2.Location = New System.Drawing.Point(0, 63)
+        Me.Lbl_Current_Actual_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Current_Actual_3_2.Name = "Lbl_Current_Actual_3_2"
+        Me.Lbl_Current_Actual_3_2.Size = New System.Drawing.Size(275, 32)
+        Me.Lbl_Current_Actual_3_2.TabIndex = 1126
+        Me.Lbl_Current_Actual_3_2.Text = "#"
+        Me.Lbl_Current_Actual_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel52
         '
@@ -3482,9 +4291,9 @@ Partial Class Ctr_Press_Status
         Me.Panel52.Controls.Add(Me.Lbl_Current_Plus_3_3)
         Me.Panel52.Controls.Add(Me.Lbl_Current_Plus_3_1)
         Me.Panel52.Controls.Add(Me.Lbl_Current_Plus_3_2)
-        Me.Panel52.Location = New System.Drawing.Point(854, 477)
+        Me.Panel52.Location = New System.Drawing.Point(858, 508)
         Me.Panel52.Name = "Panel52"
-        Me.Panel52.Size = New System.Drawing.Size(284, 186)
+        Me.Panel52.Size = New System.Drawing.Size(276, 156)
         Me.Panel52.TabIndex = 1649
         Me.Panel52.Visible = False
         '
@@ -3494,7 +4303,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer28.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer28.Name = "ShapeContainer28"
         Me.ShapeContainer28.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape59, Me.LineShape60})
-        Me.ShapeContainer28.Size = New System.Drawing.Size(284, 186)
+        Me.ShapeContainer28.Size = New System.Drawing.Size(276, 156)
         Me.ShapeContainer28.TabIndex = 1123
         Me.ShapeContainer28.TabStop = False
         '
@@ -3504,8 +4313,8 @@ Partial Class Ctr_Press_Status
         Me.LineShape59.Name = "LineShape54"
         Me.LineShape59.X1 = 284
         Me.LineShape59.X2 = 1
-        Me.LineShape59.Y1 = 124
-        Me.LineShape59.Y2 = 124
+        Me.LineShape59.Y1 = 110
+        Me.LineShape59.Y2 = 110
         '
         'LineShape60
         '
@@ -3513,8 +4322,8 @@ Partial Class Ctr_Press_Status
         Me.LineShape60.Name = "LineShape30"
         Me.LineShape60.X1 = 281
         Me.LineShape60.X2 = -2
-        Me.LineShape60.Y1 = 62
-        Me.LineShape60.Y2 = 62
+        Me.LineShape60.Y1 = 52
+        Me.LineShape60.Y2 = 52
         '
         'Lbl_Current_Plus_3_3
         '
@@ -3522,10 +4331,10 @@ Partial Class Ctr_Press_Status
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Lbl_Current_Plus_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Current_Plus_3_3.Location = New System.Drawing.Point(0, 125)
+        Me.Lbl_Current_Plus_3_3.Location = New System.Drawing.Point(0, 120)
         Me.Lbl_Current_Plus_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Current_Plus_3_3.Name = "Lbl_Current_Plus_3_3"
-        Me.Lbl_Current_Plus_3_3.Size = New System.Drawing.Size(282, 66)
+        Me.Lbl_Current_Plus_3_3.Size = New System.Drawing.Size(274, 36)
         Me.Lbl_Current_Plus_3_3.TabIndex = 1125
         Me.Lbl_Current_Plus_3_3.Text = "#"
         Me.Lbl_Current_Plus_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3539,7 +4348,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Current_Plus_3_1.Location = New System.Drawing.Point(0, 1)
         Me.Lbl_Current_Plus_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Current_Plus_3_1.Name = "Lbl_Current_Plus_3_1"
-        Me.Lbl_Current_Plus_3_1.Size = New System.Drawing.Size(274, 60)
+        Me.Lbl_Current_Plus_3_1.Size = New System.Drawing.Size(266, 30)
         Me.Lbl_Current_Plus_3_1.TabIndex = 1124
         Me.Lbl_Current_Plus_3_1.Text = "#"
         Me.Lbl_Current_Plus_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3553,258 +4362,22 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Current_Plus_3_2.Location = New System.Drawing.Point(0, 63)
         Me.Lbl_Current_Plus_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Current_Plus_3_2.Name = "Lbl_Current_Plus_3_2"
-        Me.Lbl_Current_Plus_3_2.Size = New System.Drawing.Size(280, 62)
+        Me.Lbl_Current_Plus_3_2.Size = New System.Drawing.Size(272, 32)
         Me.Lbl_Current_Plus_3_2.TabIndex = 1126
         Me.Lbl_Current_Plus_3_2.Text = "#"
         Me.Lbl_Current_Plus_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Panel53
-        '
-        Me.Panel53.Controls.Add(Me.Panel54)
-        Me.Panel53.Controls.Add(Me.ShapeContainer29)
-        Me.Panel53.Controls.Add(Me.Lbl_Total_Expected_3_3)
-        Me.Panel53.Controls.Add(Me.Lbl_Total_Expected_3_1)
-        Me.Panel53.Controls.Add(Me.Lbl_Total_Expected_3_2)
-        Me.Panel53.Location = New System.Drawing.Point(0, 1)
-        Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(284, 186)
-        Me.Panel53.TabIndex = 1649
-        Me.Panel53.Visible = False
-        '
-        'ShapeContainer29
-        '
-        Me.ShapeContainer29.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer29.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer29.Name = "ShapeContainer29"
-        Me.ShapeContainer29.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape61, Me.LineShape62})
-        Me.ShapeContainer29.Size = New System.Drawing.Size(284, 186)
-        Me.ShapeContainer29.TabIndex = 1123
-        Me.ShapeContainer29.TabStop = False
-        '
-        'LineShape61
-        '
-        Me.LineShape61.BorderWidth = 3
-        Me.LineShape61.Name = "LineShape54"
-        Me.LineShape61.X1 = 284
-        Me.LineShape61.X2 = 1
-        Me.LineShape61.Y1 = 124
-        Me.LineShape61.Y2 = 124
-        '
-        'LineShape62
-        '
-        Me.LineShape62.BorderWidth = 3
-        Me.LineShape62.Name = "LineShape30"
-        Me.LineShape62.X1 = 281
-        Me.LineShape62.X2 = -2
-        Me.LineShape62.Y1 = 62
-        Me.LineShape62.Y2 = 62
-        '
-        'Lbl_Total_Expected_3_3
-        '
-        Me.Lbl_Total_Expected_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Total_Expected_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Total_Expected_3_3.Location = New System.Drawing.Point(0, 125)
-        Me.Lbl_Total_Expected_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Total_Expected_3_3.Name = "Lbl_Total_Expected_3_3"
-        Me.Lbl_Total_Expected_3_3.Size = New System.Drawing.Size(282, 66)
-        Me.Lbl_Total_Expected_3_3.TabIndex = 1125
-        Me.Lbl_Total_Expected_3_3.Text = "#"
-        Me.Lbl_Total_Expected_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Total_Expected_3_1
-        '
-        Me.Lbl_Total_Expected_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Total_Expected_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Total_Expected_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Total_Expected_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Total_Expected_3_1.Name = "Lbl_Total_Expected_3_1"
-        Me.Lbl_Total_Expected_3_1.Size = New System.Drawing.Size(274, 60)
-        Me.Lbl_Total_Expected_3_1.TabIndex = 1124
-        Me.Lbl_Total_Expected_3_1.Text = "#"
-        Me.Lbl_Total_Expected_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Total_Expected_3_2
-        '
-        Me.Lbl_Total_Expected_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Total_Expected_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Total_Expected_3_2.Location = New System.Drawing.Point(0, 63)
-        Me.Lbl_Total_Expected_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Total_Expected_3_2.Name = "Lbl_Total_Expected_3_2"
-        Me.Lbl_Total_Expected_3_2.Size = New System.Drawing.Size(280, 62)
-        Me.Lbl_Total_Expected_3_2.TabIndex = 1126
-        Me.Lbl_Total_Expected_3_2.Text = "#"
-        Me.Lbl_Total_Expected_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel54
-        '
-        Me.Panel54.Controls.Add(Me.ShapeContainer30)
-        Me.Panel54.Controls.Add(Me.Lbl_Total_Actual_3_3)
-        Me.Panel54.Controls.Add(Me.Lbl_Total_Actual_3_1)
-        Me.Panel54.Controls.Add(Me.Lbl_Total_Actual_3_2)
-        Me.Panel54.Location = New System.Drawing.Point(276, 2)
-        Me.Panel54.Name = "Panel54"
-        Me.Panel54.Size = New System.Drawing.Size(284, 186)
-        Me.Panel54.TabIndex = 1649
-        Me.Panel54.Visible = False
-        '
-        'ShapeContainer30
-        '
-        Me.ShapeContainer30.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer30.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer30.Name = "ShapeContainer30"
-        Me.ShapeContainer30.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape63, Me.LineShape64})
-        Me.ShapeContainer30.Size = New System.Drawing.Size(284, 186)
-        Me.ShapeContainer30.TabIndex = 1123
-        Me.ShapeContainer30.TabStop = False
-        '
-        'LineShape63
-        '
-        Me.LineShape63.BorderWidth = 3
-        Me.LineShape63.Name = "LineShape54"
-        Me.LineShape63.X1 = 284
-        Me.LineShape63.X2 = 1
-        Me.LineShape63.Y1 = 124
-        Me.LineShape63.Y2 = 124
-        '
-        'LineShape64
-        '
-        Me.LineShape64.BorderWidth = 3
-        Me.LineShape64.Name = "LineShape30"
-        Me.LineShape64.X1 = 281
-        Me.LineShape64.X2 = -2
-        Me.LineShape64.Y1 = 62
-        Me.LineShape64.Y2 = 62
-        '
-        'Lbl_Total_Actual_3_3
-        '
-        Me.Lbl_Total_Actual_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Total_Actual_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Total_Actual_3_3.Location = New System.Drawing.Point(0, 125)
-        Me.Lbl_Total_Actual_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Total_Actual_3_3.Name = "Lbl_Total_Actual_3_3"
-        Me.Lbl_Total_Actual_3_3.Size = New System.Drawing.Size(282, 66)
-        Me.Lbl_Total_Actual_3_3.TabIndex = 1125
-        Me.Lbl_Total_Actual_3_3.Text = "#"
-        Me.Lbl_Total_Actual_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Total_Actual_3_1
-        '
-        Me.Lbl_Total_Actual_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Total_Actual_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Total_Actual_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Total_Actual_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Total_Actual_3_1.Name = "Lbl_Total_Actual_3_1"
-        Me.Lbl_Total_Actual_3_1.Size = New System.Drawing.Size(274, 60)
-        Me.Lbl_Total_Actual_3_1.TabIndex = 1124
-        Me.Lbl_Total_Actual_3_1.Text = "#"
-        Me.Lbl_Total_Actual_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Total_Actual_3_2
-        '
-        Me.Lbl_Total_Actual_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Total_Actual_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Total_Actual_3_2.Location = New System.Drawing.Point(0, 63)
-        Me.Lbl_Total_Actual_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Total_Actual_3_2.Name = "Lbl_Total_Actual_3_2"
-        Me.Lbl_Total_Actual_3_2.Size = New System.Drawing.Size(280, 62)
-        Me.Lbl_Total_Actual_3_2.TabIndex = 1126
-        Me.Lbl_Total_Actual_3_2.Text = "#"
-        Me.Lbl_Total_Actual_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Panel55
         '
-        Me.Panel55.Controls.Add(Me.Panel56)
         Me.Panel55.Controls.Add(Me.ShapeContainer31)
         Me.Panel55.Controls.Add(Me.Lbl_Scrap_Total_3_3)
         Me.Panel55.Controls.Add(Me.Lbl_Scrap_Total_3_1)
         Me.Panel55.Controls.Add(Me.Lbl_Scrap_Total_3_2)
-        Me.Panel55.Location = New System.Drawing.Point(586, 772)
+        Me.Panel55.Location = New System.Drawing.Point(590, 778)
         Me.Panel55.Name = "Panel55"
-        Me.Panel55.Size = New System.Drawing.Size(284, 186)
+        Me.Panel55.Size = New System.Drawing.Size(263, 175)
         Me.Panel55.TabIndex = 1649
         Me.Panel55.Visible = False
-        '
-        'ShapeContainer31
-        '
-        Me.ShapeContainer31.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer31.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer31.Name = "ShapeContainer31"
-        Me.ShapeContainer31.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape65, Me.LineShape66})
-        Me.ShapeContainer31.Size = New System.Drawing.Size(284, 186)
-        Me.ShapeContainer31.TabIndex = 1123
-        Me.ShapeContainer31.TabStop = False
-        '
-        'LineShape65
-        '
-        Me.LineShape65.BorderWidth = 3
-        Me.LineShape65.Name = "LineShape54"
-        Me.LineShape65.X1 = 284
-        Me.LineShape65.X2 = 1
-        Me.LineShape65.Y1 = 124
-        Me.LineShape65.Y2 = 124
-        '
-        'LineShape66
-        '
-        Me.LineShape66.BorderWidth = 3
-        Me.LineShape66.Name = "LineShape30"
-        Me.LineShape66.X1 = 281
-        Me.LineShape66.X2 = -2
-        Me.LineShape66.Y1 = 62
-        Me.LineShape66.Y2 = 62
-        '
-        'Lbl_Scrap_Total_3_3
-        '
-        Me.Lbl_Scrap_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Scrap_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Scrap_Total_3_3.Location = New System.Drawing.Point(0, 125)
-        Me.Lbl_Scrap_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Scrap_Total_3_3.Name = "Lbl_Scrap_Total_3_3"
-        Me.Lbl_Scrap_Total_3_3.Size = New System.Drawing.Size(282, 66)
-        Me.Lbl_Scrap_Total_3_3.TabIndex = 1125
-        Me.Lbl_Scrap_Total_3_3.Text = "#"
-        Me.Lbl_Scrap_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Scrap_Total_3_1
-        '
-        Me.Lbl_Scrap_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Scrap_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Scrap_Total_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Scrap_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Scrap_Total_3_1.Name = "Lbl_Scrap_Total_3_1"
-        Me.Lbl_Scrap_Total_3_1.Size = New System.Drawing.Size(274, 60)
-        Me.Lbl_Scrap_Total_3_1.TabIndex = 1124
-        Me.Lbl_Scrap_Total_3_1.Text = "#"
-        Me.Lbl_Scrap_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Scrap_Total_3_2
-        '
-        Me.Lbl_Scrap_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Scrap_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
-        Me.Lbl_Scrap_Total_3_2.Location = New System.Drawing.Point(0, 63)
-        Me.Lbl_Scrap_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Scrap_Total_3_2.Name = "Lbl_Scrap_Total_3_2"
-        Me.Lbl_Scrap_Total_3_2.Size = New System.Drawing.Size(280, 62)
-        Me.Lbl_Scrap_Total_3_2.TabIndex = 1126
-        Me.Lbl_Scrap_Total_3_2.Text = "#"
-        Me.Lbl_Scrap_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel56
         '
@@ -3812,9 +4385,9 @@ Partial Class Ctr_Press_Status
         Me.Panel56.Controls.Add(Me.Lbl_Total_Plus_3_3)
         Me.Panel56.Controls.Add(Me.Lbl_Total_Plus_3_1)
         Me.Panel56.Controls.Add(Me.Lbl_Total_Plus_3_2)
-        Me.Panel56.Location = New System.Drawing.Point(277, 0)
+        Me.Panel56.Location = New System.Drawing.Point(858, 778)
         Me.Panel56.Name = "Panel56"
-        Me.Panel56.Size = New System.Drawing.Size(284, 186)
+        Me.Panel56.Size = New System.Drawing.Size(278, 175)
         Me.Panel56.TabIndex = 1649
         Me.Panel56.Visible = False
         '
@@ -3824,7 +4397,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer32.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer32.Name = "ShapeContainer32"
         Me.ShapeContainer32.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape67, Me.LineShape68})
-        Me.ShapeContainer32.Size = New System.Drawing.Size(284, 186)
+        Me.ShapeContainer32.Size = New System.Drawing.Size(278, 175)
         Me.ShapeContainer32.TabIndex = 1123
         Me.ShapeContainer32.TabStop = False
         '
@@ -3855,7 +4428,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Total_Plus_3_3.Location = New System.Drawing.Point(0, 125)
         Me.Lbl_Total_Plus_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Total_Plus_3_3.Name = "Lbl_Total_Plus_3_3"
-        Me.Lbl_Total_Plus_3_3.Size = New System.Drawing.Size(282, 66)
+        Me.Lbl_Total_Plus_3_3.Size = New System.Drawing.Size(276, 55)
         Me.Lbl_Total_Plus_3_3.TabIndex = 1125
         Me.Lbl_Total_Plus_3_3.Text = "#"
         Me.Lbl_Total_Plus_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3869,7 +4442,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Total_Plus_3_1.Location = New System.Drawing.Point(0, 1)
         Me.Lbl_Total_Plus_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Total_Plus_3_1.Name = "Lbl_Total_Plus_3_1"
-        Me.Lbl_Total_Plus_3_1.Size = New System.Drawing.Size(274, 60)
+        Me.Lbl_Total_Plus_3_1.Size = New System.Drawing.Size(268, 49)
         Me.Lbl_Total_Plus_3_1.TabIndex = 1124
         Me.Lbl_Total_Plus_3_1.Text = "#"
         Me.Lbl_Total_Plus_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3883,10 +4456,80 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Total_Plus_3_2.Location = New System.Drawing.Point(0, 63)
         Me.Lbl_Total_Plus_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Total_Plus_3_2.Name = "Lbl_Total_Plus_3_2"
-        Me.Lbl_Total_Plus_3_2.Size = New System.Drawing.Size(280, 62)
+        Me.Lbl_Total_Plus_3_2.Size = New System.Drawing.Size(274, 51)
         Me.Lbl_Total_Plus_3_2.TabIndex = 1126
         Me.Lbl_Total_Plus_3_2.Text = "#"
         Me.Lbl_Total_Plus_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ShapeContainer31
+        '
+        Me.ShapeContainer31.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer31.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer31.Name = "ShapeContainer31"
+        Me.ShapeContainer31.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape65, Me.LineShape66})
+        Me.ShapeContainer31.Size = New System.Drawing.Size(263, 175)
+        Me.ShapeContainer31.TabIndex = 1123
+        Me.ShapeContainer31.TabStop = False
+        '
+        'LineShape65
+        '
+        Me.LineShape65.BorderWidth = 3
+        Me.LineShape65.Name = "LineShape54"
+        Me.LineShape65.X1 = 284
+        Me.LineShape65.X2 = 1
+        Me.LineShape65.Y1 = 124
+        Me.LineShape65.Y2 = 124
+        '
+        'LineShape66
+        '
+        Me.LineShape66.BorderWidth = 3
+        Me.LineShape66.Name = "LineShape30"
+        Me.LineShape66.X1 = 281
+        Me.LineShape66.X2 = -2
+        Me.LineShape66.Y1 = 62
+        Me.LineShape66.Y2 = 62
+        '
+        'Lbl_Scrap_Total_3_3
+        '
+        Me.Lbl_Scrap_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Scrap_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Scrap_Total_3_3.Location = New System.Drawing.Point(0, 125)
+        Me.Lbl_Scrap_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Scrap_Total_3_3.Name = "Lbl_Scrap_Total_3_3"
+        Me.Lbl_Scrap_Total_3_3.Size = New System.Drawing.Size(261, 55)
+        Me.Lbl_Scrap_Total_3_3.TabIndex = 1125
+        Me.Lbl_Scrap_Total_3_3.Text = "#"
+        Me.Lbl_Scrap_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Scrap_Total_3_1
+        '
+        Me.Lbl_Scrap_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Scrap_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Scrap_Total_3_1.Location = New System.Drawing.Point(0, 1)
+        Me.Lbl_Scrap_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Scrap_Total_3_1.Name = "Lbl_Scrap_Total_3_1"
+        Me.Lbl_Scrap_Total_3_1.Size = New System.Drawing.Size(253, 49)
+        Me.Lbl_Scrap_Total_3_1.TabIndex = 1124
+        Me.Lbl_Scrap_Total_3_1.Text = "#"
+        Me.Lbl_Scrap_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Scrap_Total_3_2
+        '
+        Me.Lbl_Scrap_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl_Scrap_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
+        Me.Lbl_Scrap_Total_3_2.Location = New System.Drawing.Point(0, 63)
+        Me.Lbl_Scrap_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Lbl_Scrap_Total_3_2.Name = "Lbl_Scrap_Total_3_2"
+        Me.Lbl_Scrap_Total_3_2.Size = New System.Drawing.Size(259, 51)
+        Me.Lbl_Scrap_Total_3_2.TabIndex = 1126
+        Me.Lbl_Scrap_Total_3_2.Text = "#"
+        Me.Lbl_Scrap_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel57
         '
@@ -3894,9 +4537,9 @@ Partial Class Ctr_Press_Status
         Me.Panel57.Controls.Add(Me.Lbl_Current_Shift_Rate_3_3)
         Me.Panel57.Controls.Add(Me.Lbl_Current_Shift_Rate_3_1)
         Me.Panel57.Controls.Add(Me.Lbl_Current_Shift_Rate_3_2)
-        Me.Panel57.Location = New System.Drawing.Point(1170, 521)
+        Me.Panel57.Location = New System.Drawing.Point(1170, 525)
         Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(166, 83)
+        Me.Panel57.Size = New System.Drawing.Size(166, 79)
         Me.Panel57.TabIndex = 1649
         Me.Panel57.Visible = False
         '
@@ -3906,7 +4549,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer33.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer33.Name = "ShapeContainer33"
         Me.ShapeContainer33.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape69, Me.LineShape70})
-        Me.ShapeContainer33.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer33.Size = New System.Drawing.Size(166, 79)
         Me.ShapeContainer33.TabIndex = 1123
         Me.ShapeContainer33.TabStop = False
         '
@@ -3937,7 +4580,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Current_Shift_Rate_3_3.Location = New System.Drawing.Point(0, 60)
         Me.Lbl_Current_Shift_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Current_Shift_Rate_3_3.Name = "Lbl_Current_Shift_Rate_3_3"
-        Me.Lbl_Current_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Current_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 22)
         Me.Lbl_Current_Shift_Rate_3_3.TabIndex = 1125
         Me.Lbl_Current_Shift_Rate_3_3.Text = "#"
         Me.Lbl_Current_Shift_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3951,7 +4594,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Current_Shift_Rate_3_1.Location = New System.Drawing.Point(0, 1)
         Me.Lbl_Current_Shift_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Current_Shift_Rate_3_1.Name = "Lbl_Current_Shift_Rate_3_1"
-        Me.Lbl_Current_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Current_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Current_Shift_Rate_3_1.TabIndex = 1124
         Me.Lbl_Current_Shift_Rate_3_1.Text = "#"
         Me.Lbl_Current_Shift_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3965,7 +4608,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Current_Shift_Rate_3_2.Location = New System.Drawing.Point(0, 30)
         Me.Lbl_Current_Shift_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Current_Shift_Rate_3_2.Name = "Lbl_Current_Shift_Rate_3_2"
-        Me.Lbl_Current_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Current_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Current_Shift_Rate_3_2.TabIndex = 1126
         Me.Lbl_Current_Shift_Rate_3_2.Text = "#"
         Me.Lbl_Current_Shift_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3976,9 +4619,9 @@ Partial Class Ctr_Press_Status
         Me.Panel58.Controls.Add(Me.Lbl_Last_Shift_Rate_3_3)
         Me.Panel58.Controls.Add(Me.Lbl_Last_Shift_Rate_3_1)
         Me.Panel58.Controls.Add(Me.Lbl_Last_Shift_Rate_3_2)
-        Me.Panel58.Location = New System.Drawing.Point(1340, 522)
+        Me.Panel58.Location = New System.Drawing.Point(1340, 525)
         Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(166, 83)
+        Me.Panel58.Size = New System.Drawing.Size(166, 79)
         Me.Panel58.TabIndex = 1650
         Me.Panel58.Visible = False
         '
@@ -3988,7 +4631,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer34.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer34.Name = "ShapeContainer34"
         Me.ShapeContainer34.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape71, Me.LineShape72})
-        Me.ShapeContainer34.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer34.Size = New System.Drawing.Size(166, 79)
         Me.ShapeContainer34.TabIndex = 1123
         Me.ShapeContainer34.TabStop = False
         '
@@ -4019,7 +4662,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Last_Shift_Rate_3_3.Location = New System.Drawing.Point(0, 60)
         Me.Lbl_Last_Shift_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Last_Shift_Rate_3_3.Name = "Lbl_Last_Shift_Rate_3_3"
-        Me.Lbl_Last_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Last_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 22)
         Me.Lbl_Last_Shift_Rate_3_3.TabIndex = 1125
         Me.Lbl_Last_Shift_Rate_3_3.Text = "#"
         Me.Lbl_Last_Shift_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4033,7 +4676,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Last_Shift_Rate_3_1.Location = New System.Drawing.Point(0, 1)
         Me.Lbl_Last_Shift_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Last_Shift_Rate_3_1.Name = "Lbl_Last_Shift_Rate_3_1"
-        Me.Lbl_Last_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Last_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Last_Shift_Rate_3_1.TabIndex = 1124
         Me.Lbl_Last_Shift_Rate_3_1.Text = "#"
         Me.Lbl_Last_Shift_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4047,7 +4690,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Last_Shift_Rate_3_2.Location = New System.Drawing.Point(0, 30)
         Me.Lbl_Last_Shift_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Last_Shift_Rate_3_2.Name = "Lbl_Last_Shift_Rate_3_2"
-        Me.Lbl_Last_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Last_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Last_Shift_Rate_3_2.TabIndex = 1126
         Me.Lbl_Last_Shift_Rate_3_2.Text = "#"
         Me.Lbl_Last_Shift_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4058,9 +4701,9 @@ Partial Class Ctr_Press_Status
         Me.Panel60.Controls.Add(Me.Lbl_Fourth_Shift_Rate_3_3)
         Me.Panel60.Controls.Add(Me.Lbl_Fourth_Shift_Rate_3_1)
         Me.Panel60.Controls.Add(Me.Lbl_Fourth_Shift_Rate_3_2)
-        Me.Panel60.Location = New System.Drawing.Point(1681, 523)
+        Me.Panel60.Location = New System.Drawing.Point(1681, 525)
         Me.Panel60.Name = "Panel60"
-        Me.Panel60.Size = New System.Drawing.Size(166, 83)
+        Me.Panel60.Size = New System.Drawing.Size(166, 79)
         Me.Panel60.TabIndex = 1649
         Me.Panel60.Visible = False
         '
@@ -4070,7 +4713,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer35.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer35.Name = "ShapeContainer35"
         Me.ShapeContainer35.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape73, Me.LineShape74})
-        Me.ShapeContainer35.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer35.Size = New System.Drawing.Size(166, 79)
         Me.ShapeContainer35.TabIndex = 1123
         Me.ShapeContainer35.TabStop = False
         '
@@ -4101,7 +4744,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Fourth_Shift_Rate_3_3.Location = New System.Drawing.Point(0, 60)
         Me.Lbl_Fourth_Shift_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Fourth_Shift_Rate_3_3.Name = "Lbl_Fourth_Shift_Rate_3_3"
-        Me.Lbl_Fourth_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Fourth_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 22)
         Me.Lbl_Fourth_Shift_Rate_3_3.TabIndex = 1125
         Me.Lbl_Fourth_Shift_Rate_3_3.Text = "#"
         Me.Lbl_Fourth_Shift_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4115,7 +4758,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Fourth_Shift_Rate_3_1.Location = New System.Drawing.Point(0, 1)
         Me.Lbl_Fourth_Shift_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Fourth_Shift_Rate_3_1.Name = "Lbl_Fourth_Shift_Rate_3_1"
-        Me.Lbl_Fourth_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Fourth_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Fourth_Shift_Rate_3_1.TabIndex = 1124
         Me.Lbl_Fourth_Shift_Rate_3_1.Text = "#"
         Me.Lbl_Fourth_Shift_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4129,7 +4772,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Fourth_Shift_Rate_3_2.Location = New System.Drawing.Point(0, 30)
         Me.Lbl_Fourth_Shift_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Fourth_Shift_Rate_3_2.Name = "Lbl_Fourth_Shift_Rate_3_2"
-        Me.Lbl_Fourth_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Fourth_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Fourth_Shift_Rate_3_2.TabIndex = 1126
         Me.Lbl_Fourth_Shift_Rate_3_2.Text = "#"
         Me.Lbl_Fourth_Shift_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4140,9 +4783,9 @@ Partial Class Ctr_Press_Status
         Me.Panel59.Controls.Add(Me.Lbl_Previous_Shift_Rate_3_3)
         Me.Panel59.Controls.Add(Me.Lbl_Previous_Shift_Rate_3_1)
         Me.Panel59.Controls.Add(Me.Lbl_Previous_Shift_Rate_3_2)
-        Me.Panel59.Location = New System.Drawing.Point(1510, 521)
+        Me.Panel59.Location = New System.Drawing.Point(1510, 525)
         Me.Panel59.Name = "Panel59"
-        Me.Panel59.Size = New System.Drawing.Size(166, 83)
+        Me.Panel59.Size = New System.Drawing.Size(166, 79)
         Me.Panel59.TabIndex = 1650
         Me.Panel59.Visible = False
         '
@@ -4152,7 +4795,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer36.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer36.Name = "ShapeContainer36"
         Me.ShapeContainer36.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape75, Me.LineShape76})
-        Me.ShapeContainer36.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer36.Size = New System.Drawing.Size(166, 79)
         Me.ShapeContainer36.TabIndex = 1123
         Me.ShapeContainer36.TabStop = False
         '
@@ -4183,7 +4826,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Previous_Shift_Rate_3_3.Location = New System.Drawing.Point(0, 60)
         Me.Lbl_Previous_Shift_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Previous_Shift_Rate_3_3.Name = "Lbl_Previous_Shift_Rate_3_3"
-        Me.Lbl_Previous_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.Lbl_Previous_Shift_Rate_3_3.Size = New System.Drawing.Size(166, 22)
         Me.Lbl_Previous_Shift_Rate_3_3.TabIndex = 1125
         Me.Lbl_Previous_Shift_Rate_3_3.Text = "#"
         Me.Lbl_Previous_Shift_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4197,7 +4840,7 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Previous_Shift_Rate_3_1.Location = New System.Drawing.Point(0, 1)
         Me.Lbl_Previous_Shift_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Previous_Shift_Rate_3_1.Name = "Lbl_Previous_Shift_Rate_3_1"
-        Me.Lbl_Previous_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Previous_Shift_Rate_3_1.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Previous_Shift_Rate_3_1.TabIndex = 1124
         Me.Lbl_Previous_Shift_Rate_3_1.Text = "#"
         Me.Lbl_Previous_Shift_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4211,92 +4854,10 @@ Partial Class Ctr_Press_Status
         Me.Lbl_Previous_Shift_Rate_3_2.Location = New System.Drawing.Point(0, 30)
         Me.Lbl_Previous_Shift_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Lbl_Previous_Shift_Rate_3_2.Name = "Lbl_Previous_Shift_Rate_3_2"
-        Me.Lbl_Previous_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.Lbl_Previous_Shift_Rate_3_2.Size = New System.Drawing.Size(166, 24)
         Me.Lbl_Previous_Shift_Rate_3_2.TabIndex = 1126
         Me.Lbl_Previous_Shift_Rate_3_2.Text = "#"
         Me.Lbl_Previous_Shift_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel61
-        '
-        Me.Panel61.Controls.Add(Me.ShapeContainer37)
-        Me.Panel61.Controls.Add(Me.lbl_Current_Total_Rate_3_3)
-        Me.Panel61.Controls.Add(Me.lbl_Current_Total_Rate_3_1)
-        Me.Panel61.Controls.Add(Me.lbl_Current_Total_Rate_3_2)
-        Me.Panel61.Location = New System.Drawing.Point(0, 0)
-        Me.Panel61.Name = "Panel61"
-        Me.Panel61.Size = New System.Drawing.Size(166, 83)
-        Me.Panel61.TabIndex = 1649
-        Me.Panel61.Visible = False
-        '
-        'ShapeContainer37
-        '
-        Me.ShapeContainer37.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer37.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer37.Name = "ShapeContainer37"
-        Me.ShapeContainer37.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape77, Me.LineShape78})
-        Me.ShapeContainer37.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer37.TabIndex = 1123
-        Me.ShapeContainer37.TabStop = False
-        '
-        'LineShape77
-        '
-        Me.LineShape77.BorderWidth = 3
-        Me.LineShape77.Name = "LineShape54"
-        Me.LineShape77.X1 = 166
-        Me.LineShape77.X2 = 0
-        Me.LineShape77.Y1 = 55
-        Me.LineShape77.Y2 = 55
-        '
-        'LineShape78
-        '
-        Me.LineShape78.BorderWidth = 3
-        Me.LineShape78.Name = "LineShape30"
-        Me.LineShape78.X1 = 166
-        Me.LineShape78.X2 = 0
-        Me.LineShape78.Y1 = 28
-        Me.LineShape78.Y2 = 28
-        '
-        'lbl_Current_Total_Rate_3_3
-        '
-        Me.lbl_Current_Total_Rate_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Current_Total_Rate_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Current_Total_Rate_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.lbl_Current_Total_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Current_Total_Rate_3_3.Name = "lbl_Current_Total_Rate_3_3"
-        Me.lbl_Current_Total_Rate_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.lbl_Current_Total_Rate_3_3.TabIndex = 1125
-        Me.lbl_Current_Total_Rate_3_3.Text = "#"
-        Me.lbl_Current_Total_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_Current_Total_Rate_3_1
-        '
-        Me.lbl_Current_Total_Rate_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Current_Total_Rate_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Current_Total_Rate_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.lbl_Current_Total_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Current_Total_Rate_3_1.Name = "lbl_Current_Total_Rate_3_1"
-        Me.lbl_Current_Total_Rate_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Current_Total_Rate_3_1.TabIndex = 1124
-        Me.lbl_Current_Total_Rate_3_1.Text = "#"
-        Me.lbl_Current_Total_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_Current_Total_Rate_3_2
-        '
-        Me.lbl_Current_Total_Rate_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Current_Total_Rate_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Current_Total_Rate_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.lbl_Current_Total_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Current_Total_Rate_3_2.Name = "lbl_Current_Total_Rate_3_2"
-        Me.lbl_Current_Total_Rate_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Current_Total_Rate_3_2.TabIndex = 1126
-        Me.lbl_Current_Total_Rate_3_2.Text = "#"
-        Me.lbl_Current_Total_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel62
         '
@@ -4304,9 +4865,9 @@ Partial Class Ctr_Press_Status
         Me.Panel62.Controls.Add(Me.lbl_Last_Total_Rate_3_3)
         Me.Panel62.Controls.Add(Me.lbl_Last_Total_Rate_3_1)
         Me.Panel62.Controls.Add(Me.lbl_Last_Total_Rate_3_2)
-        Me.Panel62.Location = New System.Drawing.Point(1339, 661)
+        Me.Panel62.Location = New System.Drawing.Point(1340, 662)
         Me.Panel62.Name = "Panel62"
-        Me.Panel62.Size = New System.Drawing.Size(166, 83)
+        Me.Panel62.Size = New System.Drawing.Size(166, 81)
         Me.Panel62.TabIndex = 1649
         Me.Panel62.Visible = False
         '
@@ -4316,7 +4877,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer38.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer38.Name = "ShapeContainer38"
         Me.ShapeContainer38.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape79, Me.LineShape80})
-        Me.ShapeContainer38.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer38.Size = New System.Drawing.Size(166, 81)
         Me.ShapeContainer38.TabIndex = 1123
         Me.ShapeContainer38.TabStop = False
         '
@@ -4347,7 +4908,7 @@ Partial Class Ctr_Press_Status
         Me.lbl_Last_Total_Rate_3_3.Location = New System.Drawing.Point(0, 60)
         Me.lbl_Last_Total_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Last_Total_Rate_3_3.Name = "lbl_Last_Total_Rate_3_3"
-        Me.lbl_Last_Total_Rate_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_Last_Total_Rate_3_3.Size = New System.Drawing.Size(166, 24)
         Me.lbl_Last_Total_Rate_3_3.TabIndex = 1125
         Me.lbl_Last_Total_Rate_3_3.Text = "#"
         Me.lbl_Last_Total_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4361,7 +4922,7 @@ Partial Class Ctr_Press_Status
         Me.lbl_Last_Total_Rate_3_1.Location = New System.Drawing.Point(0, 1)
         Me.lbl_Last_Total_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Last_Total_Rate_3_1.Name = "lbl_Last_Total_Rate_3_1"
-        Me.lbl_Last_Total_Rate_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Last_Total_Rate_3_1.Size = New System.Drawing.Size(166, 26)
         Me.lbl_Last_Total_Rate_3_1.TabIndex = 1124
         Me.lbl_Last_Total_Rate_3_1.Text = "#"
         Me.lbl_Last_Total_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4375,92 +4936,10 @@ Partial Class Ctr_Press_Status
         Me.lbl_Last_Total_Rate_3_2.Location = New System.Drawing.Point(0, 30)
         Me.lbl_Last_Total_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Last_Total_Rate_3_2.Name = "lbl_Last_Total_Rate_3_2"
-        Me.lbl_Last_Total_Rate_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Last_Total_Rate_3_2.Size = New System.Drawing.Size(166, 26)
         Me.lbl_Last_Total_Rate_3_2.TabIndex = 1126
         Me.lbl_Last_Total_Rate_3_2.Text = "#"
         Me.lbl_Last_Total_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel63
-        '
-        Me.Panel63.Controls.Add(Me.ShapeContainer39)
-        Me.Panel63.Controls.Add(Me.lbl_previous_Total_Rate_3_3)
-        Me.Panel63.Controls.Add(Me.lbl_previous_Total_Rate_3_1)
-        Me.Panel63.Controls.Add(Me.lbl_previous_Total_Rate_3_2)
-        Me.Panel63.Location = New System.Drawing.Point(0, 1)
-        Me.Panel63.Name = "Panel63"
-        Me.Panel63.Size = New System.Drawing.Size(166, 83)
-        Me.Panel63.TabIndex = 1649
-        Me.Panel63.Visible = False
-        '
-        'ShapeContainer39
-        '
-        Me.ShapeContainer39.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer39.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer39.Name = "ShapeContainer39"
-        Me.ShapeContainer39.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape81, Me.LineShape82})
-        Me.ShapeContainer39.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer39.TabIndex = 1123
-        Me.ShapeContainer39.TabStop = False
-        '
-        'LineShape81
-        '
-        Me.LineShape81.BorderWidth = 3
-        Me.LineShape81.Name = "LineShape54"
-        Me.LineShape81.X1 = 166
-        Me.LineShape81.X2 = 0
-        Me.LineShape81.Y1 = 55
-        Me.LineShape81.Y2 = 55
-        '
-        'LineShape82
-        '
-        Me.LineShape82.BorderWidth = 3
-        Me.LineShape82.Name = "LineShape30"
-        Me.LineShape82.X1 = 166
-        Me.LineShape82.X2 = 0
-        Me.LineShape82.Y1 = 28
-        Me.LineShape82.Y2 = 28
-        '
-        'lbl_previous_Total_Rate_3_3
-        '
-        Me.lbl_previous_Total_Rate_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_previous_Total_Rate_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_previous_Total_Rate_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.lbl_previous_Total_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_previous_Total_Rate_3_3.Name = "lbl_previous_Total_Rate_3_3"
-        Me.lbl_previous_Total_Rate_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.lbl_previous_Total_Rate_3_3.TabIndex = 1125
-        Me.lbl_previous_Total_Rate_3_3.Text = "#"
-        Me.lbl_previous_Total_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_previous_Total_Rate_3_1
-        '
-        Me.lbl_previous_Total_Rate_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_previous_Total_Rate_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_previous_Total_Rate_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.lbl_previous_Total_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_previous_Total_Rate_3_1.Name = "lbl_previous_Total_Rate_3_1"
-        Me.lbl_previous_Total_Rate_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_previous_Total_Rate_3_1.TabIndex = 1124
-        Me.lbl_previous_Total_Rate_3_1.Text = "#"
-        Me.lbl_previous_Total_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_previous_Total_Rate_3_2
-        '
-        Me.lbl_previous_Total_Rate_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_previous_Total_Rate_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_previous_Total_Rate_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.lbl_previous_Total_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_previous_Total_Rate_3_2.Name = "lbl_previous_Total_Rate_3_2"
-        Me.lbl_previous_Total_Rate_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_previous_Total_Rate_3_2.TabIndex = 1126
-        Me.lbl_previous_Total_Rate_3_2.Text = "#"
-        Me.lbl_previous_Total_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel64
         '
@@ -4468,9 +4947,9 @@ Partial Class Ctr_Press_Status
         Me.Panel64.Controls.Add(Me.lbl_Fourth_Total_Rate_3_3)
         Me.Panel64.Controls.Add(Me.lbl_Fourth_Total_Rate_3_1)
         Me.Panel64.Controls.Add(Me.lbl_Fourth_Total_Rate_3_2)
-        Me.Panel64.Location = New System.Drawing.Point(1680, 661)
+        Me.Panel64.Location = New System.Drawing.Point(1681, 662)
         Me.Panel64.Name = "Panel64"
-        Me.Panel64.Size = New System.Drawing.Size(166, 83)
+        Me.Panel64.Size = New System.Drawing.Size(166, 81)
         Me.Panel64.TabIndex = 1649
         Me.Panel64.Visible = False
         '
@@ -4480,7 +4959,7 @@ Partial Class Ctr_Press_Status
         Me.ShapeContainer40.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer40.Name = "ShapeContainer40"
         Me.ShapeContainer40.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape83, Me.LineShape84})
-        Me.ShapeContainer40.Size = New System.Drawing.Size(166, 83)
+        Me.ShapeContainer40.Size = New System.Drawing.Size(166, 81)
         Me.ShapeContainer40.TabIndex = 1123
         Me.ShapeContainer40.TabStop = False
         '
@@ -4511,7 +4990,7 @@ Partial Class Ctr_Press_Status
         Me.lbl_Fourth_Total_Rate_3_3.Location = New System.Drawing.Point(0, 60)
         Me.lbl_Fourth_Total_Rate_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Fourth_Total_Rate_3_3.Name = "lbl_Fourth_Total_Rate_3_3"
-        Me.lbl_Fourth_Total_Rate_3_3.Size = New System.Drawing.Size(166, 26)
+        Me.lbl_Fourth_Total_Rate_3_3.Size = New System.Drawing.Size(166, 24)
         Me.lbl_Fourth_Total_Rate_3_3.TabIndex = 1125
         Me.lbl_Fourth_Total_Rate_3_3.Text = "#"
         Me.lbl_Fourth_Total_Rate_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4525,7 +5004,7 @@ Partial Class Ctr_Press_Status
         Me.lbl_Fourth_Total_Rate_3_1.Location = New System.Drawing.Point(0, 1)
         Me.lbl_Fourth_Total_Rate_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Fourth_Total_Rate_3_1.Name = "lbl_Fourth_Total_Rate_3_1"
-        Me.lbl_Fourth_Total_Rate_3_1.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Fourth_Total_Rate_3_1.Size = New System.Drawing.Size(166, 26)
         Me.lbl_Fourth_Total_Rate_3_1.TabIndex = 1124
         Me.lbl_Fourth_Total_Rate_3_1.Text = "#"
         Me.lbl_Fourth_Total_Rate_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4539,502 +5018,10 @@ Partial Class Ctr_Press_Status
         Me.lbl_Fourth_Total_Rate_3_2.Location = New System.Drawing.Point(0, 30)
         Me.lbl_Fourth_Total_Rate_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_Fourth_Total_Rate_3_2.Name = "lbl_Fourth_Total_Rate_3_2"
-        Me.lbl_Fourth_Total_Rate_3_2.Size = New System.Drawing.Size(166, 28)
+        Me.lbl_Fourth_Total_Rate_3_2.Size = New System.Drawing.Size(166, 26)
         Me.lbl_Fourth_Total_Rate_3_2.TabIndex = 1126
         Me.lbl_Fourth_Total_Rate_3_2.Text = "#"
         Me.lbl_Fourth_Total_Rate_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel65
-        '
-        Me.Panel65.Controls.Add(Me.ShapeContainer41)
-        Me.Panel65.Controls.Add(Me.Lbl_Current_Shift_Total_3_3)
-        Me.Panel65.Controls.Add(Me.Lbl_Current_Shift_Total_3_1)
-        Me.Panel65.Controls.Add(Me.Lbl_Current_Shift_Total_3_2)
-        Me.Panel65.Location = New System.Drawing.Point(1, 0)
-        Me.Panel65.Name = "Panel65"
-        Me.Panel65.Size = New System.Drawing.Size(166, 83)
-        Me.Panel65.TabIndex = 1649
-        Me.Panel65.Visible = False
-        '
-        'ShapeContainer41
-        '
-        Me.ShapeContainer41.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer41.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer41.Name = "ShapeContainer41"
-        Me.ShapeContainer41.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape85, Me.LineShape86})
-        Me.ShapeContainer41.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer41.TabIndex = 1123
-        Me.ShapeContainer41.TabStop = False
-        '
-        'LineShape85
-        '
-        Me.LineShape85.BorderWidth = 3
-        Me.LineShape85.Name = "LineShape54"
-        Me.LineShape85.X1 = 166
-        Me.LineShape85.X2 = 0
-        Me.LineShape85.Y1 = 55
-        Me.LineShape85.Y2 = 55
-        '
-        'LineShape86
-        '
-        Me.LineShape86.BorderWidth = 3
-        Me.LineShape86.Name = "LineShape30"
-        Me.LineShape86.X1 = 166
-        Me.LineShape86.X2 = 0
-        Me.LineShape86.Y1 = 28
-        Me.LineShape86.Y2 = 28
-        '
-        'Lbl_Current_Shift_Total_3_3
-        '
-        Me.Lbl_Current_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Current_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Current_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.Lbl_Current_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Current_Shift_Total_3_3.Name = "Lbl_Current_Shift_Total_3_3"
-        Me.Lbl_Current_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.Lbl_Current_Shift_Total_3_3.TabIndex = 1125
-        Me.Lbl_Current_Shift_Total_3_3.Text = "#"
-        Me.Lbl_Current_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Current_Shift_Total_3_1
-        '
-        Me.Lbl_Current_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Current_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Current_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Current_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Current_Shift_Total_3_1.Name = "Lbl_Current_Shift_Total_3_1"
-        Me.Lbl_Current_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Current_Shift_Total_3_1.TabIndex = 1124
-        Me.Lbl_Current_Shift_Total_3_1.Text = "#"
-        Me.Lbl_Current_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Current_Shift_Total_3_2
-        '
-        Me.Lbl_Current_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Current_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Current_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.Lbl_Current_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Current_Shift_Total_3_2.Name = "Lbl_Current_Shift_Total_3_2"
-        Me.Lbl_Current_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Current_Shift_Total_3_2.TabIndex = 1126
-        Me.Lbl_Current_Shift_Total_3_2.Text = "#"
-        Me.Lbl_Current_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel66
-        '
-        Me.Panel66.Controls.Add(Me.ShapeContainer42)
-        Me.Panel66.Controls.Add(Me.Lbl_Last_Shift_Total_3_3)
-        Me.Panel66.Controls.Add(Me.Lbl_Last_Shift_Total_3_1)
-        Me.Panel66.Controls.Add(Me.Lbl_Last_Shift_Total_3_2)
-        Me.Panel66.Location = New System.Drawing.Point(1, 0)
-        Me.Panel66.Name = "Panel66"
-        Me.Panel66.Size = New System.Drawing.Size(166, 83)
-        Me.Panel66.TabIndex = 1649
-        Me.Panel66.Visible = False
-        '
-        'ShapeContainer42
-        '
-        Me.ShapeContainer42.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer42.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer42.Name = "ShapeContainer42"
-        Me.ShapeContainer42.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape87, Me.LineShape88})
-        Me.ShapeContainer42.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer42.TabIndex = 1123
-        Me.ShapeContainer42.TabStop = False
-        '
-        'LineShape87
-        '
-        Me.LineShape87.BorderWidth = 3
-        Me.LineShape87.Name = "LineShape54"
-        Me.LineShape87.X1 = 166
-        Me.LineShape87.X2 = 0
-        Me.LineShape87.Y1 = 55
-        Me.LineShape87.Y2 = 55
-        '
-        'LineShape88
-        '
-        Me.LineShape88.BorderWidth = 3
-        Me.LineShape88.Name = "LineShape30"
-        Me.LineShape88.X1 = 166
-        Me.LineShape88.X2 = 0
-        Me.LineShape88.Y1 = 28
-        Me.LineShape88.Y2 = 28
-        '
-        'Lbl_Last_Shift_Total_3_3
-        '
-        Me.Lbl_Last_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Last_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Last_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.Lbl_Last_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Last_Shift_Total_3_3.Name = "Lbl_Last_Shift_Total_3_3"
-        Me.Lbl_Last_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.Lbl_Last_Shift_Total_3_3.TabIndex = 1125
-        Me.Lbl_Last_Shift_Total_3_3.Text = "#"
-        Me.Lbl_Last_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Last_Shift_Total_3_1
-        '
-        Me.Lbl_Last_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Last_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Last_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Last_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Last_Shift_Total_3_1.Name = "Lbl_Last_Shift_Total_3_1"
-        Me.Lbl_Last_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Last_Shift_Total_3_1.TabIndex = 1124
-        Me.Lbl_Last_Shift_Total_3_1.Text = "#"
-        Me.Lbl_Last_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Last_Shift_Total_3_2
-        '
-        Me.Lbl_Last_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Last_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Last_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.Lbl_Last_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Last_Shift_Total_3_2.Name = "Lbl_Last_Shift_Total_3_2"
-        Me.Lbl_Last_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Last_Shift_Total_3_2.TabIndex = 1126
-        Me.Lbl_Last_Shift_Total_3_2.Text = "#"
-        Me.Lbl_Last_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel67
-        '
-        Me.Panel67.Controls.Add(Me.ShapeContainer43)
-        Me.Panel67.Controls.Add(Me.Lbl_Previous_Shift_Total_3_3)
-        Me.Panel67.Controls.Add(Me.Lbl_Previous_Shift_Total_3_1)
-        Me.Panel67.Controls.Add(Me.Lbl_Previous_Shift_Total_3_2)
-        Me.Panel67.Location = New System.Drawing.Point(0, 4)
-        Me.Panel67.Name = "Panel67"
-        Me.Panel67.Size = New System.Drawing.Size(166, 83)
-        Me.Panel67.TabIndex = 1649
-        Me.Panel67.Visible = False
-        '
-        'ShapeContainer43
-        '
-        Me.ShapeContainer43.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer43.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer43.Name = "ShapeContainer43"
-        Me.ShapeContainer43.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape89, Me.LineShape90})
-        Me.ShapeContainer43.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer43.TabIndex = 1123
-        Me.ShapeContainer43.TabStop = False
-        '
-        'LineShape89
-        '
-        Me.LineShape89.BorderWidth = 3
-        Me.LineShape89.Name = "LineShape54"
-        Me.LineShape89.X1 = 166
-        Me.LineShape89.X2 = 0
-        Me.LineShape89.Y1 = 55
-        Me.LineShape89.Y2 = 55
-        '
-        'LineShape90
-        '
-        Me.LineShape90.BorderWidth = 3
-        Me.LineShape90.Name = "LineShape30"
-        Me.LineShape90.X1 = 166
-        Me.LineShape90.X2 = 0
-        Me.LineShape90.Y1 = 28
-        Me.LineShape90.Y2 = 28
-        '
-        'Lbl_Previous_Shift_Total_3_3
-        '
-        Me.Lbl_Previous_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Previous_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Previous_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.Lbl_Previous_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Previous_Shift_Total_3_3.Name = "Lbl_Previous_Shift_Total_3_3"
-        Me.Lbl_Previous_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.Lbl_Previous_Shift_Total_3_3.TabIndex = 1125
-        Me.Lbl_Previous_Shift_Total_3_3.Text = "#"
-        Me.Lbl_Previous_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Previous_Shift_Total_3_1
-        '
-        Me.Lbl_Previous_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Previous_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Previous_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Previous_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Previous_Shift_Total_3_1.Name = "Lbl_Previous_Shift_Total_3_1"
-        Me.Lbl_Previous_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Previous_Shift_Total_3_1.TabIndex = 1124
-        Me.Lbl_Previous_Shift_Total_3_1.Text = "#"
-        Me.Lbl_Previous_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Previous_Shift_Total_3_2
-        '
-        Me.Lbl_Previous_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Previous_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Previous_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.Lbl_Previous_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Previous_Shift_Total_3_2.Name = "Lbl_Previous_Shift_Total_3_2"
-        Me.Lbl_Previous_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Previous_Shift_Total_3_2.TabIndex = 1126
-        Me.Lbl_Previous_Shift_Total_3_2.Text = "#"
-        Me.Lbl_Previous_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel68
-        '
-        Me.Panel68.Controls.Add(Me.ShapeContainer44)
-        Me.Panel68.Controls.Add(Me.Lbl_Fourth_Shift_Total_3_3)
-        Me.Panel68.Controls.Add(Me.Lbl_Fourth_Shift_Total_3_1)
-        Me.Panel68.Controls.Add(Me.Lbl_Fourth_Shift_Total_3_2)
-        Me.Panel68.Location = New System.Drawing.Point(5, 2)
-        Me.Panel68.Name = "Panel68"
-        Me.Panel68.Size = New System.Drawing.Size(166, 83)
-        Me.Panel68.TabIndex = 1649
-        Me.Panel68.Visible = False
-        '
-        'ShapeContainer44
-        '
-        Me.ShapeContainer44.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer44.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer44.Name = "ShapeContainer44"
-        Me.ShapeContainer44.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape91, Me.LineShape92})
-        Me.ShapeContainer44.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer44.TabIndex = 1123
-        Me.ShapeContainer44.TabStop = False
-        '
-        'LineShape91
-        '
-        Me.LineShape91.BorderWidth = 3
-        Me.LineShape91.Name = "LineShape54"
-        Me.LineShape91.X1 = 166
-        Me.LineShape91.X2 = 0
-        Me.LineShape91.Y1 = 55
-        Me.LineShape91.Y2 = 55
-        '
-        'LineShape92
-        '
-        Me.LineShape92.BorderWidth = 3
-        Me.LineShape92.Name = "LineShape30"
-        Me.LineShape92.X1 = 166
-        Me.LineShape92.X2 = 0
-        Me.LineShape92.Y1 = 28
-        Me.LineShape92.Y2 = 28
-        '
-        'Lbl_Fourth_Shift_Total_3_3
-        '
-        Me.Lbl_Fourth_Shift_Total_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Fourth_Shift_Total_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Fourth_Shift_Total_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.Lbl_Fourth_Shift_Total_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Fourth_Shift_Total_3_3.Name = "Lbl_Fourth_Shift_Total_3_3"
-        Me.Lbl_Fourth_Shift_Total_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.Lbl_Fourth_Shift_Total_3_3.TabIndex = 1125
-        Me.Lbl_Fourth_Shift_Total_3_3.Text = "#"
-        Me.Lbl_Fourth_Shift_Total_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Fourth_Shift_Total_3_1
-        '
-        Me.Lbl_Fourth_Shift_Total_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Fourth_Shift_Total_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Fourth_Shift_Total_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.Lbl_Fourth_Shift_Total_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Fourth_Shift_Total_3_1.Name = "Lbl_Fourth_Shift_Total_3_1"
-        Me.Lbl_Fourth_Shift_Total_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Fourth_Shift_Total_3_1.TabIndex = 1124
-        Me.Lbl_Fourth_Shift_Total_3_1.Text = "#"
-        Me.Lbl_Fourth_Shift_Total_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Fourth_Shift_Total_3_2
-        '
-        Me.Lbl_Fourth_Shift_Total_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Lbl_Fourth_Shift_Total_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Lbl_Fourth_Shift_Total_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.Lbl_Fourth_Shift_Total_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Lbl_Fourth_Shift_Total_3_2.Name = "Lbl_Fourth_Shift_Total_3_2"
-        Me.Lbl_Fourth_Shift_Total_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.Lbl_Fourth_Shift_Total_3_2.TabIndex = 1126
-        Me.Lbl_Fourth_Shift_Total_3_2.Text = "#"
-        Me.Lbl_Fourth_Shift_Total_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel69
-        '
-        Me.Panel69.Controls.Add(Me.ShapeContainer45)
-        Me.Panel69.Controls.Add(Me.lbl_Current_Shift_Total_Scrap_3_3)
-        Me.Panel69.Controls.Add(Me.lbl_Current_Shift_Total_Scrap_3_1)
-        Me.Panel69.Controls.Add(Me.lbl_Current_Shift_Total_Scrap_3_2)
-        Me.Panel69.Location = New System.Drawing.Point(2, 0)
-        Me.Panel69.Name = "Panel69"
-        Me.Panel69.Size = New System.Drawing.Size(166, 83)
-        Me.Panel69.TabIndex = 1649
-        Me.Panel69.Visible = False
-        '
-        'ShapeContainer45
-        '
-        Me.ShapeContainer45.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer45.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer45.Name = "ShapeContainer45"
-        Me.ShapeContainer45.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape93, Me.LineShape94})
-        Me.ShapeContainer45.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer45.TabIndex = 1123
-        Me.ShapeContainer45.TabStop = False
-        '
-        'LineShape93
-        '
-        Me.LineShape93.BorderWidth = 3
-        Me.LineShape93.Name = "LineShape54"
-        Me.LineShape93.X1 = 166
-        Me.LineShape93.X2 = 0
-        Me.LineShape93.Y1 = 55
-        Me.LineShape93.Y2 = 55
-        '
-        'LineShape94
-        '
-        Me.LineShape94.BorderWidth = 3
-        Me.LineShape94.Name = "LineShape30"
-        Me.LineShape94.X1 = 166
-        Me.LineShape94.X2 = 0
-        Me.LineShape94.Y1 = 28
-        Me.LineShape94.Y2 = 28
-        '
-        'lbl_Current_Shift_Total_Scrap_3_3
-        '
-        Me.lbl_Current_Shift_Total_Scrap_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Current_Shift_Total_Scrap_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Current_Shift_Total_Scrap_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.lbl_Current_Shift_Total_Scrap_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Current_Shift_Total_Scrap_3_3.Name = "lbl_Current_Shift_Total_Scrap_3_3"
-        Me.lbl_Current_Shift_Total_Scrap_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.lbl_Current_Shift_Total_Scrap_3_3.TabIndex = 1125
-        Me.lbl_Current_Shift_Total_Scrap_3_3.Text = "#"
-        Me.lbl_Current_Shift_Total_Scrap_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_Current_Shift_Total_Scrap_3_1
-        '
-        Me.lbl_Current_Shift_Total_Scrap_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Current_Shift_Total_Scrap_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Current_Shift_Total_Scrap_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.lbl_Current_Shift_Total_Scrap_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Current_Shift_Total_Scrap_3_1.Name = "lbl_Current_Shift_Total_Scrap_3_1"
-        Me.lbl_Current_Shift_Total_Scrap_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Current_Shift_Total_Scrap_3_1.TabIndex = 1124
-        Me.lbl_Current_Shift_Total_Scrap_3_1.Text = "#"
-        Me.lbl_Current_Shift_Total_Scrap_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_Current_Shift_Total_Scrap_3_2
-        '
-        Me.lbl_Current_Shift_Total_Scrap_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Current_Shift_Total_Scrap_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Current_Shift_Total_Scrap_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.lbl_Current_Shift_Total_Scrap_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Current_Shift_Total_Scrap_3_2.Name = "lbl_Current_Shift_Total_Scrap_3_2"
-        Me.lbl_Current_Shift_Total_Scrap_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Current_Shift_Total_Scrap_3_2.TabIndex = 1126
-        Me.lbl_Current_Shift_Total_Scrap_3_2.Text = "#"
-        Me.lbl_Current_Shift_Total_Scrap_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel70
-        '
-        Me.Panel70.Controls.Add(Me.ShapeContainer46)
-        Me.Panel70.Controls.Add(Me.lbl_Last_Shift_Total_Scrap_3_3)
-        Me.Panel70.Controls.Add(Me.lbl_Last_Shift_Total_Scrap_3_1)
-        Me.Panel70.Controls.Add(Me.lbl_Last_Shift_Total_Scrap_3_2)
-        Me.Panel70.Location = New System.Drawing.Point(0, 0)
-        Me.Panel70.Name = "Panel70"
-        Me.Panel70.Size = New System.Drawing.Size(166, 83)
-        Me.Panel70.TabIndex = 1649
-        Me.Panel70.Visible = False
-        '
-        'ShapeContainer46
-        '
-        Me.ShapeContainer46.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer46.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer46.Name = "ShapeContainer46"
-        Me.ShapeContainer46.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape95, Me.LineShape96})
-        Me.ShapeContainer46.Size = New System.Drawing.Size(166, 83)
-        Me.ShapeContainer46.TabIndex = 1123
-        Me.ShapeContainer46.TabStop = False
-        '
-        'LineShape95
-        '
-        Me.LineShape95.BorderWidth = 3
-        Me.LineShape95.Name = "LineShape54"
-        Me.LineShape95.X1 = 166
-        Me.LineShape95.X2 = 0
-        Me.LineShape95.Y1 = 55
-        Me.LineShape95.Y2 = 55
-        '
-        'LineShape96
-        '
-        Me.LineShape96.BorderWidth = 3
-        Me.LineShape96.Name = "LineShape30"
-        Me.LineShape96.X1 = 166
-        Me.LineShape96.X2 = 0
-        Me.LineShape96.Y1 = 28
-        Me.LineShape96.Y2 = 28
-        '
-        'lbl_Last_Shift_Total_Scrap_3_3
-        '
-        Me.lbl_Last_Shift_Total_Scrap_3_3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Last_Shift_Total_Scrap_3_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Last_Shift_Total_Scrap_3_3.Location = New System.Drawing.Point(0, 60)
-        Me.lbl_Last_Shift_Total_Scrap_3_3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Last_Shift_Total_Scrap_3_3.Name = "lbl_Last_Shift_Total_Scrap_3_3"
-        Me.lbl_Last_Shift_Total_Scrap_3_3.Size = New System.Drawing.Size(166, 26)
-        Me.lbl_Last_Shift_Total_Scrap_3_3.TabIndex = 1125
-        Me.lbl_Last_Shift_Total_Scrap_3_3.Text = "#"
-        Me.lbl_Last_Shift_Total_Scrap_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_Last_Shift_Total_Scrap_3_1
-        '
-        Me.lbl_Last_Shift_Total_Scrap_3_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Last_Shift_Total_Scrap_3_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Last_Shift_Total_Scrap_3_1.Location = New System.Drawing.Point(0, 1)
-        Me.lbl_Last_Shift_Total_Scrap_3_1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Last_Shift_Total_Scrap_3_1.Name = "lbl_Last_Shift_Total_Scrap_3_1"
-        Me.lbl_Last_Shift_Total_Scrap_3_1.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Last_Shift_Total_Scrap_3_1.TabIndex = 1124
-        Me.lbl_Last_Shift_Total_Scrap_3_1.Text = "#"
-        Me.lbl_Last_Shift_Total_Scrap_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lbl_Last_Shift_Total_Scrap_3_2
-        '
-        Me.lbl_Last_Shift_Total_Scrap_3_2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Last_Shift_Total_Scrap_3_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.lbl_Last_Shift_Total_Scrap_3_2.Location = New System.Drawing.Point(0, 30)
-        Me.lbl_Last_Shift_Total_Scrap_3_2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_Last_Shift_Total_Scrap_3_2.Name = "lbl_Last_Shift_Total_Scrap_3_2"
-        Me.lbl_Last_Shift_Total_Scrap_3_2.Size = New System.Drawing.Size(166, 28)
-        Me.lbl_Last_Shift_Total_Scrap_3_2.TabIndex = 1126
-        Me.lbl_Last_Shift_Total_Scrap_3_2.Text = "#"
-        Me.lbl_Last_Shift_Total_Scrap_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel71
         '
@@ -5122,6 +5109,19 @@ Partial Class Ctr_Press_Status
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(19.0!, 37.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Panel53)
+        Me.Controls.Add(Me.Panel56)
+        Me.Controls.Add(Me.Panel61)
+        Me.Controls.Add(Me.Panel63)
+        Me.Controls.Add(Me.Panel65)
+        Me.Controls.Add(Me.Panel66)
+        Me.Controls.Add(Me.Panel67)
+        Me.Controls.Add(Me.Panel68)
+        Me.Controls.Add(Me.Panel69)
+        Me.Controls.Add(Me.Panel70)
+        Me.Controls.Add(Me.Panel72)
+        Me.Controls.Add(Me.Panel51)
+        Me.Controls.Add(Me.Panel54)
         Me.Controls.Add(Me.Panel71)
         Me.Controls.Add(Me.Panel64)
         Me.Controls.Add(Me.Panel62)
@@ -5247,6 +5247,8 @@ Partial Class Ctr_Press_Status
         Me.Panel5.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
+        Me.Panel53.ResumeLayout(False)
+        Me.Panel54.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
@@ -5263,51 +5265,49 @@ Partial Class Ctr_Press_Status
         Me.Panel21.ResumeLayout(False)
         Me.Panel22.ResumeLayout(False)
         Me.Panel23.ResumeLayout(False)
+        Me.Panel61.ResumeLayout(False)
         Me.Panel24.ResumeLayout(False)
         Me.Panel25.ResumeLayout(False)
         Me.Panel26.ResumeLayout(False)
         Me.Panel27.ResumeLayout(False)
         Me.Panel28.ResumeLayout(False)
+        Me.Panel63.ResumeLayout(False)
         Me.Panel29.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
         Me.Panel31.ResumeLayout(False)
         Me.Panel32.ResumeLayout(False)
+        Me.Panel65.ResumeLayout(False)
         Me.Panel33.ResumeLayout(False)
+        Me.Panel66.ResumeLayout(False)
         Me.Panel34.ResumeLayout(False)
         Me.Panel35.ResumeLayout(False)
+        Me.Panel67.ResumeLayout(False)
         Me.Panel36.ResumeLayout(False)
         Me.Panel37.ResumeLayout(False)
+        Me.Panel68.ResumeLayout(False)
         Me.Panel38.ResumeLayout(False)
         Me.Panel39.ResumeLayout(False)
         Me.Panel40.ResumeLayout(False)
+        Me.Panel69.ResumeLayout(False)
         Me.Panel41.ResumeLayout(False)
         Me.Panel42.ResumeLayout(False)
+        Me.Panel70.ResumeLayout(False)
         Me.Panel43.ResumeLayout(False)
         Me.Panel44.ResumeLayout(False)
         Me.Panel45.ResumeLayout(False)
-        Me.Panel46.ResumeLayout(False)
         Me.Panel72.ResumeLayout(False)
+        Me.Panel46.ResumeLayout(False)
         Me.Panel50.ResumeLayout(False)
         Me.Panel51.ResumeLayout(False)
         Me.Panel52.ResumeLayout(False)
-        Me.Panel53.ResumeLayout(False)
-        Me.Panel54.ResumeLayout(False)
         Me.Panel55.ResumeLayout(False)
         Me.Panel56.ResumeLayout(False)
         Me.Panel57.ResumeLayout(False)
         Me.Panel58.ResumeLayout(False)
         Me.Panel60.ResumeLayout(False)
         Me.Panel59.ResumeLayout(False)
-        Me.Panel61.ResumeLayout(False)
         Me.Panel62.ResumeLayout(False)
-        Me.Panel63.ResumeLayout(False)
         Me.Panel64.ResumeLayout(False)
-        Me.Panel65.ResumeLayout(False)
-        Me.Panel66.ResumeLayout(False)
-        Me.Panel67.ResumeLayout(False)
-        Me.Panel68.ResumeLayout(False)
-        Me.Panel69.ResumeLayout(False)
-        Me.Panel70.ResumeLayout(False)
         Me.Panel71.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

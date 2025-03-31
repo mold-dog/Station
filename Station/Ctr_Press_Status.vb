@@ -81,8 +81,6 @@ Public Class Ctr_Press_Status
 
             Cmb_Press.Visible = True
             Lbl_Press_Name.Visible = False
-
-
             Call Load_Combo()
 
 
@@ -2434,7 +2432,7 @@ Public Class Ctr_Press_Status
             End If
             lbl_Comm_Fail.Visible = True
             WriteEvent("Error registered on Press Status Screen(Update Screen): " & Ex.Message, EventError)
-            MsgBox("Error Getting Press Info from Database: " & Ex.Message & vbCrLf & Ex.StackTrace)
+            'MsgBox("Error Getting Press Info from Database: " & Ex.Message & vbCrLf & Ex.StackTrace)
         End Try
 
 

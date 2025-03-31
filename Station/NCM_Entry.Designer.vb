@@ -22,6 +22,7 @@ Partial Class NCM_Entry
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.NCM_Date = New System.Windows.Forms.DateTimePicker()
         Me.lbl_NCM_Date = New System.Windows.Forms.Label()
         Me.lbl_RFID_Tag = New System.Windows.Forms.Label()
@@ -50,6 +51,8 @@ Partial Class NCM_Entry
         Me.txtbox_Cust_Part_Number = New RFID_Station.SelectedTextBox()
         Me.txtbox_NCM_Number = New RFID_Station.SelectedTextBox()
         Me.txtbox_RFID_Tag = New RFID_Station.SelectedTextBox()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.lbl_scannerstatus = New RFID_Station.SerialStatusLabel()
         Me.flowlayoutpanel_Buttons.SuspendLayout()
         CType(Me.picturebox_Part, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -272,9 +275,6 @@ Partial Class NCM_Entry
         Me.combobox_Defect_Quantity.Size = New System.Drawing.Size(382, 42)
         Me.combobox_Defect_Quantity.TabIndex = 4
         '
-        'BackgroundWorker1
-        '
-        '
         'lbl_Part_Description
         '
         Me.lbl_Part_Description.AutoSize = True
@@ -319,10 +319,20 @@ Partial Class NCM_Entry
         Me.txtbox_RFID_Tag.Size = New System.Drawing.Size(323, 41)
         Me.txtbox_RFID_Tag.TabIndex = 10
         '
+        'lbl_scannerstatus
+        '
+        Me.lbl_scannerstatus.AutoSize = True
+        Me.lbl_scannerstatus.Location = New System.Drawing.Point(1129, 47)
+        Me.lbl_scannerstatus.Name = "lbl_scannerstatus"
+        Me.lbl_scannerstatus.Size = New System.Drawing.Size(206, 29)
+        Me.lbl_scannerstatus.TabIndex = 43
+        Me.lbl_scannerstatus.Text = "SerialStatusLabel1"
+        '
         'NCM_Entry
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1370, 897)
+        Me.Controls.Add(Me.lbl_scannerstatus)
         Me.Controls.Add(Me.lbl_Part_Description)
         Me.Controls.Add(Me.txtbox_Part_Description)
         Me.Controls.Add(Me.combobox_Defect_Quantity)
@@ -386,4 +396,6 @@ Partial Class NCM_Entry
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents lbl_Part_Description As Label
     Friend WithEvents txtbox_Part_Description As SelectedTextBox
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents lbl_scannerstatus As SerialStatusLabel
 End Class

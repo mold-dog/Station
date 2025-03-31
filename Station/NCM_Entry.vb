@@ -42,6 +42,10 @@ Public Class NCM_Entry
         End Set
     End Property
 
+    Private WithEvents ScannerPort As New SerialPort
+
+    Private portTimer As Timers.Timer
+
 
     Private Sub NCM_Entry_Load() Handles MyBase.Load
 
@@ -149,7 +153,15 @@ Public Class NCM_Entry
         End Try
         txtbox_RFID_Tag.Text = " "
         txtbox_Part_Description.Text = " "
-        BackgroundWorker1.RunWorkerAsync()
+
+
+        ' BackgroundWorker1.RunWorkerAsync()
+        portTimer = New Timers.Timer(500)
+        AddHandler portTimer.Elapsed, AddressOf portTimerElapsed
+
+        FindPort()
+        OpenPort()
+
         WriteEvent("Backgroundworker started, beginning main loop.")
 
 
@@ -344,105 +356,103 @@ Public Class NCM_Entry
 
             If Int32.TryParse(txtbox_NCM_Number.Text, sink) Then
 
-                If Int32.TryParse(txtbox_Cust_Part_Number.Text, sink) Then
-
-                    If should_update Then
-
-                        Dim base As String = "Update NCM_" & customer_location.Replace(" ", "_") & " Set NCM_Number = '" & txtbox_NCM_Number.Text & "', NCM_Date = '" & NCM_Date.Text & "', RFID = '" & txtbox_RFID_Tag.Text & "', Cust_Part_Number = '" & txtbox_Cust_Part_Number.Text & "', Part_ID = (select top 1 id from part_type where description = '" & txtbox_Part_Description.Text & "'), Color = '" & combobox_Color.Text & "', Defect_Qty = " & combobox_Defect_Quantity.Text & ", Notes = '" & txtbox_Comments.Text & "'"
-
-                        Dim def As String = ""
 
 
-                        For Each parent_control As Control In flowlayoutpanel_Defects.Controls
-                            For Each ctrl As Control In parent_control.Controls
-                                If ctrl.Name.Length > 2 Then
+                If should_update Then
 
-                                    def += ", " & ctrl.Name & " = '" & ctrl.Text & "'"
+                    Dim base As String = "Update NCM_" & customer_location.Replace(" ", "_") & " Set NCM_Number = '" & txtbox_NCM_Number.Text & "', NCM_Date = '" & NCM_Date.Text & "', RFID = '" & txtbox_RFID_Tag.Text & "', Cust_Part_Number = '" & txtbox_Cust_Part_Number.Text & "', Part_ID = (select top 1 id from part_type where description = '" & txtbox_Part_Description.Text & "'), Color = '" & combobox_Color.Text & "', Defect_Qty = " & combobox_Defect_Quantity.Text & ", Notes = '" & txtbox_Comments.Text & "' where RFID = '" & txtbox_RFID_Tag.Text & "'"
+
+                    Dim def As String = ""
 
 
-                                End If
-                            Next
+                    For Each parent_control As Control In flowlayoutpanel_Defects.Controls
+                        For Each ctrl As Control In parent_control.Controls
+                            If ctrl.Name.Length > 2 Then
+
+                                def += ", " & ctrl.Name & " = '" & ctrl.Text & "'"
+
+
+                            End If
+                        Next
+                    Next
+
+                    For i As Integer = flowlayoutpanel_Defects.Controls.Count To 6
+                        Dim label As String = "Defect "
+                        Dim dummy_panel As New Defect_Panel
+
+                        For Each str As String In dummy_panel.LabelArray
+                            If str <> "Label" Then
+
+                                def += ", " & label.Replace(" ", "") & i.ToString & "_" & str.Replace(" ", "_") & "= null"
+                            End If
+
                         Next
 
-                        For i As Integer = flowlayoutpanel_Defects.Controls.Count To 6
-                            Dim label As String = "Defect "
-                            Dim dummy_panel As New Defect_Panel
-
-                            For Each str As String In dummy_panel.LabelArray
-                                If str <> "Label" Then
-
-                                    def += ", " & label.Replace(" ", "") & i.ToString & "_" & str.Replace(" ", "_") & "= null"
-                                End If
-
-                            Next
-
-                        Next
+                    Next
 
 
-                        Dim where As String = " Where RFID = '" & txtbox_RFID_Tag.Text & "'"
+                    Dim where As String = " Where RFID = '" & txtbox_RFID_Tag.Text & "'"
 
 
-                        Dim query As String = base & def
+                    Dim query As String = base & def
 
-                        Try
-                            ' MsgBox(query)
-                            toolboxMM.SQLTools.queryDatabase(query, "nada")
-                        Catch ex As Exception
-                            MsgBox("Unable to add information to database.")
-                        End Try
+                    Try
+                        ' MsgBox(query)
+                        toolboxMM.SQLTools.queryDatabase(query, "nada")
+                    Catch ex As Exception
+                        MsgBox("Unable to add information to database.")
+                    End Try
 
-
-                    Else
-
-                        Dim base As String = "Insert Into NCM_" & customer_location.Replace(" ", "_")
-                        Dim req_columns As String = "(NCM_Number, NCM_Date, RFID, Cust_Part_Number, Part_ID, Color, Defect_Qty, Notes"
-
-                        Dim def_columns As String = ""
-                        Dim def_values As String = ""
-
-                        For Each parent_control As Control In flowlayoutpanel_Defects.Controls
-                            For Each ctrl As Control In parent_control.Controls
-                                If ctrl.Name.Length > 2 Then
-                                    def_columns += ", " & ctrl.Name
-                                    def_values += "', '" & ctrl.Text
-
-
-                                End If
-                            Next
-                        Next
-
-
-                        Dim req_values As String = ") values('" & txtbox_NCM_Number.Text & "', '" & NCM_Date.Text & "', '" & txtbox_RFID_Tag.Text & "', '" & txtbox_Cust_Part_Number.Text & "', (select top 1 id from part_type where description = '" & txtbox_Part_Description.Text & "'), '" & combobox_Color.Text & "', " & combobox_Defect_Quantity.Text & ", '" & txtbox_Comments.Text
-
-
-
-
-                        Dim cap As String = "')"
-
-                        Dim query As String = base & req_columns & def_columns & req_values & def_values & cap
-
-                        Try
-                            ' MsgBox(query)
-                            toolboxMM.SQLTools.queryDatabase(query, "nada")
-                        Catch ex As Exception
-                            MsgBox("Unable to add information to database.")
-                        End Try
-
-                    End If
 
                 Else
-                    MsgBox("Please enter a valid Part Number")
+
+                    Dim base As String = "Insert Into NCM_" & customer_location.Replace(" ", "_")
+                    Dim req_columns As String = "(NCM_Number, NCM_Date, RFID, Cust_Part_Number, Part_ID, Color, Defect_Qty, Notes"
+
+                    Dim def_columns As String = ""
+                    Dim def_values As String = ""
+
+                    For Each parent_control As Control In flowlayoutpanel_Defects.Controls
+                        For Each ctrl As Control In parent_control.Controls
+                            If ctrl.Name.Length > 2 Then
+                                def_columns += ", " & ctrl.Name
+                                def_values += "', '" & ctrl.Text
+
+
+                            End If
+                        Next
+                    Next
+
+
+                    Dim req_values As String = ") values('" & txtbox_NCM_Number.Text & "', '" & NCM_Date.Text & "', '" & txtbox_RFID_Tag.Text & "', '" & txtbox_Cust_Part_Number.Text & "', (select top 1 id from part_type where description = '" & txtbox_Part_Description.Text & "'), '" & combobox_Color.Text & "', " & combobox_Defect_Quantity.Text & ", '" & txtbox_Comments.Text
+
+
+
+
+                    Dim cap As String = "')"
+
+                    Dim query As String = base & req_columns & def_columns & req_values & def_values & cap
+
+                    Try
+                        ' MsgBox(query)
+                        toolboxMM.SQLTools.queryDatabase(query, "nada")
+                    Catch ex As Exception
+                        MsgBox("Unable to add information to database.")
+                    End Try
+
                 End If
 
 
+
+
             Else
-                    MsgBox("Please enter a valid NCM Number.")
+                MsgBox("Please enter a valid NCM Number.")
             End If
 
 
         Else
-                MsgBox("Please scan a part before submitting.")
-            End If
+            MsgBox("Please scan a part before submitting.")
+        End If
 
 
 
@@ -477,357 +487,302 @@ Public Class NCM_Entry
 
 #End Region
 
+
+    Private Sub portTimerElapsed()
+
+        ' SerialPort.GetPortNames()
+        If Not ScannerPort.IsOpen() Then
+            FindPort()
+            OpenPort()
+
+        End If
+
+    End Sub
+
+
+
+    Private Sub DataReceived(sender As Object, e As SerialDataReceivedEventArgs) Handles ScannerPort.DataReceived
+
+
+        Dim current_read As String = ""
+
+        Try
+            current_read = ScannerPort.ReadExisting
+        Catch ex As Exception
+            ' MsgBox("Unable to read data from port." & vbCrLf & vbCrLf & ex.Message)
+        End Try
+
+        '
+        'MsgBox(ExtractTag(current_read))
+
+        Dim parsed_read As String = ExtractTag(current_read)
+
+        If parsed_read <> "" Then
+            RFID_Tag = parsed_read
+            If InvokeRequired Then
+                Invoke(Sub() Update_Screen())
+            Else
+                Update_Screen()
+            End If
+
+
+        End If
+
+        ' RFID_Tag = current_read
+
+
+
+        If Not ScannerPort.IsOpen Then
+
+            FindPort()
+            OpenPort()
+
+        End If
+
+    End Sub
+
+
+    Private Function ExtractTag(raw As String) As String
+
+        If raw.Contains("EP: ") Then
+
+            Dim zeroindex As Integer = raw.IndexOf("EP: ")
+            Dim newstring As String = Strings.Mid(raw, zeroindex + 5, zeroindex + 19 + 5)
+            Return newstring
+
+        Else
+            ' TODO: add error handling
+            Return ""
+        End If
+
+
+
+
+    End Function
+
+
+    Private Sub ErrorReceived(sender As Object, e As SerialErrorReceivedEventArgs) Handles ScannerPort.ErrorReceived
+
+        ' MsgBox("Error received on scanner port." & vbCrLf & vbCrLf & e.ToString)
+
+        If ScannerPort.IsOpen Then
+            Try
+                ScannerPort.Close()
+            Catch ex As Exception
+
+            End Try
+        End If
+
+        FindPort()
+        OpenPort()
+
+    End Sub
+
+    Private Sub PinChanged(sender As Object, e As SerialPinChangedEventArgs) Handles ScannerPort.PinChanged
+
+        If ScannerPort.IsOpen Then
+            Try
+                ScannerPort.Close()
+            Catch ex As Exception
+
+            End Try
+
+        End If
+
+        portTimer.Interval = 500
+        portTimer.Start()
+        'FindPort()
+        'OpenPort()
+
+    End Sub
+
+
+
+    Private Sub FindPort()
+
+        Dim scanning_ports As Boolean = True
+
+        For i As Integer = 0 To 5
+
+
+            Dim ports() As String = SerialPort.GetPortNames()
+
+            If ports.Length = 0 Then
+                If InvokeRequired Then
+                    Invoke(Sub() lbl_scannerstatus.NoPortsFound())
+                Else
+                    lbl_scannerstatus.NoPortsFound()
+                End If
+
+
+            Else
+                If InvokeRequired Then
+                    Invoke(Sub() lbl_scannerstatus.ScanningPorts())
+                Else
+                    lbl_scannerstatus.ScanningPorts()
+                End If
+
+            End If
+
+            For Each port_name As String In ports
+
+                If scanning_ports Then
+
+                    Dim port As New SerialPort(port_name)
+                    Dim return_val As String = ""
+                    Dim Command As String = ""
+
+                    Try
+                        If port.IsOpen Then
+                            port.Close()
+                        End If
+
+                        port.ReadTimeout = 1000
+                        port.BaudRate = 115200 '9600
+                        port.DataBits = 8
+                        port.Parity = IO.Ports.Parity.None
+                        port.StopBits = IO.Ports.StopBits.One
+                        port.Handshake = IO.Ports.Handshake.None
+
+
+                        port.Open()
+
+
+                    Catch ex As Exception
+                        ' MsgBox("Unable to open serial port." & vbCrLf & vbCrLf & ex.Message)
+                    End Try
+
+                    Try
+
+
+
+                        ''                    return_val = port.ReadExisting()
+                        ''                    WriteEvent(return_val & port.PortName, EventInfo)
+                        ''                    If return_val = "CS: .fd -x" & vbCrLf & "OK:" & vbCrLf & vbCrLf Then
+                        ''                        WriteEvent("Proper Response Detected", EventInfo)
+                        ''                        port.WriteLine(".iv -fs on -o " & strength & " -n" & vbCr)
+                        ''                        Thread.Sleep(250)
+                        ''                        port.WriteLine(".bl")
+                        ''                        Thread.Sleep(250)
+                        ''                        port.WriteLine(".sa -aon -soff -doff" & vbCr)
+                        ''                        Thread.Sleep(250)
+                        ''                        return_val = port.ReadExisting()
+                        ''                        WriteEvent(return_val, EventInfo)
+                        ''                        Return port
+                        ''                    End If
+
+                        port.Write(".fd -x" & vbCr)
+                        port.RtsEnable = True
+
+                        Thread.Sleep(200)
+
+                        Dim temp As String = port.ReadExisting()
+
+
+
+
+                        If temp.Contains("CS: .fd -x" & vbCrLf & "OK:" & vbCrLf & vbCrLf) Then
+
+                            port.WriteLine(".iv -fs on -o " & strength & " -n" & vbCr)
+                            ''                        Thread.Sleep(250)
+                            ''                        port.WriteLine(".bl")
+                            ''                        Thread.Sleep(250)
+                            ''                        port.WriteLine(".sa -aon -soff -doff" & vbCr)
+                            ''                        Thread.Sleep(250)
+                            ''                        return_val = port.ReadExisting()
+                            ''                        WriteEvent(return_val, EventInfo)
+
+                            port.Close()
+
+                            portTimer.Enabled = False
+
+                            If InvokeRequired Then
+                                Invoke(Sub() lbl_scannerstatus.PortConnected())
+                            Else
+                                lbl_scannerstatus.PortConnected()
+                            End If
+
+                            ScannerPort = port
+                            scanning_ports = False
+                            ' MsgBox("success")
+
+                            Return
+
+                        End If
+
+                    Catch ex As Exception
+                        ' MsgBox("Unable to communicate with port." & vbCrLf & vbCrLf & ex.Message)
+                    End Try
+
+                End If
+            Next
+
+        Next
+
+        If scanning_ports Then
+            portTimer.Start()
+        End If
+
+
+    End Sub
+
+    Private Sub OpenPort()
+
+
+        If Not portTimer.Enabled Then
+
+
+
+            Try
+                If ScannerPort.IsOpen Then
+                    Try
+                        ScannerPort.Close()
+                    Catch ex As Exception
+
+                    End Try
+
+                End If
+
+                ScannerPort.ReadTimeout = 1000
+                ScannerPort.BaudRate = 115200 '9600
+                ScannerPort.DataBits = 8
+                ScannerPort.Parity = IO.Ports.Parity.None
+                ScannerPort.StopBits = IO.Ports.StopBits.One
+                ScannerPort.Handshake = IO.Ports.Handshake.None
+
+                ScannerPort.Open()
+                ScannerPort.RtsEnable = True
+                ScannerPort.WriteLine(".iv -fs on -o " & strength & " -n" & vbCr)
+
+
+
+            Catch ex As Exception
+                ' MsgBox("Unable to open main serial port." & vbCrLf & vbCrLf & ex.Message)
+            End Try
+
+        End If
+
+    End Sub
+
+
+
     ' This region handles activity related to the handscanner. It listens on the com port and updates the textboxes for RFID Tag, Part Description, and Color
 #Region " Hand Scanner "
 
-
-
-
-    Structure RFID_Data
-        Dim Index As Integer
-        Dim RFID_Tag As String
-        Dim Part_Name As String
-        Dim RSSI_text As String
-    End Structure
 
     Structure Part_Type
         Dim Description As String
         Dim Prefix As String
     End Structure
 
-    Structure Part_Count
-        Dim Index As Integer
-        Dim Description As String
-        Dim Count As Integer
-    End Structure
-
-    Public SQLCon As New SqlConnection
-
-    Public DBConnection As String
-    Public comm_port As String
     Public strength As String
-    Public Station As String
     Public RFID_Tag As String
-    Dim RFID_Tag_Buffered As String
-    Public RSSI_Value As String = ""
-
-    Dim update_string As String
-    Dim eval_job As Integer
-    Dim Database_Good As Boolean = True
-    Dim RFID_Array() As RFID_Data
-    Dim Mem_Array() As RFID_Data
-    Dim overall_count As Integer = 1
     Dim Part_Array() As Part_Type
-    Dim Count_Array() As Part_Count
     Dim counter As Integer
-    Dim Array_Clear As Boolean
-    Dim Screen_Updating As Boolean
-    Dim pending_user As Boolean = False
-
-
-
-    Const User_Interaction As Boolean = True
-
-
-    'set up the thread that monitors serial comms with handheld reader 
-    Public Sub New()
-        InitializeComponent()
-        BackgroundWorker1.WorkerReportsProgress = True
-        BackgroundWorker1.WorkerSupportsCancellation = True
-
-
-    End Sub
-
-    Private Function open_port() As SerialPort
-
-        txtbox_RFID_Tag.Text = " "
-        txtbox_Part_Description.Text = " "
-
-        Dim ports() As String = SerialPort.GetPortNames()
-        Dim str_ports As String = ""
-
-        For Each port_piece As String In ports
-            If str_ports = "" Then
-                str_ports += port_piece
-            Else
-                str_ports += ", " & port_piece
-            End If
-            'str_ports += port_piece & ", "
-        Next
-        WriteEvent("Available ports:  " + str_ports, EventInfo)
-
-        While True
-
-
-            ports = SerialPort.GetPortNames()
-
-
-            For Each portName As String In ports
-                Dim port As New SerialPort(portName)
-                Dim return_val As String = ""
-                Dim Command As String = ""
-                Try
-                    'TODO: take a look at order re: potential hangup/slowdown
-                    port.Open()
-                    port.ReadTimeout = 1000
-                    port.BaudRate = 115200
-                    port.DataBits = 8
-                    port.Handshake = IO.Ports.Handshake.None
-                    port.Parity = IO.Ports.Parity.None
-                    port.StopBits = IO.Ports.StopBits.One
-
-                    port.WriteLine(".fd -x" & vbCr)
-                    port.RtsEnable = True
-                    'TODO: alternatives to sleep
-                    Thread.Sleep(500)
-                    return_val = port.ReadExisting()
-                    WriteEvent(return_val & port.PortName, EventInfo)
-                    If return_val = "CS: .fd -x" & vbCrLf & "OK:" & vbCrLf & vbCrLf Then
-                        WriteEvent("Proper Response Detected", EventInfo)
-                        port.WriteLine(".iv -fs on -o " & strength & " -n" & vbCr)
-                        Thread.Sleep(250)
-                        port.WriteLine(".bl")
-                        Thread.Sleep(250)
-                        port.WriteLine(".sa -aon -soff -doff" & vbCr)
-                        Thread.Sleep(250)
-                        return_val = port.ReadExisting()
-                        WriteEvent(return_val, EventInfo)
-                        Return port
-                    End If
-
-
-                Catch ex As Exception
-                    WriteEvent(return_val & port.PortName & "Catch", EventInfo)
-                    If port IsNot Nothing Then port.Close()
-                    WriteEvent(("Error connecting to port " & portName & ": " & ex.Message))
-                Finally
-                    WriteEvent(return_val & port.PortName & "Finally", EventInfo)
-                    ' Ensure the port is closed after attempting to open it
-                    If port.IsOpen Then
-                        port.Close()
-                    End If
-                    port.Dispose() ' Dispose of the SerialPort object
-
-                End Try
-            Next
-            Thread.Sleep(5000)
-        End While
-    End Function
-
-
-
-    ' This event handler is where the time-consuming work is done.
-    Private Sub backgroundWorker1_DoWork(ByVal sender As System.Object,
-    ByVal e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-
-        Dim worker As BackgroundWorker = CType(sender, BackgroundWorker)
-
-        Dim wait_time As Date = Now()
-
-        Dim return_val As String = ""
-        Dim command As String
-
-
-        Dim counter As Integer = 0
-        Dim good_Data As Boolean = False
-        Dim Ascii_Value As Integer = 0
-        Dim returnStr As String = ""
-        Dim Incoming As String = ""
-        Dim read_timeout_count As Integer = 0
-
-        Dim com1 As SerialPort = open_port()
-        com1.Open()
-
-        ' Start the serial communications loop in the background worker thread
-        Do While 1 = 1
-
-
-            Database_Good = True
-
-
-            'Open the serial port and send the .fd command to set the handheld reader to factory defaults
-            Try
-
-
-ConnectionStart:
-
-
-                Try
-
-                    Do While True ' Database_Good
-
-                        ' WriteEvent("in while loop", EventInfo)
-Retry:
-
-                        ' If reconfig_reader Then GoTo ConnectionStart 'And Not pending_user
-
-
-                        'WriteEvent("trying to read com1", EventInfo)
-                        Incoming = com1.ReadLine()
-                        ' WriteEvent("reading com1: " & Incoming, EventInfo)
-
-                        ' TODO: add something to not let the user scan in more items
-                        If Incoming IsNot Nothing Then
-                            ' TODO: move if statement to a better spot
-                            ' If lbl_Scan_Fail.Visible = True Then LabelUpdate(False)
-                            read_timeout_count = 0
-
-                            If Mid(Incoming, 1, 10) = "SW: single" Then
-                                WriteEvent("Trigger press detected", EventInfo)
-                                com1.WriteLine(".iv" & vbCr)
-                            End If
-
-                            If Mid(Incoming, 1, 2) = "EP" Then  ' When the reader sends tag data it is preceded by the two characters EP
-                                Incoming = Mid(Incoming, 5, 24)
-                                RSSI_Value = ""
-                                RSSI_Value = com1.ReadLine()
-
-                                'Do While RSSI_Value Is Nothing
-                                '    RSSI_Value = com1.ReadLine()
-                                'Loop
-
-
-                                ' RSSI_Value = Mid(RSSI_Value, 6, 2)
-                                ' MsgBox(Incoming + " // " + RSSI_Value)
-                            End If
-
-                            ' WriteEvent(RSSI_Value)
-                            ' Dim RSSI_Int As String = RSSI_Value
-                            ' MsgBox((Convert.ToInt16(RSSI_Int)).ToString)
-                            ' If Convert.ToInt16(RSSI_Int) < 1000 Then
-                            good_Data = True
-                            For counter = 1 To Len(Incoming)
-                                Ascii_Value = Asc(Mid(Incoming, counter, 1))
-                                If counter = 1 Then
-                                    If Ascii_Value < 65 Or Ascii_Value > 70 Or Ascii_Value = 69 Then  ' Check to make sure the tag data starts with A,B,C,D,F.  Leave out E because 
-                                        good_Data = False                                             '  that is an employee tag
-                                    End If
-                                End If
-                                'loop through tag checking for valid characters
-                                If (Ascii_Value < 48) Or ((Ascii_Value > 57) And (Ascii_Value < 65)) Or ((Ascii_Value > 70) And (Ascii_Value < 97)) Or (Ascii_Value > 102) Then
-                                    good_Data = False
-                                End If
-                            Next
-                            ' If good data is detected put the RFID tag into a string variable and trigger the update from the background thread to the main user interface thread
-                            If good_Data Then
-                                RFID_Tag_Buffered = Incoming
-                                worker.ReportProgress(1)
-
-                            End If
-                            ' End If
-
-                            ' Consider Else statement to good data for false
-
-                        End If
-
-
-                    Loop
-
-                Catch time_ex As TimeoutException
-                    read_timeout_count += 1
-                    If (read_timeout_count Mod 5) = 0 Then
-                        com1.WriteLine(".bl")
-                    End If
-
-                    If read_timeout_count > 8 Then
-                        If com1 IsNot Nothing Then com1.Close()
-                        WriteEvent("No serial communications for over 4 seconds.  Attempt to reset port.", EventInfo)
-                        ' If Not (pending_user Or reconfig_reader) Then LabelUpdate(True)
-
-                        ' WriteEvent("visible", EventInfo)
-                        Threading.Thread.Sleep(250)
-                        com1 = My.Computer.Ports.OpenSerialPort(comm_port)
-                        com1.ReadTimeout = 500
-                        command = ".fd"
-                        com1.WriteLine(command)
-                        return_val = com1.ReadExisting()
-                        command = ".iv -r on -o " & strength & " -p -n" ' added -p to return -fs on
-                        ' TODO: look into -fs parameter and whether is is necessary
-                        com1.WriteLine(command)
-                        Threading.Thread.Sleep(250)
-                        return_val = com1.ReadExisting()
-                        WriteEvent(return_val, EventInfo)
-                        com1.WriteLine(command)
-                        Threading.Thread.Sleep(100)
-                        GoTo Retry
-                    Else
-                        GoTo Retry
-                    End If
-
-                Catch ex As Exception
-                    MsgBox(ex.ToString)
-
-
-
-                End Try
-
-
-            Catch ex As Exception
-                If read_timeout_count > 180 Then
-                    MsgBox("Error Opening Serial Port: " & comm_port & ex.Message, EventError)
-                    WriteEvent("Error Opening Serial Port: " & comm_port & ex.Message, EventError)
-                    Application.Exit()
-                    Process.Start(Application.ExecutablePath)
-                End If
-                ' WriteEvent("Error Opening Serial Port: " & comm_port & ex.Message, EventError)
-                ' If Not (pending_user Or reconfig_reader) Then LabelUpdate(True)
-
-
-            End Try
-
-            wait_time = DateAdd(DateInterval.Second, 0.125, Now())
-            Do Until wait_time < Now()
-            Loop
-
-        Loop
-
-
-    End Sub
-
-    ' This event handler updates the progress.
-    Private Sub backgroundWorker1_ProgressChanged(ByVal sender As System.Object,
-    ByVal e As ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
-        'This event is triggered from the background serial comms thread.  Transfer the RFID tag into a string variable once and do not allow the data to change until the screen
-        ' is done updating
-        If Screen_Updating = False Then
-            RFID_Tag = RFID_Tag_Buffered
-            Screen_Updating = True
-            Update_Screen()
-            Screen_Updating = False
-        End If
-
-
-    End Sub
-
-    ' This event handler deals with the results of the background operation.
-    Private Sub backgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object,
-    ByVal e As RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
-        If e.Cancelled = True Then
-            'resultLabel.Text = "Canceled!"
-        ElseIf e.Error IsNot Nothing Then
-            'resultLabel.Text = "Error: " & e.Error.Message
-        Else
-            'resultLabel.Text = "Done!"
-        End If
-    End Sub
-
 
 
 
     Sub InitializeVariables()
-        ' grab database information out of registry and register application with event log
-        'Try
-        '    EventLog.CreateEventSource(App_Name, "Application")
-        'Catch ex As Exception
-        '    If ex.Message <> "Source Shipping Reader already exists on the local computer." Then
-
-        '        If User_Interaction Then
-        '            MsgBox("Error Registering the app with the Event Viewer: " & ex.Message)
-        '        End If
-        '        WriteEvent("Error Registering the app with the Event Viewer: " & ex.Message, EventWarning)
-        '    End If
-
-        'End Try
 
         Dim strDBServer As String = ""
         Dim strDBUID As String = ""
@@ -843,9 +798,7 @@ Retry:
                         strDBServer = regpaintprocesskey.GetValue("DBServer", "")
                         strDBUID = regpaintprocesskey.GetValue("DBUID", "")
                         strDBpassword = regpaintprocesskey.GetValue("DBpassword", "")
-                        comm_port = regpaintprocesskey.GetValue("Port1", "")
                         strength = regpaintprocesskey.GetValue("ReadStrength", "")
-                        Station = regpaintprocesskey.GetValue("Station", "")
                     End If
                     regpaintprocesskey.Close()
                 End If
@@ -854,9 +807,7 @@ Retry:
             regsoftwarekey.Close()
         End If
         If strDBServer = "" Then
-            If User_Interaction Then
-                MsgBox("Database is not configured in the registry.")
-            End If
+
             WriteEvent("Database is not configured in the registry.", EventError)
         Else
             DBConnection = "Server=" + strDBServer + ";uid=" + strDBUID + ";pwd=" + strDBpassword + ";database=RFID;Connection Timeout=30;"
@@ -952,9 +903,14 @@ Retry:
 
         Dim picturetable As DataSet = toolboxMM.SQLTools.queryDatabase("Select Part_Type.Image_Name as Image From Part_Type Where RFID_Prefix = '" & RFID_Prefix & "'", "picture")
 
-        For Each dr As DataRow In picturetable.Tables("picture").Rows
-            picturebox_Part.Image = Image.FromFile(Image_Share & dr("Image"), False)
-        Next
+        Try
+            For Each dr As DataRow In picturetable.Tables("picture").Rows
+                picturebox_Part.Image = Image.FromFile(Image_Share & dr("Image"), False)
+            Next
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 

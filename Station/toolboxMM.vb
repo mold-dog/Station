@@ -311,7 +311,8 @@ Namespace toolboxMM
 
             Catch ex As Exception
 
-                MsgBox("Query: " & query & vbCrLf & "Table: " & table & vbCrLf & vbCrLf & "Exception Message: " & vbCrLf & ex.ToString)
+                WriteEvent("Query: " & query & vbCrLf & "Table: " & table & vbCrLf & vbCrLf & "Exception Message: " & vbCrLf & ex.ToString)
+                ' MsgBox("Query: " & query & vbCrLf & "Table: " & table & vbCrLf & vbCrLf & "Exception Message: " & vbCrLf & ex.ToString)
 
 
             End Try

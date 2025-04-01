@@ -151,17 +151,18 @@ Public Class Ctr_Operator_Status_by_Function
         Dim Schedule_Panel_Bottom As Integer
         Dim Debug_Step As Integer
 
-
-
+        WriteEvent("Updating screen.", EventInfo)
         Try
             If Area_ID <= 0 Then
                 Exit Sub
             End If
+
             Call Update_Completed_to_Ship()
             SQLCon.ConnectionString = DBConnection
             SQLCon.Open()
             Debug_Step = 1
-            Dim daCounts_Data As New SqlDataAdapter("Exec Operator_Status_by_Area " & Area_ID, SQLCon)
+            Dim daCounts_Data As New SqlDataAdapter("Exec Operator_Status_by_Area0 " & Area_ID, SQLCon)
+            WriteEvent("Querying Database: " & vbCrLf & "Exec Operator_Status_by_Area0 " & Area_ID, EventInfo)
             daCounts_Data.SelectCommand.CommandTimeout = SQL_Timeout
             Dim dsCounts As New DataSet
             daCounts_Data.Fill(dsCounts, "Counts")
@@ -173,6 +174,8 @@ Public Class Ctr_Operator_Status_by_Function
             SQLCon.Close()
             Enable_Rate_Lbls = False
             Enable_Schedule_Status = False
+
+            WriteEvent("Data received, looping through data.", EventInfo)
             For Each drRateView As DataRow In dsView_Rate.Tables("Enable_Rate_View").Rows
                 If drRateView("Enable_Rate_View") Then
                     Enable_Rate_Lbls = True
@@ -181,6 +184,8 @@ Public Class Ctr_Operator_Status_by_Function
                     Enable_Schedule_Status = True
                 End If
             Next
+
+            WriteEvent("Moving through counts table.", EventInfo)
             For Each drCounts As DataRow In dsCounts.Tables("Counts").Rows
                 If Quantity_Count <= Max_Counts Then
                     If first_row Then
@@ -211,6 +216,8 @@ Public Class Ctr_Operator_Status_by_Function
                         Me.Controls("lbl_Reclear" & Quantity_Count).Text = drCounts("reclear") & ""
                         Me.Controls("lbl_Rework" & Quantity_Count).Text = drCounts("rework") & ""
                         Me.Controls("lbl_FTQ" & Quantity_Count).Text = drCounts("FTQ") & ""
+                        Me.Controls("lbl_Incomplete" & Quantity_Count).Text = drCounts("Incomplete") & ""
+
                         If drCounts("points") > 1000 Then
                             set_progressbar_value(Me.Controls("ProgressBar" & Quantity_Count), 1000)
                         ElseIf drCounts("points") < 1 Then
@@ -224,11 +231,13 @@ Public Class Ctr_Operator_Status_by_Function
                             Line_Visible(Quantity_Count, False)
                             Me.Controls("lbl_FTQ" & Quantity_Count).Visible = False
                             Me.Controls("ProgressBar" & Quantity_Count).Visible = False
+                            'Me.Controls("lbl_Incomplete" & Quantity_Count).Visible = False
                         Else
                             Me.Controls("lbl_Operator" & Quantity_Count).Visible = True
                             Line_Visible(Quantity_Count, True)
                             Me.Controls("lbl_FTQ" & Quantity_Count).Visible = True
                             Me.Controls("ProgressBar" & Quantity_Count).Visible = True
+                            'Me.Controls("lbl_Incomplete" & Quantity_Count).Visible = True
                             prev_op = Me.Controls("lbl_Operator" & Quantity_Count).Text
                         End If
 
@@ -241,6 +250,7 @@ Public Class Ctr_Operator_Status_by_Function
                         Me.Controls("lbl_TU" & Quantity_Count).Visible = True
                         Me.Controls("lbl_Reclear" & Quantity_Count).Visible = True
                         Me.Controls("lbl_Rework" & Quantity_Count).Visible = True
+                        Me.Controls("lbl_Incomplete" & Quantity_Count).Visible = True
 
                         If Enable_Rate_Lbls Then
                             Me.Controls("lbl_Rate").Visible = True
@@ -256,6 +266,8 @@ Public Class Ctr_Operator_Status_by_Function
 
             Next
 
+
+            WriteEvent("Counts table complete.", EventInfo)
 
             If Enable_Schedule_Status Then
                 Pnl_Schedule.Top = 45 + (Quantity_Count * 31)
@@ -277,6 +289,8 @@ Public Class Ctr_Operator_Status_by_Function
                     Pnl_Finesse.Visible = True
                 End If
             End If
+
+            WriteEvent("Making unused controls invisible.", EventInfo)
             Do While Quantity_Count <= Max_Counts
                 Me.Controls("lbl_Operator" & Quantity_Count).Visible = False
                 Me.Controls("lbl_Rate" & Quantity_Count).Visible = False
@@ -288,13 +302,14 @@ Public Class Ctr_Operator_Status_by_Function
                 Me.Controls("lbl_Rework" & Quantity_Count).Visible = False
                 Me.Controls("lbl_FTQ" & Quantity_Count).Visible = False
                 Me.Controls("ProgressBar" & Quantity_Count).Visible = False
+                Me.Controls("lbl_Incomplete" & Quantity_Count).Visible = False
                 Line_Visible(Quantity_Count, False)
 
                 Quantity_Count += 1
             Loop
             lbl_Comm_Fail.Visible = False
 
-
+            WriteEvent("Updating FTB Data.", EventInfo)
             Call Update_FTB_data()
             lbl_Comm_Fail.Visible = False
 
@@ -719,4 +734,6 @@ Public Class Ctr_Operator_Status_by_Function
         Update_Screen()
 
     End Sub
+
+
 End Class

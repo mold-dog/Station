@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Inventory_Clear
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,9 @@ Partial Class Inventory_Clear
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DGV = New System.Windows.Forms.DataGridView()
         Me.lbl_end_date = New System.Windows.Forms.Label()
         Me.lbl_start_date = New System.Windows.Forms.Label()
@@ -39,22 +39,20 @@ Partial Class Inventory_Clear
         Me.btn_load = New System.Windows.Forms.Button()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.lbl_narrow_search = New System.Windows.Forms.Label()
-        Me.line_Title = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DGV
         '
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV.DefaultCellStyle = DataGridViewCellStyle3
         Me.DGV.Location = New System.Drawing.Point(20, 301)
         Me.DGV.Name = "DGV"
         Me.DGV.RowTemplate.Height = 28
@@ -65,7 +63,7 @@ Partial Class Inventory_Clear
         '
         Me.lbl_end_date.AutoSize = True
         Me.lbl_end_date.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lbl_end_date.Location = New System.Drawing.Point(659, 55)
+        Me.lbl_end_date.Location = New System.Drawing.Point(659, 46)
         Me.lbl_end_date.Name = "lbl_end_date"
         Me.lbl_end_date.Size = New System.Drawing.Size(133, 32)
         Me.lbl_end_date.TabIndex = 13
@@ -75,7 +73,7 @@ Partial Class Inventory_Clear
         '
         Me.lbl_start_date.AutoSize = True
         Me.lbl_start_date.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lbl_start_date.Location = New System.Drawing.Point(407, 55)
+        Me.lbl_start_date.Location = New System.Drawing.Point(407, 46)
         Me.lbl_start_date.Name = "lbl_start_date"
         Me.lbl_start_date.Size = New System.Drawing.Size(142, 32)
         Me.lbl_start_date.TabIndex = 12
@@ -113,7 +111,7 @@ Partial Class Inventory_Clear
         '
         Me.lbl_color.AutoSize = True
         Me.lbl_color.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lbl_color.Location = New System.Drawing.Point(301, 202)
+        Me.lbl_color.Location = New System.Drawing.Point(301, 193)
         Me.lbl_color.Name = "lbl_color"
         Me.lbl_color.Size = New System.Drawing.Size(83, 32)
         Me.lbl_color.TabIndex = 15
@@ -132,7 +130,7 @@ Partial Class Inventory_Clear
         '
         Me.lbl_part_type.AutoSize = True
         Me.lbl_part_type.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lbl_part_type.Location = New System.Drawing.Point(606, 201)
+        Me.lbl_part_type.Location = New System.Drawing.Point(606, 192)
         Me.lbl_part_type.Name = "lbl_part_type"
         Me.lbl_part_type.Size = New System.Drawing.Size(137, 32)
         Me.lbl_part_type.TabIndex = 17
@@ -201,30 +199,11 @@ Partial Class Inventory_Clear
         '
         Me.lbl_narrow_search.AutoSize = True
         Me.lbl_narrow_search.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lbl_narrow_search.Location = New System.Drawing.Point(301, 163)
+        Me.lbl_narrow_search.Location = New System.Drawing.Point(301, 154)
         Me.lbl_narrow_search.Name = "lbl_narrow_search"
         Me.lbl_narrow_search.Size = New System.Drawing.Size(87, 32)
         Me.lbl_narrow_search.TabIndex = 24
         Me.lbl_narrow_search.Text = "Filter:"
-        '
-        'line_Title
-        '
-        Me.line_Title.BorderWidth = 3
-        Me.line_Title.Name = "line_Title"
-        Me.line_Title.X1 = 30
-        Me.line_Title.X2 = 330
-        Me.line_Title.Y1 = 56
-        Me.line_Title.Y2 = 56
-        '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.line_Title})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1101, 839)
-        Me.ShapeContainer1.TabIndex = 25
-        Me.ShapeContainer1.TabStop = False
         '
         'Inventory_Clear
         '
@@ -247,7 +226,6 @@ Partial Class Inventory_Clear
         Me.Controls.Add(Me.dt_picker_end)
         Me.Controls.Add(Me.dt_picker_start)
         Me.Controls.Add(Me.DGV)
-        Me.Controls.Add(Me.ShapeContainer1)
         Me.Name = "Inventory_Clear"
         Me.Text = "Inventory_Clear"
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
@@ -272,6 +250,4 @@ Partial Class Inventory_Clear
     Friend WithEvents btn_load As Button
     Friend WithEvents btn_delete As Button
     Friend WithEvents lbl_narrow_search As Label
-    Friend WithEvents line_Title As PowerPacks.LineShape
-    Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
 End Class

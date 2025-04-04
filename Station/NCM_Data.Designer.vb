@@ -106,7 +106,7 @@ Partial Class NCM_Data
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.Label2.Location = New System.Drawing.Point(352, 7)
+        Me.Label2.Location = New System.Drawing.Point(352, -2)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(142, 32)
         Me.Label2.TabIndex = 7
@@ -116,7 +116,7 @@ Partial Class NCM_Data
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.Label3.Location = New System.Drawing.Point(564, 7)
+        Me.Label3.Location = New System.Drawing.Point(564, -2)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(133, 32)
         Me.Label3.TabIndex = 8
@@ -126,7 +126,7 @@ Partial Class NCM_Data
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.Label4.Location = New System.Drawing.Point(773, 7)
+        Me.Label4.Location = New System.Drawing.Point(773, -2)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(137, 32)
         Me.Label4.TabIndex = 9

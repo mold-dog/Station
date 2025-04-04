@@ -300,11 +300,10 @@ Module Module1
 
         Try
 
-            'WriteEvent("yeeeeehaw", EventError)
+            ' Inventory_Clear.ShowDialog()
+
 
             InitializeVariables()
-
-
 
 
             SQLCon.ConnectionString = DBConnection
@@ -316,6 +315,7 @@ Module Module1
                 ' Dim location_screen As New Location_Select
 
                 Call Check_User()
+
 
                 'If System.Environment.MachineName.Contains("Station") Then
                 '    location_screen.Show()
@@ -338,6 +338,17 @@ Module Module1
 
 
     Sub Check_Station()
+
+
+        Try
+
+            WriteEvent("Event logging initialized.", EventInfo)
+
+        Catch ex As Exception
+            ' MsgBox("error writing to event log")
+        End Try
+
+
         Dim found As Boolean = False
         Dim screen_Name As String = ""
 
@@ -419,10 +430,16 @@ Module Module1
                     Case "Defect"
 
                         'If Show_Paint_Defects Then
-                        'Enable_Finesse_Defects = False
+                        '    Enable_Finesse_Defects = False
                         'Else
-                        'Enable_Paint_Defects = False
+                        '    Enable_Paint_Defects = False
                         'End If
+                        'NCM_Form = New NCM_Entry
+
+                        'NCM_Form.CustomerLocation = "Mercury"
+                        'NCM_Form.ShowDialog()
+
+                        ''Slitter_Scanner.ShowDialog()
 
                         Defect_Tabs = Val(drStation("tabs") & "")
                         Defect_Form = New Defect
@@ -501,6 +518,8 @@ Module Module1
                 Login_Form.ShowDialog()
             Else
 
+                ' Slitter_Scanner.ShowDialog()
+
                 Dim location_screen As Location_Select = New Location_Select
                 location_screen.JohnsonCreek = User_Perms.JohnsonCreek
                 location_screen.Mauston = User_Perms.Mauston
@@ -524,6 +543,8 @@ Module Module1
 
                     End If
                 Else
+
+
 
                     Main_Menu_Form = New Main_Menu
                     Main_Menu_Form.ShowDialog()
@@ -707,6 +728,8 @@ Module Module1
 
             'log the entry
             EvLog.Source = App_Name
+
+
 
             Select Case Style
 

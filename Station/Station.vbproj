@@ -84,6 +84,7 @@
     <DebugType>none</DebugType>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>A71B6EB6E76D558802C278D00492D96B37245E60</ManifestCertificateThumbprint>
@@ -162,7 +163,12 @@
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="RFID Station, Version=1.0.9186.27884, Culture=neutral, processorArchitecture=x86" />
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -448,6 +454,12 @@
     <Compile Include="Defect_History.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inventory_Clear.Designer.vb">
+      <DependentUpon>Inventory_Clear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Clear.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Location_Select.Designer.vb">
       <DependentUpon>Location_Select.vb</DependentUpon>
     </Compile>
@@ -464,6 +476,12 @@
       <DependentUpon>Molding_Job_Process_Data.vb</DependentUpon>
     </Compile>
     <Compile Include="Molding_Job_Process_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NCM_Data.Designer.vb">
+      <DependentUpon>NCM_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NCM_Data.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NCM_Entry.Designer.vb">
@@ -514,6 +532,18 @@
     </Compile>
     <Compile Include="QRScanner.Designer.vb" />
     <Compile Include="QRScanner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Slitter_Import.Designer.vb">
+      <DependentUpon>Slitter_Import.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Slitter_Import.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Slitter_Scanner.Designer.vb">
+      <DependentUpon>Slitter_Scanner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Slitter_Scanner.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SupPressRep.Designer.vb" />
@@ -1168,6 +1198,9 @@
       <DependentUpon>Inventory.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Clear.resx">
+      <DependentUpon>Inventory_Clear.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory_Control.resx">
       <DependentUpon>Inventory_Control.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1189,6 +1222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mold_Schedule.resx">
       <DependentUpon>Mold_Schedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NCM_Data.resx">
+      <DependentUpon>NCM_Data.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NCM_Entry.resx">
       <DependentUpon>NCM_Entry.vb</DependentUpon>
@@ -1369,6 +1405,12 @@
     <EmbeddedResource Include="Shifts.resx">
       <DependentUpon>Shifts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Slitter_Import.resx">
+      <DependentUpon>Slitter_Import.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Slitter_Scanner.resx">
+      <DependentUpon>Slitter_Scanner.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Station_Defects.resx">
       <DependentUpon>Station_Defects.vb</DependentUpon>
     </EmbeddedResource>
@@ -1434,6 +1476,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
     <None Include="My Project\Settings.settings">
       <CustomToolNamespace>My</CustomToolNamespace>
       <Generator>SettingsSingleFileGenerator</Generator>

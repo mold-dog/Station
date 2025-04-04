@@ -60,8 +60,8 @@
 		<lastauthor>Administrator</lastauthor>
 		<revnumber>{E621A1A2-2464-4BB5-8430-C68CE4EA4F58}</revnumber>
 		<lastprinted/>
-		<createdtm>06/21/1999 08:00</createdtm>
-		<lastsavedtm>07/14/2000 11:50</lastsavedtm>
+		<createdtm>06/21/1999 09:00</createdtm>
+		<lastsavedtm>07/14/2000 12:50</lastsavedtm>
 		<pagecount>200</pagecount>
 		<wordcount>0</wordcount>
 		<charcount/>
@@ -343,7 +343,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{4A50B9D2-2497-44EE-958D-A68D9369F453}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{94089AE2-4C8F-43F1-BF1E-FB3A5848342D}</td><td>INSTALLDIR</td><td>258</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{3CECF424-7B67-4A71-9ED3-A4D43395900D}</td><td>INSTALLDIR</td><td>258</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Station.Primary_output</td><td>{FCB64470-8073-4048-94AB-F15645C84D4F}</td><td>INSTALLDIR</td><td>2</td><td/><td>station.primary_output</td><td>81</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
@@ -2043,7 +2043,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_A8A192B4_896B_4992_BB46_1A202CAD111C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_E2E1DAAE_2EE8_4857_9DF1_C35345F1E45A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_1F87AF63_D73A_48DE_9D1C_6052EA416AC6_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Station.Primary_output</td><td/><td/><td>_DBEE0A02_09C3_4629_A482_887B350AE58F_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
@@ -4447,14 +4447,13 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="I4">ISAttributes</col>
 		<row><td>Registry1</td><td>2</td><td>SOFTWARE\LCE</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>1</td></row>
 		<row><td>Registry10</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Station</td><td>199</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry12</td><td>2</td><td>SOFTWARE</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>1</td></row>
-		<row><td>Registry2</td><td>2</td><td>SOFTWARE\ASA</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>1</td></row>
+		<row><td>Registry2</td><td>2</td><td>SOFTWARE</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>1</td></row>
 		<row><td>Registry3</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer_Ma</td><td>192.168.99.7</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry4</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Port</td><td>COM2</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry5</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>ReadStrength</td><td>16</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry6</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry7</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBPassword</td><td>RFID123$</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry8</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer</td><td>192.168.15.253</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry8</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer</td><td>192.168.0.7</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry9</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBUID</td><td>VB_Client</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 	</table>
 

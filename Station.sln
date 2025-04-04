@@ -93,7 +93,6 @@ Global
 		{CA81B73F-B49B-4344-A545-15275DFB8929}.SingleImage|Any CPU.ActiveCfg = SingleImage
 		{CA81B73F-B49B-4344-A545-15275DFB8929}.SingleImage|Any CPU.Build.0 = SingleImage
 		{CA81B73F-B49B-4344-A545-15275DFB8929}.SingleImage|x64.ActiveCfg = SingleImage
-		{CA81B73F-B49B-4344-A545-15275DFB8929}.SingleImage|x64.Build.0 = SingleImage
 		{CA81B73F-B49B-4344-A545-15275DFB8929}.SingleImage|x86.ActiveCfg = SingleImage
 		{CA81B73F-B49B-4344-A545-15275DFB8929}.SingleImage|x86.Build.0 = SingleImage
 	EndGlobalSection

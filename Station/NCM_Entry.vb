@@ -548,7 +548,35 @@ Public Class NCM_Entry
 
             Dim zeroindex As Integer = raw.IndexOf("EP: ")
             Dim newstring As String = Strings.Mid(raw, zeroindex + 5, zeroindex + 19 + 5)
-            Return newstring
+
+            Try
+                ' check if string is too short
+                If newstring.Length < 23 Then
+                    Return ""
+                End If
+
+            Catch ex As Exception
+                'MsgBox(ex.Message)
+            End Try
+
+
+            Try
+
+
+
+                ' check for white space
+                For i As Integer = 0 To newstring.Length - 1
+                    If i > 0 And String.IsNullOrWhiteSpace(newstring(i)) Then
+                        Return ""
+                    End If
+                Next
+
+                Return newstring
+            Catch ex As Exception
+                'MsgBox("Issue parsing string: " & vbCrLf & vbCrLf & ex.Message)
+
+            End Try
+
 
         Else
             ' TODO: add error handling

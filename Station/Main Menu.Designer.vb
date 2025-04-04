@@ -112,6 +112,8 @@ Partial Class Main_Menu
         Me.Btn_Paint_Color_Groups = New System.Windows.Forms.Button()
         Me.Btn_PMC_Reports = New System.Windows.Forms.Button()
         Me.btn_PressReporting = New System.Windows.Forms.Button()
+        Me.btn_NCM_Data = New System.Windows.Forms.Button()
+        Me.btn_Inventory_Clear = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Btn_Exit
@@ -598,7 +600,7 @@ Partial Class Main_Menu
         Me.lbl_Comm_Fail.AutoSize = True
         Me.lbl_Comm_Fail.BackColor = System.Drawing.Color.Red
         Me.lbl_Comm_Fail.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Comm_Fail.Location = New System.Drawing.Point(424, 263)
+        Me.lbl_Comm_Fail.Location = New System.Drawing.Point(424, 863)
         Me.lbl_Comm_Fail.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Comm_Fail.Name = "lbl_Comm_Fail"
         Me.lbl_Comm_Fail.Size = New System.Drawing.Size(765, 163)
@@ -1080,11 +1082,35 @@ Partial Class Main_Menu
         Me.btn_PressReporting.Text = "Press Reporting"
         Me.btn_PressReporting.UseVisualStyleBackColor = True
         '
+        'btn_NCM_Data
+        '
+        Me.btn_NCM_Data.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_NCM_Data.Location = New System.Drawing.Point(549, 809)
+        Me.btn_NCM_Data.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btn_NCM_Data.Name = "btn_NCM_Data"
+        Me.btn_NCM_Data.Size = New System.Drawing.Size(225, 40)
+        Me.btn_NCM_Data.TabIndex = 121
+        Me.btn_NCM_Data.Text = "NCM Data"
+        Me.btn_NCM_Data.UseVisualStyleBackColor = True
+        '
+        'btn_Inventory_Clear
+        '
+        Me.btn_Inventory_Clear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Inventory_Clear.Location = New System.Drawing.Point(1354, 415)
+        Me.btn_Inventory_Clear.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btn_Inventory_Clear.Name = "btn_Inventory_Clear"
+        Me.btn_Inventory_Clear.Size = New System.Drawing.Size(225, 40)
+        Me.btn_Inventory_Clear.TabIndex = 122
+        Me.btn_Inventory_Clear.Text = "Inventory Clear"
+        Me.btn_Inventory_Clear.UseVisualStyleBackColor = True
+        '
         'Main_Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1602, 1006)
+        Me.Controls.Add(Me.btn_Inventory_Clear)
+        Me.Controls.Add(Me.btn_NCM_Data)
         Me.Controls.Add(Me.btn_PressReporting)
         Me.Controls.Add(Me.Btn_PMC_Reports)
         Me.Controls.Add(Me.Btn_Paint_Color_Groups)
@@ -1268,4 +1294,6 @@ Partial Class Main_Menu
     Friend WithEvents Btn_Paint_Color_Groups As Button
     Friend WithEvents Btn_PMC_Reports As Button
     Friend WithEvents btn_PressReporting As Button
+    Friend WithEvents btn_NCM_Data As Button
+    Friend WithEvents btn_Inventory_Clear As Button
 End Class

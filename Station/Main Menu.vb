@@ -704,4 +704,14 @@ Public Class Main_Menu
         SupPressRep.Show()
 
     End Sub
+
+    Private Sub btn_NCM_Data_Click(sender As Object, e As EventArgs) Handles btn_NCM_Data.Click
+        NCM_Data_Form = New NCM_Data
+        NCM_Data_Form.Show()
+    End Sub
+
+    Private Sub btn_Inventory_Clear_Click(sender As Object, e As EventArgs) Handles btn_Inventory_Clear.Click
+        Inventory_Clear_Form = New Inventory_Clear
+        Inventory_Clear_Form.Show
+    End Sub
 End Class

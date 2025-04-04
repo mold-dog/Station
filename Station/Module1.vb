@@ -205,6 +205,8 @@ Module Module1
     Public Number_Keyboard_Form As Number_Keyboard
     Public Part_Position_Form As Part_Position
     Public PMC_Report_By_Resource_Form As PMC_Report_By_Resource
+    Public NCM_Data_Form As NCM_Data
+    Public Inventory_Clear_Form As Inventory_Clear
     Public PMC_History_By_Event_Form As PMC_History_By_Event
     Public NCM_Form As NCM_Entry
 

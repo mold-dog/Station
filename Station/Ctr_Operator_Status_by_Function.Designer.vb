@@ -2556,7 +2556,7 @@ Partial Class Ctr_Operator_Status_by_Function
         'Tmr_Screen_Update
         '
         Me.Tmr_Screen_Update.Enabled = True
-        Me.Tmr_Screen_Update.Interval = 60000
+        Me.Tmr_Screen_Update.Interval = 15000
         '
         'Lbl_Rework20
         '
@@ -6562,11 +6562,11 @@ Partial Class Ctr_Operator_Status_by_Function
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(340, 2)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Label7.Location = New System.Drawing.Point(315, -2)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(142, 55)
+        Me.Label7.Size = New System.Drawing.Size(117, 46)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "24 Hr"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -6575,11 +6575,11 @@ Partial Class Ctr_Operator_Status_by_Function
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(614, 2)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Label8.Location = New System.Drawing.Point(589, -2)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(174, 55)
+        Me.Label8.Size = New System.Drawing.Size(144, 46)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "7 Days"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -6588,11 +6588,11 @@ Partial Class Ctr_Operator_Status_by_Function
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(876, 5)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Label9.Location = New System.Drawing.Point(851, 1)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(158, 55)
+        Me.Label9.Size = New System.Drawing.Size(131, 46)
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "Month"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -6601,11 +6601,11 @@ Partial Class Ctr_Operator_Status_by_Function
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(1124, 5)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Label10.Location = New System.Drawing.Point(1099, 1)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(201, 55)
+        Me.Label10.Size = New System.Drawing.Size(166, 46)
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "90 Days"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -6614,11 +6614,11 @@ Partial Class Ctr_Operator_Status_by_Function
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(1408, 5)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Label11.Location = New System.Drawing.Point(1383, 1)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(155, 55)
+        Me.Label11.Size = New System.Drawing.Size(129, 46)
         Me.Label11.TabIndex = 17
         Me.Label11.Text = "Model"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -9948,7 +9948,7 @@ Partial Class Ctr_Operator_Status_by_Function
         Me.Pnl_Schedule.Controls.Add(Me.Lbl_IP29)
         Me.Pnl_Schedule.Controls.Add(Me.Lbl_CTS_Part_Type30)
         Me.Pnl_Schedule.Controls.Add(Me.ShapeContainer2)
-        Me.Pnl_Schedule.Location = New System.Drawing.Point(8, 1338)
+        Me.Pnl_Schedule.Location = New System.Drawing.Point(4, 2822)
         Me.Pnl_Schedule.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Pnl_Schedule.Name = "Pnl_Schedule"
         Me.Pnl_Schedule.Size = New System.Drawing.Size(1611, 1318)
@@ -17147,6 +17147,7 @@ Partial Class Ctr_Operator_Status_by_Function
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Pnl_Finesse)
         Me.Controls.Add(Me.Pnl_Schedule)
         Me.Controls.Add(Me.lbl_Incomplete57)
@@ -17207,7 +17208,6 @@ Partial Class Ctr_Operator_Status_by_Function
         Me.Controls.Add(Me.lbl_Incomplete2)
         Me.Controls.Add(Me.lbl_Incomplete1)
         Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lbl_Comm_Fail)
         Me.Controls.Add(Me.Lbl_Rate57)
         Me.Controls.Add(Me.Lbl_Rate56)

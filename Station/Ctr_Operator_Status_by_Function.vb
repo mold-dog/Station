@@ -33,6 +33,8 @@ Public Class Ctr_Operator_Status_by_Function
             CB_Wetsand.Enabled = False
             CB_Finesse.Enabled = False
             CB_Inspect.Enabled = False
+
+
         End If
 
     End Sub
@@ -89,6 +91,7 @@ Public Class Ctr_Operator_Status_by_Function
             Call Update_Screen()
             lbl_Comm_Fail.Visible = False
 
+
         Catch Ex As Exception
             If SQLCon.State = ConnectionState.Open Then
                 SQLCon.Close()
@@ -113,6 +116,8 @@ Public Class Ctr_Operator_Status_by_Function
     End Sub
 
     Private Sub Tmr_Screen_Update_Tick(sender As Object, e As EventArgs) Handles Tmr_Screen_Update.Tick
+
+        Tmr_Screen_Update.Interval = 60000
         Call Update_Screen()
         If Station_ID > 0 Then
             Call update_station_status()

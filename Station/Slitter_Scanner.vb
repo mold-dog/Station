@@ -466,13 +466,44 @@ Public Class Slitter_Scanner
 
             Else
 
+
+                Dim invalid As Boolean = True
+
+                For Each str As String In sortDictionary.Keys
+
+                    If inputArray(i).Contains(str) Then
+                        invalid = False
+
+                        Dim zeroindex As Integer = inputArray(i).IndexOf(str)
+                        Dim newstring As String = Strings.Mid(inputArray(i), zeroindex + 4)
+
+                        If newstring.Contains("date") Then
+                            Dim tempDate As New DateTime
+
+                            If DateTime.TryParse(inputArray(i), tempDate) Then
+                                newArray(i, 0) = "'" & Strings.Right(inputArray(i), inputArray(i).Length - 3) & "'"
+                            Else
+                                newArray(i, 0) = ""
+                            End If
+
+                        Else
+                            newArray(i, 0) = "'" & Strings.Right(inputArray(i), inputArray(i).Length - 3) & "'"
+                        End If
+
+                    End If
+
+                Next
+
+
+
+
                 Dim catString As String = ""
                 For q As Integer = 0 To arrMax
                     catString += inputArray(q)
                 Next
 
 
-                MsgBox("QR contained unexpected information:" & vbCrLf & catString, MsgBoxStyle.Exclamation)
+                MsgBox("QR contained unexpected information:" & vbCrLf & inputArray(i) & vbCrLf & vbCrLf & "Full String:" & vbCrLf & catString, MsgBoxStyle.Exclamation)
 
                 ' return empty string array
                 Dim badArray(arrMax, 1) As String
@@ -540,7 +571,7 @@ Public Class Slitter_Scanner
                 query += ", "
 
             Else
-                query += ", LogDate, Press"
+                query += ", LogDate"
             End If
 
         Next
@@ -561,7 +592,7 @@ Public Class Slitter_Scanner
                 query += ", "
 
             Else
-                'query += ", GetDate(), (Select ID From Press Where Description = '" & press_name & "')"
+                query += ", GetDate()"
             End If
 
         Next
@@ -571,12 +602,12 @@ Public Class Slitter_Scanner
 
         Try
 
-            MsgBox("query")
+            'MsgBox("query")
             Dim SQLCon As New SqlConnection
             SQLCon.ConnectionString = toolboxMM.SQLTools.getDBConnection()
             SQLCon.Open()
             Dim cmd As New SqlCommand(query, SQLCon)
-            'cmd.ExecuteNonQuery()
+            cmd.ExecuteNonQuery()
             SQLCon.Close()
             Return True
 

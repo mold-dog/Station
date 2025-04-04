@@ -981,6 +981,8 @@ Public Class Defect
                     Me.Invoke(New Action(Of String)(AddressOf Check_For_New_Operator), True)
                     Return
                 End If
+
+
                 If dr2("Supervisor") Then
                     Tab_Control.TabPages.Remove(TabPage4)
                     Tab_Control.TabPages.Remove(TabPage5)
@@ -1232,7 +1234,7 @@ Public Class Defect
 
     Private Sub Chk_Wetsand_Good_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Wetsand_Good.CheckedChanged
         If Not loading Then
-            If Wetsand_Complete = True Then
+            If Wetsand_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Wetsand_Already_Complete_Msg & " By " & Wetsander_Complete & " On " & Wetsander_Complete_Time)
                 Chk_Wetsand_Good.Checked = False
                 Exit Sub
@@ -1245,6 +1247,7 @@ Public Class Defect
         End If
         If Chk_Wetsand_TU.Checked = False And Chk_Wetsand_Reclear.Checked = False And Chk_Wetsand_Rework.Checked = False Then
             Call Update_Checked(2, IIf(Chk_Wetsand_Good.Checked, 1, 0))
+
         End If
         If Chk_Wetsand_Good.Checked Then
             Chk_Wetsand_Good.BackColor = Color.DarkGray
@@ -1256,7 +1259,7 @@ Public Class Defect
 
     Private Sub Chk_Wetsand_TU_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Wetsand_TU.CheckedChanged
         If Not loading Then
-            If Wetsand_Complete = True Then
+            If Wetsand_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Wetsand_Already_Complete_Msg & " By " & Wetsander_Complete & " On " & Wetsander_Complete_Time)
                 Chk_Wetsand_TU.Checked = False
                 Exit Sub
@@ -1280,7 +1283,7 @@ Public Class Defect
 
     Private Sub Chk_Wetsand_Reclear_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Wetsand_Reclear.CheckedChanged
         If Not loading Then
-            If Wetsand_Complete = True Then
+            If Wetsand_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Wetsand_Already_Complete_Msg & " By " & Wetsander_Complete & " On " & Wetsander_Complete_Time)
                 Chk_Wetsand_Reclear.Checked = False
                 Exit Sub
@@ -1304,7 +1307,7 @@ Public Class Defect
 
     Private Sub Chk_Wetsand_Rework_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Wetsand_Rework.CheckedChanged
         If Not loading Then
-            If Wetsand_Complete = True Then
+            If Wetsand_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Wetsand_Already_Complete_Msg & " By " & Wetsander_Complete & " On " & Wetsander_Complete_Time)
                 Chk_Wetsand_Rework.Checked = False
                 Exit Sub
@@ -1328,7 +1331,7 @@ Public Class Defect
 
     Private Sub Chk_Buff_Good_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Buff_Good.CheckedChanged
         If Not loading Then
-            If Buff_Complete = True Then
+            If Buff_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Finesse_Already_Complete_Msg & " By " & Buffer_Complete & " On " & Buffer_Complete_Time)
                 Chk_Buff_Good.Checked = False
                 Exit Sub
@@ -1352,7 +1355,7 @@ Public Class Defect
 
     Private Sub Chk_Buff_TU_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Buff_TU.CheckedChanged
         If Not loading Then
-            If Buff_Complete = True Then
+            If Buff_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Finesse_Already_Complete_Msg & " By " & Buffer_Complete & " On " & Buffer_Complete_Time)
                 Chk_Buff_TU.Checked = False
                 Exit Sub
@@ -1376,7 +1379,7 @@ Public Class Defect
 
     Private Sub Chk_Buff_Reclear_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Buff_Reclear.CheckedChanged
         If Not loading Then
-            If Buff_Complete = True Then
+            If Buff_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Finesse_Already_Complete_Msg & " By " & Buffer_Complete & " On " & Buffer_Complete_Time)
                 Chk_Buff_Reclear.Checked = False
                 Exit Sub
@@ -1400,7 +1403,7 @@ Public Class Defect
 
     Private Sub Chk_Buff_Rework_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Buff_Rework.CheckedChanged
         If Not loading Then
-            If Buff_Complete = True Then
+            If Buff_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Finesse_Already_Complete_Msg & " By " & Buffer_Complete & " On " & Buffer_Complete_Time)
                 Chk_Buff_Rework.Checked = False
                 Exit Sub
@@ -1485,6 +1488,7 @@ Public Class Defect
 
 
         Try
+            WriteEvent("Loading defects.", EventInfo)
 
             query = "Select * from RFID_Defect_Inspection where id = " & RFID_Defect_Inspection_ID
 
@@ -1495,34 +1499,49 @@ Public Class Defect
             Dim ds2 As DataSet = queryDB(query, "Past_Inspections", True)
 
             For Each dr As DataRow In ds.Tables("RFID_Defect_Inspection").Rows
+
+                WriteEvent("Updating button colors.", EventInfo)
                 If IsDBNull(dr("Wetsand_Complete")) Then
+                    Btn_Wet_Sand_Done.BackColor = Color.WhiteSmoke
                     Wetsand_Complete = False
                 Else
+                    WriteEvent("Wetsand Complete: " & dr("Wetsand_Complete").ToString, EventInfo)
                     If dr("Wetsand_Complete") = True Then
+
+                        Btn_Wet_Sand_Done.BackColor = Color.DarkGray
                         Wetsand_Complete = True
                     Else
+                        Btn_Wet_Sand_Done.BackColor = Color.WhiteSmoke
                         Wetsand_Complete = False
                     End If
 
                 End If
 
                 If IsDBNull(dr("Buff_Complete")) Then
+                    Btn_Buff_Done.BackColor = Color.WhiteSmoke
                     Buff_Complete = False
                 Else
+                    WriteEvent("Buff Complete: " & dr("Buff_Complete").ToString, EventInfo)
                     If dr("Buff_Complete") = True Then
+                        Btn_Buff_Done.BackColor = Color.DarkGray
                         Buff_Complete = True
                     Else
+                        Btn_Buff_Done.BackColor = Color.WhiteSmoke
                         Buff_Complete = False
                     End If
 
                 End If
 
                 If IsDBNull(dr("Final_Inspection_Complete")) Then
+                    Btn_Inspect_Done.BackColor = Color.WhiteSmoke
                     Inspection_Complete = False
                 Else
+                    WriteEvent("Final Inspection Complete: " & dr("Final_Inspection_Complete").ToString, EventInfo)
                     If dr("Final_Inspection_Complete") = True Then
+                        Btn_Inspect_Done.BackColor = Color.DarkGray
                         Inspection_Complete = True
                     Else
+                        Btn_Inspect_Done.BackColor = Color.WhiteSmoke
                         Inspection_Complete = False
                     End If
 
@@ -1885,6 +1904,7 @@ Public Class Defect
                 query = "Select ID from Part where rfid = '" & Txt_RFID.Text & "'"
                 Dim ds As DataSet = queryDB(query, "Part", True)
 
+
                 Part_ID = 0
 
                 For Each dr As DataRow In ds.Tables("Part").Rows
@@ -2118,7 +2138,7 @@ Public Class Defect
     Private Sub Chk_Final_Good_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Final_Good.CheckedChanged
 
         If Not loading Then
-            If Inspection_Complete = True Then
+            If Inspection_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Inspection_Already_Complete_Msg & " By " & Inspector_Complete & " On " & Inspector_Complete_Time)
                 Chk_Final_Good.Checked = False
                 Exit Sub
@@ -2145,7 +2165,7 @@ Public Class Defect
 
     Private Sub Chk_Final_TU_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Final_TU.CheckedChanged
         If Not loading Then
-            If Inspection_Complete = True Then
+            If Inspection_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Inspection_Already_Complete_Msg & " By " & Inspector_Complete & " On " & Inspector_Complete_Time)
                 Chk_Final_TU.Checked = False
                 Exit Sub
@@ -2169,7 +2189,7 @@ Public Class Defect
 
     Private Sub Chk_Final_Reclear_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Final_Reclear.CheckedChanged
         If Not loading Then
-            If Inspection_Complete = True Then
+            If Inspection_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Inspection_Already_Complete_Msg & " By " & Inspector_Complete & " On " & Inspector_Complete_Time)
                 Chk_Final_Reclear.Checked = False
                 Exit Sub
@@ -2193,7 +2213,7 @@ Public Class Defect
 
     Private Sub Chk_Final_Rework_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Final_Rework.CheckedChanged
         If Not loading Then
-            If Inspection_Complete = True Then
+            If Inspection_Complete = True And Tab_Control.TabPages.Count < 4 Then
                 MsgBox(Inspection_Already_Complete_Msg & " By " & Inspector_Complete & " On " & Inspector_Complete_Time)
                 Chk_Final_Rework.Checked = False
                 Exit Sub
@@ -2554,15 +2574,26 @@ Public Class Defect
 
     End Sub
     Private Sub Btn_Wet_Sand_Done_Click(sender As Object, e As EventArgs) Handles Btn_Wet_Sand_Done.Click
+
         If Not loading Then
             If Chk_Wetsand_TU.Checked = True Or Chk_Wetsand_Good.Checked = True Or Chk_Wetsand_Reclear.Checked = True Or Chk_Wetsand_Rework.Checked = True Then
-                If Wetsand_Complete = True Then
+                If Wetsand_Complete = True And Tab_Control.TabPages.Count < 4 Then
                     MsgBox(Wetsand_Already_Complete_Msg & " By " & Wetsander_Complete & " On " & Wetsander_Complete_Time)
                     Exit Sub
                 End If
             End If
-            Call Update_Checked(2, 99)
-            Wetsand_Complete = True
+
+            If Wetsand_Complete Then
+                Wetsand_Complete = False
+                Btn_Wet_Sand_Done.BackColor = Color.WhiteSmoke
+                Call Update_Checked(2, 102)
+            Else
+                Wetsand_Complete = True
+                Btn_Wet_Sand_Done.BackColor = Color.DarkGray
+                Call Update_Checked(2, 99)
+            End If
+
+
             Get_Rates(True)
 
 
@@ -2573,15 +2604,26 @@ Public Class Defect
     End Sub
 
     Private Sub Btn_Buff_Done_Click(sender As Object, e As EventArgs) Handles Btn_Buff_Done.Click
+
         If Not loading Then
             If Chk_Buff_Rework.Checked = True Or Chk_Buff_Good.Checked = True Or Chk_Buff_TU.Checked = True Or Chk_Buff_Reclear.Checked = True Then
-                If Buff_Complete = True Then
+                If Buff_Complete = True And Tab_Control.TabPages.Count < 4 Then
                     MsgBox(Finesse_Already_Complete_Msg & " By " & Buffer_Complete & " On " & Buffer_Complete_Time)
                     Exit Sub
                 End If
             End If
-            Call Update_Checked(3, 99)
-            Buff_Complete = True
+
+            If Buff_Complete Then
+                Buff_Complete = False
+                Btn_Buff_Done.BackColor = Color.WhiteSmoke
+                Call Update_Checked(3, 104)
+            Else
+                Buff_Complete = True
+                Btn_Buff_Done.BackColor = Color.DarkGray
+                Call Update_Checked(3, 99)
+            End If
+
+
             Get_Rates(True)
 
 
@@ -2592,15 +2634,26 @@ Public Class Defect
     End Sub
 
     Private Sub Btn_Inspect_Done_Click(sender As Object, e As EventArgs) Handles Btn_Inspect_Done.Click
+
         If Not loading Then
             If Chk_Final_TU.Checked = True Or Chk_Final_Good.Checked = True Or Chk_Final_Reclear.Checked = True Or Chk_Final_Rework.Checked = True Then
-                If Inspection_Complete = True Then
+                If Inspection_Complete = True And Tab_Control.TabPages.Count < 4 Then
                     MsgBox(Inspection_Already_Complete_Msg & " By " & Inspector_Complete & " On " & Inspector_Complete_Time)
                     Exit Sub
                 End If
             End If
-            Call Update_Checked(4, 99)
-            Inspection_Complete = True
+
+            If Inspection_Complete Then
+                Inspection_Complete = False
+                Btn_Inspect_Done.BackColor = Color.WhiteSmoke
+                Call Update_Checked(4, 104)
+            Else
+                Inspection_Complete = True
+                Btn_Inspect_Done.BackColor = Color.DarkGray
+                Call Update_Checked(4, 99)
+            End If
+
+
             Get_Rates(True)
 
         End If

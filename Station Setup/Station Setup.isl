@@ -3746,6 +3746,7 @@
 		<row><td>ID_STRING6</td><td>1033</td><td>RFID Station 2.0</td><td>0</td><td/><td>355215533</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td/><td>0</td><td/><td>355214413</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td/><td>0</td><td/><td>355220400</td></row>
+		<row><td>ID_STRING9</td><td>1033</td><td>NEWRFI~1|new RFID Station</td><td>0</td><td/><td>976050922</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1696868492</td></row>
 	</table>
 
@@ -4453,7 +4454,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>Registry5</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>ReadStrength</td><td>16</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry6</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry7</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBPassword</td><td>RFID123$</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry8</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer</td><td>192.168.0.7</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry8</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer</td><td>192.168.15.253</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry9</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBUID</td><td>VB_Client</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 	</table>
 
@@ -4552,7 +4553,8 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>_Built</td><td>rfidst_1_rfid_station</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built1</td><td>StartupFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built2</td><td>DesktopFolder</td><td>##ID_STRING9##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

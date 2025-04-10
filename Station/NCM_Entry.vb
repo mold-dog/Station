@@ -49,6 +49,14 @@ Public Class NCM_Entry
 
     Private Sub NCM_Entry_Load() Handles MyBase.Load
 
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
+
         flowlayoutpanel_Defects.WrapContents = False
         flowlayoutpanel_Defects.AutoScroll = True
         flowlayoutpanel_Defects.SetAutoScrollMargin(0, 0)

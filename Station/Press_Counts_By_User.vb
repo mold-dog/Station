@@ -5,6 +5,14 @@ Imports System.Data.SqlClient
 Public Class Press_Counts_By_User
     Private bindingsource1 As New BindingSource
     Private Sub Press_Counts_By_User_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Dim start_time As DateTime
         Dim End_Time As DateTime
 

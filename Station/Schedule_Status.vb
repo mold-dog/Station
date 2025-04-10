@@ -5,6 +5,12 @@
 Public Class Schedule_Status
 
     Private Sub Schedule_Status_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
         Panel1.Visible = True
         Call Update_Completed_to_Ship()
         Call Update_FTB_data()

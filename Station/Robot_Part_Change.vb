@@ -322,6 +322,14 @@ Public Class Robot_Part_Change
     End Sub
 
     Private Sub Robot_Part_Change_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Call Load_Bells()
         Call Load_Spray_Head()
         Call Load_Air_Cap()

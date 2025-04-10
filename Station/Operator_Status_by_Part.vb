@@ -5,28 +5,34 @@ Public Class Operator_Status_by_Part
     Dim ID_Array() As Int32
 
     Private bindingsource1 As New BindingSource
-        Private Sub Operator_Status_by_Part_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Operator_Status_by_Part_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-            Dim start_time As DateTime
-            Dim End_Time As DateTime
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
 
-            start_time = DateAdd(DateInterval.Hour, -1, Now)
-            End_Time = Now
+        Dim start_time As DateTime
+        Dim End_Time As DateTime
 
-            DTP_Start_Date.Text = start_time
-            DTP_Start_Time.Text = start_time
-            DTP_End_Date.Text = End_Time
-            DTP_End_Time.Text = End_Time
+        start_time = DateAdd(DateInterval.Hour, -1, Now)
+        End_Time = Now
 
-            DGV_Paint_Data.AutoGenerateColumns = True
+        DTP_Start_Date.Text = start_time
+        DTP_Start_Time.Text = start_time
+        DTP_End_Date.Text = End_Time
+        DTP_End_Time.Text = End_Time
 
-            Call Load_Combo()
+        DGV_Paint_Data.AutoGenerateColumns = True
+
+        Call Load_Combo()
 
 
 
-        End Sub
+    End Sub
 
-        Private Sub Btn_Update_Click(sender As Object, e As EventArgs) Handles Btn_Update.Click
+    Private Sub Btn_Update_Click(sender As Object, e As EventArgs) Handles Btn_Update.Click
             Dim query As String = ""
             Dim table_name As String = ""
 

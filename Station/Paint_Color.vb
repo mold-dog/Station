@@ -267,6 +267,13 @@ Public Class Paint_Color
     End Sub
 
     Private Sub Defects_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Call Load_Combo()
         Btn_Add.Enabled = User_Permissions_Edit_Config
         Btn_Edit.Enabled = User_Permissions_Edit_Config

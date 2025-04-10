@@ -2,6 +2,13 @@
 
 Public Class Ctr_FTB_by_Model
     Private Sub Ctr_FTB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         If FTB_Loaded = False Then
             FTB_Loaded = True
         Else

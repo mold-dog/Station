@@ -300,6 +300,7 @@ Module Module1
     Sub main()
 
 
+
         Try
 
             ' Inventory_Clear.ShowDialog()
@@ -310,6 +311,8 @@ Module Module1
 
             SQLCon.ConnectionString = DBConnection
             Call Check_Station()
+
+
 
 
             If Station_ID = 0 Then

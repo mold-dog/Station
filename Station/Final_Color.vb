@@ -6,6 +6,14 @@ Public Class Final_Color
     Dim Recipe_Array() As Int32
     Dim Paint_Color_Array() As Int32
     Private Sub Btn_Add_Click(sender As Object, e As EventArgs) Handles Btn_Add.Click
+
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Txt_Description.Text = ""
         txt_Spanish.Text = ""
         Txt_Description.Visible = True

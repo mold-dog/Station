@@ -25,6 +25,13 @@ Public Class Press_Alarm_History
     End Sub
 
     Private Sub Press_Alarm_History_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Dim start_time As DateTime
         Dim End_Time As DateTime
 

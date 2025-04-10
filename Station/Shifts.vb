@@ -526,6 +526,13 @@ Public Class Shifts
     End Sub
 
     Private Sub Shifts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Call Load_Combo()
         Call Load_Area()
         Btn_Add.Enabled = User_Permissions_Edit_Config

@@ -5,6 +5,12 @@ Public Class Mold_Schedule
 
     Private Sub Mold_Schedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         DTP_Start_Date.Text = Now
         DGV_Paint_Data.AutoGenerateColumns = True
 

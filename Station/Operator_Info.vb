@@ -279,6 +279,14 @@ Public Class Operator_Info
     End Sub
 
     Private Sub Operator_Info_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Dim computer As String
         Dim printerName As String
         Dim printerExists As Boolean

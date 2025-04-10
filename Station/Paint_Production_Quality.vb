@@ -6,6 +6,14 @@ Public Class Paint_Production_Quality
     Public End_Date As String = ""
 
     Private Sub Paint_Production_Quality_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Dim start_time As DateTime
         Dim End_Time As DateTime
 

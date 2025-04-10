@@ -17,6 +17,13 @@ Public Class Ctr_Comm_Status
     End Structure
 
     Private Sub Ctr_Comm_Status_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         Panel1.Visible = False
         Call Refresh_Grid()
         Call Refresh_Map()

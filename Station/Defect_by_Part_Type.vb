@@ -268,6 +268,11 @@ Public Class Defect_by_Part_Type
 
 
     Private Sub Defect_by_Part_Type_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Application.CurrentCulture = New Globalization.CultureInfo("en-US", False)
+        Globalization.CultureInfo.CurrentCulture = New Globalization.CultureInfo("en-US", False)
+        Globalization.CultureInfo.CurrentUICulture = New Globalization.CultureInfo("en-US", False)
+
         Dim Start_Time As DateTime
         Dim End_Time As DateTime
 
@@ -281,8 +286,14 @@ Public Class Defect_by_Part_Type
         Start_Time = DateAdd(DateInterval.Hour, -1, Now)
         End_Time = Now
 
-        DTP_Start_Date.Text = start_time
-        DTP_Start_Time.Text = start_time
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
+        DTP_Start_Date.Text = Start_Time
+        DTP_Start_Time.Text = Start_Time
         DTP_End_Date.Text = End_Time
         DTP_End_Time.Text = End_Time
 
@@ -561,7 +572,7 @@ Public Class Defect_by_Part_Type
             Next
 
         Catch ex As Exception
-            MsgBox("Error getting defects from database: " & ex.Message)
+            MsgBox("Error getting defects from database: " & ex.Message & vbCrLf & vbCrLf & query)
         End Try
 
 
@@ -1041,7 +1052,7 @@ Public Class Defect_by_Part_Type
         Catch ex As Exception
             Me.UseWaitCursor = False
 
-            MsgBox("Error getting defects from database: " & ex.Message)
+            MsgBox("Error getting defects from database: " & ex.Message & vbCrLf & vbCrLf & query)
             If SQLCon.State = ConnectionState.Open Then
                 SQLCon.Close()
             End If

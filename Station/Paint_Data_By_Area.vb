@@ -3,6 +3,14 @@ Imports System.Data.SqlClient
 Public Class Paint_Data_By_Area
     Private bindingsource1 As New BindingSource
     Private Sub Paint_Data_By_Area_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
         'TODO: This line of code loads data into the 'RFIDDataSet.Air_Force_1' table. You can move, or remove it, as needed.
         Cmb_Area.Items.Add("Washer 1")
         Cmb_Area.Items.Add("Washer 2")

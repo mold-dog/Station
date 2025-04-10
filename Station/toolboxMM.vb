@@ -53,6 +53,23 @@ Namespace toolboxMM
 
         End Function
 
+        Shared Function Change_DTPicker(DTP As DateTimePicker) As DateTimePicker
+
+            If DTP.Format = DateTimePickerFormat.Long Then
+                DTP.Format = DateTimePickerFormat.Custom
+                DTP.CustomFormat = "MM-dd-yyyy HH:mm:ss"
+            ElseIf DTP.Format = DateTimePickerFormat.Short Then
+                DTP.Format = DateTimePickerFormat.Custom
+                DTP.CustomFormat = "MM-dd-yyyy"
+            ElseIf DTP.Format = DateTimePickerFormat.Time Then
+                DTP.Format = DateTimePickerFormat.Custom
+                DTP.CustomFormat = "HH:mm:ss"
+            End If
+
+            Return DTP
+
+        End Function
+
     End Class
 
     Public Structure server

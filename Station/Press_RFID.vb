@@ -7,6 +7,12 @@ Public Class Press_RFID
 
     Private Sub Press_Produced_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        For Each ctrl As Control In Me.Controls
+            If ctrl.GetType = GetType(DateTimePicker) Then
+                ctrl = toolboxMM.General.Change_DTPicker(ctrl)
+            End If
+        Next
+
 
 
         Dim start_time As DateTime

@@ -11,6 +11,7 @@ Public Class Ctr_Press_Summary
     Dim Auto_Logout(11) As Boolean
     Dim Press As Boolean
     Dim Bonder As Boolean
+    Dim DisableRFID As Boolean = False
     Dim Alarm_Red_Array(500) As Integer
     Dim Alarm_Green_Array(500) As Integer
     Dim Alarm_Blue_Array(500) As Integer
@@ -180,6 +181,7 @@ Public Class Ctr_Press_Summary
         Dim rowcount As Integer = 0
         Dim query As String
         Dim query2 As String
+        Dim query3 As String
 
 
 
@@ -194,9 +196,11 @@ Public Class Ctr_Press_Summary
             If press_id < 100 Then
                 query = "Exec Get_Press_Status3 " & press_id
                 query2 = "Exec Get_Press_Users " & press_id & "," & Auto_Logout(press_id)
+                query3 = "Select Disable_RFID From Press where ID = " & press_id
             Else
                 query = "Exec Get_Bonder_Status3 " & press_id - 100
                 query2 = "Exec Get_Bonder_Users " & press_id - 100 & "," & 0
+                query3 = "Select Disable_RFID From Bonder where ID = " & press_id - 100
             End If
             Dim daCounts_Data As New SqlDataAdapter(query, SQLCon)
             daCounts_Data.SelectCommand.CommandTimeout = SQL_Timeout
@@ -218,6 +222,17 @@ Public Class Ctr_Press_Summary
             For Each temp_dr As DataRow In daFourthShift.Tables("Fourth").Rows
                 If temp_dr("Enable_Fourth_Shift") Then
                     enable_fourth_shift = True
+                End If
+            Next
+
+            Dim daDisableRFID_bit As New SqlDataAdapter(query3, SQLCon)
+            daDisableRFID_bit.SelectCommand.CommandTimeout = SQL_Timeout
+            Dim daDisableRFID As New DataSet
+            daDisableRFID_bit.Fill(daDisableRFID, "RFID")
+
+            For Each temp_dr As DataRow In daDisableRFID.Tables("RFID").Rows
+                If temp_dr("Disable_RFID") Then
+                    DisableRFID = True
                 End If
             Next
 
@@ -395,7 +410,11 @@ Public Class Ctr_Press_Summary
                 Me.Controls("Lbl_Current_Actual" & press_row).Text = Format(Val(drCounts("Current_Hour") & ""), "0")
                 Me.Controls("Lbl_Current_Scan" & press_row).Text = Format(Val(drCounts("Current_Hour_Scans") & ""), "0")
                 If (drCounts("Current_Hour_Scans") + 1 < drCounts("Current_Hour")) Or (drCounts("Current_Hour_Scans") - 1 > drCounts("Current_Hour")) Then
-                    Me.Controls("Lbl_Current_Scan" & press_row).BackColor = Color.Red
+                    ' DISABLE
+                    If Not DisableRFID Then
+                        Me.Controls("Lbl_Current_Scan" & press_row).BackColor = Color.Red
+                    End If
+
                 Else
                     Me.Controls("Lbl_Current_Scan" & press_row).BackColor = SystemColors.Control
                 End If
@@ -431,9 +450,12 @@ Public Class Ctr_Press_Summary
                 '    Me.Controls("lbl_fourth_Total_Rate" & press_row).ForeColor = Get_Color(Val(Me.Controls("lbl_fourth_Total_Rate" & press_row).Text), planned)
                 'End If
 
+                ' DISABLE?
+                If Not DisableRFID Then
+                    Me.Controls("lbl_Scrap_Hour" & press_row).ForeColor = Get_Scrap_Color(Val(Me.Controls("lbl_Scrap_Hour" & press_row).Text))
+                    Me.Controls("Lbl_Scrap_Total" & press_row).ForeColor = Get_Scrap_Color(Val(Me.Controls("Lbl_Scrap_Total" & press_row).Text))
+                End If
 
-                Me.Controls("lbl_Scrap_Hour" & press_row).ForeColor = Get_Scrap_Color(Val(Me.Controls("lbl_Scrap_Hour" & press_row).Text))
-                Me.Controls("Lbl_Scrap_Total" & press_row).ForeColor = Get_Scrap_Color(Val(Me.Controls("Lbl_Scrap_Total" & press_row).Text))
 
                 If press_row < 11 Then
 
@@ -493,9 +515,13 @@ Public Class Ctr_Press_Summary
                         No_Operator(press_row) = 0
                     End If
 
+                    ' DISABLE
                     If No_Operator(press_row) > 5 Then
-                        Me.Controls("Lbl_Oper" & press_row).ForeColor = Color.Red
-                        Me.Controls("lbl_Warning" & press_row).Visible = True
+                        If not DisableRFID Then
+                            Me.Controls("Lbl_Oper" & press_row).ForeColor = Color.Red
+                            Me.Controls("lbl_Warning" & press_row).Visible = True
+                        End If
+
                     Else
                         Me.Controls("Lbl_Oper" & press_row).ForeColor = Color.Black
                         Me.Controls("lbl_Warning" & press_row).Visible = False
@@ -614,28 +640,28 @@ Public Class Ctr_Press_Summary
         Dim alarm_string As String
         Dim mid_string As String()
 
+        ' Need to switch away from Press_Alarms and just show PMC
+        'If Press Then
+        '    DGV_Paint_Data.AutoGenerateColumns = True
+        '    Me.Cursor = Cursors.WaitCursor
+        '    query = "Exec Get_Press_Alarms 0"
+        '    DGV_Paint_Data.Visible = True
+        '    LB_PMC.Visible = False
+        '    bindingsource1.DataSource = GetData(query)
 
-        If Press Then
-            DGV_Paint_Data.AutoGenerateColumns = True
-            Me.Cursor = Cursors.WaitCursor
-            query = "Exec Get_Press_Alarms 0"
-            DGV_Paint_Data.Visible = True
-            LB_PMC.Visible = False
-            bindingsource1.DataSource = GetData(query)
+        '    DGV_Paint_Data.DataSource = bindingsource1
+        '    DGV_Paint_Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        '    DGV_Paint_Data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
 
-            DGV_Paint_Data.DataSource = bindingsource1
-            DGV_Paint_Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-            DGV_Paint_Data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-
-            Me.Cursor = Cursors.Default
-        Else
-            query = "Select PMC_Alarm_Current.Description, PMC_Resources.Resource, PMC_Alarm_Config.Event_Type, PMC_Event_Types.Display_Color, PMC_Alarm_Config.PLC, PMC_Alarm_Current.Start_Time from PMC_Alarm_Current " &
+        '    Me.Cursor = Cursors.Default
+        'Else
+        query = "Select PMC_Alarm_Current.Description, PMC_Resources.Resource, PMC_Alarm_Config.Event_Type, PMC_Event_Types.Display_Color, PMC_Alarm_Config.PLC, PMC_Alarm_Current.Start_Time from PMC_Alarm_Current " &
             "inner join PMC_Resources on PMC_Alarm_Current.PLC = PMC_Resources.id " &
             "inner join PMC_Alarm_Config on PMC_Alarm_Current.Alarm_Offset = PMC_Alarm_Config.Event_Number and PMC_Alarm_Current.PLC = PMC_Alarm_Config.PLC " &
-            "inner join PMC_Event_Types on PMC_Alarm_Config.Event_Type = PMC_Event_Types.ID Where PMC_Resources.Enabled = 'True' and PMC_Resources.Resource = '7913' and isnull(PMC_Alarm_Config.Disabled,0) = 0 and " &
+            "inner join PMC_Event_Types on PMC_Alarm_Config.Event_Type = PMC_Event_Types.ID Where PMC_Resources.Enabled = 'True' and (PMC_Resources.Resource like 'P%' or PMC_Resources.Resource like '%Rt%' or PMC_Resources.Resource like 'Slitter%' or PMC_Resources.Resource in ('7913', 'RFID PLC')) and not (PMC_Resources.Resource like 'Pa%') and isnull(PMC_Alarm_Config.Disabled,0) = 0 and " &
             "(isnull(PMC_Alarm_Config.shelved,0) = 0 or (PMC_Alarm_Config.shelved = 1 and PMC_Alarm_Config.Shelve_Time < getdate()))" &
             "order by event_type"
-            DGV_Paint_Data.Visible = False
+        DGV_Paint_Data.Visible = False
             LB_PMC.Visible = True
 
             Try
@@ -666,10 +692,10 @@ Public Class Ctr_Press_Summary
                 If SQLCon.State = ConnectionState.Open Then
                     SQLCon.Close()
                 End If
-
-                MsgBox("Error Communications Info from Database: " & Ex.Message)
-            End Try
-        End If
+            WriteEvent("Error Communications Info from Database: " & Ex.Message, EventError)
+            'MsgBox("Error Communications Info from Database: " & Ex.Message)
+        End Try
+        'End If
 
     End Sub
 

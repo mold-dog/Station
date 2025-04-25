@@ -75,6 +75,7 @@ Public Class Ctr_Press_Status
     Dim Alarm_Red_Array(500) As Integer
     Dim Alarm_Green_Array(500) As Integer
     Dim Alarm_Blue_Array(500) As Integer
+    Dim DisableRFID As Boolean = False
 
     Private Sub Ctr_Press_Status_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Station_ID = 0 Then
@@ -613,6 +614,7 @@ Public Class Ctr_Press_Status
         Dim rowcount As Integer
         Dim query As String
         Dim query2 As String
+        Dim query3 As String
         Dim Bonder_ID As Integer = 0
 
 
@@ -625,7 +627,7 @@ Public Class Ctr_Press_Status
             Bonder_ID = (Press_ID - 100)
             query = "Exec Get_Bonder_Status3 " & Bonder_ID
             query2 = "Exec Get_Bonder_Users " & Bonder_ID & "," & Clear_Press_Operators
-
+            query3 = "Select Disable_RFID From Bonder where ID = " & Bonder_ID
 
         Else
 
@@ -633,6 +635,7 @@ Public Class Ctr_Press_Status
             'Press = 1
             query = "Exec Get_Press_Status3 " & Press_ID
             query2 = "Exec Get_Press_Users " & Press_ID & "," & Clear_Press_Operators
+            query3 = "Select Disable_RFID From Press where ID = " & Press_ID
         End If
 
 
@@ -670,7 +673,18 @@ Public Class Ctr_Press_Status
                     End If
                 Next
 
+                Dim daDisableRFID_bit As New SqlDataAdapter(query3, SQLCon)
+                daDisableRFID_bit.SelectCommand.CommandTimeout = SQL_Timeout
+                Dim daDisableRFID As New DataSet
+                daDisableRFID_bit.Fill(daDisableRFID, "RFID")
+                ' MsgBox(query3)
 
+                For Each temp_dr As DataRow In daDisableRFID.Tables("RFID").Rows
+
+                    If temp_dr("Disable_RFID") Then
+                        DisableRFID = True
+                    End If
+                Next
 
 
                 For Each drCounts As DataRow In dsCounts.Tables("Counts").Rows
@@ -896,7 +910,10 @@ Public Class Ctr_Press_Status
 
                     lbl_Current_Scan.Text = drCounts("Current_Hour_Scans") & ""
                     If (drCounts("Current_Hour_Scans") + 1 < drCounts("Current_Hour")) Or (drCounts("Current_Hour_Scans") - 1 > drCounts("Current_Hour")) Then
-                        lbl_Current_Scan.BackColor = Color.Red
+                        If Not DisableRFID Then
+                            lbl_Current_Scan.BackColor = Color.Red
+                        End If
+
                     Else
                         lbl_Current_Scan.BackColor = SystemColors.Control
                     End If
@@ -922,11 +939,15 @@ Public Class Ctr_Press_Status
                     Lbl_Fourth_Shift_Rate.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate.Text), planned)
 
                     'lbl_Current_Scan.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan.Text))
-                    Lbl_Scrap_Total.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total.Text))
-                    lbl_Current_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap.Text))
-                    lbl_Last_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap.Text))
-                    lbl_Previous_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap.Text))
-                    lbl_Fourth_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap.Text))
+                    If Not DisableRFID Then
+                        Lbl_Scrap_Total.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total.Text))
+                        lbl_Current_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap.Text))
+                        lbl_Last_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap.Text))
+                        lbl_Previous_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap.Text))
+                        lbl_Fourth_Shift_Total_Scrap.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap.Text))
+
+                    End If
+
 
 
 
@@ -983,8 +1004,11 @@ Public Class Ctr_Press_Status
                 End If
                 If Press Then
                     If No_Operator > 5 Then
-                        Lbl_Users.ForeColor = Color.Red
-                        lbl_Warning.Visible = True
+                        If Not DisableRFID Then
+                            Lbl_Users.ForeColor = Color.Red
+                            lbl_Warning.Visible = True
+                        End If
+
                     Else
                         Lbl_Users.ForeColor = Color.Black
                         lbl_Warning.Visible = False
@@ -1244,7 +1268,9 @@ Public Class Ctr_Press_Status
 
                     lbl_Current_Scan1.Text = drCounts("Current_Hour_Scans") & ""
                     If (drCounts("Current_Hour_Scans") + 1 < drCounts("Current_Hour")) Or (drCounts("Current_Hour_Scans") - 1 > drCounts("Current_Hour")) Then
-                        lbl_Current_Scan1.BackColor = Color.Red
+                        If Not DisableRFID Then
+                            lbl_Current_Scan1.BackColor = Color.Red
+                        End If
                     Else
                         lbl_Current_Scan1.BackColor = SystemColors.Control
                     End If
@@ -1270,11 +1296,14 @@ Public Class Ctr_Press_Status
                     Lbl_Fourth_Shift_Rate1.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate1.Text), planned)
 
                     'lbl_Current_Scan.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan.Text))
-                    Lbl_Scrap_Total1.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total1.Text))
-                    lbl_Current_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap1.Text))
-                    lbl_Last_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap1.Text))
-                    lbl_Previous_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap1.Text))
-                    lbl_Fourth_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap1.Text))
+                    If Not DisableRFID Then
+                        Lbl_Scrap_Total1.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total1.Text))
+                        lbl_Current_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap1.Text))
+                        lbl_Last_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap1.Text))
+                        lbl_Previous_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap1.Text))
+                        lbl_Fourth_Shift_Total_Scrap1.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap1.Text))
+                    End If
+
 
 
 
@@ -1330,8 +1359,11 @@ Public Class Ctr_Press_Status
                 End If
                 If Press Then
                     If No_Operator > 5 Then
-                        Lbl_Users.ForeColor = Color.Red
-                        lbl_Warning.Visible = True
+                        If Not DisableRFID Then
+                            Lbl_Users.ForeColor = Color.Red
+                            lbl_Warning.Visible = True
+                        End If
+
                     Else
                         Lbl_Users.ForeColor = Color.Black
                         lbl_Warning.Visible = False
@@ -1537,7 +1569,10 @@ Public Class Ctr_Press_Status
 
                     lbl_Current_Scan2.Text = drCounts1("Current_Hour_Scans") & ""
                     If (drCounts1("Current_Hour_Scans") + 1 < drCounts1("Current_Hour")) Or (drCounts1("Current_Hour_Scans") - 1 > drCounts1("Current_Hour")) Then
-                        lbl_Current_Scan2.BackColor = Color.Red
+                        If Not DisableRFID Then
+                            lbl_Current_Scan2.BackColor = Color.Red
+                        End If
+
                     Else
                         lbl_Current_Scan2.BackColor = SystemColors.Control
                     End If
@@ -1564,11 +1599,14 @@ Public Class Ctr_Press_Status
                     Lbl_Fourth_Shift_Rate2.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate2.Text), planned)
 
                     '    'lbl_Current_Scan2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan2.Text))
-                    Lbl_Scrap_Total2.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total2.Text))
-                    lbl_Current_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap2.Text))
-                    lbl_Last_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap2.Text))
-                    lbl_Previous_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap2.Text))
-                    lbl_Fourth_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap2.Text))
+                    If Not DisableRFID Then
+                        Lbl_Scrap_Total2.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total2.Text))
+                        lbl_Current_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap2.Text))
+                        lbl_Last_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap2.Text))
+                        lbl_Previous_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap2.Text))
+                        lbl_Fourth_Shift_Total_Scrap2.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap2.Text))
+                    End If
+
 
 
 
@@ -1873,7 +1911,10 @@ Public Class Ctr_Press_Status
 
                     lbl_Current_Scan_3_1.Text = drCounts("Current_Hour_Scans") & ""
                     If (drCounts("Current_Hour_Scans") + 1 < drCounts("Current_Hour")) Or (drCounts("Current_Hour_Scans") - 1 > drCounts("Current_Hour")) Then
-                        lbl_Current_Scan_3_1.BackColor = Color.Red
+                        If Not DisableRFID Then
+                            lbl_Current_Scan_3_1.BackColor = Color.Red
+                        End If
+
                     Else
                         lbl_Current_Scan_3_1.BackColor = SystemColors.Control
                     End If
@@ -1899,11 +1940,15 @@ Public Class Ctr_Press_Status
                     Lbl_Fourth_Shift_Rate_3_1.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate_3_1.Text), planned)
 
                     'lbl_Current_Scan.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan.Text))
-                    Lbl_Scrap_Total_3_1.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_1.Text))
-                    lbl_Current_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_1.Text))
-                    lbl_Last_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_1.Text))
-                    lbl_Previous_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_1.Text))
-                    lbl_Fourth_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_1.Text))
+                    If Not DisableRFID Then
+                        Lbl_Scrap_Total_3_1.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_1.Text))
+                        lbl_Current_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_1.Text))
+                        lbl_Last_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_1.Text))
+                        lbl_Previous_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_1.Text))
+                        lbl_Fourth_Shift_Total_Scrap_3_1.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_1.Text))
+
+                    End If
+
 
 
 
@@ -1964,8 +2009,11 @@ Public Class Ctr_Press_Status
                 End If
                 If Press Then
                     If No_Operator > 5 Then
-                        Lbl_Users.ForeColor = Color.Red
-                        lbl_Warning.Visible = True
+                        If Not DisableRFID Then
+                            Lbl_Users.ForeColor = Color.Red
+                            lbl_Warning.Visible = True
+                        End If
+
                     Else
                         Lbl_Users.ForeColor = Color.Black
                         lbl_Warning.Visible = False
@@ -2163,7 +2211,10 @@ Public Class Ctr_Press_Status
 
                     lbl_Current_Scan_3_2.Text = drCounts1("Current_Hour_Scans") & ""
                     If (drCounts1("Current_Hour_Scans") + 1 < drCounts1("Current_Hour")) Or (drCounts1("Current_Hour_Scans") - 1 > drCounts1("Current_Hour")) Then
-                        lbl_Current_Scan_3_2.BackColor = Color.Red
+                        If Not DisableRFID Then
+                            lbl_Current_Scan_3_2.BackColor = Color.Red
+                        End If
+
                     Else
                         lbl_Current_Scan_3_2.BackColor = SystemColors.Control
                     End If
@@ -2190,11 +2241,14 @@ Public Class Ctr_Press_Status
                     Lbl_Fourth_Shift_Rate_3_2.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate_3_2.Text), planned)
 
                     '    'lbl_Current_Scan2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan2.Text))
-                    Lbl_Scrap_Total_3_2.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_2.Text))
-                    lbl_Current_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_2.Text))
-                    lbl_Last_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_2.Text))
-                    lbl_Previous_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_2.Text))
-                    lbl_Fourth_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_2.Text))
+                    If Not DisableRFID Then
+                        Lbl_Scrap_Total_3_2.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_2.Text))
+                        lbl_Current_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_2.Text))
+                        lbl_Last_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_2.Text))
+                        lbl_Previous_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_2.Text))
+                        lbl_Fourth_Shift_Total_Scrap_3_2.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_2.Text))
+                    End If
+
 
 
 
@@ -2381,7 +2435,10 @@ Public Class Ctr_Press_Status
 
                     lbl_Current_Scan_3_3.Text = drCounts2("Current_Hour_Scans") & ""
                     If (drCounts2("Current_Hour_Scans") + 1 < drCounts2("Current_Hour")) Or (drCounts2("Current_Hour_Scans") - 1 > drCounts2("Current_Hour")) Then
-                        lbl_Current_Scan_3_3.BackColor = Color.Red
+                        If Not DisableRFID Then
+                            lbl_Current_Scan_3_3.BackColor = Color.Red
+                        End If
+
                     Else
                         lbl_Current_Scan_3_3.BackColor = SystemColors.Control
                     End If
@@ -2408,11 +2465,14 @@ Public Class Ctr_Press_Status
                     Lbl_Fourth_Shift_Rate_3_3.ForeColor = Get_Color(Val(Lbl_Fourth_Shift_Rate_3_3.Text), planned)
 
                     '    'lbl_Current_Scan2.ForeColor = Get_Scrap_Color(Val(lbl_Current_Scan2.Text))
-                    Lbl_Scrap_Total_3_3.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_3.Text))
-                    lbl_Current_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_3.Text))
-                    lbl_Last_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_3.Text))
-                    lbl_Previous_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_3.Text))
-                    lbl_Fourth_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_3.Text))
+                    If Not DisableRFID Then
+                        Lbl_Scrap_Total_3_3.ForeColor = Get_Scrap_Color(Val(Lbl_Scrap_Total_3_3.Text))
+                        lbl_Current_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Current_Shift_Total_Scrap_3_3.Text))
+                        lbl_Last_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Last_Shift_Total_Scrap_3_3.Text))
+                        lbl_Previous_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Previous_Shift_Total_Scrap_3_3.Text))
+                        lbl_Fourth_Shift_Total_Scrap_3_3.ForeColor = Get_Scrap_Color(Val(lbl_Fourth_Shift_Total_Scrap_3_3.Text))
+                    End If
+
 
 
 
@@ -2496,27 +2556,27 @@ Public Class Ctr_Press_Status
         Dim mid_string As String()
 
 
-        If Press Then
-            DGV_Paint_Data.AutoGenerateColumns = True
-            Me.Cursor = Cursors.WaitCursor
-            query = "Exec Get_Press_Alarms " & Press_ID
-            DGV_Paint_Data.Visible = True
-            LB_PMC.Visible = False
-            bindingsource1.DataSource = GetData(query)
+        'If Press Then
+        '    DGV_Paint_Data.AutoGenerateColumns = True
+        '    Me.Cursor = Cursors.WaitCursor
+        '    query = "Exec Get_Press_Alarms " & Press_ID
+        '    DGV_Paint_Data.Visible = True
+        '    LB_PMC.Visible = False
+        '    bindingsource1.DataSource = GetData(query)
 
-            DGV_Paint_Data.DataSource = bindingsource1
-            DGV_Paint_Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-            DGV_Paint_Data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        '    DGV_Paint_Data.DataSource = bindingsource1
+        '    DGV_Paint_Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        '    DGV_Paint_Data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
 
-            Me.Cursor = Cursors.Default
-        Else
-            query = "Select PMC_Alarm_Current.Description, PMC_Resources.Resource, PMC_Alarm_Config.Event_Type, PMC_Event_Types.Display_Color, PMC_Alarm_Config.PLC, PMC_Alarm_Current.Start_Time from PMC_Alarm_Current " &
+        '    Me.Cursor = Cursors.Default
+        'Else
+        query = "Select PMC_Alarm_Current.Description, PMC_Resources.Resource, PMC_Alarm_Config.Event_Type, PMC_Event_Types.Display_Color, PMC_Alarm_Config.PLC, PMC_Alarm_Current.Start_Time from PMC_Alarm_Current " &
             "inner join PMC_Resources on PMC_Alarm_Current.PLC = PMC_Resources.id " &
             "inner join PMC_Alarm_Config on PMC_Alarm_Current.Alarm_Offset = PMC_Alarm_Config.Event_Number and PMC_Alarm_Current.PLC = PMC_Alarm_Config.PLC " &
-            "inner join PMC_Event_Types on PMC_Alarm_Config.Event_Type = PMC_Event_Types.ID Where PMC_Resources.Enabled = 'True' and PMC_Resources.Resource = '7913' and isnull(PMC_Alarm_Config.Disabled,0) = 0 and " &
+            "inner join PMC_Event_Types on PMC_Alarm_Config.Event_Type = PMC_Event_Types.ID Where PMC_Resources.Enabled = 'True' and (PMC_Resources.Resource = '7913' or PMC_Resources.Resource = 'P' + (Select Replace((Select Description From Press Where id = " & Press_ID & "), 'Press ', ''))) and isnull(PMC_Alarm_Config.Disabled,0) = 0 and " &
             "(isnull(PMC_Alarm_Config.shelved,0) = 0 or (PMC_Alarm_Config.shelved = 1 and PMC_Alarm_Config.Shelve_Time < getdate()))" &
             "order by event_type"
-            DGV_Paint_Data.Visible = False
+        DGV_Paint_Data.Visible = False
             LB_PMC.Visible = True
 
             Try
@@ -2550,7 +2610,7 @@ Public Class Ctr_Press_Status
 
                 ' MsgBox("Error Communications Info from Database: " & Ex.Message)
             End Try
-        End If
+        'End If
 
 
 
@@ -2605,5 +2665,7 @@ Public Class Ctr_Press_Status
         End If
     End Sub
 
+    Private Sub Panel61_Paint(sender As Object, e As PaintEventArgs) Handles Panel61.Paint
 
+    End Sub
 End Class

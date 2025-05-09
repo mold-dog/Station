@@ -86,6 +86,7 @@ End Class
 
 Module Module1
     Public DBConnection As String
+    Public DBConnection_Ma As String
     Public DBConnection_t As String
     Public SQLCon As New SqlConnection
     Public SQLCon_t As New SqlConnection
@@ -534,7 +535,14 @@ Module Module1
                     ' TODO: change what buttons based on configs
 
                     location_screen.ShowDialog()
-                    If location_screen.SelectedLocation = "Johnson Creek" Or location_screen.SelectedLocation = "Mauston" Then
+
+                    If location_screen.SelectedLocation = "Johnson Creek" Then
+                        Main_Menu_Form = New Main_Menu
+                        Main_Menu_Form.ShowDialog()
+
+
+                    ElseIf location_screen.SelectedLocation = "Mauston" Then
+                        DBConnection = DBConnection_Ma
                         Main_Menu_Form = New Main_Menu
                         Main_Menu_Form.ShowDialog()
 
@@ -623,6 +631,7 @@ Module Module1
         ' grab database information out of registry and register application with event log
 
         Dim strDBServer As String = ""
+        Dim strDBServer_Ma As String = ""
         Dim strDBUID As String = ""
         Dim strDBpassword As String = ""
         Dim strHRes As String = ""
@@ -633,12 +642,13 @@ Module Module1
         Dim regsoftwarekey As RegistryKey = Registry.LocalMachine.OpenSubKey("SOFTWARE")
         If Not (regsoftwarekey Is Nothing) Then
 
-            Dim regoraclekey As RegistryKey = regsoftwarekey.OpenSubKey("ASA")
+            Dim regoraclekey As RegistryKey = regsoftwarekey.OpenSubKey("LCE")
             If Not (regoraclekey Is Nothing) Then
                 Dim regpaintprocesskey As RegistryKey = regoraclekey.OpenSubKey("RFID")
                 If Not (regpaintprocesskey Is Nothing) Then
                     If Not (regsoftwarekey Is Nothing) Then
                         strDBServer = regpaintprocesskey.GetValue("DBServer", "")
+                        strDBServer_MA = regpaintprocesskey.GetValue("DBServer_Ma", "")
                         strDBUID = regpaintprocesskey.GetValue("DBUID", "")
                         strDBpassword = regpaintprocesskey.GetValue("DBpassword", "")
                         strHRes = regpaintprocesskey.GetValue("HRes", "1920")
@@ -655,8 +665,10 @@ Module Module1
             regsoftwarekey.Close()
         End If
         DBConnection = "Server=" + strDBServer + ";uid=" + strDBUID + ";pwd=" + strDBpassword + ";database=RFID;Connection Timeout=30;"
+        DBConnection_Ma = "Server=" + strDBServer_Ma + ";uid=" + strDBUID + ";pwd=" + strDBpassword + ";database=RFID;Connection Timeout=30;"
 
         DBConnection_t = "Server=" + strDBServer + ";uid=" + strDBUID + ";pwd=" + strDBpassword + ";database=RFID_t;Connection Timeout=30;"
+
         Image_Share = "\\" & strDBServer & "\Images\"
         'Image_Share = "C:\Images\"
         If IsNumeric(strHRes) Then

@@ -38,11 +38,48 @@ Public Class Main_Menu
 
     Private Sub Main_Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.Text = "Version - " & System.Windows.Forms.Application.ProductVersion.ToString & "  Main Menu"
+        Me.Text = IIf(DBConnection = DBConnection_Ma, "Mauston", "Johnson Creek") & ": Version - " & System.Windows.Forms.Application.ProductVersion.ToString & "  [Main Menu]"
 
-        'checkprevious()
-        Btn_Paint_Coveyor.Enabled = User_Permissions_Access_Paint_Area
-        Btn_Paint_Data.Enabled = User_Permissions_Access_Paint_Area
+
+        If DBConnection = DBConnection_Ma Then
+
+            For Each ctrl As Control In Me.Controls
+                ctrl.Enabled = False
+            Next
+
+            Btn_Exit.Enabled = True
+
+            Btn_Press_Alarms.Enabled = True
+            Btn_Press_Alarm_History.Enabled = True
+            Btn_Press_Summary.Enabled = True
+            Btn_Press_Status.Enabled = True
+            Btn_Press_History.Enabled = True
+            Btn_PMC_Reports.Enabled = True
+
+
+            Btn_Areas.Enabled = True
+            Btn_Part_Types.Enabled = True
+
+            Btn_Shifts.Enabled = True
+
+            Btn_Part_Type_Groups.Enabled = True
+            Btn_Functional_Areas.Enabled = True
+
+            Btn_Mold_Schedule.Enabled = True
+            Btn_Mold_Buffer.Enabled = True
+
+            'Btn_Press_Counts.Enabled = True
+            'Btn_Press_Users.Enabled = True
+            'Btn_Press_RFID.Enabled = True
+            'Btn_Operators.Enabled = True
+            'Btn_Press_Counts_User.Enabled = True
+
+
+        Else
+
+            'checkprevious()
+            Btn_Paint_Coveyor.Enabled = User_Permissions_Access_Paint_Area
+            Btn_Paint_Data.Enabled = User_Permissions_Access_Paint_Area
         Btn_Paint_Production.Enabled = User_Permissions_Access_Paint_Area
         Btn_Paint_Current_Run.Enabled = User_Permissions_Access_Paint_Area
         Btn_Robot_Data.Enabled = User_Permissions_Access_Paint_Area
@@ -50,9 +87,9 @@ Public Class Main_Menu
         Btn_Robot_Part_Defects.Enabled = User_Permissions_Access_Paint_Area
         Btn_Test_Panels.Enabled = User_Permissions_Access_Paint_Area
         Btn_Test_Panel_History.Enabled = User_Permissions_Access_Paint_Area
-        Btn_Film_Check_History.Enabled = User_Permissions_Access_Paint_Area
+            Btn_Film_Check_History.Enabled = User_Permissions_Access_Paint_Area
 
-        Btn_Production_Defects.Enabled = User_Permissions_Access_Defects
+            Btn_Production_Defects.Enabled = User_Permissions_Access_Defects
         Btn_Production_Inspections.Enabled = User_Permissions_Access_Defects
         Btn_Defects_By_Inspector.Enabled = User_Permissions_Access_Defects
         Btn_Defect_Inspections_by_Inspector.Enabled = User_Permissions_Access_Defects
@@ -116,6 +153,12 @@ Public Class Main_Menu
         btn_Completed_to_Ship.Enabled = User_Permissions_Access_Targets
         Btn_Mold_Schedule.Enabled = User_Permissions_Access_Targets
         Btn_Mold_Buffer.Enabled = User_Permissions_Access_Targets
+
+
+
+
+
+        End If
 
 
         'WriteEvent("Error Registering the app with the Event Viewer: " & ex.Message, EventWarning)

@@ -586,13 +586,10 @@ Public Class NCM_Entry
             End Try
 
 
-        Else
-            ' TODO: add error handling
-            Return ""
         End If
 
 
-
+        Return ""
 
     End Function
 

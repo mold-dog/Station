@@ -5186,10 +5186,10 @@ Partial Class Ctr_Press_Summary
         'Block
         '
         Me.Block.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Block.Location = New System.Drawing.Point(13, 641)
+        Me.Block.Location = New System.Drawing.Point(13, 516)
         Me.Block.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Block.Name = "Block"
-        Me.Block.Size = New System.Drawing.Size(1878, 59)
+        Me.Block.Size = New System.Drawing.Size(1878, 278)
         Me.Block.TabIndex = 1839
         '
         'Lbl_Oper1

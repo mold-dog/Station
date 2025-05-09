@@ -701,7 +701,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
 
@@ -722,7 +722,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -742,7 +742,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -763,7 +763,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -778,6 +778,9 @@ Public Class Ctr_Press_Status
 
 
                     If enable_fourth_shift Then
+                        Label35.Visible = True
+                        Label36.Visible = True
+                        Label37.Visible = True
 
                         Label27.Visible = True
                         Label28.Visible = True
@@ -786,6 +789,10 @@ Public Class Ctr_Press_Status
                         'Label28.Text = "Pieces Total"
                         'Label27.Text = "Scrap Total"
                     Else
+                        Label35.Visible = False
+                        Label36.Visible = False
+                        Label37.Visible = False
+
                         Label27.Visible = False
                         Label28.Visible = False
                         Label32.Visible = False
@@ -793,6 +800,8 @@ Public Class Ctr_Press_Status
                         'Label28.Text = ""
                         'Label27.Text = ""
                     End If
+
+                    Me.Refresh()
 
                     If drCounts("PLC_Comm_Fail") <> 0 Then
                         Lbl_RFID_Fail.Visible = True
@@ -816,13 +825,9 @@ Public Class Ctr_Press_Status
                     Else
                         lbl_Last_Total_Rate.Text = "0.0"
                     End If
-                    Lbl_Previous_Shift_Total.Text = drCounts("C_Shift_Total") & ""
+                    Lbl_Previous_Shift_Total.Text = "" 'drCounts("C_Shift_Total") & 
                     Press_Hours = Val(drCounts("C_Shift_Hours") & "")
-                    If Press_Hours > 0 Then
-                        lbl_previous_Total_Rate.Text = Format(Val(Lbl_Previous_Shift_Total.Text) / Press_Hours, "#.0")
-                    Else
-                        lbl_previous_Total_Rate.Text = "0.0"
-                    End If
+
                     Lbl_Fourth_Shift_Total.Text = "" 'drCounts("D_Shift_Total") & ""
                     Press_Hours = Val(drCounts("D_Shift_Hours") & "")
 
@@ -833,8 +838,16 @@ Public Class Ctr_Press_Status
                             lbl_Fourth_Total_Rate.Text = "0.0"
                         End If
 
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate.Text = Format(Val(Lbl_Previous_Shift_Total.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate.Text = "0.0"
+                        End If
+
                     Else
                         lbl_Fourth_Total_Rate.Text = ""
+                        lbl_previous_Total_Rate.Text = ""
+
                     End If
 
 
@@ -856,11 +869,7 @@ Public Class Ctr_Press_Status
                     End If
                     Shift_Parts = drCounts("C_Shift_Parts") & ""
                     Press_Hours = Val(drCounts("C_Shift_Last_Hours") & "")
-                    If Press_Hours > 0 Then
-                        Lbl_Previous_Shift_Rate.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
-                    Else
-                        Lbl_Previous_Shift_Rate.Text = "0.0"
-                    End If
+
                     Shift_Parts = drCounts("D_Shift_Parts") & ""
                     Press_Hours = Val(drCounts("D_Shift_Last_Hours") & "")
 
@@ -870,8 +879,16 @@ Public Class Ctr_Press_Status
                         Else
                             Lbl_Fourth_Shift_Rate.Text = "0.0"
                         End If
+
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate.Text = "0.0"
+                        End If
+
                     Else
                         Lbl_Fourth_Shift_Rate.Text = ""
+                        Lbl_Previous_Shift_Rate.Text = ""
                     End If
 
 
@@ -920,10 +937,12 @@ Public Class Ctr_Press_Status
                     Lbl_Scrap_Total.Text = drCounts("Total_Scrap") & ""
                     lbl_Current_Shift_Total_Scrap.Text = drCounts("A_Shift_Scrap_Total") & ""
                     lbl_Last_Shift_Total_Scrap.Text = drCounts("B_Shift_Scrap_Total") & ""
-                    lbl_Previous_Shift_Total_Scrap.Text = drCounts("C_Shift_Scrap_Total") & ""
+
                     If enable_fourth_shift Then
+                        lbl_Previous_Shift_Total_Scrap.Text = drCounts("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap.Text = drCounts("D_Shift_Scrap_Total") & ""
                     Else
+                        lbl_Previous_Shift_Total_Scrap.Text = ""
                         lbl_Fourth_Shift_Total_Scrap.Text = ""
                     End If
 
@@ -1070,7 +1089,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
@@ -1090,7 +1109,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1110,7 +1129,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1130,7 +1149,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1146,6 +1165,11 @@ Public Class Ctr_Press_Status
 
                     If enable_fourth_shift Then
 
+                        'third shift
+                        Label35.Visible = True
+                        Label36.Visible = True
+                        Label37.Visible = True
+
                         Label27.Visible = True
                         Label28.Visible = True
                         Label32.Visible = True
@@ -1153,6 +1177,10 @@ Public Class Ctr_Press_Status
                         'Label28.Text = "Pieces Total"
                         'Label27.Text = "Scrap Total"
                     Else
+                        Label35.Visible = False
+                        Label36.Visible = False
+                        Label37.Visible = False
+
                         Label27.Visible = False
                         Label28.Visible = False
                         Label32.Visible = False
@@ -1160,6 +1188,9 @@ Public Class Ctr_Press_Status
                         'Label28.Text = ""
                         'Label27.Text = ""
                     End If
+
+                    Me.Refresh()
+
                     Lbl_Downtime.Text = Format_Time(drCounts("Downtime") & "")
 
                     Lbl_Current_Shift_Total1.Text = drCounts("A_Shift_Total") & ""
@@ -1176,23 +1207,26 @@ Public Class Ctr_Press_Status
                     Else
                         lbl_Last_Total_Rate1.Text = "0.0"
                     End If
-                    Lbl_Previous_Shift_Total1.Text = drCounts("C_Shift_Total") & ""
+                    Lbl_Previous_Shift_Total1.Text = "" ' drCounts("C_Shift_Total") &
                     Press_Hours = Val(drCounts("C_Shift_Hours") & "")
-                    If Press_Hours > 0 Then
-                        lbl_previous_Total_Rate1.Text = Format(Val(Lbl_Previous_Shift_Total1.Text) / Press_Hours, "#.0")
-                    Else
-                        lbl_previous_Total_Rate1.Text = "0.0"
-                    End If
+
                     Lbl_Fourth_Shift_Total1.Text = "" 'drCounts("D_Shift_Total") & ""
                     Press_Hours = Val(drCounts("D_Shift_Hours") & "")
 
                     If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate1.Text = Format(Val(Lbl_Previous_Shift_Total1.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate1.Text = "0.0"
+                        End If
+
                         If Press_Hours > 0 Then
                             lbl_Fourth_Total_Rate1.Text = Format(Val(Lbl_Fourth_Shift_Total1.Text) / Press_Hours, "#.0")
                         Else
                             lbl_Fourth_Total_Rate1.Text = "0.0"
                         End If
                     Else
+                        lbl_previous_Total_Rate1.Text = ""
                         lbl_Fourth_Total_Rate1.Text = ""
                     End If
 
@@ -1215,21 +1249,24 @@ Public Class Ctr_Press_Status
                     End If
                     Shift_Parts = drCounts("C_Shift_Parts") & ""
                     Press_Hours = Val(drCounts("C_Shift_Last_Hours") & "")
-                    If Press_Hours > 0 Then
-                        Lbl_Previous_Shift_Rate1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
-                    Else
-                        Lbl_Previous_Shift_Rate1.Text = "0.0"
-                    End If
+
                     Shift_Parts = drCounts("D_Shift_Parts") & ""
                     Press_Hours = Val(drCounts("D_Shift_Last_Hours") & "")
 
                     If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate1.Text = "0.0"
+                        End If
+
                         If Press_Hours > 0 Then
                             Lbl_Fourth_Shift_Rate1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
                         Else
                             Lbl_Fourth_Shift_Rate1.Text = "0.0"
                         End If
                     Else
+                        Lbl_Previous_Shift_Rate1.Text = ""
                         Lbl_Fourth_Shift_Rate1.Text = ""
                     End If
 
@@ -1277,10 +1314,12 @@ Public Class Ctr_Press_Status
                     Lbl_Scrap_Total1.Text = drCounts("Total_Scrap") & ""
                     lbl_Current_Shift_Total_Scrap1.Text = drCounts("A_Shift_Scrap_Total") & ""
                     lbl_Last_Shift_Total_Scrap1.Text = drCounts("B_Shift_Scrap_Total") & ""
-                    lbl_Previous_Shift_Total_Scrap1.Text = drCounts("C_Shift_Scrap_Total") & ""
+
                     If enable_fourth_shift Then
+                        lbl_Previous_Shift_Total_Scrap1.Text = drCounts("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap1.Text = drCounts("D_Shift_Scrap_Total") & ""
                     Else
+                        lbl_Previous_Shift_Total_Scrap1.Text = ""
                         lbl_Fourth_Shift_Total_Scrap1.Text = ""
                     End If
 
@@ -1469,18 +1508,24 @@ Public Class Ctr_Press_Status
                     Else
                         lbl_Last_Total_Rate2.Text = "0.0"
                     End If
-                    Lbl_Previous_Shift_Total2.Text = drCounts1("C_Shift_Total") & ""
-                    Press_Hours = Val(drCounts1("C_Shift_Hours") & "")
-                    If Press_Hours > 0 Then
-                        lbl_previous_Total_Rate2.Text = Format(Val(Lbl_Previous_Shift_Total2.Text) / Press_Hours, "#.0")
-                    Else
-                        lbl_previous_Total_Rate2.Text = "0.0"
-                    End If
+
+
+
 
                     If enable_fourth_shift Then
                         Lbl_Fourth_Shift_Total2.Text = drCounts1("D_Shift_Total") & ""
+
+                        Press_Hours = Val(drCounts1("C_Shift_Hours") & "")
+                        Lbl_Previous_Shift_Total2.Text = drCounts1("C_Shift_Total") & ""
+
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate2.Text = Format(Val(Lbl_Previous_Shift_Total2.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate2.Text = "0.0"
+                        End If
                     Else
                         Lbl_Fourth_Shift_Total2.Text = ""
+                        lbl_previous_Total_Rate2.Text = ""
                     End If
 
 
@@ -1516,21 +1561,24 @@ Public Class Ctr_Press_Status
                     End If
                     Shift_Parts = drCounts1("C_Shift_Parts") & ""
                     Press_Hours = Val(drCounts1("C_Shift_Last_Hours") & "")
-                    If Press_Hours > 0 Then
-                        Lbl_Previous_Shift_Rate2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
-                    Else
-                        Lbl_Previous_Shift_Rate2.Text = "0.0"
-                    End If
+
                     Shift_Parts = drCounts1("D_Shift_Parts") & ""
                     Press_Hours = Val(drCounts1("D_Shift_Last_Hours") & "")
 
                     If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate2.Text = "0.0"
+                        End If
+
                         If Press_Hours > 0 Then
                             Lbl_Fourth_Shift_Rate2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
                         Else
                             Lbl_Fourth_Shift_Rate2.Text = "0.0"
                         End If
                     Else
+                        Lbl_Previous_Shift_Rate2.Text = ""
                         Lbl_Fourth_Shift_Rate2.Text = ""
                     End If
 
@@ -1579,11 +1627,13 @@ Public Class Ctr_Press_Status
                     Lbl_Scrap_Total2.Text = drCounts1("Total_Scrap") & ""
                     lbl_Current_Shift_Total_Scrap2.Text = drCounts1("A_Shift_Scrap_Total") & ""
                     lbl_Last_Shift_Total_Scrap2.Text = drCounts1("B_Shift_Scrap_Total") & ""
-                    lbl_Previous_Shift_Total_Scrap2.Text = drCounts1("C_Shift_Scrap_Total") & ""
+
 
                     If enable_fourth_shift Then
+                        lbl_Previous_Shift_Total_Scrap2.Text = drCounts1("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap2.Text = drCounts1("D_Shift_Scrap_Total") & ""
                     Else
+                        lbl_Previous_Shift_Total_Scrap2.Text = ""
                         lbl_Fourth_Shift_Total_Scrap2.Text = ""
                     End If
 
@@ -1713,7 +1763,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
@@ -1733,7 +1783,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1753,7 +1803,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1773,7 +1823,7 @@ Public Class Ctr_Press_Status
                             Else
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
-                                Lbl_Previous_Shift.Text = "3"
+                                Lbl_Previous_Shift.Text = ""
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1788,6 +1838,9 @@ Public Class Ctr_Press_Status
 
 
                     If enable_fourth_shift Then
+                        Label35.Visible = True
+                        Label36.Visible = True
+                        Label37.Visible = True
 
                         Label27.Visible = True
                         Label28.Visible = True
@@ -1796,6 +1849,10 @@ Public Class Ctr_Press_Status
                         'Label28.Text = "Pieces Total"
                         'Label27.Text = "Scrap Total"
                     Else
+                        Label35.Visible = False
+                        Label36.Visible = False
+                        Label37.Visible = False
+
                         Label27.Visible = False
                         Label28.Visible = False
                         Label32.Visible = False
@@ -1803,6 +1860,9 @@ Public Class Ctr_Press_Status
                         'Label28.Text = ""
                         'Label27.Text = ""
                     End If
+
+                    Me.Refresh()
+
                     Lbl_Downtime.Text = Format_Time(drCounts("Downtime") & "")
 
                     Lbl_Current_Shift_Total_3_1.Text = drCounts("A_Shift_Total") & ""
@@ -1819,23 +1879,26 @@ Public Class Ctr_Press_Status
                     Else
                         lbl_Last_Total_Rate_3_1.Text = "0.0"
                     End If
-                    Lbl_Previous_Shift_Total_3_1.Text = drCounts("C_Shift_Total") & ""
+                    Lbl_Previous_Shift_Total_3_1.Text = "" ' drCounts("C_Shift_Total") &
                     Press_Hours = Val(drCounts("C_Shift_Hours") & "")
-                    If Press_Hours > 0 Then
-                        lbl_previous_Total_Rate_3_1.Text = Format(Val(Lbl_Previous_Shift_Total_3_1.Text) / Press_Hours, "#.0")
-                    Else
-                        lbl_previous_Total_Rate_3_1.Text = "0.0"
-                    End If
+
                     Lbl_Fourth_Shift_Total_3_1.Text = "" 'drCounts("D_Shift_Total") & ""
                     Press_Hours = Val(drCounts("D_Shift_Hours") & "")
 
                     If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate_3_1.Text = Format(Val(Lbl_Previous_Shift_Total_3_1.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate_3_1.Text = "0.0"
+                        End If
+
                         If Press_Hours > 0 Then
                             lbl_Fourth_Total_Rate_3_1.Text = Format(Val(Lbl_Fourth_Shift_Total_3_1.Text) / Press_Hours, "#.0")
                         Else
                             lbl_Fourth_Total_Rate_3_1.Text = "0.0"
                         End If
                     Else
+                        lbl_previous_Total_Rate_3_1.Text = ""
                         lbl_Fourth_Total_Rate_3_1.Text = ""
                     End If
 
@@ -1858,21 +1921,23 @@ Public Class Ctr_Press_Status
                     End If
                     Shift_Parts = drCounts("C_Shift_Parts") & ""
                     Press_Hours = Val(drCounts("C_Shift_Last_Hours") & "")
-                    If Press_Hours > 0 Then
-                        Lbl_Previous_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
-                    Else
-                        Lbl_Previous_Shift_Rate_3_1.Text = "0.0"
-                    End If
+
                     Shift_Parts = drCounts("D_Shift_Parts") & ""
                     Press_Hours = Val(drCounts("D_Shift_Last_Hours") & "")
 
                     If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate_3_1.Text = "0.0"
+                        End If
                         If Press_Hours > 0 Then
                             Lbl_Fourth_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
                         Else
                             Lbl_Fourth_Shift_Rate_3_1.Text = "0.0"
                         End If
                     Else
+                        Lbl_Previous_Shift_Rate_3_1.Text = ""
                         Lbl_Fourth_Shift_Rate_3_1.Text = ""
                     End If
 
@@ -1921,10 +1986,12 @@ Public Class Ctr_Press_Status
                     Lbl_Scrap_Total_3_1.Text = drCounts("Total_Scrap") & ""
                     lbl_Current_Shift_Total_Scrap_3_1.Text = drCounts("A_Shift_Scrap_Total") & ""
                     lbl_Last_Shift_Total_Scrap_3_1.Text = drCounts("B_Shift_Scrap_Total") & ""
-                    lbl_Previous_Shift_Total_Scrap_3_1.Text = drCounts("C_Shift_Scrap_Total") & ""
+
                     If enable_fourth_shift Then
+                        lbl_Previous_Shift_Total_Scrap_3_1.Text = drCounts("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap_3_1.Text = drCounts("D_Shift_Scrap_Total") & ""
                     Else
+                        lbl_Previous_Shift_Total_Scrap_3_1.Text = ""
                         lbl_Fourth_Shift_Total_Scrap_3_1.Text = ""
                     End If
 
@@ -2111,17 +2178,21 @@ Public Class Ctr_Press_Status
                     Else
                         lbl_Last_Total_Rate_3_2.Text = "0.0"
                     End If
-                    Lbl_Previous_Shift_Total_3_2.Text = drCounts1("C_Shift_Total") & ""
-                    Press_Hours = Val(drCounts1("C_Shift_Hours") & "")
-                    If Press_Hours > 0 Then
-                        lbl_previous_Total_Rate_3_2.Text = Format(Val(Lbl_Previous_Shift_Total_3_2.Text) / Press_Hours, "#.0")
-                    Else
-                        lbl_previous_Total_Rate_3_2.Text = "0.0"
-                    End If
+
 
                     If enable_fourth_shift Then
                         Lbl_Fourth_Shift_Total_3_2.Text = drCounts1("D_Shift_Total") & ""
+
+                        Lbl_Previous_Shift_Total_3_2.Text = drCounts1("C_Shift_Total") & ""
+                        Press_Hours = Val(drCounts1("C_Shift_Hours") & "")
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate_3_2.Text = Format(Val(Lbl_Previous_Shift_Total_3_2.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate_3_2.Text = "0.0"
+                        End If
+
                     Else
+                        lbl_previous_Total_Rate_3_2.Text = ""
                         Lbl_Fourth_Shift_Total_3_2.Text = ""
                     End If
 
@@ -2158,21 +2229,24 @@ Public Class Ctr_Press_Status
                     End If
                     Shift_Parts = drCounts1("C_Shift_Parts") & ""
                     Press_Hours = Val(drCounts1("C_Shift_Last_Hours") & "")
-                    If Press_Hours > 0 Then
-                        Lbl_Previous_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
-                    Else
-                        Lbl_Previous_Shift_Rate_3_2.Text = "0.0"
-                    End If
+
                     Shift_Parts = drCounts1("D_Shift_Parts") & ""
                     Press_Hours = Val(drCounts1("D_Shift_Last_Hours") & "")
 
                     If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate_3_2.Text = "0.0"
+                        End If
+
                         If Press_Hours > 0 Then
                             Lbl_Fourth_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
                         Else
                             Lbl_Fourth_Shift_Rate_3_2.Text = "0.0"
                         End If
                     Else
+                        Lbl_Previous_Shift_Rate_3_2.Text = ""
                         Lbl_Fourth_Shift_Rate_3_2.Text = ""
                     End If
 
@@ -2221,11 +2295,13 @@ Public Class Ctr_Press_Status
                     Lbl_Scrap_Total_3_2.Text = drCounts1("Total_Scrap") & ""
                     lbl_Current_Shift_Total_Scrap_3_2.Text = drCounts1("A_Shift_Scrap_Total") & ""
                     lbl_Last_Shift_Total_Scrap_3_2.Text = drCounts1("B_Shift_Scrap_Total") & ""
-                    lbl_Previous_Shift_Total_Scrap_3_2.Text = drCounts1("C_Shift_Scrap_Total") & ""
+
 
                     If enable_fourth_shift Then
+                        lbl_Previous_Shift_Total_Scrap_3_2.Text = drCounts1("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap_3_2.Text = drCounts1("D_Shift_Scrap_Total") & ""
                     Else
+                        lbl_Previous_Shift_Total_Scrap_3_2.Text = ""
                         lbl_Fourth_Shift_Total_Scrap_3_2.Text = ""
                     End If
 
@@ -2335,17 +2411,19 @@ Public Class Ctr_Press_Status
                     Else
                         lbl_Last_Total_Rate_3_3.Text = "0.0"
                     End If
-                    Lbl_Previous_Shift_Total_3_3.Text = drCounts2("C_Shift_Total") & ""
-                    Press_Hours = Val(drCounts2("C_Shift_Hours") & "")
-                    If Press_Hours > 0 Then
-                        lbl_previous_Total_Rate_3_3.Text = Format(Val(Lbl_Previous_Shift_Total_3_3.Text) / Press_Hours, "#.0")
-                    Else
-                        lbl_previous_Total_Rate_3_3.Text = "0.0"
-                    End If
+
 
                     If enable_fourth_shift Then
                         Lbl_Fourth_Shift_Total_3_3.Text = drCounts2("D_Shift_Total") & ""
+                        Lbl_Previous_Shift_Total_3_3.Text = drCounts2("C_Shift_Total") & ""
+                        Press_Hours = Val(drCounts2("C_Shift_Hours") & "")
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate_3_3.Text = Format(Val(Lbl_Previous_Shift_Total_3_3.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate_3_3.Text = "0.0"
+                        End If
                     Else
+                        lbl_previous_Total_Rate_3_3.Text = ""
                         Lbl_Fourth_Shift_Total_3_3.Text = ""
                     End If
 
@@ -2382,21 +2460,23 @@ Public Class Ctr_Press_Status
                     End If
                     Shift_Parts = drCounts2("C_Shift_Parts") & ""
                     Press_Hours = Val(drCounts2("C_Shift_Last_Hours") & "")
-                    If Press_Hours > 0 Then
-                        Lbl_Previous_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
-                    Else
-                        Lbl_Previous_Shift_Rate_3_3.Text = "0.0"
-                    End If
+
                     Shift_Parts = drCounts2("D_Shift_Parts") & ""
                     Press_Hours = Val(drCounts2("D_Shift_Last_Hours") & "")
 
                     If enable_fourth_shift Then
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate_3_3.Text = "0.0"
+                        End If
                         If Press_Hours > 0 Then
                             Lbl_Fourth_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
                         Else
                             Lbl_Fourth_Shift_Rate_3_3.Text = "0.0"
                         End If
                     Else
+                        Lbl_Previous_Shift_Rate_3_3.Text = ""
                         Lbl_Fourth_Shift_Rate_3_3.Text = ""
                     End If
 
@@ -2445,11 +2525,13 @@ Public Class Ctr_Press_Status
                     Lbl_Scrap_Total_3_3.Text = drCounts2("Total_Scrap") & ""
                     lbl_Current_Shift_Total_Scrap_3_3.Text = drCounts2("A_Shift_Scrap_Total") & ""
                     lbl_Last_Shift_Total_Scrap_3_3.Text = drCounts2("B_Shift_Scrap_Total") & ""
-                    lbl_Previous_Shift_Total_Scrap_3_3.Text = drCounts2("C_Shift_Scrap_Total") & ""
+
 
                     If enable_fourth_shift Then
+                        lbl_Previous_Shift_Total_Scrap_3_3.Text = drCounts2("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap_3_3.Text = drCounts2("D_Shift_Scrap_Total") & ""
                     Else
+                        lbl_Previous_Shift_Total_Scrap_3_3.Text = ""
                         lbl_Fourth_Shift_Total_Scrap_3_3.Text = ""
                     End If
 

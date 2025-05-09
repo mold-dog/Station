@@ -79,7 +79,14 @@ Public Class Ctr_Operator_Status_by_Function
         Try
             SQLCon.ConnectionString = DBConnection
             SQLCon.Open()
-            Dim da As New SqlDataAdapter("Select * from functional_area where id = " & Sub_Parameter, SQLCon)
+            Area_ID = Sub_Parameter
+            Dim query As String = ""
+            If Area_ID > 20 And Area_ID < 25 Then
+                query = "Select * from functional_area where id = 11"
+            Else
+                query = "Select * from functional_area where id = " & Sub_Parameter
+            End If
+            Dim da As New SqlDataAdapter(query, SQLCon)
             da.SelectCommand.CommandTimeout = SQL_Timeout
             Dim ds As New DataSet
             da.Fill(ds, "Area")
@@ -87,7 +94,7 @@ Public Class Ctr_Operator_Status_by_Function
             For Each dr As DataRow In ds.Tables("Area").Rows
                 Lbl_Area_Name.Text = (dr("Description"))
             Next
-            Area_ID = Sub_Parameter
+
             Call Update_Screen()
             lbl_Comm_Fail.Visible = False
 
@@ -166,8 +173,27 @@ Public Class Ctr_Operator_Status_by_Function
             SQLCon.ConnectionString = DBConnection
             SQLCon.Open()
             Debug_Step = 1
-            Dim daCounts_Data As New SqlDataAdapter("Exec Operator_Status_by_Area0 " & Area_ID, SQLCon)
-            WriteEvent("Querying Database: " & vbCrLf & "Exec Operator_Status_by_Area0 " & Area_ID, EventInfo)
+            Dim query As String = ""
+            If Area_ID > 20 And Area_ID < 25 Then
+                query = "Exec Operator_Status_by_Area_Temp 11, "
+                If Area_ID = 21 Then
+                    query += "'68, 69, 70, 71, 72, 73, 74, 75'"
+                ElseIf Area_ID = 22 Then
+                    query += "'84, 85, 86, 87, 88, 89, 90, 91'"
+                ElseIf Area_ID = 23 Then
+                    query += "'146, 147, 148, 149, 150, 151, 152, 153'"
+                ElseIf Area_ID = 24 Then
+                    query += "'66, 67, 76, 77, 78, 79, 96, 97'"
+                End If
+
+            Else
+                query = "Exec Operator_Status_by_Area_Temp " & Area_ID & ", ''"
+            End If
+
+            Dim daCounts_Data As New SqlDataAdapter(query, SQLCon)
+            WriteEvent("Querying Database: " & vbCrLf & query, EventInfo)
+
+
             daCounts_Data.SelectCommand.CommandTimeout = SQL_Timeout
             Dim dsCounts As New DataSet
             daCounts_Data.Fill(dsCounts, "Counts")
@@ -478,7 +504,13 @@ Public Class Ctr_Operator_Status_by_Function
         Try
             SQLCon.ConnectionString = DBConnection
             SQLCon.Open()
-            Dim daCounts_Data As New SqlDataAdapter("Exec Completed_to_Ship " & Area_ID, SQLCon)
+            Dim query As String = ""
+            If Area_ID > 20 And Area_ID < 25 Then
+                query = "Exec Completed_to_Ship 11"
+            Else
+                query = "Exec Completed_to_Ship " & Area_ID
+            End If
+            Dim daCounts_Data As New SqlDataAdapter(query, SQLCon)
             daCounts_Data.SelectCommand.CommandTimeout = SQL_Timeout
             Dim dsCounts As New DataSet
             daCounts_Data.Fill(dsCounts, "Completed_to_Ship")

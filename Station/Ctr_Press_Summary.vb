@@ -19,6 +19,14 @@ Public Class Ctr_Press_Summary
 
 
     Private Sub Ctr_Press_Summary_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If False Then
+            Block.Location = New Point(13, 641)
+            Block.Size = New Size(1878, 59)
+            Block.BringToFront()
+
+        End If
+
         Dim counter As Integer
         Call Load_Presses()
 
@@ -250,7 +258,7 @@ Public Class Ctr_Press_Summary
                         Else
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
-                            Lbl_Previous_Shift.Text = "3"
+                            Lbl_Previous_Shift.Text = ""
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
@@ -270,7 +278,7 @@ Public Class Ctr_Press_Summary
                         Else
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
-                            Lbl_Previous_Shift.Text = "3"
+                            Lbl_Previous_Shift.Text = ""
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -290,7 +298,7 @@ Public Class Ctr_Press_Summary
                         Else
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
-                            Lbl_Previous_Shift.Text = "3"
+                            Lbl_Previous_Shift.Text = ""
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -310,7 +318,7 @@ Public Class Ctr_Press_Summary
                         Else
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
-                            Lbl_Previous_Shift.Text = "3"
+                            Lbl_Previous_Shift.Text = ""
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -352,14 +360,16 @@ Public Class Ctr_Press_Summary
                     Me.Controls("lbl_Last_Total_Rate" & press_row).Text = "0.0"
                 End If
                 Press_Hours = Val(drCounts("C_Shift_Hours") & "")
-                If Press_Hours > 0 Then
-                    Me.Controls("lbl_previous_Total_Rate" & press_row).Text = Format(Val(drCounts("C_Shift_Total") & "") / Press_Hours, "#.0")
-                Else
-                    Me.Controls("lbl_previous_Total_Rate" & press_row).Text = "0.0"
-                End If
+
                 Press_Hours = Val(drCounts("D_Shift_Hours") & "")
 
                 If enable_fourth_shift Then
+                    If Press_Hours > 0 Then
+                        Me.Controls("lbl_previous_Total_Rate" & press_row).Text = Format(Val(drCounts("C_Shift_Total") & "") / Press_Hours, "#.0")
+                    Else
+                        Me.Controls("lbl_previous_Total_Rate" & press_row).Text = "0.0"
+                    End If
+
                     If Press_Hours > 0 Then
                         Me.Controls("lbl_fourth_Total_Rate" & press_row).Text = Format(Val(drCounts("D_Shift_Total") & "") / Press_Hours, "#.0")
                     Else
@@ -367,6 +377,7 @@ Public Class Ctr_Press_Summary
                     End If
 
                 Else
+                    Me.Controls("lbl_previous_Total_Rate" & press_row).Text = " "
                     Me.Controls("lbl_fourth_Total_Rate" & press_row).Text = " "
 
                 End If

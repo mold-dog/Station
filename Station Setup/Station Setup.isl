@@ -343,7 +343,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{4A50B9D2-2497-44EE-958D-A68D9369F453}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{3CECF424-7B67-4A71-9ED3-A4D43395900D}</td><td>INSTALLDIR</td><td>258</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{ED32561C-DE7F-4D57-862F-1A2771101BEA}</td><td>INSTALLDIR</td><td>258</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Station.Primary_output</td><td>{FCB64470-8073-4048-94AB-F15645C84D4F}</td><td>INSTALLDIR</td><td>2</td><td/><td>station.primary_output</td><td>81</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
@@ -1173,7 +1173,6 @@
 		<row><td>ProgramMenuFolder</td><td>TARGETDIR</td><td>.:Programs</td><td/><td>3</td><td/></row>
 		<row><td>RFID_STATION</td><td>ISMyCompanyDir</td><td>RFIDST~1|RFID Station</td><td/><td>0</td><td/></row>
 		<row><td>RFID_STATION1</td><td>ASA</td><td>RFIDST~1|RFID Station</td><td/><td>0</td><td/></row>
-		<row><td>RFID_STATION2</td><td>LCE</td><td>RFIDST~1|RFID Station</td><td/><td>0</td><td/></row>
 		<row><td>RFID_STATION_2.0</td><td>LCE</td><td>RFIDST~1|RFID Station</td><td/><td>0</td><td/></row>
 		<row><td>RecentFolder</td><td>TARGETDIR</td><td>.:Recent</td><td/><td>0</td><td/></row>
 		<row><td>SendToFolder</td><td>TARGETDIR</td><td>.:SendTo</td><td/><td>3</td><td/></row>
@@ -2043,7 +2042,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_A8A192B4_896B_4992_BB46_1A202CAD111C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_1F87AF63_D73A_48DE_9D1C_6052EA416AC6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_6D3F98B4_B6EC_4B51_B500_5541EB71C76B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Station.Primary_output</td><td/><td/><td>_DBEE0A02_09C3_4629_A482_887B350AE58F_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
@@ -3449,7 +3448,6 @@
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1033</td><td>Updating XML file %s...</td><td>0</td><td/><td>1696868492</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>1696868492</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>1696868492</td></row>
-		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>NEWRFI~1|new RFID Station</td><td>0</td><td/><td>355233038</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>1696868492</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>1696868492</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>1696868492</td></row>
@@ -3740,6 +3738,7 @@
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1696868492</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>1696870540</td></row>
 		<row><td>ID_STRING10</td><td>1033</td><td/><td>0</td><td/><td>1915565547</td></row>
+		<row><td>ID_STRING11</td><td>1033</td><td>NEWRFI~1|new RFID Station</td><td>0</td><td/><td>313327915</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td/><td>0</td><td/><td>1696873356</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Wilhelmina Fredenberg</td><td>0</td><td/><td>355221355</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>LCE</td><td>0</td><td/><td>355252043</td></row>
@@ -4376,9 +4375,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]Station.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{37B37AAC-54FF-4429-A9CE-97845B8F4570}</td><td/></row>
+		<row><td>ProductCode</td><td>{7B496AF0-23F4-408E-8EFB-657DEE0D787A}</td><td/></row>
 		<row><td>ProductName</td><td>RFID Station 2.0</td><td/></row>
-		<row><td>ProductVersion</td><td>2.03.0000</td><td/></row>
+		<row><td>ProductVersion</td><td>2.3.3.3</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4391,7 +4390,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
 		<row><td>SHOWLAUNCHPROGRAM</td><td>-1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION45FULL;ISACTIONPROP2</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION45FULL;ISACTIONPROP2</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{9A6F1094-6A6C-4121-8216-DD03D64155C4}</td><td/></row>
@@ -4447,16 +4446,24 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S0">Value</col>
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Registry1</td><td>2</td><td>SOFTWARE\LCE</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>1</td></row>
-		<row><td>Registry10</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Station</td><td>199</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry2</td><td>2</td><td>SOFTWARE</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>1</td></row>
-		<row><td>Registry3</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer_Ma</td><td>192.168.99.7</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry4</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Port</td><td>COM2</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry5</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>ReadStrength</td><td>16</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry6</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry7</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBPassword</td><td>RFID123$</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry8</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer</td><td>192.168.0.7</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>Registry9</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBUID</td><td>VB_Client</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry1</td><td>2</td><td>SOFTWARE\LCE</td><td/><td/><td>ISX_DEFAULTCOMPONENT1</td><td>1</td></row>
+		<row><td>Registry10</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Station</td><td>199</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry11</td><td>2</td><td>SOFTWARE</td><td/><td/><td>ISX_DEFAULTCOMPONENT1</td><td>1</td></row>
+		<row><td>Registry12</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Station</td><td>199</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry13</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer_Ma</td><td>192.168.99.1</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry14</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Port</td><td>COM2</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry15</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>ReadStrength</td><td>16</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry16</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry17</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBPassword</td><td>RFID123$</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry18</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer</td><td>192.168.0.7</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry19</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBUID</td><td>VB_Client</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry3</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer_Ma</td><td>192.168.99.1</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry4</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>Port</td><td>COM2</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry5</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>ReadStrength</td><td>16</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry6</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td/><td/><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry7</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBPassword</td><td>RFID123$</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry8</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBServer</td><td>192.168.0.7</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry9</td><td>2</td><td>SOFTWARE\LCE\RFID</td><td>DBUID</td><td>VB_Client</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
@@ -4467,7 +4474,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="i2">InstallMode</col>
 		<row><td>FileKey1</td><td>Station.Primary_output</td><td/><td>asa</td><td>2</td></row>
 		<row><td>FileKey2</td><td>Station.Primary_output</td><td/><td>rfidst_1_rfid_station</td><td>2</td></row>
-		<row><td>_Built</td><td>Station.Primary_output</td><td/><td>rfidst_1_rfid_station</td><td>2</td></row>
+		<row><td>_Built21</td><td>Station.Primary_output</td><td/><td>rfidst_1_rfid_station</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4553,9 +4560,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>_Built</td><td>rfidst_1_rfid_station</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>_Built1</td><td>StartupFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>_Built2</td><td>DesktopFolder</td><td>##ID_STRING9##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built21</td><td>rfidst_1_rfid_station</td><td>##ID_STRING11##</td><td>Station.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4677,7 +4683,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">Remove</col>
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
-		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
 		<row><td>{9A6F1094-6A6C-4121-8216-DD03D64155C4}</td><td></td><td>2.99.0000</td><td></td><td>768</td><td/><td>ISACTIONPROP2</td><td>2.01.0000 Upgrade</td></row>
 	</table>
 

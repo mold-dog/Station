@@ -4375,9 +4375,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]Station.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{7B496AF0-23F4-408E-8EFB-657DEE0D787A}</td><td/></row>
+		<row><td>ProductCode</td><td>{1712D35A-E472-4978-A387-A7EC06C276BD}</td><td/></row>
 		<row><td>ProductName</td><td>RFID Station 2.0</td><td/></row>
-		<row><td>ProductVersion</td><td>2.3.3.3</td><td/></row>
+		<row><td>ProductVersion</td><td>2.3.4.3</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4393,7 +4393,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SecureCustomProperties</td><td>USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION45FULL;ISACTIONPROP2</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
-		<row><td>UpgradeCode</td><td>{9A6F1094-6A6C-4121-8216-DD03D64155C4}</td><td/></row>
+		<row><td>UpgradeCode</td><td>{6AEA56CF-80E2-45CB-8165-4C964B98A9B5}</td><td/></row>
 		<row><td>_IsMaintenance</td><td>Change</td><td/></row>
 		<row><td>_IsSetupTypeMin</td><td>Typical</td><td/></row>
 	</table>

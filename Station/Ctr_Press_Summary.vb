@@ -20,40 +20,36 @@ Public Class Ctr_Press_Summary
 
     Private Sub Ctr_Press_Summary_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If False Then
+        If DBConnection <> DBConnection_Ma Then
             Block.Location = New Point(13, 641)
             Block.Size = New Size(1878, 59)
             Block.BringToFront()
 
+            'Mauston
+            '20, 794
+            '2817, 428
+
+            'Johnson Creek
+            '13, 641
+            '1878, 59
         End If
 
-        Dim counter As Integer
         Call Load_Presses()
-
-        'For counter = UBound(ID_Array) + 2 To Num_presses_allowed
-        '    Call row_invisible(counter)
-        'Next
-
-        'Block.Top = ((UBound(ID_Array)) * 65) + 120
-        'Block.Height = (10 - UBound(ID_Array)) * 65
-        'Block.ForeColor = Me.BackColor
 
         DGV_Paint_Data.Font = Block.Font
         LB_PMC.DrawMode = DrawMode.OwnerDrawFixed
         LB_PMC.ItemHeight += 5
 
-
         Call Update_Screen()
         Call Update_Alarms()
         Me.Refresh()
     End Sub
+
     Private bindingsource1 As New BindingSource
 
     Dim Press_ID_Array() As Int32
     Dim Bond_ID_Array() As Int32
     Dim Num_presses_allowed As Integer = 10
-
-
 
 
     Sub Load_Presses()
@@ -62,6 +58,8 @@ Public Class Ctr_Press_Summary
 
         Dim counter As Integer = 0
         Try
+
+
             SQLCon.ConnectionString = DBConnection
             SQLCon.Open()
             Dim da As New SqlDataAdapter("Select * from Press order by description", SQLCon)
@@ -121,36 +119,13 @@ Public Class Ctr_Press_Summary
 
 
     Private Sub Tmr_Screen_Update_Tick(sender As Object, e As EventArgs) Handles Tmr_Screen_Update.Tick
-        ' Dim counter As Integer
-        '        Tmr_Screen_Update.Interval = 60000
+
         If Not Bonder Then
             Press = 0
             Bonder = 1
-            'Lbl_Bond_Cell.Visible = True
-            'Lbl_Press.Visible = False
-            'Block.Top = ((UBound(Bond_ID_Array)) * 65) + 144
-            'Block.Height = (10 - UBound(Bond_ID_Array)) * 65
-            'For counter = UBound(Bond_ID_Array) + 2 To Num_presses_allowed
-            '    Call row_invisible(counter)
-            'Next
-            'counter = 0
-            'For counter = 1 To Num_presses_allowed
-            '    Me.Controls("Lbl_Press_Name" & (counter)).Visible = False
-            'Next
         Else
             Press = 1
             Bonder = 0
-            'Lbl_Bond_Cell.Visible = False
-            'Lbl_Press.Visible = True
-            'Block.Top = ((UBound(Press_ID_Array)) * 65) + 120
-            'Block.Height = (10 - UBound(Press_ID_Array)) * 65
-            'For counter = UBound(Press_ID_Array) + 2 To Num_presses_allowed
-            '    Call row_invisible(counter)
-            'Next
-            'counter = 0
-            'For counter = 1 To Num_presses_allowed
-            '    Me.Controls("Lbl_Bond_Name" & (counter)).Visible = False
-            'Next
         End If
 
         Call Update_Screen()
@@ -159,19 +134,25 @@ Public Class Ctr_Press_Summary
 
     End Sub
     Sub Update_Screen()
-        Dim counter As Integer
-        For counter = 0 To UBound(Press_ID_Array)
-            If counter <= Num_presses_allowed Then
-                Call update_row(Press_ID_Array(counter), counter + 1)
-            End If
-        Next
-        For counter = 0 To UBound(Bond_ID_Array)
-            If counter <= Num_presses_allowed Then
-                Call update_row(Bond_ID_Array(counter) + 100, counter + 11)
-            End If
-        Next
+
+        Try
 
 
+            Dim counter As Integer
+            For counter = 0 To UBound(Press_ID_Array)
+                If counter <= Num_presses_allowed Then
+                    Call update_row(Press_ID_Array(counter), counter + 1)
+                End If
+            Next
+            For counter = 0 To UBound(Bond_ID_Array)
+                If counter <= Num_presses_allowed Then
+                    Call update_row(Bond_ID_Array(counter) + 100, counter + 11)
+                End If
+            Next
+
+        Catch ex As Exception
+            WriteEvent("Error updating screen: " & ex.Message & vbCrLf & vbCrLf & ex.ToString, EventError)
+        End Try
 
     End Sub
     Sub update_row(press_id As Integer, press_row As Integer)
@@ -210,26 +191,34 @@ Public Class Ctr_Press_Summary
                 query2 = "Exec Get_Bonder_Users " & press_id - 100 & "," & 0
                 query3 = "Select Disable_RFID From Bonder where ID = " & press_id - 100
             End If
+
+            Dim dsCounts As New DataSet
+
+
             Dim daCounts_Data As New SqlDataAdapter(query, SQLCon)
             daCounts_Data.SelectCommand.CommandTimeout = SQL_Timeout
-            Dim dsCounts As New DataSet
             daCounts_Data.Fill(dsCounts, "Counts")
+
+
 
             Dim daUser_Data As New SqlDataAdapter(query2, SQLCon)
             daUser_Data.SelectCommand.CommandTimeout = SQL_Timeout
             Dim dsUser As New DataSet
             daUser_Data.Fill(dsUser, "Users")
 
-            Dim daFourthShift_bit As New SqlDataAdapter("Select Enable_Fourth_Shift From Config_View", SQLCon)
+            Dim daFourthShift_bit As New SqlDataAdapter("Select Enable_Fourth_Shift, Enable_Two_Shift From Config_View", SQLCon)
             daFourthShift_bit.SelectCommand.CommandTimeout = SQL_Timeout
             Dim daFourthShift As New DataSet
             daFourthShift_bit.Fill(daFourthShift, "Fourth")
 
             Dim enable_fourth_shift As Boolean = False
+            Dim enable_two_shift As Boolean = False
 
             For Each temp_dr As DataRow In daFourthShift.Tables("Fourth").Rows
                 If temp_dr("Enable_Fourth_Shift") Then
                     enable_fourth_shift = True
+                ElseIf temp_dr("Enable_Two_Shift") Then
+                    enable_two_Shift = True
                 End If
             Next
 
@@ -255,10 +244,16 @@ Public Class Ctr_Press_Summary
                             Lbl_Last_Shift.Text = "B"
                             Lbl_Previous_Shift.Text = "C"
                             Lbl_Fourth_Shift.Text = "D"
-                        Else
+                        ElseIf enable_two_shift Then
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
                             Lbl_Previous_Shift.Text = ""
+                            Lbl_Fourth_Shift.Text = ""
+                        Else
+
+                            Lbl_Current_Shift.Text = "1"
+                            Lbl_Last_Shift.Text = "2"
+                            Lbl_Previous_Shift.Text = "3"
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
@@ -275,10 +270,16 @@ Public Class Ctr_Press_Summary
                             Lbl_Last_Shift.Text = "B"
                             Lbl_Previous_Shift.Text = "C"
                             Lbl_Fourth_Shift.Text = "D"
-                        Else
+                        ElseIf enable_two_shift Then
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
                             Lbl_Previous_Shift.Text = ""
+                            Lbl_Fourth_Shift.Text = ""
+                        Else
+
+                            Lbl_Current_Shift.Text = "1"
+                            Lbl_Last_Shift.Text = "2"
+                            Lbl_Previous_Shift.Text = "3"
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -295,10 +296,16 @@ Public Class Ctr_Press_Summary
                             Lbl_Last_Shift.Text = "B"
                             Lbl_Previous_Shift.Text = "C"
                             Lbl_Fourth_Shift.Text = "D"
-                        Else
+                        ElseIf enable_two_shift Then
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
                             Lbl_Previous_Shift.Text = ""
+                            Lbl_Fourth_Shift.Text = ""
+                        Else
+
+                            Lbl_Current_Shift.Text = "1"
+                            Lbl_Last_Shift.Text = "2"
+                            Lbl_Previous_Shift.Text = "3"
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -315,10 +322,16 @@ Public Class Ctr_Press_Summary
                             Lbl_Last_Shift.Text = "B"
                             Lbl_Previous_Shift.Text = "C"
                             Lbl_Fourth_Shift.Text = "D"
-                        Else
+                        ElseIf enable_two_shift Then
                             Lbl_Current_Shift.Text = "1"
                             Lbl_Last_Shift.Text = "2"
                             Lbl_Previous_Shift.Text = ""
+                            Lbl_Fourth_Shift.Text = ""
+                        Else
+
+                            Lbl_Current_Shift.Text = "1"
+                            Lbl_Last_Shift.Text = "2"
+                            Lbl_Previous_Shift.Text = "3"
                             Lbl_Fourth_Shift.Text = ""
                         End If
                         Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -376,10 +389,16 @@ Public Class Ctr_Press_Summary
                         Me.Controls("lbl_fourth_Total_Rate" & press_row).Text = "0.0"
                     End If
 
-                Else
+                Elseif enable_two_shift then
                     Me.Controls("lbl_previous_Total_Rate" & press_row).Text = " "
                     Me.Controls("lbl_fourth_Total_Rate" & press_row).Text = " "
-
+                Else
+                    Me.Controls("lbl_fourth_Total_Rate" & press_row).Text = " "
+                    If Press_Hours > 0 Then
+                        Me.Controls("lbl_previous_Total_Rate" & press_row).Text = Format(Val(drCounts("C_Shift_Total") & "") / Press_Hours, "#.0")
+                    Else
+                        Me.Controls("lbl_previous_Total_Rate" & press_row).Text = "0.0"
+                    End If
                 End If
 
 

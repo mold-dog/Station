@@ -660,17 +660,22 @@ Public Class Ctr_Press_Status
                 daUser_Data.Fill(dsUser, "Users")
                 SQLCon.Close()
 
-                Dim daFourthShift_bit As New SqlDataAdapter("Select Enable_Fourth_Shift From Config_View", SQLCon)
+                Dim daFourthShift_bit As New SqlDataAdapter("Select Enable_Fourth_Shift, Enable_Two_Shift From Config_View", SQLCon)
                 daFourthShift_bit.SelectCommand.CommandTimeout = SQL_Timeout
                 Dim daFourthShift As New DataSet
                 daFourthShift_bit.Fill(daFourthShift, "Fourth")
 
                 Dim enable_fourth_shift As Boolean = False
+                Dim enable_two_shift As Boolean = False
+
 
                 For Each temp_dr As DataRow In daFourthShift.Tables("Fourth").Rows
                     If temp_dr("Enable_Fourth_Shift") Then
                         enable_fourth_shift = True
+                    ElseIf temp_dr("Enable_Two_Shift") Then
+                        enable_two_shift = True
                     End If
+
                 Next
 
                 Dim daDisableRFID_bit As New SqlDataAdapter(query3, SQLCon)
@@ -698,10 +703,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
 
@@ -719,10 +729,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -739,10 +754,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -760,10 +780,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -788,10 +813,18 @@ Public Class Ctr_Press_Status
                         'Label32.Text = "Average"
                         'Label28.Text = "Pieces Total"
                         'Label27.Text = "Scrap Total"
-                    Else
+                    ElseIf enable_two_shift Then
                         Label35.Visible = False
                         Label36.Visible = False
                         Label37.Visible = False
+
+                        Label27.Visible = False
+                        Label28.Visible = False
+                        Label32.Visible = False
+                    Else
+                        Label35.Visible = True
+                        Label36.Visible = True
+                        Label37.Visible = True
 
                         Label27.Visible = False
                         Label28.Visible = False
@@ -844,9 +877,19 @@ Public Class Ctr_Press_Status
                             lbl_previous_Total_Rate.Text = "0.0"
                         End If
 
-                    Else
+                    ElseIf enable_two_shift Then
+
                         lbl_Fourth_Total_Rate.Text = ""
                         lbl_previous_Total_Rate.Text = ""
+
+                    Else
+                        lbl_Fourth_Total_Rate.Text = ""
+
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate.Text = Format(Val(Lbl_Previous_Shift_Total.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate.Text = "0.0"
+                        End If
 
                     End If
 
@@ -886,9 +929,19 @@ Public Class Ctr_Press_Status
                             Lbl_Previous_Shift_Rate.Text = "0.0"
                         End If
 
-                    Else
+                    ElseIf enable_two_shift Then
                         Lbl_Fourth_Shift_Rate.Text = ""
                         Lbl_Previous_Shift_Rate.Text = ""
+                    Else
+
+                        Lbl_Fourth_Shift_Rate.Text = ""
+
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate.Text = "0.0"
+                        End If
+
                     End If
 
 
@@ -941,9 +994,13 @@ Public Class Ctr_Press_Status
                     If enable_fourth_shift Then
                         lbl_Previous_Shift_Total_Scrap.Text = drCounts("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap.Text = drCounts("D_Shift_Scrap_Total") & ""
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_Previous_Shift_Total_Scrap.Text = ""
                         lbl_Fourth_Shift_Total_Scrap.Text = ""
+                    Else
+                        lbl_Previous_Shift_Total_Scrap.Text = drCounts("C_Shift_Scrap_Total") & ""
+                        lbl_Fourth_Shift_Total_Scrap.Text = ""
+
                     End If
 
 
@@ -1063,17 +1120,21 @@ Public Class Ctr_Press_Status
                 daUser_Data.Fill(dsUser, "Users")
                 SQLCon.Close()
 
-                Dim daFourthShift_bit As New SqlDataAdapter("Select Enable_Fourth_Shift From Config_View", SQLCon)
+                Dim daFourthShift_bit As New SqlDataAdapter("Select Enable_Fourth_Shift, Enable_Two_Shift From Config_View", SQLCon)
                 daFourthShift_bit.SelectCommand.CommandTimeout = SQL_Timeout
                 Dim daFourthShift As New DataSet
                 daFourthShift_bit.Fill(daFourthShift, "Fourth")
 
                 Dim enable_fourth_shift As Boolean = False
+                Dim enable_two_shift As Boolean = False
 
                 For Each temp_dr As DataRow In daFourthShift.Tables("Fourth").Rows
                     If temp_dr("Enable_Fourth_Shift") Then
                         enable_fourth_shift = True
+                    ElseIf temp_dr("Enable_Two_Shift") Then
+                        enable_two_shift = True
                     End If
+
                 Next
 
                 For Each drCounts As DataRow In dsCounts.Tables("Counts").Rows
@@ -1086,10 +1147,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
@@ -1106,10 +1172,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1126,10 +1197,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1146,10 +1222,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1176,7 +1257,8 @@ Public Class Ctr_Press_Status
                         'Label32.Text = "Average"
                         'Label28.Text = "Pieces Total"
                         'Label27.Text = "Scrap Total"
-                    Else
+                    ElseIf enable_two_shift Then
+
                         Label35.Visible = False
                         Label36.Visible = False
                         Label37.Visible = False
@@ -1187,6 +1269,15 @@ Public Class Ctr_Press_Status
                         'Label32.Text = ""
                         'Label28.Text = ""
                         'Label27.Text = ""
+
+                    Else
+                        Label35.Visible = True
+                        Label36.Visible = True
+                        Label37.Visible = True
+
+                        Label27.Visible = False
+                        Label28.Visible = False
+                        Label32.Visible = False
                     End If
 
                     Me.Refresh()
@@ -1225,9 +1316,16 @@ Public Class Ctr_Press_Status
                         Else
                             lbl_Fourth_Total_Rate1.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_previous_Total_Rate1.Text = ""
                         lbl_Fourth_Total_Rate1.Text = ""
+                    Else
+                        lbl_Fourth_Total_Rate1.Text = ""
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate1.Text = Format(Val(Lbl_Previous_Shift_Total1.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate1.Text = "0.0"
+                        End If
                     End If
 
 
@@ -1265,9 +1363,16 @@ Public Class Ctr_Press_Status
                         Else
                             Lbl_Fourth_Shift_Rate1.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         Lbl_Previous_Shift_Rate1.Text = ""
                         Lbl_Fourth_Shift_Rate1.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Rate1.Text = ""
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate1.Text = "0.0"
+                        End If
                     End If
 
 
@@ -1318,9 +1423,12 @@ Public Class Ctr_Press_Status
                     If enable_fourth_shift Then
                         lbl_Previous_Shift_Total_Scrap1.Text = drCounts("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap1.Text = drCounts("D_Shift_Scrap_Total") & ""
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_Previous_Shift_Total_Scrap1.Text = ""
                         lbl_Fourth_Shift_Total_Scrap1.Text = ""
+                    Else
+                        lbl_Previous_Shift_Total_Scrap1.Text = ""
+                        lbl_Previous_Shift_Total_Scrap1.Text = drCounts("C_Shift_Scrap_Total") & ""
                     End If
 
 
@@ -1523,9 +1631,19 @@ Public Class Ctr_Press_Status
                         Else
                             lbl_previous_Total_Rate2.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         Lbl_Fourth_Shift_Total2.Text = ""
                         lbl_previous_Total_Rate2.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Total2.Text = ""
+                        Press_Hours = Val(drCounts1("C_Shift_Hours") & "")
+                        Lbl_Previous_Shift_Total2.Text = drCounts1("C_Shift_Total") & ""
+
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate2.Text = Format(Val(Lbl_Previous_Shift_Total2.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate2.Text = "0.0"
+                        End If
                     End If
 
 
@@ -1577,9 +1695,16 @@ Public Class Ctr_Press_Status
                         Else
                             Lbl_Fourth_Shift_Rate2.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         Lbl_Previous_Shift_Rate2.Text = ""
                         Lbl_Fourth_Shift_Rate2.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Rate2.Text = ""
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate2.Text = "0.0"
+                        End If
                     End If
 
 
@@ -1632,9 +1757,12 @@ Public Class Ctr_Press_Status
                     If enable_fourth_shift Then
                         lbl_Previous_Shift_Total_Scrap2.Text = drCounts1("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap2.Text = drCounts1("D_Shift_Scrap_Total") & ""
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_Previous_Shift_Total_Scrap2.Text = ""
                         lbl_Fourth_Shift_Total_Scrap2.Text = ""
+                    Else
+                        lbl_Fourth_Shift_Total_Scrap2.Text = ""
+                        lbl_Previous_Shift_Total_Scrap2.Text = drCounts1("C_Shift_Scrap_Total") & ""
                     End If
 
 
@@ -1738,17 +1866,27 @@ Public Class Ctr_Press_Status
 
                 Dim dsCounts As DataSet = toolboxMM.SQLTools.queryDatabase(query, "Counts")
                 Dim dsUser As DataSet = toolboxMM.SQLTools.queryDatabase(query2, "Users")
-                Dim daFourthShift As DataSet = toolboxMM.SQLTools.queryDatabase("Select Enable_Fourth_Shift From Config_View", "Fourth")
+                Dim daFourthShift As DataSet = toolboxMM.SQLTools.queryDatabase("Select Enable_Fourth_Shift, Enable_Two_Shift From Config_View", "Fourth")
 
 
                 Dim enable_fourth_shift As Boolean = False
+                Dim enable_two_shift As Boolean = False
 
-                For Each temp_dr As DataRow In daFourthShift.Tables("Fourth").Rows
-                    If temp_dr("Enable_Fourth_Shift") Then
-                        enable_fourth_shift = True
-                    End If
-                Next
+                Try
 
+
+                    For Each temp_dr As DataRow In daFourthShift.Tables("Fourth").Rows
+                        If temp_dr("Enable_Fourth_Shift") Then
+                            enable_fourth_shift = True
+                        ElseIf temp_dr("Enable_Two_Shift") Then
+                            enable_two_shift = True
+                        End If
+
+                    Next
+                Catch ex As Exception
+                    WriteEvent("Error determining shift number: " & ex.Message & vbCrLf & vbCrLf & ex.ToString, EventError)
+
+                End Try
 
                 For Each drCounts As DataRow In dsCounts.Tables("Counts").Rows
                     Lbl_Part.Text = drCounts("Part_Name")
@@ -1760,10 +1898,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.FixedSingle
@@ -1780,10 +1923,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1800,10 +1948,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1820,10 +1973,15 @@ Public Class Ctr_Press_Status
                                 Lbl_Last_Shift.Text = "B"
                                 Lbl_Previous_Shift.Text = "C"
                                 Lbl_Fourth_Shift.Text = "D"
-                            Else
+                            ElseIf enable_two_shift Then
                                 Lbl_Current_Shift.Text = "1"
                                 Lbl_Last_Shift.Text = "2"
                                 Lbl_Previous_Shift.Text = ""
+                                Lbl_Fourth_Shift.Text = ""
+                            Else
+                                Lbl_Current_Shift.Text = "1"
+                                Lbl_Last_Shift.Text = "2"
+                                Lbl_Previous_Shift.Text = "3"
                                 Lbl_Fourth_Shift.Text = ""
                             End If
                             Lbl_Current_Shift.BorderStyle = BorderStyle.None
@@ -1848,7 +2006,7 @@ Public Class Ctr_Press_Status
                         'Label32.Text = "Average"
                         'Label28.Text = "Pieces Total"
                         'Label27.Text = "Scrap Total"
-                    Else
+                    ElseIf enable_two_shift Then
                         Label35.Visible = False
                         Label36.Visible = False
                         Label37.Visible = False
@@ -1859,6 +2017,15 @@ Public Class Ctr_Press_Status
                         'Label32.Text = ""
                         'Label28.Text = ""
                         'Label27.Text = ""
+
+                    Else
+                        Label35.Visible = True
+                        Label36.Visible = True
+                        Label37.Visible = True
+
+                        Label27.Visible = False
+                        Label28.Visible = False
+                        Label32.Visible = False
                     End If
 
                     Me.Refresh()
@@ -1897,9 +2064,16 @@ Public Class Ctr_Press_Status
                         Else
                             lbl_Fourth_Total_Rate_3_1.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_previous_Total_Rate_3_1.Text = ""
                         lbl_Fourth_Total_Rate_3_1.Text = ""
+                    Else
+                        lbl_Fourth_Total_Rate_3_1.Text = ""
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate_3_1.Text = Format(Val(Lbl_Previous_Shift_Total_3_1.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate_3_1.Text = "0.0"
+                        End If
                     End If
 
 
@@ -1936,9 +2110,16 @@ Public Class Ctr_Press_Status
                         Else
                             Lbl_Fourth_Shift_Rate_3_1.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         Lbl_Previous_Shift_Rate_3_1.Text = ""
                         Lbl_Fourth_Shift_Rate_3_1.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Rate_3_1.Text = ""
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate_3_1.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate_3_1.Text = "0.0"
+                        End If
                     End If
 
 
@@ -1990,9 +2171,12 @@ Public Class Ctr_Press_Status
                     If enable_fourth_shift Then
                         lbl_Previous_Shift_Total_Scrap_3_1.Text = drCounts("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap_3_1.Text = drCounts("D_Shift_Scrap_Total") & ""
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_Previous_Shift_Total_Scrap_3_1.Text = ""
                         lbl_Fourth_Shift_Total_Scrap_3_1.Text = ""
+                    Else
+                        lbl_Fourth_Shift_Total_Scrap_3_1.Text = ""
+                        lbl_Previous_Shift_Total_Scrap_3_1.Text = drCounts("C_Shift_Scrap_Total") & ""
                     End If
 
 
@@ -2034,39 +2218,39 @@ Public Class Ctr_Press_Status
 
 
                 For Each drUsers As DataRow In dsUser.Tables("Users").Rows
-                        rowcount = rowcount + 1
-                        Select Case rowcount
-                            Case = 1
-                                If drUsers("User") <> "" Then
-                                    lblUser1.Visible = True
-                                    lblUser1.Text = drUsers("User")
-                                End If
-                            Case = 2
-                                If drUsers("User") <> "" Then
-                                    lblUser2.Visible = True
-                                    lblUser2.Text = drUsers("User")
-                                End If
-                            Case = 3
-                                If drUsers("User") <> "" Then
-                                    lblUser3.Visible = True
-                                    lblUser3.Text = drUsers("User")
-                                End If
-                            Case = 4
-                                If drUsers("User") <> "" Then
-                                    lblUser4.Visible = True
-                                    lblUser4.Text = drUsers("User")
-                                End If
-                            Case = 5
-                                If drUsers("User") <> "" Then
-                                    lblUser5.Visible = True
-                                    lblUser5.Text = drUsers("User")
-                                End If
+                    rowcount = rowcount + 1
+                    Select Case rowcount
+                        Case = 1
+                            If drUsers("User") <> "" Then
+                                lblUser1.Visible = True
+                                lblUser1.Text = drUsers("User")
+                            End If
+                        Case = 2
+                            If drUsers("User") <> "" Then
+                                lblUser2.Visible = True
+                                lblUser2.Text = drUsers("User")
+                            End If
+                        Case = 3
+                            If drUsers("User") <> "" Then
+                                lblUser3.Visible = True
+                                lblUser3.Text = drUsers("User")
+                            End If
+                        Case = 4
+                            If drUsers("User") <> "" Then
+                                lblUser4.Visible = True
+                                lblUser4.Text = drUsers("User")
+                            End If
+                        Case = 5
+                            If drUsers("User") <> "" Then
+                                lblUser5.Visible = True
+                                lblUser5.Text = drUsers("User")
+                            End If
 
-                        End Select
+                    End Select
 
 
 
-                    Next
+                Next
 
 
                 If Lbl_Running.Text = "Running" And lblUser1.Visible = False And lblUser2.Visible = False And lblUser3.Visible = False And lblUser4.Visible = False And lblUser5.Visible = False Then
@@ -2191,9 +2375,18 @@ Public Class Ctr_Press_Status
                             lbl_previous_Total_Rate_3_2.Text = "0.0"
                         End If
 
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_previous_Total_Rate_3_2.Text = ""
                         Lbl_Fourth_Shift_Total_3_2.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Total_3_2.Text = ""
+                        Lbl_Previous_Shift_Total_3_2.Text = drCounts1("C_Shift_Total") & ""
+                        Press_Hours = Val(drCounts1("C_Shift_Hours") & "")
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate_3_2.Text = Format(Val(Lbl_Previous_Shift_Total_3_2.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate_3_2.Text = "0.0"
+                        End If
                     End If
 
 
@@ -2245,9 +2438,16 @@ Public Class Ctr_Press_Status
                         Else
                             Lbl_Fourth_Shift_Rate_3_2.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         Lbl_Previous_Shift_Rate_3_2.Text = ""
                         Lbl_Fourth_Shift_Rate_3_2.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Rate_3_2.Text = ""
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate_3_2.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate_3_2.Text = "0.0"
+                        End If
                     End If
 
 
@@ -2300,9 +2500,12 @@ Public Class Ctr_Press_Status
                     If enable_fourth_shift Then
                         lbl_Previous_Shift_Total_Scrap_3_2.Text = drCounts1("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap_3_2.Text = drCounts1("D_Shift_Scrap_Total") & ""
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_Previous_Shift_Total_Scrap_3_2.Text = ""
                         lbl_Fourth_Shift_Total_Scrap_3_2.Text = ""
+                    Else
+                        lbl_Fourth_Shift_Total_Scrap_3_2.Text = ""
+                        lbl_Previous_Shift_Total_Scrap_3_2.Text = drCounts1("C_Shift_Scrap_Total") & ""
                     End If
 
 
@@ -2422,9 +2625,18 @@ Public Class Ctr_Press_Status
                         Else
                             lbl_previous_Total_Rate_3_3.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_previous_Total_Rate_3_3.Text = ""
                         Lbl_Fourth_Shift_Total_3_3.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Total_3_3.Text = ""
+                        Lbl_Previous_Shift_Total_3_3.Text = drCounts2("C_Shift_Total") & ""
+                        Press_Hours = Val(drCounts2("C_Shift_Hours") & "")
+                        If Press_Hours > 0 Then
+                            lbl_previous_Total_Rate_3_3.Text = Format(Val(Lbl_Previous_Shift_Total_3_3.Text) / Press_Hours, "#.0")
+                        Else
+                            lbl_previous_Total_Rate_3_3.Text = "0.0"
+                        End If
                     End If
 
 
@@ -2475,9 +2687,16 @@ Public Class Ctr_Press_Status
                         Else
                             Lbl_Fourth_Shift_Rate_3_3.Text = "0.0"
                         End If
-                    Else
+                    ElseIf enable_two_shift Then
                         Lbl_Previous_Shift_Rate_3_3.Text = ""
                         Lbl_Fourth_Shift_Rate_3_3.Text = ""
+                    Else
+                        Lbl_Fourth_Shift_Rate_3_3.Text = ""
+                        If Press_Hours > 0 Then
+                            Lbl_Previous_Shift_Rate_3_3.Text = Format(Val(Shift_Parts) / Press_Hours, "#.0")
+                        Else
+                            Lbl_Previous_Shift_Rate_3_3.Text = "0.0"
+                        End If
                     End If
 
 
@@ -2530,9 +2749,12 @@ Public Class Ctr_Press_Status
                     If enable_fourth_shift Then
                         lbl_Previous_Shift_Total_Scrap_3_3.Text = drCounts2("C_Shift_Scrap_Total") & ""
                         lbl_Fourth_Shift_Total_Scrap_3_3.Text = drCounts2("D_Shift_Scrap_Total") & ""
-                    Else
+                    ElseIf enable_two_shift Then
                         lbl_Previous_Shift_Total_Scrap_3_3.Text = ""
                         lbl_Fourth_Shift_Total_Scrap_3_3.Text = ""
+                    Else
+                        lbl_Fourth_Shift_Total_Scrap_3_3.Text = ""
+                        lbl_Previous_Shift_Total_Scrap_3_3.Text = drCounts2("C_Shift_Scrap_Total") & ""
                     End If
 
 
@@ -2573,7 +2795,7 @@ Public Class Ctr_Press_Status
                 SQLCon.Close()
             End If
             lbl_Comm_Fail.Visible = True
-            WriteEvent("Error registered on Press Status Screen(Update Screen): " & Ex.Message, EventError)
+            WriteEvent("Error registered on Press Status Screen(Update Screen): " & Ex.Message & vbCrLf & vbCrLf & Ex.ToString, EventError)
             'MsgBox("Error Getting Press Info from Database: " & Ex.Message & vbCrLf & Ex.StackTrace)
         End Try
 
@@ -2655,13 +2877,13 @@ Public Class Ctr_Press_Status
         query = "Select PMC_Alarm_Current.Description, PMC_Resources.Resource, PMC_Alarm_Config.Event_Type, PMC_Event_Types.Display_Color, PMC_Alarm_Config.PLC, PMC_Alarm_Current.Start_Time from PMC_Alarm_Current " &
             "inner join PMC_Resources on PMC_Alarm_Current.PLC = PMC_Resources.id " &
             "inner join PMC_Alarm_Config on PMC_Alarm_Current.Alarm_Offset = PMC_Alarm_Config.Event_Number and PMC_Alarm_Current.PLC = PMC_Alarm_Config.PLC " &
-            "inner join PMC_Event_Types on PMC_Alarm_Config.Event_Type = PMC_Event_Types.ID Where PMC_Resources.Enabled = 'True' and (PMC_Resources.Resource = '7913' or PMC_Resources.Resource = 'P' + (Select Replace((Select Description From Press Where id = " & Press_ID & "), 'Press ', ''))) and isnull(PMC_Alarm_Config.Disabled,0) = 0 and " &
+            "inner join PMC_Event_Types on PMC_Alarm_Config.Event_Type = PMC_Event_Types.ID Where PMC_Resources.Enabled = 'True' and (" & IIf(Bonder, "PMC_Resources.Resource = '7913'", "") & IIf(Router, IIf(Press_ID = 103, "PMC_Resources.Resource like '%Rt_1%'", "PMC_Resources.Resource like '%Rt_2%'"), "") & IIf(Press, "PMC_Resources.Resource = 'P' + (Select Replace((Select Description From Press Where id = " & Press_ID & "), 'Press ', ''))", "") & ") and isnull(PMC_Alarm_Config.Disabled,0) = 0 and " &
             "(isnull(PMC_Alarm_Config.shelved,0) = 0 or (PMC_Alarm_Config.shelved = 1 and PMC_Alarm_Config.Shelve_Time < getdate()))" &
             "order by event_type"
         DGV_Paint_Data.Visible = False
-            LB_PMC.Visible = True
+        LB_PMC.Visible = True
 
-            Try
+        Try
 
                 SQLCon.ConnectionString = DBConnection
                 SQLCon.Open()
